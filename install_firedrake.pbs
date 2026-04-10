@@ -1,0 +1,161 @@
+#!/bin/bash
+# Firedrake + PETSc installation using the foss-2025b buildenv toolchain.
+#
+# Installs everything under $HOME/firedrake-dev.
+# Submit with:
+#   qsub install_firedrake_foss.pbs
+#
+# NOTE: Firedrake is cloned via SSH. Change to the https URL if SSH agent
+# forwarding is unavailable on the compute node:
+#   git clone https://github.com/firedrakeproject/firedrake.git
+
+#PBS -N firedrake_install
+#PBS -l select=1:ncpus=32:mem=64gb:cpu_type=rome:mpiprocs=32
+#PBS -l walltime=02:00:00
+#PBS -j oe
+#PBS -o firedrake_install.log
+
+set -euo pipefail
+
+INSTALL_DIR="$HOME/firedrake-dev"
+NPROCS=32
+
+mkdir -p "$INSTALL_DIR/logs"
+LOGFILE="$INSTALL_DIR/logs/install_foss_$(date +%Y%m%d_%H%M%S).log"
+exec > >(tee -a "$LOGFILE") 2>&1
+
+# Load modules
+echo ""
+echo "Loading modules"
+module purge
+module load tools/prod
+module load buildenv/default-foss-2025b
+module load CMake/4.0.3-GCCcore-14.3.0
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+module list
+
+mkdir -p "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+curl -fsSO https://raw.githubusercontent.com/firedrakeproject/firedrake/release/scripts/firedrake-configure
+
+# Clone PETSc
+echo ""
+echo "Cloning PETSc"
+if [[ -d "$INSTALL_DIR/petsc/.git" ]]; then
+    echo "  PETSc already cloned, skipping."
+else
+    git clone https://gitlab.com/petsc/petsc.git "$INSTALL_DIR/petsc"
+fi
+
+# Configure PETSc
+echo ""
+echo "Configuring PETSc"
+export PETSC_DIR="$INSTALL_DIR/petsc"
+export PETSC_ARCH=arch-firedrake-default
+
+cd "$PETSC_DIR"
+
+./configure \
+    --with-cc=mpicc \
+    --with-cxx=mpicxx \
+    --with-fc=mpif90 \
+    --with-c2html=0 \
+    --with-debugging=0 \
+    --with-fortran-bindings=0 \
+    --with-shared-libraries=1 \
+    --with-strict-petscerrorcode \
+    PETSC_ARCH="$PETSC_ARCH" \
+    --COPTFLAGS='-O3 -march=native -mtune=native' \
+    --CXXOPTFLAGS='-O3 -march=native -mtune=native' \
+    --FOPTFLAGS='-O3 -march=native -mtune=native' \
+    --with-blaslapack-dir="$EBROOTFLEXIBLAS" \
+    --with-scalapack-dir="$EBROOTSCALAPACK" \
+    --with-fftw-dir="$EBROOTFFTW" \
+    --with-hwloc-dir="$EBROOTHWLOC" \
+    --with-zlib-dir="$EBROOTZLIB" \
+    --with-hdf5-dir="$EBROOTHDF5" \
+    --download-bison \
+    --download-ptscotch \
+    --download-suitesparse \
+    --download-superlu_dist \
+    --download-mumps \
+    --download-hypre \
+    --download-pnetcdf \
+    --download-netcdf \
+    --download-metis
+
+# Build PETSc
+echo ""
+echo "Building PETSc (make -j$NPROCS)"
+make -j"$NPROCS" PETSC_DIR="$PETSC_DIR" PETSC_ARCH="$PETSC_ARCH" all
+
+# Check PETSc
+echo ""
+echo "Running PETSc check"
+PETSC_CHECK_LOG="$INSTALL_DIR/logs/petsc_check_$(date +%Y%m%d_%H%M%S).log"
+if ! make PETSC_DIR="$PETSC_DIR" PETSC_ARCH="$PETSC_ARCH" check 2>&1 | tee "$PETSC_CHECK_LOG"; then
+    echo "ERROR: make check failed. See $PETSC_CHECK_LOG for details."
+    exit 1
+fi
+echo "  PETSc checks passed. Log: $PETSC_CHECK_LOG"
+cd "$INSTALL_DIR"
+
+# Clone Firedrake
+echo ""
+echo "Cloning Firedrake"
+if [[ -d "$INSTALL_DIR/firedrake/.git" ]]; then
+    echo "  Firedrake already cloned, skipping."
+else
+    git clone git@github.com:firedrakeproject/firedrake.git "$INSTALL_DIR/firedrake"
+fi
+
+# Export environment variables
+export CC=mpicc
+export CXX=mpicxx
+export PETSC_ARCH=arch-firedrake-default
+export PETSC_DIR="$INSTALL_DIR/petsc"
+export HDF5_MPI=ON
+export HDF5_DIR="$EBROOTHDF5"
+
+# Create virtual environment
+cd "$INSTALL_DIR"
+if [[ ! -d "$INSTALL_DIR/venv-firedrake" ]]; then
+    python3 -m venv venv-firedrake
+fi
+source "$INSTALL_DIR/venv-firedrake/bin/activate"
+echo "  Python: $(which python3) ($(python3 --version))"
+
+# Install Python packages
+pip cache purge
+
+echo "Installing petsc4py"
+pip install "$PETSC_DIR/src/binding/petsc4py"
+
+echo "Installing Firedrake build requirements"
+pip install -r "$INSTALL_DIR/firedrake/requirements-build.txt"
+
+echo "Installing Firedrake"
+pip install \
+    --no-build-isolation \
+    --no-binary h5py \
+    --editable "$INSTALL_DIR/firedrake[check,docs]"
+
+# Run firedrake-check
+echo ""
+echo "Running firedrake-check"
+CHECK_LOG="$INSTALL_DIR/logs/firedrake_check_$(date +%Y%m%d_%H%M%S).log"
+firedrake-check 2>&1 | tee "$CHECK_LOG" || {
+    echo "firedrake-check reported failures. See $CHECK_LOG"
+}
+
+echo "Installation complete: $(date -Iseconds)"
+echo ""
+echo "To use Firedrake in future sessions:"
+echo "  module load tools/prod buildenv/default-foss-2025b \\"
+echo "    HDF5/1.14.6-gompi-2025b PnetCDF/1.14.1-gompi-2025b \\"
+echo "    METIS/5.1.0-GCCcore-14.3.0 netCDF/4.9.3-gompi-2025b \\"
+echo "    Python/3.13.5-GCCcore-14.3.0"
+echo "  source $INSTALL_DIR/venv-firedrake/bin/activate"
+echo "  export PETSC_DIR=$INSTALL_DIR/petsc PETSC_ARCH=arch-firedrake-default"
+echo "  export HDF5_MPI=ON HDF5_DIR=\$EBROOTHDF5"
