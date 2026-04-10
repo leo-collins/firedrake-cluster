@@ -9,11 +9,8 @@ Defaults: nx=500, npoints=10_000_000, ntrials=5, output=results/vom_results.csv
 import argparse
 import csv
 import datetime
-import gc
 import os
-import resource
 import socket
-import subprocess
 from time import perf_counter_ns
 
 import numpy as np
@@ -25,10 +22,6 @@ from mpi4py import MPI
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def run_benchmark(mesh, points, comm):
-    """Time VertexOnlyMesh creation with MPI barriers to sync all ranks."""
-
-    # print_mem_all_ranks(f"before", comm)
-
     comm.barrier()
     t_start = perf_counter_ns()
     vom = VertexOnlyMesh(mesh, points)
@@ -36,7 +29,6 @@ def run_benchmark(mesh, points, comm):
     t_end = perf_counter_ns()
     elapsed_s = (t_end - t_start) / 1e9
 
-    # print_mem_all_ranks(f"after", comm)
     PETSc.Sys.Print(f"done in {elapsed_s:.3f}s")
 
     return elapsed_s
@@ -87,7 +79,6 @@ def main():
         print(
             f"nprocs={nprocs}, nx={args.nx}, npoints={args.npoints}: "
             f"time={elapsed:.3f}s, "
-            f"mem(rank0)={row['peak_mem_mb_rank0']}MB"
         )
 
 
