@@ -1,0 +1,2123 @@
+Job ID:    538334.pbs-6
+Node:      hx1-c04-4-4
+NPROCS:    2048
+Date:      2026-04-15T20:03:41+01:00
+Running with 1 processes
+nranks=1
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 2.837501953 s
+Running with 2 processes
+nranks=2
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 0.752906384 s
+Running with 4 processes
+nranks=4
+Finished creating mesh
+node deallocated
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 0.74668013775 s
+Running with 8 processes
+nranks=8
+Finished creating mesh
+node deallocated
+node deallocated
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 0.759877138625 s
+Running with 16 processes
+nranks=16
+Finished creating mesh
+node deallocated
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+node deallocated
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+node deallocated
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+Deallocated 4 child nodes
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 0.79710929 s
+Running with 32 processes
+nranks=32
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 0.89390974965625 s
+Running with 64 processes
+nranks=64
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 1.187180122171875 s
+Running with 128 processes
+nranks=128
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 9 child nodes
+Time to create VertexOnlyMesh: 2.3941822982890626 s
+Running with 256 processes
+nranks=256
+Finished creating mesh
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+node deallocated
+Level 0: 1 nodes, max level 1
+node deallocated
+Deallocated 4 child nodes
+Time to create VertexOnlyMesh: 5.10993756990625 s
+Running with 512 processes
+--------------------------------------------------------------------------
+There are not enough slots available in the system to satisfy the 512
+slots that were requested by the application:
+
+  python
+
+Either request fewer procs for your application, or make more slots
+available for use.
+
+A "slot" is the PRRTE term for an allocatable unit where we can
+launch a process.  The number of slots available are defined by the
+environment in which PRRTE processes are run:
+
+  1. Hostfile, via "slots=N" clauses (N defaults to number of
+     processor cores if not provided)
+  2. The --host command line parameter, via a ":N" suffix on the
+     hostname (N defaults to 1 if not provided)
+  3. Resource manager (e.g., SLURM, PBS/Torque, LSF, etc.)
+  4. If none of a hostfile, the --host command line parameter, or an
+     RM is present, PRRTE defaults to the number of processor cores
+
+In all the above cases, if you want PRRTE to default to the number
+of hardware threads instead of the number of processor cores, use the
+--use-hwthread-cpus option.
+
+Alternatively, you can use the --map-by :OVERSUBSCRIBE option to ignore the
+number of available slots when deciding the number of processes to
+launch.
+--------------------------------------------------------------------------
+ 
+====================================
+CPU Time used: 00:20:42
+CPU Percent: 1447%
+Memory usage: 21139592kb
+Approx Power usage: 0.004
+Walltime usage: 00:02:00
+
+====================================

@@ -1,0 +1,50 @@
+Job ID:    538323.pbs-6
+Node:      hx1-c04-4-4
+NPROCS:    256
+Date:      2026-04-15T19:09:29+01:00
+Running with 1 processes
+nranks=1
+Finished creating mesh
+Time to create VertexOnlyMesh: 1.213649682 s
+Running with 2 processes
+nranks=2
+Finished creating mesh
+Time to create VertexOnlyMesh: 0.79855667 s
+Running with 4 processes
+nranks=4
+Finished creating mesh
+Time to create VertexOnlyMesh: 0.77992494875 s
+Running with 8 processes
+nranks=8
+Finished creating mesh
+Time to create VertexOnlyMesh: 0.896884189375 s
+Running with 16 processes
+nranks=16
+Finished creating mesh
+Time to create VertexOnlyMesh: 1.1861468471875 s
+Running with 32 processes
+nranks=32
+Finished creating mesh
+Time to create VertexOnlyMesh: 2.1682495264375 s
+Running with 64 processes
+nranks=64
+Finished creating mesh
+Time to create VertexOnlyMesh: 3.976044132921875 s
+Running with 128 processes
+nranks=128
+Finished creating mesh
+Time to create VertexOnlyMesh: 11.741944074726563 s
+Running with 256 processes
+nranks=256
+Finished creating mesh
+Time to create VertexOnlyMesh: 26.95290415059375 s
+Done.
+
+====================================
+CPU Time used: 00:10:25
+CPU Percent: 952%
+Memory usage: 73655276kb
+Approx Power usage: 0.002
+Walltime usage: 00:02:32
+
+====================================

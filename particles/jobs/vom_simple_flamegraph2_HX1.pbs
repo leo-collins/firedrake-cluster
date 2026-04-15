@@ -4,8 +4,8 @@
 # Runs old allgather vom algorithm
 
 #PBS -N vom_simple
-#PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
-#PBS -l walltime=01:00:00
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l walltime=00:30:00
 #PBS -j oe
 #PBS -o logs/
 

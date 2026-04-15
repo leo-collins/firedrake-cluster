@@ -1,0 +1,59 @@
+Job ID:    538345.pbs-6
+Node:      hx1-c04-7-1
+NPROCS:    256
+Date:      2026-04-15T21:11:27+01:00
+Running with 1 processes
+nranks=1
+Finished creating mesh
+Rank 0 time 0.860198272s
+Avg. time: 0.860198272 s
+Running with 2 processes
+nranks=2
+Finished creating mesh
+Rank 0 time 0.756161615s
+Avg. time: 0.755681274 s
+Running with 4 processes
+nranks=4
+Finished creating mesh
+Rank 0 time 0.747955158s
+Avg. time: 0.74778260075 s
+Running with 8 processes
+nranks=8
+Finished creating mesh
+Rank 0 time 0.774152164s
+Avg. time: 0.773980980625 s
+Running with 16 processes
+nranks=16
+Finished creating mesh
+Rank 0 time 0.846037948s
+Avg. time: 0.8454154644375 s
+Running with 32 processes
+nranks=32
+Finished creating mesh
+Rank 0 time 1.068187267s
+Avg. time: 1.067077059875 s
+Running with 64 processes
+nranks=64
+Finished creating mesh
+Rank 0 time 1.351315543s
+Avg. time: 1.35348014378125 s
+Running with 128 processes
+nranks=128
+Finished creating mesh
+Rank 0 time 2.707010133s
+Avg. time: 2.70087530084375 s
+Running with 256 processes
+nranks=256
+Finished creating mesh
+Rank 0 time 5.243685477s
+Avg. time: 5.234678392222656 s
+Done.
+
+====================================
+CPU Time used: 00:15:44
+CPU Percent: 1312%
+Memory usage: 21174268kb
+Approx Power usage: 0.003
+Walltime usage: 00:01:52
+
+====================================

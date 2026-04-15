@@ -2,15 +2,14 @@
 
 # Runs vom_simple.py and generates 
 
-#PBS -N vom_simple
-#PBS -l select=32:ncpus=64:mpiprocs=64:mem=450gb
-#PBS -l walltime=02:00:00
-#PBS -l place=excl
+#PBS -N vom_simple_dist_rtree
+#PBS -l select=32:ncpus=64:mpiprocs=64:mem=200gb
+#PBS -l walltime=00:30:00
 #PBS -j oe
 #PBS -o logs/
 
 cd $PBS_O_WORKDIR
-cd ../flamegraphs/vom_simple
+cd ../flamegraphs/vom_simple_distributedrtree
 
 set -euo pipefail
 
@@ -30,7 +29,7 @@ echo "Date:      $(date -Iseconds)"
 P=1
 while [ $P -le "$NPROCS" ]; do
   echo "Running with $P processes"
-  mpirun -n $P python ../scripts/vom_simple.py -log_view :vom_simple_${P}.txt:ascii_flamegraph
+  mpirun -n $P python ../../scripts/vom_simple.py -log_view :vom_simple_${P}.txt:ascii_flamegraph
   P=$(( P * 2))
 done
 
