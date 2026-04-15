@@ -18,5 +18,7 @@ t0 = perf_counter_ns()
 vom = VertexOnlyMesh(mesh, points, redundant=False)
 t1 = perf_counter_ns()
 
+if COMM_WORLD.rank == 0:
+    print(f"Rank 0 time {(t1 - t0) / 1e9}s")
 t = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / COMM_WORLD.size
-PETSc.Sys.Print(f"Time to create VertexOnlyMesh: {t / 1e9} s")
+PETSc.Sys.Print(f"Avg. time: {t / 1e9} s")
