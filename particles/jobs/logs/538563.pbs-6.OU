@@ -1,0 +1,51 @@
+Job ID:    538563.pbs-6
+Node:      hx1-c04-1-1
+NPROCS:    256
+Date:      2026-04-16T23:04:46+01:00
+CSV:       results/overlapping_strongscaling_20260416_230446.csv
+nranks=1
+Finished creating mesh
+Rank 0 time 0.405114817s
+Avg. time: 0.405114817 s
+nranks=2
+Finished creating mesh
+Rank 0 time 0.807203566s
+Avg. time: 0.8076694575 s
+nranks=4
+Finished creating mesh
+Rank 0 time 0.809342128s
+Avg. time: 0.8092867715 s
+nranks=8
+Finished creating mesh
+Rank 0 time 0.801413621s
+Avg. time: 0.80230901475 s
+nranks=16
+Finished creating mesh
+Rank 0 time 0.956681106s
+Avg. time: 0.956068104375 s
+nranks=32
+Finished creating mesh
+Rank 0 time 1.239059349s
+Avg. time: 1.23933070484375 s
+nranks=64
+Finished creating mesh
+Rank 0 time 1.608778269s
+Avg. time: 1.6014586171875 s
+nranks=128
+Finished creating mesh
+Rank 0 time 4.336111305s
+Avg. time: 4.339512261234375 s
+nranks=256
+Finished creating mesh
+Rank 0 time 13.354150076s
+Avg. time: 13.347491371175781 s
+Done.
+
+====================================
+CPU Time used: 00:08:21
+CPU Percent: 819%
+Memory usage: 17727108kb
+Approx Power usage: 0.0016
+Walltime usage: 00:02:22
+
+====================================
