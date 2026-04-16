@@ -21,7 +21,7 @@ NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/mass_matrix_weakscaling_${TS}.csv"
+CSV="$RESULTS_DIR/mass_matrix_weakscaling_${DOFS_PER_CORE}_${TS}.csv"
 
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"

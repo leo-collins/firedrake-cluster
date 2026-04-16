@@ -21,7 +21,7 @@ NPROCS=${NPROCS:-256}
 TOTAL_DOFS=${TOTAL_DOFS:-200000}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_strongscaling_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_strongscaling_${TOTAL_DOFS}_${TS}.csv"
 
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
