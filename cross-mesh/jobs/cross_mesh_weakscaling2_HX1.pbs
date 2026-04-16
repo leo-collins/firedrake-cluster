@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Weak scaling for cross-mesh interpolation matrix, using old VOM code.
+
 #PBS -N weakscale_cross_mesh
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
 #PBS -l walltime=01:00:00
@@ -15,13 +17,13 @@ module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
 module load Python/3.13.5-GCCcore-14.3.0
 
-source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+source "$HOME/firedrake-dev2/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_weakscaling_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_weakscaling2_${TS}.csv"
 
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
