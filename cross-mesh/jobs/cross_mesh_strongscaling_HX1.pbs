@@ -21,17 +21,17 @@ NPROCS=${NPROCS:-256}
 TOTAL_DOFS=${TOTAL_DOFS:-200000}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-STRONG_CSV="$RESULTS_DIR/overlapping_strongscaling_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_strongscaling_${TS}.csv"
 
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
 echo "Date:      $(date -Iseconds)"
-echo "Strong CSV:$STRONG_CSV"
+echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_strongscaling.py "$TOTAL_DOFS" "$STRONG_CSV"
+	mpirun -n "$P" python overlapping_strongscaling.py "$TOTAL_DOFS" "$CSV"
 	P=$(( P * 2 ))
 done
 

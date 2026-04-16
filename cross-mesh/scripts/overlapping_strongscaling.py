@@ -24,8 +24,8 @@ t0_mesh = perf_counter_ns()
 mesh1 = UnitSquareMesh(n, n)
 mesh2 = UnitSquareMesh(n + 1, n + 1)
 t1_mesh = perf_counter_ns()
-PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={((t1_mesh - t0_mesh) / 1e9):.6g}s")
-
+mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
+PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", 1)
 W = FunctionSpace(mesh2, "CG", 1)
@@ -54,6 +54,7 @@ if COMM_WORLD.rank == 0:
                 fieldnames=[
                     "nprocs",
                     "dofs_per_core",
+                    "mesh_gen_time_s",
                     "assembly_time_s",
                 ],
             )
@@ -63,6 +64,7 @@ if COMM_WORLD.rank == 0:
                 {
                     "nprocs": n_cores,
                     "dofs_per_core": actual_dofs_per_core,
+                    "mesh_gen_time_s": mesh_gen_time_s,
                     "assembly_time_s": avg_time_s,
                 }
             )
