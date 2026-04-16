@@ -31,10 +31,6 @@ W = FunctionSpace(mesh2, "CG", 1)
 
 mass = inner(TrialFunction(V), TestFunction(W)) * dx
 
-if n_cores == 1:
-    # Warm up cache
-    assemble(mass, mat_type="aij")
-
 t0 = perf_counter_ns()
 assemble(mass, mat_type="aij")
 t1 = perf_counter_ns()

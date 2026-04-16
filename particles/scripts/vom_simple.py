@@ -22,10 +22,6 @@ PETSc.Sys.Print(f"Finished creating mesh")
 rng = np.random.default_rng(COMM_WORLD.rank)
 points = rng.random((100_000, 2))
 
-if COMM_WORLD.size == 1:
-    # Warm up cache
-    VertexOnlyMesh(mesh, points, redundant=False)
-
 t0 = perf_counter_ns()
 vom = VertexOnlyMesh(mesh, points, redundant=False)
 t1 = perf_counter_ns()

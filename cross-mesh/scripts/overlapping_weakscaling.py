@@ -32,10 +32,6 @@ W = FunctionSpace(mesh2, "CG", 1)
 
 interp = interpolate(TrialFunction(V), W)
 
-if n_cores == 1:
-    # Warm up cache
-    assemble(interp, mat_type="aij")
-
 t0 = perf_counter_ns()
 assemble(interp, mat_type="aij")
 t1 = perf_counter_ns()
