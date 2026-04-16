@@ -19,8 +19,9 @@ dofs_per_core = int(argv[1]) if len(argv) > 1 else 50_000  # default 50k dofs/co
 csv_path = Path(argv[2]) if len(argv) > 2 else None
 n = int(floor(sqrt(dofs_per_core * n_cores) - 1))  # works for CG1 UnitSquareMesh
 
+# meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(n, n)
+mesh2 = UnitSquareMesh(n + 1, n + 1)
 
 V = FunctionSpace(mesh1, "CG", 1)
 W = FunctionSpace(mesh2, "CG", 1)
