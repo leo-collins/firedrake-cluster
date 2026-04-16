@@ -19,8 +19,11 @@ csv_path = Path(argv[2]) if len(argv) > 2 else None
 n = int(floor(sqrt(dofs_per_core * n_cores) - 1))  # works for CG1 UnitSquareMesh
 
 # meshes have different number of nodes to force different parallel partitions
+t0_mesh = perf_counter_ns()
 mesh1 = UnitSquareMesh(n, n)
 mesh2 = UnitSquareMesh(n + 1, n + 1)
+t1_mesh = perf_counter_ns()
+PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={((t1_mesh - t0_mesh) / 1e9):.6g}s")
 
 V = FunctionSpace(mesh1, "CG", 1)
 W = FunctionSpace(mesh2, "CG", 1)
