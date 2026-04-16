@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#PBS -N weakscale_cross_mesh
+#PBS -N weakscale_mass_matrix
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
 #PBS -l walltime=01:00:00
 #PBS -j oe
