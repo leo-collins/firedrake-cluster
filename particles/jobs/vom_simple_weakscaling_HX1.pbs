@@ -2,7 +2,7 @@
 
 #PBS -N weakscale_vom_simple
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
-#PBS -l walltime=00:30:00
+#PBS -l walltime=00:10:00
 #PBS -j oe
 #PBS -o logs/
 
@@ -18,7 +18,6 @@ module load Python/3.13.5-GCCcore-14.3.0
 source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
-TOTAL_DOFS=${TOTAL_DOFS:-200000}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
 CSV="$RESULTS_DIR/overlapping_strongscaling_${TS}.csv"
@@ -31,7 +30,7 @@ echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_strongscaling.py "$TOTAL_DOFS" "$CSV"
+	mpirun -n "$P" python vom_simple.py "$CSV"
 	P=$(( P * 2 ))
 done
 
