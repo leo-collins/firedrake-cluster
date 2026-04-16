@@ -3,6 +3,8 @@ from math import floor, sqrt
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
+import warnings
+warnings.filterwarnings("ignore")
 
 from firedrake import *
 from mpi4py import MPI

@@ -2,7 +2,9 @@ import csv
 from math import floor, sqrt
 from pathlib import Path
 from sys import argv
-from time import perf_counter, perf_counter_ns
+from time import perf_counter_ns
+import warnings
+warnings.filterwarnings("ignore")
 
 from firedrake import *
 from mpi4py import MPI
@@ -24,6 +26,10 @@ V = FunctionSpace(mesh1, "CG", 1)
 W = FunctionSpace(mesh2, "CG", 1)
 
 interp = interpolate(TrialFunction(V), W)
+
+if n_cores == 1:
+    # Warm up cache
+    assemble(interp, mat_type="aij")
 
 t0 = perf_counter_ns()
 assemble(interp, mat_type="aij")
