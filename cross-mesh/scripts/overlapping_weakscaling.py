@@ -1,0 +1,59 @@
+import csv
+from math import floor, sqrt
+from pathlib import Path
+from sys import argv
+from time import perf_counter, perf_counter_ns
+
+from firedrake import *
+from mpi4py import MPI
+
+# This tests weak parallel scaling of assembly of cross-mesh interpolation
+# matrices with fully overlapping meshes.
+# Run with:
+#   mpiexec -n <nprocs> python overlapping_weakscaling.py <dofs_per_core> [csv_path]
+
+n_cores = COMM_WORLD.size
+dofs_per_core = int(argv[1]) if len(argv) > 1 else 50_000  # default 50k dofs/core
+csv_path = Path(argv[2]) if len(argv) > 2 else None
+n = int(floor(sqrt(dofs_per_core * n_cores) - 1))  # works for CG1 UnitSquareMesh
+
+mesh1 = UnitSquareMesh(n, n)
+mesh2 = UnitSquareMesh(n, n)
+
+V = FunctionSpace(mesh1, "CG", 1)
+W = FunctionSpace(mesh2, "CG", 1)
+
+interp = interpolate(TrialFunction(V), W)
+
+t0 = perf_counter_ns()
+assemble(interp, mat_type="aij")
+t1 = perf_counter_ns()
+
+avg_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
+actual_dofs_per_core = V.dim() / n_cores
+
+if COMM_WORLD.rank == 0:
+    PETSc.Sys.Print(
+        f"nprocs={n_cores}: assembly={avg_time_s:.6g}s"
+    )
+    if csv_path is not None:
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        write_header = not csv_path.exists() or csv_path.stat().st_size == 0
+        with csv_path.open("a", newline="") as f:
+            w = csv.DictWriter(
+                f,
+                fieldnames=[
+                    "nprocs",
+                    "dofs_per_core",
+                    "assembly_time_s",
+                ],
+            )
+            if write_header:
+                w.writeheader()
+            w.writerow(
+                {
+                    "nprocs": n_cores,
+                    "dofs_per_core": actual_dofs_per_core,
+                    "assembly_time_s": avg_time_s,
+                }
+            )
