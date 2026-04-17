@@ -1,0 +1,51 @@
+Job ID:    538696.pbs-6
+Node:      hx1-c04-2-3
+NPROCS:    256
+Date:      2026-04-17T01:37:11+01:00
+CSV:       results/vom_simple_weakscaling_20260417_013711.csv
+nranks=1
+Finished creating mesh
+Rank 0 time 2.382696728s
+Avg. time: 2.382696728 s
+nranks=2
+Finished creating mesh
+Rank 0 time 0.882819433s
+Avg. time: 0.882951829 s
+nranks=4
+Finished creating mesh
+Rank 0 time 0.791530737s
+Avg. time: 0.79139538725 s
+nranks=8
+Finished creating mesh
+Rank 0 time 0.80358884s
+Avg. time: 0.8022246615 s
+nranks=16
+Finished creating mesh
+Rank 0 time 0.858541482s
+Avg. time: 0.8578150000625 s
+nranks=32
+Finished creating mesh
+Rank 0 time 0.971259076s
+Avg. time: 0.96976657240625 s
+nranks=64
+Finished creating mesh
+Rank 0 time 1.448904164s
+Avg. time: 1.448843914796875 s
+nranks=128
+Finished creating mesh
+Rank 0 time 4.218225145s
+Avg. time: 4.216617130867188 s
+nranks=256
+Finished creating mesh
+Rank 0 time 15.024951847s
+Avg. time: 15.02841362771875 s
+Done.
+
+====================================
+CPU Time used: 00:55:47
+CPU Percent: 2756%
+Memory usage: 22322852kb
+Approx Power usage: 0.011
+Walltime usage: 00:03:43
+
+====================================

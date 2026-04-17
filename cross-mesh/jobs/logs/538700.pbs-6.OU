@@ -1,0 +1,37 @@
+Job ID:    538700.pbs-6
+Node:      hx1-c04-2-3
+NPROCS:    256
+Date:      2026-04-17T01:51:04+01:00
+CSV:       results/overlapping_weakscaling2_100000_20260417_015104.csv
+nprocs=1: mesh generation=12.6636s
+nprocs=1: assembly=1.8815s
+nprocs=2: mesh generation=16.5962s
+nprocs=2: assembly=1.83185s
+nprocs=4: mesh generation=19.8397s
+nprocs=4: assembly=1.99044s
+nprocs=8: mesh generation=25.6432s
+nprocs=8: assembly=2.04959s
+nprocs=16: mesh generation=37.4266s
+nprocs=16: assembly=2.48048s
+nprocs=32: mesh generation=66.0178s
+nprocs=32: assembly=3.62327s
+nprocs=64: mesh generation=127.563s
+nprocs=64: assembly=6.59464s
+nprocs=128: mesh generation=285.728s
+nprocs=128: assembly=12.2142s
+nprocs=256: mesh generation=586.453s
+--------------------------------------------------------------------------
+prterun noticed that process rank 104 with PID 3489759 on node hx1-c04-2-4 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 18:55:21
+CPU Percent: 6368%
+Memory usage: 290895920kb
+Approx Power usage: 0.227
+Walltime usage: 00:22:08
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=538700.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/538700.pbs-6,task_memcg=/pbs_jobs.service/jobid/538700.pbs-6,task=python,pid=2758263,uid=1831114
+

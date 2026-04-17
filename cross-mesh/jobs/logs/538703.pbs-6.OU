@@ -1,0 +1,30 @@
+Job ID:    538703.pbs-6
+Node:      hx1-c04-7-1
+NPROCS:    256
+Date:      2026-04-17T02:01:05+01:00
+CSV:       results/overlapping_weakscaling_1000000_20260417_020105.csv
+nprocs=1: mesh generation=128.807s
+nprocs=1: assembly=11.434s
+nprocs=2: mesh generation=173.673s
+nprocs=2: assembly=11.9238s
+nprocs=4: mesh generation=206.125s
+nprocs=4: assembly=12.3093s
+nprocs=8: mesh generation=276.915s
+nprocs=8: assembly=11.6984s
+nprocs=16: mesh generation=421.694s
+nprocs=16: assembly=13.3102s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 2815370 on node hx1-c04-7-1 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 08:29:43
+CPU Percent: 3194%
+Memory usage: 80833100kb
+Approx Power usage: 0.10179999999999999
+Walltime usage: 00:35:50
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=538703.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/538703.pbs-6,task_memcg=/pbs_jobs.service/jobid/538703.pbs-6,task=python,pid=2815370,uid=1831114
+

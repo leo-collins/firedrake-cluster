@@ -1,0 +1,33 @@
+Job ID:    538698.pbs-6
+Node:      hx1-c04-2-3
+NPROCS:    256
+Date:      2026-04-17T01:40:58+01:00
+CSV:       results/overlapping_strongscaling_1000000_20260417_014058.csv
+nprocs=1: mesh generation=128.5s
+nprocs=1: assembly=10.1678s
+nprocs=2: mesh generation=84.6321s
+nprocs=2: assembly=5.77561s
+nprocs=4: mesh generation=49.6153s
+nprocs=4: assembly=3.65397s
+nprocs=8: mesh generation=31.994s
+nprocs=8: assembly=2.14068s
+nprocs=16: mesh generation=23.2134s
+nprocs=16: assembly=1.82455s
+nprocs=32: mesh generation=19.6795s
+nprocs=32: assembly=1.56317s
+nprocs=64: mesh generation=17.6878s
+nprocs=64: assembly=2.92395s
+nprocs=128: mesh generation=27.3427s
+nprocs=128: assembly=2.84338s
+nprocs=256: mesh generation=39.4109s
+nprocs=256: assembly=9.85636s
+Done.
+
+====================================
+CPU Time used: 01:41:23
+CPU Percent: 3946%
+Memory usage: 22520676kb
+Approx Power usage: 0.0202
+Walltime usage: 00:09:58
+
+====================================
