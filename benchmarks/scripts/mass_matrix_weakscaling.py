@@ -21,7 +21,7 @@ n = int(floor(sqrt(dofs_per_core * n_cores) - 1))  # works for CG1 UnitSquareMes
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
 mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(n + 1, n + 1)
+mesh2 = UnitSquareMesh(int(1.1*n), int(1.1*n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
