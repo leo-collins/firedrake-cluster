@@ -3,7 +3,7 @@
 # Weak scaling for cross-mesh interpolation matrix, using old VOM code.
 
 #PBS -N weakscale_cross_mesh
-#PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=450gb
 #PBS -l walltime=01:00:00
 #PBS -j oe
 #PBS -o logs/
@@ -25,9 +25,14 @@ RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
 CSV="$RESULTS_DIR/overlapping_weakscaling2_${DOFS_PER_CORE}_${TS}.csv"
 
+echo "Assembly of cross-mesh interpolation matrix using old"
+echo "VOM algorithm. Running overlapping_weakscaling.py with"
+echo "$DOFS_PER_CORE dofs per core."
+echo "Job file:  cross_mesh_weakscaling2_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
+echo "RAM:       450gb"
 echo "Date:      $(date -Iseconds)"
 echo "CSV:       $CSV"
 
