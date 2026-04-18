@@ -1,0 +1,37 @@
+Assembly of cross-mesh interpolation matrix with distributed
+Rtree. Strong scaling with 10000000 total dofs.
+Job file:  cross_mesh_strongscaling_HX1.pbs
+Job ID:    538835.pbs-6
+Node:      hx1-c04-6-2
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-17T22:59:06+01:00
+CSV:       results/overlapping_strongscaling_10000000_20260417_225906.csv
+nprocs=1: mesh generation=1462.4s
+nprocs=1: assembly=110.522s
+nprocs=2: mesh generation=1001.65s
+nprocs=2: assembly=59.3407s
+nprocs=4: mesh generation=600.153s
+nprocs=4: assembly=33.0826s
+nprocs=8: mesh generation=391.791s
+nprocs=8: assembly=17.1363s
+nprocs=16: mesh generation=288.401s
+nprocs=16: assembly=9.93285s
+nprocs=32: mesh generation=274.986s
+nprocs=32: assembly=6.82065s
+nprocs=64: mesh generation=267.487s
+nprocs=64: assembly=5.22283s
+nprocs=128: mesh generation=290.343s
+nprocs=128: assembly=6.79389s
+nprocs=256: mesh generation=275.688s
+nprocs=256: assembly=12.255s
+Done.
+
+====================================
+CPU Time used: 20:29:39
+CPU Percent: 6374%
+Memory usage: 69087584kb
+Approx Power usage: 0.24580000000000002
+Walltime usage: 01:30:42
+
+====================================
