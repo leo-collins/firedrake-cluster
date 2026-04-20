@@ -1,0 +1,37 @@
+One-form cross-mesh interpolation with distributed
+Rtree. Weak scaling with 100000 dofs per core.
+Job file:  cross_mesh_weakscaling_HX1.pbs
+Job ID:    539696.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-20T12:22:07+01:00
+CSV:       results/overlapping_weakscaling_oneform_100000_20260420_122206.csv
+nprocs=1: mesh generation=15.0684s
+nprocs=1: assembly=3.26433s
+nprocs=2: mesh generation=18.6627s
+nprocs=2: assembly=2.14688s
+nprocs=4: mesh generation=22.155s
+nprocs=4: assembly=2.85395s
+nprocs=8: mesh generation=28.2971s
+nprocs=8: assembly=2.09257s
+nprocs=16: mesh generation=45.6738s
+nprocs=16: assembly=2.50123s
+nprocs=32: mesh generation=76.2571s
+nprocs=32: assembly=2.64919s
+nprocs=64: mesh generation=167.181s
+nprocs=64: assembly=4.52039s
+nprocs=128: mesh generation=373.511s
+nprocs=128: assembly=7.13145s
+nprocs=256: mesh generation=695.637s
+nprocs=256: assembly=12.3436s
+Done.
+
+====================================
+CPU Time used: 21:52:49
+CPU Percent: 6370%
+Memory usage: 59068272kb
+Approx Power usage: 0.26239999999999997
+Walltime usage: 00:28:04
+
+====================================
