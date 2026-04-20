@@ -12,12 +12,20 @@ from mpi4py import MPI
 # This tests parallel scaling of assembly of cross-mesh interpolation
 # matrices with fully overlapping meshes.
 # Run with:
-#   mpiexec -n <nprocs> python overlapping_strongscaling.py <total_dofs> [csv_path]
+#   mpiexec -n <nprocs> python overlapping_strongscaling.py <total_dofs> <degree> [csv_path]
+
+if len(argv) < 3:
+    raise ValueError("Usage: overlapping_strongscaling.py <total_dofs> <degree> [csv_path]")
 
 n_cores = COMM_WORLD.size
-total_dofs = int(argv[1]) if len(argv) > 1 else 200_000  # default 50k dofs/core
-csv_path = Path(argv[2]) if len(argv) > 2 else None
-n = int(floor(sqrt(total_dofs) - 1))  # works for CG1 UnitSquareMesh
+total_dofs = int(argv[1])
+degree = int(argv[2])
+if degree < 1:
+    raise ValueError("degree must be >= 1")
+csv_path = Path(argv[3]) if len(argv) > 3 else None
+
+# For UnitSquareMesh, dim(CG(degree)) = (degree * n + 1)^2.
+n = max(int(floor((sqrt(total_dofs) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
@@ -27,8 +35,8 @@ t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
-V = FunctionSpace(mesh1, "CG", 1)
-W = FunctionSpace(mesh2, "CG", 1)
+V = FunctionSpace(mesh1, "CG", degree)
+W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
 
@@ -37,7 +45,7 @@ assemble(interp, mat_type="aij")
 t1 = perf_counter_ns()
 
 avg_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
-actual_dofs_per_core = V.dim() / n_cores
+average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
 
 if COMM_WORLD.rank == 0:
     PETSc.Sys.Print(f"nprocs={n_cores}: assembly={avg_time_s:.6g}s")
@@ -59,7 +67,7 @@ if COMM_WORLD.rank == 0:
             w.writerow(
                 {
                     "nprocs": n_cores,
-                    "dofs_per_core": actual_dofs_per_core,
+                    "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
                     "assembly_time_s": avg_time_s,
                 }
