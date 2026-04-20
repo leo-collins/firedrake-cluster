@@ -40,11 +40,15 @@ W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
 
-t0 = perf_counter_ns()
-assemble(interp, mat_type="aij")
-t1 = perf_counter_ns()
+run_times_s = []
+for _ in range(4):
+    t0 = perf_counter_ns()
+    assemble(interp, mat_type="aij")
+    t1 = perf_counter_ns()
+    run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
+    run_times_s.append(run_time_s)
 
-avg_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
+avg_time_s = sum(run_times_s) / len(run_times_s)
 average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
 
 if COMM_WORLD.rank == 0:
@@ -60,6 +64,10 @@ if COMM_WORLD.rank == 0:
                     "dofs_per_core",
                     "mesh_gen_time_s",
                     "assembly_time_s",
+                    "run0",
+                    "run1",
+                    "run2",
+                    "run3",
                 ],
             )
             if write_header:
@@ -70,5 +78,9 @@ if COMM_WORLD.rank == 0:
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
                     "assembly_time_s": avg_time_s,
+                    "run0": run_times_s[0],
+                    "run1": run_times_s[1],
+                    "run2": run_times_s[2],
+                    "run3": run_times_s[3],
                 }
             )
