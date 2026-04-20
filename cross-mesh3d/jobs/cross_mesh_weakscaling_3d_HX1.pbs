@@ -1,12 +1,10 @@
 #!/bin/bash
 
-#PBS -N weakscale_cross_mesh
+#PBS -N weakscale_cross_mesh_3d
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
 #PBS -l walltime=01:00:00
 #PBS -j oe
 #PBS -o logs/
-
-# 100,000 dofs runs on 100gb for ~30 mins
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
@@ -25,12 +23,12 @@ DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
 DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_weakscaling_oneform_CG${DEGREE}_${DOFS_PER_CORE}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_weakscaling_3d_CG${DEGREE}_${DOFS_PER_CORE}_${TS}.csv"
 
-echo "One-form cross-mesh interpolation with distributed"
+echo "Assembly of 3D cross-mesh interpolation matrix with distributed"
 echo "Rtree. Weak scaling with $DOFS_PER_CORE dofs per core."
 echo "Uses CG${DEGREE} elements."
-echo "Job file:  cross_mesh_weakscaling_oneform_HX1.pbs"
+echo "Job file:  cross_mesh_weakscaling_3d_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
@@ -40,7 +38,7 @@ echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_weakscaling_one_form.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
+	mpirun -n "$P" python overlapping_weakscaling_3d.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
 	P=$(( P * 2 ))
 done
 

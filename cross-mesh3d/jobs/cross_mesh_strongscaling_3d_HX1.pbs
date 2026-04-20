@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#PBS -N strongscale_cross_mesh
+#PBS -N strongscale_cross_mesh_3d
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
 #PBS -l walltime=02:00:00
 #PBS -j oe
@@ -10,7 +10,6 @@
 # 10,000,000 total dofs takes ...
 
 set -euo pipefail
-export OMP_NUM_THREADS=1
 
 cd $PBS_O_WORKDIR
 cd ../scripts
@@ -26,12 +25,12 @@ TOTAL_DOFS=${TOTAL_DOFS:-200000}
 DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_strongscaling_CG${DEGREE}_${TOTAL_DOFS}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_strongscaling_3d_CG${DEGREE}_${TOTAL_DOFS}_${TS}.csv"
 
-echo "Assembly of 2D cross-mesh interpolation matrix with distributed"
+echo "Assembly of 3D cross-mesh interpolation matrix with distributed"
 echo "Rtree. Strong scaling with $TOTAL_DOFS total dofs."
 echo "Uses CG${DEGREE} elements."
-echo "Job file:  cross_mesh_strongscaling_HX1.pbs"
+echo "Job file:  cross_mesh_strongscaling_3d_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
@@ -41,7 +40,7 @@ echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_strongscaling.py "$TOTAL_DOFS" "$DEGREE" "$CSV"
+	mpirun -n "$P" python overlapping_strongscaling_3d.py "$TOTAL_DOFS" "$DEGREE" "$CSV"
 	P=$(( P * 2 ))
 done
 
