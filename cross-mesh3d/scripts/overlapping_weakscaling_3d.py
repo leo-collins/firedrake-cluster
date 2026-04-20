@@ -26,7 +26,6 @@ csv_path = Path(argv[3]) if len(argv) > 3 else None
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(int(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree)), 1)
-print(n)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
