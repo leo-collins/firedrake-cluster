@@ -42,6 +42,7 @@ interp = interpolate(f, W)
 
 run_times_s = []
 for _ in range(4):
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     assemble(interp)
     t1 = perf_counter_ns()
