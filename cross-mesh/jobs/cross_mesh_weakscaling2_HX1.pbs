@@ -21,13 +21,15 @@ source "$HOME/firedrake-dev2/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
+DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_weakscaling2_${DOFS_PER_CORE}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_weakscaling2_CG${DEGREE}_${DOFS_PER_CORE}_${TS}.csv"
 
 echo "Assembly of cross-mesh interpolation matrix using old"
 echo "VOM algorithm. Running overlapping_weakscaling.py with"
 echo "$DOFS_PER_CORE dofs per core."
+echo "Uses CG${DEGREE} elements."
 echo "Job file:  cross_mesh_weakscaling2_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
@@ -38,7 +40,7 @@ echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_weakscaling.py "$DOFS_PER_CORE" "$CSV"
+	mpirun -n "$P" python overlapping_weakscaling.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
 	P=$(( P * 2 ))
 done
 

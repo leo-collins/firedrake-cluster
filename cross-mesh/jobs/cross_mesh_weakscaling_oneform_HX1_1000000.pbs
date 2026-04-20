@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #PBS -N weakscale_cross_mesh
-#PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=450gb
 #PBS -l walltime=08:00:00
 #PBS -j oe
 #PBS -o logs/
@@ -19,23 +19,25 @@ source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-1000000}
+DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_weakscaling_oneform_${DOFS_PER_CORE}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_weakscaling_oneform_CG${DEGREE}_${DOFS_PER_CORE}_${TS}.csv"
 
 echo "One-form cross-mesh interpolation with distributed"
 echo "Rtree. Weak scaling with $DOFS_PER_CORE dofs per core."
-echo "Job file:  cross_mesh_weakscaling_HX1.pbs"
+echo "Uses CG${DEGREE} elements."
+echo "Job file:  cross_mesh_weakscaling_oneform_HX1_1000000.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
-echo "RAM:       400gb"
+echo "RAM:       450gb"
 echo "Date:      $(date -Iseconds)"
 echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python overlapping_weakscaling_one_form.py "$DOFS_PER_CORE" "$CSV"
+	mpirun -n "$P" python overlapping_weakscaling_one_form.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
 	P=$(( P * 2 ))
 done
 
