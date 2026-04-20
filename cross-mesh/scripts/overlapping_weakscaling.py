@@ -60,9 +60,9 @@ if COMM_WORLD.rank == 0:
                 f,
                 fieldnames=[
                     "nprocs",
+                    "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
-                    "assembly_time_s",
                     "run0",
                     "run1",
                     "run2",
@@ -74,6 +74,7 @@ if COMM_WORLD.rank == 0:
             w.writerow(
                 {
                     "nprocs": n_cores,
+                    "degree": degree,
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
                     "run0": run_times_s[0],
