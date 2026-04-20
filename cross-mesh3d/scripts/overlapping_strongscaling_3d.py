@@ -46,6 +46,7 @@ for _ in range(4):
 	assemble(interp, mat_type="aij")
 	t1 = perf_counter_ns()
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
+	PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
 
 avg_time_s = sum(run_times_s) / len(run_times_s)
