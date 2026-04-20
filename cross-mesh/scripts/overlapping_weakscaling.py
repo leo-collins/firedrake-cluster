@@ -50,13 +50,9 @@ for _ in range(4):
     PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
     run_times_s.append(run_time_s)
 
-avg_time_s = sum(run_times_s) / len(run_times_s)
 average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
 
 if COMM_WORLD.rank == 0:
-    PETSc.Sys.Print(
-        f"nprocs={n_cores}: assembly={avg_time_s:.6g}s"
-    )
     if csv_path is not None:
         csv_path.parent.mkdir(parents=True, exist_ok=True)
         write_header = not csv_path.exists() or csv_path.stat().st_size == 0
@@ -81,7 +77,6 @@ if COMM_WORLD.rank == 0:
                     "nprocs": n_cores,
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
-                    "assembly_time_s": avg_time_s,
                     "run0": run_times_s[0],
                     "run1": run_times_s[1],
                     "run2": run_times_s[2],
