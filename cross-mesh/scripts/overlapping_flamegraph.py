@@ -35,8 +35,8 @@ W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
 
-with PETSc.Log.Event("warmup") as e:
-    e.deactivate()
+with PETSc.Log.Event("warmup"):
     assemble(interp, mat_type="aij")
 
-assemble(interp, mat_type="aij")
+with PETSc.Log.Event("assembly"):
+    assemble(interp, mat_type="aij")
