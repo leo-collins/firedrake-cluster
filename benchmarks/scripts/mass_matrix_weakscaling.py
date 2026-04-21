@@ -21,7 +21,7 @@ dofs_per_core = int(argv[1])
 degree = int(argv[2])
 if degree < 1:
     raise ValueError("degree must be >= 1")
-csv_path = Path(argv[2]) if len(argv) > 2 else None
+csv_path = Path(argv[3]) if len(argv) > 3 else None
 
 # For UnitSquareMesh, dim(CG(degree)) = (degree * n + 1)^2.
 n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
