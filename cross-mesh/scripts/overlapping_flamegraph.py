@@ -24,15 +24,18 @@ if degree < 1:
     raise ValueError("degree must be >= 1")
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
-n = max(int(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree)), 1)
+n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
-mesh1 = UnitCubeMesh(n, n, n)
-mesh2 = UnitCubeMesh(int(1.01*n), int(1.01*n), int(1.01*n))
+mesh1 = UnitSquareMesh(n, n)
+mesh2 = UnitSquareMesh(int(1.01*n), int(1.01*n))
 
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
+
+with PETSc.Log.Event("warmup").deactivate():
+    assemble(interp, mat_type="aij")
 
 assemble(interp, mat_type="aij")

@@ -1,5 +1,5 @@
 import csv
-from math import floor
+from math import floor, sqrt
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
@@ -9,19 +9,19 @@ warnings.filterwarnings("ignore")
 from firedrake import *
 from mpi4py import MPI
 
-# This produces a flamegraph of assembly of cross-mesh interpolation
+# This tests weak parallel scaling of assembly of cross-mesh interpolation
 # matrices with fully overlapping meshes.
 # Run with:
-#   mpiexec -n <nprocs> python overlapping_flamegraph_3d.py <dofs_per_core> <degree> -log_view :foo.txt:ascii_flamegraph
+#   mpiexec -n <nprocs> python overlapping_flamegraph3d.py <dofs_per_core> <degree> -log_view :foo.txt:ascii_flamegraph
 
 if len(argv) < 2:
-	raise ValueError("Usage: overlapping_flamegraph_3d.py <dofs_per_core> <degree>")
+    raise ValueError("Usage: overlapping_flamegraph3d.py <dofs_per_core> <degree>")
 
 n_cores = COMM_WORLD.size
 dofs_per_core = int(argv[1])
 degree = int(argv[2])
 if degree < 1:
-	raise ValueError("degree must be >= 1")
+    raise ValueError("degree must be >= 1")
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(int(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree)), 1)
@@ -34,5 +34,8 @@ V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
+
+with PETSc.Log.Event("warmup").deactivate():
+    assemble(interp, mat_type="aij")
 
 assemble(interp, mat_type="aij")
