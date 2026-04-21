@@ -36,10 +36,9 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 V = FunctionSpace(mesh, "CG", degree)
 W = FunctionSpace(mesh, "CG", degree)
 
-mass = inner(TrialFunction(V), TestFunction(W)) * dx
-
 run_times_s = []
 for _ in range(4):
+    mass = inner(TrialFunction(V), TestFunction(W)) * dx
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     assemble(mass, mat_type="aij")
