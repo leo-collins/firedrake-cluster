@@ -29,10 +29,10 @@ mesh2 = UnitCubeMesh(int(1.01*n), int(1.01*n), int(1.01*n))
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
 
-interp = interpolate(TrialFunction(V), W)
-
 with PETSc.Log.Event("run0"):
+    interp = interpolate(TrialFunction(V), W)
     assemble(interp, mat_type="aij")
 
 with PETSc.Log.Event("run1"):
+    interp = interpolate(TrialFunction(V), W)
     assemble(interp, mat_type="aij")
