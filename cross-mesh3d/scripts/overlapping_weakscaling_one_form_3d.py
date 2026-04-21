@@ -49,6 +49,8 @@ for _ in range(4):
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 	PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
+	# delete cached interpolator (which includes cached VOM)
+	del interp._interpolator
 
 average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
 

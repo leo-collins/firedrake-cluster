@@ -1,6 +1,7 @@
 from math import floor, sqrt
 from sys import argv
 import warnings
+
 warnings.filterwarnings("ignore")
 
 from firedrake import *
@@ -23,7 +24,7 @@ n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(int(1.01*n), int(1.01*n))
+mesh2 = UnitSquareMesh(int(1.01 * n), int(1.01 * n))
 
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
@@ -33,5 +34,6 @@ interp = interpolate(TrialFunction(V), W)
 with PETSc.Log.Event("run0"):
     assemble(interp, mat_type="aij")
 
+del interp._interpolator
 with PETSc.Log.Event("run1"):
     assemble(interp, mat_type="aij")

@@ -4,6 +4,7 @@ from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
 import warnings
+
 warnings.filterwarnings("ignore")
 
 from firedrake import *
@@ -15,7 +16,9 @@ from mpi4py import MPI
 #   mpiexec -n <nprocs> python overlapping_strongscaling.py <total_dofs> <degree> [csv_path]
 
 if len(argv) < 3:
-    raise ValueError("Usage: overlapping_strongscaling.py <total_dofs> <degree> [csv_path]")
+    raise ValueError(
+        "Usage: overlapping_strongscaling.py <total_dofs> <degree> [csv_path]"
+    )
 
 n_cores = COMM_WORLD.size
 total_dofs = int(argv[1])
@@ -30,7 +33,7 @@ n = max(int(floor((sqrt(total_dofs) - 1) / degree)), 1)
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
 mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(int(1.1*n), int(1.1*n))
+mesh2 = UnitSquareMesh(int(1.1 * n), int(1.1 * n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
@@ -49,8 +52,12 @@ for _ in range(4):
     run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
     PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
     run_times_s.append(run_time_s)
+    # delete cached interpolator (which includes cached VOM)
+    del interp._interpolator
 
-average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
+average_dofs_per_core = (
+    COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
+)
 
 if COMM_WORLD.rank == 0:
     if csv_path is not None:
