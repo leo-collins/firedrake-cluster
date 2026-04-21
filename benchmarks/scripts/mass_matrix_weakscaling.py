@@ -11,37 +11,47 @@ from mpi4py import MPI
 
 # This tests weak parallel scaling of assembly of a mass matrix
 # Run with:
-#   mpiexec -n <nprocs> python overlapping_weakscaling.py <dofs_per_core> [csv_path]
+#   mpiexec -n <nprocs> python mass_matrix_weakscaling.py <dofs_per_core> <degree> [csv_path]
+
+if len(argv) < 3:
+    raise ValueError("Usage: mass_matrix_weakscaling.py <dofs_per_core> <degree> [csv_path]")
 
 n_cores = COMM_WORLD.size
-dofs_per_core = int(argv[1]) if len(argv) > 1 else 50_000  # default 50k dofs/core
+dofs_per_core = int(argv[1])
+degree = int(argv[2])
+if degree < 1:
+    raise ValueError("degree must be >= 1")
 csv_path = Path(argv[2]) if len(argv) > 2 else None
-n = int(floor(sqrt(dofs_per_core * n_cores) - 1))  # works for CG1 UnitSquareMesh
+
+# For UnitSquareMesh, dim(CG(degree)) = (degree * n + 1)^2.
+n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
 mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(int(1.1*n), int(1.1*n))
+mesh2 = UnitSquareMesh(int(1.01*n), int(1.01*n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
-V = FunctionSpace(mesh1, "CG", 1)
-W = FunctionSpace(mesh2, "CG", 1)
+V = FunctionSpace(mesh1, "CG", degree)
+W = FunctionSpace(mesh2, "CG", degree)
 
 mass = inner(TrialFunction(V), TestFunction(W)) * dx
 
-t0 = perf_counter_ns()
-assemble(mass, mat_type="aij")
-t1 = perf_counter_ns()
+run_times_s = []
+for _ in range(4):
+    COMM_WORLD.barrier()
+    t0 = perf_counter_ns()
+    assemble(mass, mat_type="aij")
+    t1 = perf_counter_ns()
+    run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+    PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
+    run_times_s.append(run_time_s)
 
-avg_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.SUM) / (n_cores * 1e9)
-actual_dofs_per_core = V.dim() / n_cores
+average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
 
 if COMM_WORLD.rank == 0:
-    PETSc.Sys.Print(
-        f"nprocs={n_cores}: assembly={avg_time_s:.6g}s"
-    )
     if csv_path is not None:
         csv_path.parent.mkdir(parents=True, exist_ok=True)
         write_header = not csv_path.exists() or csv_path.stat().st_size == 0
@@ -50,9 +60,13 @@ if COMM_WORLD.rank == 0:
                 f,
                 fieldnames=[
                     "nprocs",
+                    "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
-                    "assembly_time_s",
+                    "run0",
+                    "run1",
+                    "run2",
+                    "run3",
                 ],
             )
             if write_header:
@@ -60,8 +74,11 @@ if COMM_WORLD.rank == 0:
             w.writerow(
                 {
                     "nprocs": n_cores,
-                    "dofs_per_core": actual_dofs_per_core,
+                    "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
-                    "assembly_time_s": avg_time_s,
+                    "run0": run_times_s[0],
+                    "run1": run_times_s[1],
+                    "run2": run_times_s[2],
+                    "run3": run_times_s[3],
                 }
             )
