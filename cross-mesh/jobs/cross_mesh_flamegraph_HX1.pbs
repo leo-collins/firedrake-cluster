@@ -35,7 +35,7 @@ echo "Date:      $(date -Iseconds)"
 P=1
 while [ $P -le "$NPROCS" ]; do
   echo "Running with $P processes"
-  mpirun -n $P python ../../scripts/overlapping_flamegraph.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_${P}.txt:ascii_flamegraph
+  mpirun -n $P python ../../scripts/overlapping_flamegraph.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_${PBS_JOBID}_${P}.txt:ascii_flamegraph
   P=$(( P * 2))
 done
 
