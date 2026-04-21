@@ -1,0 +1,26 @@
+Assembly of 3d cross-mesh interpolation matrix with distributed
+Rtree. Flamegraph with 100000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_flamegraph_3d.pbs
+Job ID:    540108.pbs-6
+Node:      hx1-c04-1-3
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-21T11:03:33+01:00
+Running with 1 processes
+Running with 2 processes
+Running with 4 processes
+Running with 8 processes
+Running with 16 processes
+Running with 32 processes
+Running with 64 processes
+=>> PBS: job killed: walltime 1827 exceeded limit 1800
+
+====================================
+CPU Time used: 14:46:25
+CPU Percent: 6374%
+Memory usage: 125830900kb
+Approx Power usage: 0.17720000000000002
+Walltime usage: 00:30:38
+
+====================================
