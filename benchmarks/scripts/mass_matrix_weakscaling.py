@@ -28,14 +28,13 @@ n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
-mesh1 = UnitSquareMesh(n, n)
-mesh2 = UnitSquareMesh(int(1.01*n), int(1.01*n))
+mesh = UnitSquareMesh(n, n)
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
-V = FunctionSpace(mesh1, "CG", degree)
-W = FunctionSpace(mesh2, "CG", degree)
+V = FunctionSpace(mesh, "CG", degree)
+W = FunctionSpace(mesh, "CG", degree)
 
 mass = inner(TrialFunction(V), TestFunction(W)) * dx
 
