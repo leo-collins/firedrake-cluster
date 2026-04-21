@@ -7,7 +7,7 @@
 #PBS -o logs/
 
 cd $PBS_O_WORKDIR
-cd ../flamegraphs/crossmesh_distributedrtree
+cd ../flamegraphs/crossmesh3d_distributedrtree
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
@@ -22,10 +22,10 @@ NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
 DEGREE=${DEGREE:-1}
 
-echo "Assembly of cross-mesh interpolation matrix with distributed"
+echo "Assembly of 3d cross-mesh interpolation matrix with distributed"
 echo "Rtree. Flamegraph with $DOFS_PER_CORE dofs per core."
 echo "Uses CG${DEGREE} elements."
-echo "Job file:  cross_mesh_flamegraph_HX1.pbs"
+echo "Job file:  cross_mesh_flamegraph_3d.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
@@ -35,7 +35,7 @@ echo "Date:      $(date -Iseconds)"
 P=1
 while [ $P -le "$NPROCS" ]; do
   echo "Running with $P processes"
-  mpirun -n $P python ../../scripts/overlapping_flamegraph.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_${P}.txt:ascii_flamegraph
+  mpirun -n $P python ../../scripts/overlapping_flamegraph_3d.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_${P}.txt:ascii_flamegraph
   P=$(( P * 2))
 done
 
