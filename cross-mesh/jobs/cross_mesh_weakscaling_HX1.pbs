@@ -22,8 +22,7 @@ NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
 DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
-TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_weakscaling_CG${DEGREE}_${DOFS_PER_CORE}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_weakscaling_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_JOBID}.csv"
 
 echo "Assembly of cross-mesh interpolation matrix with distributed"
 echo "Rtree. Weak scaling with $DOFS_PER_CORE dofs per core."

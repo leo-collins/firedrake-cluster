@@ -25,8 +25,7 @@ NPROCS=${NPROCS:-256}
 TOTAL_DOFS=${TOTAL_DOFS:-1000000}
 DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
-TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/overlapping_strongscaling_CG${DEGREE}_${TOTAL_DOFS}_${TS}.csv"
+CSV="$RESULTS_DIR/overlapping_strongscaling_CG${DEGREE}_${TOTAL_DOFS}_${PBS_JOBID}.csv"
 
 echo "Assembly of 2D cross-mesh interpolation matrix with distributed"
 echo "Rtree. Strong scaling with $TOTAL_DOFS total dofs."

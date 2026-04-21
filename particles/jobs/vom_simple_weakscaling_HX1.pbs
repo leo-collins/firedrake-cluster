@@ -19,8 +19,7 @@ source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
 RESULTS_DIR=${RESULTS_DIR:-results}
-TS=$(date +%Y%m%d_%H%M%S)
-CSV="$RESULTS_DIR/vom_simple_weakscaling_${TS}.csv"
+CSV="$RESULTS_DIR/vom_simple_weakscaling_${PBS_JOBID}.csv"
 
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
