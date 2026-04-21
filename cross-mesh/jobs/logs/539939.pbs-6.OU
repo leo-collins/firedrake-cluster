@@ -1,0 +1,65 @@
+Assembly of 2D cross-mesh interpolation matrix with distributed
+Rtree. Strong scaling with 200000 total dofs.
+Uses CG1 elements.
+Job file:  cross_mesh_strongscaling_HX1.pbs
+Job ID:    539939.pbs-6
+Node:      hx1-c04-1-3
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-20T23:35:00+01:00
+CSV:       results/overlapping_strongscaling_CG1_200000_20260420_233500.csv
+nprocs=1: mesh generation=28.0754s
+nprocs=1: run time=2.97722s
+nprocs=1: run time=0.0670395s
+nprocs=1: run time=0.066522s
+nprocs=1: run time=0.0679818s
+nprocs=2: mesh generation=18.6721s
+nprocs=2: run time=1.93826s
+nprocs=2: run time=0.0610897s
+nprocs=2: run time=0.0649299s
+nprocs=2: run time=0.0644611s
+nprocs=4: mesh generation=10.6734s
+nprocs=4: run time=1.4066s
+nprocs=4: run time=0.0712156s
+nprocs=4: run time=0.0730618s
+nprocs=4: run time=0.0732779s
+nprocs=8: mesh generation=7.11463s
+nprocs=8: run time=1.20258s
+nprocs=8: run time=0.0403107s
+nprocs=8: run time=0.0418251s
+nprocs=8: run time=0.0429267s
+nprocs=16: mesh generation=5.18168s
+nprocs=16: run time=1.01818s
+nprocs=16: run time=0.0240426s
+nprocs=16: run time=0.024375s
+nprocs=16: run time=0.023412s
+nprocs=32: mesh generation=5.05636s
+nprocs=32: run time=1.1589s
+nprocs=32: run time=0.0193079s
+nprocs=32: run time=0.018298s
+nprocs=32: run time=0.0202627s
+nprocs=64: mesh generation=5.60767s
+nprocs=64: run time=1.57517s
+nprocs=64: run time=0.0152577s
+nprocs=64: run time=0.0161274s
+nprocs=64: run time=0.0151398s
+nprocs=128: mesh generation=24.0817s
+nprocs=128: run time=3.52944s
+nprocs=128: run time=0.0198698s
+nprocs=128: run time=0.0364376s
+nprocs=128: run time=0.0374292s
+nprocs=256: mesh generation=29.7351s
+nprocs=256: run time=9.98754s
+nprocs=256: run time=0.0212221s
+nprocs=256: run time=0.0866289s
+nprocs=256: run time=0.184961s
+Done.
+
+====================================
+CPU Time used: 00:12:24
+CPU Percent: 605%
+Memory usage: 12276420kb
+Approx Power usage: 0.0024000000000000002
+Walltime usage: 00:04:08
+
+====================================
