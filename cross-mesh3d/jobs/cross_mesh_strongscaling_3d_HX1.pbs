@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #PBS -N strongscale_cross_mesh_3d
-#PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
-#PBS -l walltime=02:00:00
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l walltime=08:00:00
 #PBS -j oe
 #PBS -o logs/
 
