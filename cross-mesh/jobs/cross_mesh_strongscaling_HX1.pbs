@@ -29,7 +29,7 @@ CSV="$RESULTS_DIR/overlapping_strongscaling_CG${DEGREE}_${TOTAL_DOFS}_${PBS_JOBI
 
 echo "Assembly of 2D cross-mesh interpolation matrix with distributed"
 echo "Rtree. Strong scaling with $TOTAL_DOFS total dofs."
-echo "Uses CG${DEGREE} elements."
+echo "Uses CG$DEGREE elements."
 echo "Job file:  cross_mesh_strongscaling_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"

@@ -26,7 +26,7 @@ CSV="$RESULTS_DIR/overlapping_weakscaling_3d_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_
 
 echo "Assembly of 3D cross-mesh interpolation matrix with distributed"
 echo "Rtree. Weak scaling with $DOFS_PER_CORE dofs per core."
-echo "Uses CG${DEGREE} elements."
+echo "Uses CG$DEGREE elements."
 echo "Job file:  cross_mesh_weakscaling_3d_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"

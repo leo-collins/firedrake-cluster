@@ -24,7 +24,7 @@ DEGREE=${DEGREE:-1}
 
 echo "Assembly of 3d cross-mesh interpolation matrix with distributed"
 echo "Rtree. Flamegraph with $DOFS_PER_CORE dofs per core."
-echo "Uses CG${DEGREE} elements."
+echo "Uses CG$DEGREE elements."
 echo "Job file:  cross_mesh_flamegraph_3d.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"

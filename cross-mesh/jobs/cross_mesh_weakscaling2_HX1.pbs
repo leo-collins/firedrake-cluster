@@ -28,7 +28,7 @@ CSV="$RESULTS_DIR/overlapping_weakscaling2_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_JO
 echo "Assembly of cross-mesh interpolation matrix using old"
 echo "VOM algorithm. Running overlapping_weakscaling.py with"
 echo "$DOFS_PER_CORE dofs per core."
-echo "Uses CG${DEGREE} elements."
+echo "Uses CG$DEGREE elements."
 echo "Job file:  cross_mesh_weakscaling2_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"

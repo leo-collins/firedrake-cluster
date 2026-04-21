@@ -1,13 +1,9 @@
-import csv
 from math import floor, sqrt
-from pathlib import Path
 from sys import argv
-from time import perf_counter_ns
 import warnings
 warnings.filterwarnings("ignore")
 
 from firedrake import *
-from mpi4py import MPI
 
 # This tests weak parallel scaling of assembly of cross-mesh interpolation
 # matrices with fully overlapping meshes.
@@ -23,7 +19,6 @@ degree = int(argv[2])
 if degree < 1:
     raise ValueError("degree must be >= 1")
 
-# For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
@@ -35,8 +30,8 @@ W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
 
-with PETSc.Log.Event("warmup"):
+with PETSc.Log.Event("run0"):
     assemble(interp, mat_type="aij")
 
-with PETSc.Log.Event("assembly"):
+with PETSc.Log.Event("run1"):
     assemble(interp, mat_type="aij")

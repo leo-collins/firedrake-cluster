@@ -25,7 +25,7 @@ CSV="$RESULTS_DIR/cross_mesh_weakscaling_oneform_CG${DEGREE}_${DOFS_PER_CORE}_${
 
 echo "One-form cross-mesh interpolation with old VOM algorithm."
 echo "Weak scaling with $DOFS_PER_CORE dofs per core."
-echo "Uses CG${DEGREE} elements."
+echo "Uses CG$DEGREE elements."
 echo "Job file:  cross_mesh_weakscaling2_oneform_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
