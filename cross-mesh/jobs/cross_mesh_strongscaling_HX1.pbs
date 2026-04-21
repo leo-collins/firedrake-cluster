@@ -2,7 +2,7 @@
 
 #PBS -N strongscale_cross_mesh
 #PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
-#PBS -l walltime=02:00:00
+#PBS -l walltime=08:00:00
 #PBS -j oe
 #PBS -o logs/
 
@@ -22,7 +22,7 @@ module load Python/3.13.5-GCCcore-14.3.0
 source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
-TOTAL_DOFS=${TOTAL_DOFS:-200000}
+TOTAL_DOFS=${TOTAL_DOFS:-1000000}
 DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
