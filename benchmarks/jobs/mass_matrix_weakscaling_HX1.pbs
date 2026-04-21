@@ -7,6 +7,7 @@
 #PBS -o logs/
 
 set -euo pipefail
+export OMP_NUM_THREADS=1
 
 cd $PBS_O_WORKDIR
 cd ../scripts
@@ -19,11 +20,13 @@ source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
 DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
+DEGREE=${DEGREE:-1}
 RESULTS_DIR=${RESULTS_DIR:-results}
 TS=$(date +%Y%m%d_%H%M%S)
 CSV="$RESULTS_DIR/mass_matrix_weakscaling_${DOFS_PER_CORE}_${TS}.csv"
 
 echo "Assembly of mass matrix. Weak scaling with $DOFS_PER_CORE dofs per core."
+echo "Uses CG${DEGREE} elements."
 echo "Job file:  mass_matrix_weakscaling_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
@@ -34,7 +37,7 @@ echo "CSV:       $CSV"
 
 P=1
 while [ "$P" -le "$NPROCS" ]; do
-	mpirun -n "$P" python mass_matrix_weakscaling.py "$DOFS_PER_CORE" "$CSV"
+	mpirun -n "$P" python mass_matrix_weakscaling.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
 	P=$(( P * 2 ))
 done
 
