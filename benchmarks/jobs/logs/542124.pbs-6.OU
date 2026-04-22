@@ -1,0 +1,64 @@
+Assembly of mass matrix. Weak scaling with 10000 dofs per core.
+Uses CG3 elements.
+Job file:  mass_matrix_weakscaling_HX1.pbs
+Job ID:    542124.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T05:02:49+01:00
+CSV:       results/mass_matrix_weakscaling_CG3_10000_542124.pbs-6.csv
+nprocs=1: mesh generation=0.321561s
+nprocs=1: run time=0.309415s
+nprocs=1: run time=0.00754826s
+nprocs=1: run time=0.00681471s
+nprocs=1: run time=0.00687844s
+nprocs=2: mesh generation=0.142954s
+nprocs=2: run time=0.273882s
+nprocs=2: run time=0.00831012s
+nprocs=2: run time=0.00793788s
+nprocs=2: run time=0.00786769s
+nprocs=4: mesh generation=0.162166s
+nprocs=4: run time=0.238684s
+nprocs=4: run time=0.00858192s
+nprocs=4: run time=0.00870428s
+nprocs=4: run time=0.00846088s
+nprocs=8: mesh generation=0.198432s
+nprocs=8: run time=0.240637s
+nprocs=8: run time=0.00898004s
+nprocs=8: run time=0.00916627s
+nprocs=8: run time=0.0104962s
+nprocs=16: mesh generation=0.276509s
+nprocs=16: run time=0.246424s
+nprocs=16: run time=0.00967674s
+nprocs=16: run time=0.00970327s
+nprocs=16: run time=0.0093135s
+nprocs=32: mesh generation=0.591647s
+nprocs=32: run time=0.290307s
+nprocs=32: run time=0.0111496s
+nprocs=32: run time=0.0123245s
+nprocs=32: run time=0.0111265s
+nprocs=64: mesh generation=1.64502s
+nprocs=64: run time=0.4485s
+nprocs=64: run time=0.015536s
+nprocs=64: run time=0.0192229s
+nprocs=64: run time=0.0148958s
+nprocs=128: mesh generation=25.3767s
+nprocs=128: run time=1.28112s
+nprocs=128: run time=0.020747s
+nprocs=128: run time=0.0183273s
+nprocs=128: run time=0.015662s
+nprocs=256: mesh generation=7.01316s
+nprocs=256: run time=0.607651s
+nprocs=256: run time=0.0228471s
+nprocs=256: run time=0.0210456s
+nprocs=256: run time=0.0245072s
+Done.
+
+====================================
+CPU Time used: 00:03:25
+CPU Percent: 224%
+Memory usage: 9093760kb
+Approx Power usage: 0.0006000000000000001
+Walltime usage: 00:03:12
+
+====================================
