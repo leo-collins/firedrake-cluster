@@ -1,0 +1,194 @@
+Main Stage 3540326
+Main Stage;firedrake 1467
+Main Stage;firedrake;firedrake.__init__ 16461858
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh 61
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh 40
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh 479600
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh 47304
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh 380309
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute 4821
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition 1147953
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartLblInv 206937
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartSelf 194426
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartLblSF 1773
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartLblSF;SFSetUp 6783
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartLblSF;SFSetUp;BuildTwoSided 8906
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartStrtSF 7923
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartStrtSF;SFBcastEnd 11306
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Partition;DMPlexPartStrtSF;SFBcastBegin 3215
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration 6977
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels 84793
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFDistSection 24138
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFDistSection;SFBcastEnd 15069
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFDistSection;SFBcastBegin 945
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFDistSection;SFBcastBegin;SFPack 11178
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFSectionSF 1209
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFSectionSF;SFSetUp 3863
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFSectionSF;SFSetUp;BuildTwoSided 3086
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFBcastEnd 5881
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistLabels;SFBcastBegin 3446
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones 2606
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFBcastEnd 16799
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFBcastBegin 860
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFBcastBegin;SFPack 10833
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFSectionSF 1065
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFSectionSF;SFSetUp 6136
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFDistSection 843
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFDistSection;SFBcastEnd 5040
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFDistSection;SFBcastBegin 243
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistCones;SFDistSection;SFBcastBegin;SFPack 3873
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistField 2234
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;DMPlexDistField;SFDistSection 4387
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;Mesh Migration;SFBcastEnd 3468
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;DMPlexPointSF 5951
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;DMPlexPointSF;SFBcastEnd 36744
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;DMPlexPointSF;SFReduceEnd 7070
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistribute;DMPlexPointSF;SFReduceEnd;SFUnpack 27497
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;Mesh: numbering 65556
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;Mesh: numbering;Mesh: reorder 12346
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp 1603
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Partition 16699
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Partition;DMPlexPartLblInv 9609
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Partition;DMPlexPartLblSF 3893
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Migration 9163
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Migration;DMPlexDistLabels 7706
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Migration;DMPlexDistCones 4546
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;DMPlexDistOvrlp;Mesh Migration;DMPlexDistCones;SFSectionSF 3206
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateMesh;SFDistSection 5235
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace 440
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 859
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 66
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 155690
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__;FunctionSpaceData: CreateElement 970249
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;CreateMesh;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__;firedrake.mesh.MeshTopology._facets 427551
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexInterp 963162
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexInterp;DMPlexStratify 917599
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexInterp;DMPlexSymmetrize 66644
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexBuFrCeLi 5243
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexBuFrCeLi;DMPlexStratify 22247
+Main Stage;firedrake;firedrake.utility_meshes.UnitCubeMesh;firedrake.utility_meshes.CubeMesh;firedrake.utility_meshes.BoxMesh;DMPlexBuFrCeLi;DMPlexSymmetrize 9320
+Main Stage;firedrake;run0 45
+Main Stage;firedrake;run0;firedrake.assemble.assemble 14130
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh 1494
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh 4069
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding 9071
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells 57
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists 1252
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator 25364
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;firedrake.pointquery_utils.src_locate_cell 736
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;firedrake.pointquery_utils.src_locate_cell;firedrake.pointquery_utils.make_wrapper 182
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;firedrake.pointquery_utils.src_locate_cell;firedrake.pointquery_utils.make_wrapper;pyop2.parloop.generate_single_cell_wrapper 1835492
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;firedrake.pointquery_utils.src_locate_cell;firedrake.pointquery_utils.compile_coordinate_element 139609
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;firedrake.pointquery_utils.src_locate_cell;firedrake.pointquery_utils.compile_coordinate_element;firedrake.pointquery_utils.to_reference_coords_newton_step 144202
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;pyop2.caching.parallel_cache.wrapper(load) 126
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;firedrake.mesh.MeshGeometry._c_locator;pyop2.caching.parallel_cache.wrapper(load);pyop2.compilation.load 1393676
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;c_locator_run 44972
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh.MeshGeometry.distributed_rtree 3240
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh.MeshGeometry.distributed_rtree;distributed_rtree_allgather_counts 63600
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_minimum_distance 718
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_minimum_distance;SFReduceEnd 63950
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;discover_ranks 16495
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;discover_ranks;BuildTwoSided 9247
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;broadcast_minimum_distance 761
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;broadcast_minimum_distance;SFBcastEnd 7416
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;assign_global_indices 3920
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_winner_cells 1003
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_winner_cells;SFSetUp 903
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_winner_cells;SFSetUp;BuildTwoSided 3191
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;tie_break_retries 3276
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;broadcast_coordinates 3224
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology 30333
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace 187
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 335
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 28
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 23325
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.VertexOnlyMeshTopology.__init__ 3408
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.VertexOnlyMeshTopology.__init__;Mesh: numbering 13341
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble 16004
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute 3262
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel 6554
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel) 28502
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel);pyop2.caching.parallel_cache.wrapper(load) 201
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel);pyop2.caching.parallel_cache.wrapper(load);pyop2.compilation.load 943789
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel);pyop2.caching.parallel_cache.wrapper(load);pyop2.compilation.load;pyop2.caching.parallel_cache.wrapper(make_so) 27669
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel);pyop2.caching.parallel_cache.wrapper(_generate_code_from_global_kernel) 72
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel;pyop2.caching.parallel_cache.wrapper(compile_global_kernel);pyop2.caching.parallel_cache.wrapper(_generate_code_from_global_kernel);pyop2.caching.parallel_cache.wrapper(_generate_code_from_global_kernel) 37488
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;pyop2.caching.parallel_cache.wrapper(compile_expression) 764
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;pyop2.caching.parallel_cache.wrapper(compile_expression);pyop2.caching.parallel_cache.wrapper(compile_expression) 94986
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin 170
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin;BuildTwoSidedF 129
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin;BuildTwoSidedF;BuildTwoSided 54193
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity 30234
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin 197
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin;BuildTwoSidedF 169
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin;BuildTwoSidedF;BuildTwoSided 8751
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym 6897
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym;MatAssemblyEnd 11260
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym;MatGetBrAoCol 6800
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatTranspose 3542
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatTranspose;MatAssemblyEnd 3108
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultNum 3158
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultNum;MatGetBrAoCol 3106
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyEnd 5354
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;MatZeroInitial 4968
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.assemble.assemble;firedrake.formmanipulation.split_form 3349
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology 16432
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace 120
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 443
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 29
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 19993
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMeshTopology.__init__ 6719
+Main Stage;firedrake;run0;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMeshTopology.__init__;Mesh: numbering 18854
+Main Stage;firedrake;run1 34
+Main Stage;firedrake;run1;firedrake.assemble.assemble 3855
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble 13447
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym 30052
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym;MatAssemblyEnd 150964
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultSym;MatGetBrAoCol 29532
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity 112093
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin 163
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin;BuildTwoSidedF 240
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;CreateSparsity;MatAssemblyBegin;BuildTwoSidedF;BuildTwoSided 94538
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultNum 7368
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatMatMultNum;MatGetBrAoCol 5250
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute 2878
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;ParLoopExecute;Parloop_Cells_wrap_expression_kernel 6962
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin 78
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin;BuildTwoSidedF 42
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyBegin;BuildTwoSidedF;BuildTwoSided 6478
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatTranspose 5560
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatZeroInitial 5402
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.assemble.assemble;MatAssemblyEnd 3839
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh 1891
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh 4450
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding 14018
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells 46
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists 1085
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;firedrake.mesh._parent_mesh_embedding.<locals>._locate_cells;firedrake.mesh.MeshGeometry.locate_cells_ref_coords_and_dists;c_locator_run 47889
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;discover_ranks 17238
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;discover_ranks;BuildTwoSided 9930
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_minimum_distance 491
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;reduce_minimum_distance;SFReduceEnd 14396
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;broadcast_minimum_distance 215
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;broadcast_minimum_distance;SFBcastEnd 5779
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;determine_owning_ranks 3320
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh._pic_swarm_in_mesh;firedrake.mesh._parent_mesh_embedding;assign_global_indices 3203
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology 24854
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace 141
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 596
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 30
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 21376
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.VertexOnlyMeshTopology.__init__ 3166
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMesh;firedrake.mesh.VertexOnlyMeshTopology.__init__;Mesh: numbering 13747
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology 18173
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace 109
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 542
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 24
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.make_vom_from_vom_topology;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 18603
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMeshTopology.__init__ 5805
+Main Stage;firedrake;run1;firedrake.assemble.assemble;firedrake.mesh.VertexOnlyMeshTopology.__init__;Mesh: numbering 21047
+Main Stage;firedrake;CreateFunctionSpace 314
+Main Stage;firedrake;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__ 425
+Main Stage;firedrake;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data 30
+Main Stage;firedrake;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__ 86755
+Main Stage;firedrake;CreateFunctionSpace;firedrake.functionspaceimpl.FunctionSpace.__init__;firedrake.functionspacedata.get_shared_data;firedrake.functionspacedata.FunctionSpaceData.__init__;FunctionSpaceData: CreateElement 5226
