@@ -1,0 +1,65 @@
+One-form cross-mesh interpolation with distributed
+Rtree. Weak scaling with 10000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_oneform_HX1.pbs
+Job ID:    542153.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T07:33:37+01:00
+CSV:       results/overlapping_weakscaling_oneform_CG1_10000_542153.pbs-6.csv
+nprocs=1: mesh generation=1.51863s
+nprocs=1: run time=1.41584s
+nprocs=1: run time=0.075125s
+nprocs=1: run time=0.0742197s
+nprocs=1: run time=0.0747805s
+nprocs=2: mesh generation=1.69539s
+nprocs=2: run time=1.14346s
+nprocs=2: run time=0.0818864s
+nprocs=2: run time=0.082317s
+nprocs=2: run time=0.0836539s
+nprocs=4: mesh generation=2.0029s
+nprocs=4: run time=1.09784s
+nprocs=4: run time=0.0850703s
+nprocs=4: run time=0.0854308s
+nprocs=4: run time=0.0874696s
+nprocs=8: mesh generation=2.55989s
+nprocs=8: run time=1.10556s
+nprocs=8: run time=0.0946339s
+nprocs=8: run time=0.0908818s
+nprocs=8: run time=0.0916942s
+nprocs=16: mesh generation=3.71138s
+nprocs=16: run time=1.13726s
+nprocs=16: run time=0.094036s
+nprocs=16: run time=0.0930706s
+nprocs=16: run time=0.0932245s
+nprocs=32: mesh generation=7.34436s
+nprocs=32: run time=1.30626s
+nprocs=32: run time=0.113704s
+nprocs=32: run time=0.110793s
+nprocs=32: run time=0.113831s
+nprocs=64: mesh generation=14.8774s
+nprocs=64: run time=3.92772s
+nprocs=64: run time=0.150307s
+nprocs=64: run time=0.14952s
+nprocs=64: run time=0.143523s
+nprocs=128: mesh generation=28.839s
+nprocs=128: run time=3.78456s
+nprocs=128: run time=0.227485s
+nprocs=128: run time=0.188667s
+nprocs=128: run time=0.186801s
+nprocs=256: mesh generation=59.0149s
+nprocs=256: run time=10.0203s
+nprocs=256: run time=0.241583s
+nprocs=256: run time=0.275303s
+nprocs=256: run time=0.207156s
+Done.
+
+====================================
+CPU Time used: 01:06:52
+CPU Percent: 3300%
+Memory usage: 21658564kb
+Approx Power usage: 0.013200000000000002
+Walltime usage: 00:03:56
+
+====================================

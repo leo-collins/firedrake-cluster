@@ -1,0 +1,58 @@
+Assembly of cross-mesh interpolation matrix with distributed
+Rtree. Weak scaling with 1000000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_HX1.pbs
+Job ID:    542146.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T06:15:33+01:00
+CSV:       results/overlapping_weakscaling_CG1_1000000_542146.pbs-6.csv
+nprocs=1: mesh generation=126.676s
+nprocs=1: run time=9.60569s
+nprocs=1: run time=7.26586s
+nprocs=1: run time=7.28129s
+nprocs=1: run time=7.33849s
+nprocs=2: mesh generation=174.606s
+nprocs=2: run time=10.7755s
+nprocs=2: run time=8.55606s
+nprocs=2: run time=8.54241s
+nprocs=2: run time=8.55019s
+nprocs=4: mesh generation=206.717s
+nprocs=4: run time=11.0832s
+nprocs=4: run time=8.95337s
+nprocs=4: run time=8.81743s
+nprocs=4: run time=8.82933s
+nprocs=8: mesh generation=279.364s
+nprocs=8: run time=11.9659s
+nprocs=8: run time=9.55393s
+nprocs=8: run time=9.50368s
+nprocs=8: run time=9.47508s
+nprocs=16: mesh generation=422.432s
+nprocs=16: run time=14.3309s
+nprocs=16: run time=10.1475s
+nprocs=16: run time=10.2768s
+nprocs=16: run time=10.2529s
+nprocs=32: mesh generation=790.859s
+nprocs=32: run time=17.1097s
+nprocs=32: run time=12.4927s
+nprocs=32: run time=12.4974s
+nprocs=32: run time=12.5047s
+nprocs=64: mesh generation=1706.87s
+nprocs=64: run time=22.2093s
+nprocs=64: run time=15.0599s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 3232277 on node hx1-c04-6-1 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 41:53:34
+CPU Percent: 6376%
+Memory usage: 419430400kb
+Approx Power usage: 0.5026
+Walltime usage: 01:08:43
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=542146.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/542146.pbs-6,task_memcg=/pbs_jobs.service/jobid/542146.pbs-6,task=python,pid=3232277,uid=1831114
+

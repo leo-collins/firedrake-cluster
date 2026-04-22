@@ -1,0 +1,25 @@
+One-form cross-mesh interpolation with distributed
+Rtree. Weak scaling with 1000000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_oneform_HX1.pbs
+Job ID:    542157.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T07:37:42+01:00
+CSV:       results/overlapping_weakscaling_oneform_CG1_1000000_542157.pbs-6.csv
+nprocs=1: mesh generation=129.502s
+nprocs=1: run time=10.9497s
+nprocs=1: run time=6.70983s
+nprocs=1: run time=6.88629s
+nprocs=1: run time=7.035s
+=>> PBS: job killed: walltime 14516 exceeded limit 14400
+
+====================================
+CPU Time used: 00:02:42
+CPU Percent: 98%
+Memory usage: 3886244kb
+Approx Power usage: 0.0004
+Walltime usage: 04:02:06
+
+====================================

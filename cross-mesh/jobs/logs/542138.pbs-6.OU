@@ -1,0 +1,65 @@
+Assembly of 2D cross-mesh interpolation matrix with distributed
+Rtree. Strong scaling with 1000000 total dofs.
+Uses CG3 elements.
+Job file:  cross_mesh_strongscaling_HX1.pbs
+Job ID:    542138.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-22T05:43:49+01:00
+CSV:       results/overlapping_strongscaling_CG3_1000000_542138.pbs-6.csv
+nprocs=1: mesh generation=15.848s
+nprocs=1: run time=10.4483s
+nprocs=1: run time=9.31982s
+nprocs=1: run time=9.33448s
+nprocs=1: run time=9.29781s
+nprocs=2: mesh generation=10.202s
+nprocs=2: run time=5.98249s
+nprocs=2: run time=4.98791s
+nprocs=2: run time=4.99745s
+nprocs=2: run time=4.97192s
+nprocs=4: mesh generation=6.04687s
+nprocs=4: run time=3.74979s
+nprocs=4: run time=2.85744s
+nprocs=4: run time=2.85037s
+nprocs=4: run time=2.81654s
+nprocs=8: mesh generation=3.90088s
+nprocs=8: run time=2.30426s
+nprocs=8: run time=1.45962s
+nprocs=8: run time=1.44826s
+nprocs=8: run time=1.44851s
+nprocs=16: mesh generation=2.84821s
+nprocs=16: run time=1.60506s
+nprocs=16: run time=0.765301s
+nprocs=16: run time=0.76492s
+nprocs=16: run time=0.766468s
+nprocs=32: mesh generation=2.70818s
+nprocs=32: run time=1.42291s
+nprocs=32: run time=0.472874s
+nprocs=32: run time=0.469854s
+nprocs=32: run time=0.471181s
+nprocs=64: mesh generation=3.66949s
+nprocs=64: run time=2.1659s
+nprocs=64: run time=0.299727s
+nprocs=64: run time=0.302551s
+nprocs=64: run time=0.306223s
+nprocs=128: mesh generation=7.28051s
+nprocs=128: run time=3.99439s
+nprocs=128: run time=0.202493s
+nprocs=128: run time=0.181391s
+nprocs=128: run time=0.179037s
+nprocs=256: mesh generation=7.85877s
+nprocs=256: run time=10.9292s
+nprocs=256: run time=0.364599s
+nprocs=256: run time=0.395374s
+nprocs=256: run time=0.291994s
+Done.
+
+====================================
+CPU Time used: 00:14:46
+CPU Percent: 690%
+Memory usage: 15392356kb
+Approx Power usage: 0.0028
+Walltime usage: 00:04:05
+
+====================================
