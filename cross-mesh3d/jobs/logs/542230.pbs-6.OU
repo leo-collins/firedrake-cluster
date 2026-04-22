@@ -1,0 +1,65 @@
+One-form 3D cross-mesh interpolation with distributed
+Rtree. Weak scaling with 100000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_oneform_3d_HX1.pbs
+Job ID:    542230.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T13:22:01+01:00
+CSV:       results/overlapping_weakscaling_oneform_3d_CG1_100000_542230.pbs-6.csv
+nprocs=1: mesh generation=86.7112s
+nprocs=1: run time=4.34513s
+nprocs=1: run time=1.06332s
+nprocs=1: run time=1.06006s
+nprocs=1: run time=1.06931s
+nprocs=2: mesh generation=108.957s
+nprocs=2: run time=3.59996s
+nprocs=2: run time=1.14514s
+nprocs=2: run time=1.12954s
+nprocs=2: run time=1.12919s
+nprocs=4: mesh generation=127.109s
+nprocs=4: run time=3.69353s
+nprocs=4: run time=1.18149s
+nprocs=4: run time=1.18414s
+nprocs=4: run time=1.17064s
+nprocs=8: mesh generation=166.644s
+nprocs=8: run time=3.88247s
+nprocs=8: run time=1.34015s
+nprocs=8: run time=1.35563s
+nprocs=8: run time=1.353s
+nprocs=16: mesh generation=253.744s
+nprocs=16: run time=3.44758s
+nprocs=16: run time=1.44644s
+nprocs=16: run time=1.43995s
+nprocs=16: run time=1.45075s
+nprocs=32: mesh generation=464.933s
+nprocs=32: run time=4.11457s
+nprocs=32: run time=1.91067s
+nprocs=32: run time=1.8923s
+nprocs=32: run time=1.87841s
+nprocs=64: mesh generation=1019.55s
+nprocs=64: run time=6.03244s
+nprocs=64: run time=2.19358s
+nprocs=64: run time=2.318s
+nprocs=64: run time=2.27484s
+nprocs=128: mesh generation=2317.45s
+nprocs=128: run time=6.32973s
+nprocs=128: run time=2.37746s
+nprocs=128: run time=2.45997s
+nprocs=128: run time=2.41416s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 3294897 on node hx1-c04-6-1 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 111:35:32
+CPU Percent: 6375%
+Memory usage: 414139228kb
+Approx Power usage: 1.339
+Walltime usage: 02:04:46
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=542230.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/542230.pbs-6,task_memcg=/pbs_jobs.service/jobid/542230.pbs-6,task=python,pid=3294897,uid=1831114
+

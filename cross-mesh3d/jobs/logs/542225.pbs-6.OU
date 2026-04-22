@@ -1,0 +1,65 @@
+Assembly of 3D cross-mesh interpolation matrix with distributed
+Rtree. Weak scaling with 10000 dofs per core.
+Uses CG3 elements.
+Job file:  cross_mesh_weakscaling_3d_HX1.pbs
+Job ID:    542225.pbs-6
+Node:      hx1-c04-6-4
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T13:12:51+01:00
+CSV:       results/overlapping_weakscaling_3d_CG3_10000_542225.pbs-6.csv
+nprocs=1: mesh generation=0.380473s
+nprocs=1: run time=1.09289s
+nprocs=1: run time=0.0781574s
+nprocs=1: run time=0.0771484s
+nprocs=1: run time=0.0772337s
+nprocs=2: mesh generation=0.387523s
+nprocs=2: run time=0.909247s
+nprocs=2: run time=0.100984s
+nprocs=2: run time=0.109706s
+nprocs=2: run time=0.102547s
+nprocs=4: mesh generation=0.604241s
+nprocs=4: run time=1.03895s
+nprocs=4: run time=0.150939s
+nprocs=4: run time=0.15246s
+nprocs=4: run time=0.154105s
+nprocs=8: mesh generation=0.814152s
+nprocs=8: run time=0.989735s
+nprocs=8: run time=0.170134s
+nprocs=8: run time=0.168117s
+nprocs=8: run time=0.168563s
+nprocs=16: mesh generation=1.05225s
+nprocs=16: run time=1.0415s
+nprocs=16: run time=0.1623s
+nprocs=16: run time=0.16387s
+nprocs=16: run time=0.165399s
+nprocs=32: mesh generation=2.14415s
+nprocs=32: run time=1.30196s
+nprocs=32: run time=0.219762s
+nprocs=32: run time=0.221905s
+nprocs=32: run time=0.239518s
+nprocs=64: mesh generation=4.53227s
+nprocs=64: run time=1.70003s
+nprocs=64: run time=0.278823s
+nprocs=64: run time=0.286687s
+nprocs=64: run time=0.286107s
+nprocs=128: mesh generation=19.191s
+nprocs=128: run time=2.24332s
+nprocs=128: run time=0.365145s
+nprocs=128: run time=0.341866s
+nprocs=128: run time=0.347543s
+nprocs=256: mesh generation=17.2872s
+nprocs=256: run time=2.96397s
+nprocs=256: run time=0.444547s
+nprocs=256: run time=0.588561s
+nprocs=256: run time=0.741361s
+Done.
+
+====================================
+CPU Time used: 00:48:33
+CPU Percent: 2390%
+Memory usage: 24280428kb
+Approx Power usage: 0.009600000000000001
+Walltime usage: 00:02:48
+
+====================================

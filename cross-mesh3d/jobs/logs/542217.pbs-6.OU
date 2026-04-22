@@ -1,0 +1,65 @@
+Assembly of 3D cross-mesh interpolation matrix with distributed
+Rtree. Weak scaling with 10000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_3d_HX1.pbs
+Job ID:    542217.pbs-6
+Node:      hx1-c04-6-1
+NPROCS:    256
+RAM:       100gb
+Date:      2026-04-22T12:40:42+01:00
+CSV:       results/overlapping_weakscaling_3d_CG1_10000_542217.pbs-6.csv
+nprocs=1: mesh generation=7.81701s
+nprocs=1: run time=1.29197s
+nprocs=1: run time=0.107659s
+nprocs=1: run time=0.105959s
+nprocs=1: run time=0.104479s
+nprocs=2: mesh generation=10.5326s
+nprocs=2: run time=1.01807s
+nprocs=2: run time=0.127675s
+nprocs=2: run time=0.126597s
+nprocs=2: run time=0.13063s
+nprocs=4: mesh generation=12.4358s
+nprocs=4: run time=0.996963s
+nprocs=4: run time=0.139945s
+nprocs=4: run time=0.143803s
+nprocs=4: run time=0.142035s
+nprocs=8: mesh generation=16.6296s
+nprocs=8: run time=1.31463s
+nprocs=8: run time=0.156915s
+nprocs=8: run time=0.158777s
+nprocs=8: run time=0.159743s
+nprocs=16: mesh generation=23.8142s
+nprocs=16: run time=1.03272s
+nprocs=16: run time=0.167586s
+nprocs=16: run time=0.165705s
+nprocs=16: run time=0.165913s
+nprocs=32: mesh generation=43.7984s
+nprocs=32: run time=1.20801s
+nprocs=32: run time=0.194073s
+nprocs=32: run time=0.202618s
+nprocs=32: run time=0.201431s
+nprocs=64: mesh generation=96.1284s
+nprocs=64: run time=2.13744s
+nprocs=64: run time=0.290106s
+nprocs=64: run time=0.366038s
+nprocs=64: run time=0.295441s
+nprocs=128: mesh generation=202.89s
+nprocs=128: run time=2.2845s
+nprocs=128: run time=0.315307s
+nprocs=128: run time=0.379458s
+nprocs=128: run time=0.386327s
+nprocs=256: mesh generation=493.661s
+nprocs=256: run time=2.8237s
+nprocs=256: run time=1.01849s
+nprocs=256: run time=0.943568s
+nprocs=256: run time=0.839701s
+Done.
+
+====================================
+CPU Time used: 14:54:22
+CPU Percent: 6370%
+Memory usage: 69571140kb
+Approx Power usage: 0.17880000000000001
+Walltime usage: 00:16:53
+
+====================================
