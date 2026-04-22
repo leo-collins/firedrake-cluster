@@ -1,0 +1,22 @@
+Assembly of cross-mesh interpolation matrix with distributed
+Rtree. Flamegraph with 10000 dofs per core.
+Uses CG3 elements.
+Job file:  cross_mesh_flamegraph_HX1.pbs
+Job ID:    542185.pbs-6
+Node:      hx1-c04-6-4
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-22T10:51:39+01:00
+Running with 64 processes
+Running with 128 processes
+Running with 256 processes
+Done.
+
+====================================
+CPU Time used: 00:00:00
+CPU Percent: 0%
+Memory usage: 0b
+Approx Power usage: 0.0
+Walltime usage: 00:01:15
+
+====================================

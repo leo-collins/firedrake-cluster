@@ -1,0 +1,26 @@
+Assembly of cross-mesh interpolation matrix with distributed
+Rtree. Flamegraph with 1000000 dofs per core.
+Uses CG1 elements.
+Job file:  cross_mesh_flamegraph_HX1.pbs
+Job ID:    542178.pbs-6
+Node:      hx1-c04-4-3
+NPROCS:    256
+RAM:       200gb
+Date:      2026-04-22T09:41:46+01:00
+Running with 64 processes
+Running with 128 processes
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 3363452 on node hx1-c04-4-3 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 83:15:21
+CPU Percent: 6379%
+Memory usage: 372159020kb
+Approx Power usage: 0.999
+Walltime usage: 01:20:24
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=542178.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/542178.pbs-6,task_memcg=/pbs_jobs.service/jobid/542178.pbs-6,task=python,pid=3363452,uid=1831114
+
