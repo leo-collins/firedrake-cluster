@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#PBS -N strongscale_mass_matrix
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o logs/
+
+set -euo pipefail
+export OMP_NUM_THREADS=1
+
+cd $PBS_O_WORKDIR
+cd ../scripts
+
+module load buildenv/default-foss-2025b
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+
+source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+
+NPROCS=${NPROCS:-256}
+TOTAL_DOFS=${TOTAL_DOFS:-1000000}
+DEGREE=${DEGREE:-1}
+RESULTS_DIR=${RESULTS_DIR:-results}
+CSV="$RESULTS_DIR/mass_matrix_strongscaling_CG${DEGREE}_${TOTAL_DOFS}_${PBS_JOBID}.csv"
+
+echo "Assembly of mass matrix. Strong scaling with $TOTAL_DOFS total dofs."
+echo "Uses CG${DEGREE} elements."
+echo "Job file:  mass_matrix_strongscaling_HX1.pbs"
+echo "Job ID:    $PBS_JOBID"
+echo "Node:      $(hostname)"
+echo "NPROCS:    $NPROCS"
+echo "RAM:       400gb"
+echo "Date:      $(date -Iseconds)"
+echo "CSV:       $CSV"
+
+P=1
+while [ "$P" -le "$NPROCS" ]; do
+	mpirun -n "$P" python mass_matrix_strongscaling.py "$TOTAL_DOFS" "$DEGREE" "$CSV"
+	P=$(( P * 2 ))
+done
+
+echo "Done."
