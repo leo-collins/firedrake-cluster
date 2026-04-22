@@ -1,5 +1,5 @@
 import csv
-from math import floor
+from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
@@ -30,7 +30,7 @@ n = max(int(floor(((total_dofs ** (1 / 3)) - 1) / degree)), 1)
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
-mesh2 = UnitCubeMesh(int(1.1*n), int(1.1*n), int(1.1*n))
+mesh2 = UnitCubeMesh(ceil(1.01*n), ceil(1.01*n), ceil(1.01*n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
@@ -52,7 +52,7 @@ for _ in range(4):
 	# delete cached interpolator (which includes cached VOM)
 	del interp._interpolator
 
-average_dofs_per_core = COMM_WORLD.allreduce((W.dof_count + V.dof_count) / 2, op=MPI.SUM) / n_cores
+average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 
 if COMM_WORLD.rank == 0:
 	if csv_path is not None:

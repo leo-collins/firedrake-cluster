@@ -1,4 +1,4 @@
-from math import floor
+from math import ceil, floor
 from sys import argv
 import warnings
 warnings.filterwarnings("ignore")
@@ -24,7 +24,7 @@ n = max(int(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree)), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitCubeMesh(n, n, n)
-mesh2 = UnitCubeMesh(int(1.01*n), int(1.01*n), int(1.01*n))
+mesh2 = UnitCubeMesh(ceil(1.01*n), ceil(1.01*n), ceil(1.01*n))
 PETSc.Sys.Print("Meshes created")
 
 V = FunctionSpace(mesh1, "CG", degree)
