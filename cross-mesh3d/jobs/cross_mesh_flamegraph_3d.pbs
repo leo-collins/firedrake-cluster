@@ -19,7 +19,7 @@ module load Python/3.13.5-GCCcore-14.3.0
 source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
-DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
+DOFS_PER_CORE=${DOFS_PER_CORE:-1000000}
 DEGREE=${DEGREE:-1}
 
 echo "Assembly of 3d cross-mesh interpolation matrix with distributed"
