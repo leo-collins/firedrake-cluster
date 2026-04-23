@@ -20,7 +20,7 @@ if degree < 1:
     raise ValueError("degree must be >= 1")
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
-n = max(int(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree)), 1)
+n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitCubeMesh(n, n, n)

@@ -20,7 +20,7 @@ degree = int(argv[2])
 if degree < 1:
     raise ValueError("degree must be >= 1")
 
-n = max(int(floor((sqrt(dofs_per_core * n_cores) - 1) / degree)), 1)
+n = max(floor((sqrt(dofs_per_core * n_cores) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitSquareMesh(n, n)

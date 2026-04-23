@@ -24,7 +24,7 @@ if degree < 1:
 csv_path = Path(argv[3]) if len(argv) > 3 else None
 
 # For UnitSquareMesh, dim(CG(degree)) = (degree * n + 1)^2.
-n = max(int(floor((sqrt(total_dofs) - 1) / degree)), 1)
+n = max(floor((sqrt(total_dofs) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
