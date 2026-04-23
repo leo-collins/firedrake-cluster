@@ -1,0 +1,25 @@
+Assembly of 3d cross-mesh one-form with distributed
+Rtree. Flamegraph with 1000000 dofs per core.
+Uses CG3 elements.
+Job file:  cross_mesh_oneform_flamegraph_3d.pbs
+Job ID:    549978.pbs-6
+Node:      hx1-c04-4-3
+NPROCS:    256
+RAM:       250gb
+Date:      2026-04-23T21:35:29+01:00
+Running with 64 processes
+Meshes created
+Running with 128 processes
+Meshes created
+Running with 256 processes
+Meshes created
+Done.
+
+====================================
+CPU Time used: 70:33:45
+CPU Percent: 6378%
+Memory usage: 212255228kb
+Approx Power usage: 0.8465999999999999
+Walltime usage: 01:09:28
+
+====================================
