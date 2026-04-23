@@ -7,7 +7,7 @@
 #PBS -o logs/
 
 cd $PBS_O_WORKDIR
-cd ../flamegraphs/crossmesh3d_distributedrtree
+cd ../flamegraphs/crossmesh3d_oneform_distributedrtree
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
@@ -19,7 +19,7 @@ module load Python/3.13.5-GCCcore-14.3.0
 source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
 
 NPROCS=${NPROCS:-256}
-DOFS_PER_CORE=${DOFS_PER_CORE:-100000}
+DOFS_PER_CORE=${DOFS_PER_CORE:-1000000}
 DEGREE=${DEGREE:-1}
 
 echo "Assembly of 3d cross-mesh interpolation matrix with distributed"
@@ -35,7 +35,7 @@ echo "Date:      $(date -Iseconds)"
 P=64
 while [ $P -le "$NPROCS" ]; do
   echo "Running with $P processes"
-  mpirun -n $P python ../../scripts/overlapping_flamegraph_3d.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_JOBID}_${P}.txt:ascii_flamegraph
+  mpirun -n $P python ../../scripts/overlapping_flamegraph_one_form_3d.py "$DOFS_PER_CORE" "$DEGREE" -log_view :cross_mesh_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_JOBID}_${P}.txt:ascii_flamegraph
   P=$(( P * 2))
 done
 

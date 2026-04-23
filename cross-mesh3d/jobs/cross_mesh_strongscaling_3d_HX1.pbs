@@ -33,7 +33,7 @@ echo "Job file:  cross_mesh_strongscaling_3d_HX1.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
-echo "RAM:       200gb"
+echo "RAM:       400gb"
 echo "Date:      $(date -Iseconds)"
 echo "CSV:       $CSV"
 
