@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#PBS -N weakscale_cross_mesh_3d
+#PBS -l select=8:ncpus=64:mpiprocs=64:mem=400gb
+#PBS -l place=excl
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o logs/
+
+set -euo pipefail
+export OMP_NUM_THREADS=1
+
+cd $PBS_O_WORKDIR
+cd ../scripts
+
+module load buildenv/default-foss-2025b
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+
+source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+
+NPROCS=${NPROCS:-512}
+DOFS_PER_CORE=${DOFS_PER_CORE:-1000000}
+DEGREE=${DEGREE:-1}
+RESULTS_DIR=${RESULTS_DIR:-results}
+CSV="$RESULTS_DIR/overlapping_weakscaling_apply_matrix_3d_CG${DEGREE}_${DOFS_PER_CORE}_${PBS_JOBID}.csv"
+
+echo "Application of 3D cross-mesh interpolation matrix with distributed"
+echo "Rtree. Weak scaling with $DOFS_PER_CORE dofs per core."
+echo "Exclusive node placement"
+echo "Uses CG$DEGREE elements."
+echo "Job file:  cross_mesh_weakscaling_matrix_application_3d_HX1_512.pbs"
+echo "Job ID:    $PBS_JOBID"
+echo "Node:      $(hostname)"
+echo "NPROCS:    $NPROCS"
+echo "RAM:       400gb"
+echo "Date:      $(date -Iseconds)"
+echo "CSV:       $CSV"
+
+P=512
+while [ "$P" -le "$NPROCS" ]; do
+	mpirun -n "$P" python overlapping_apply_matrix_3d.py "$DOFS_PER_CORE" "$DEGREE" "$CSV"
+	P=$(( P * 2 ))
+done
+
+echo "Done."
