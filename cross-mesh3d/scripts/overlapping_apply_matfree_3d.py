@@ -48,7 +48,9 @@ u = Function(V).assign(1.1)
 # Assemble matrix-free operator
 interp = interpolate(TrialFunction(V), W)
 t0 = perf_counter_ns()
-operator = assemble(interp, mat_type="matfree")
+I = assemble(interp, mat_type="matfree")
+# apply once to build VOM
+assemble(I @ u)
 t1 = perf_counter_ns()
 assembly_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(
@@ -60,7 +62,7 @@ apply_times_s = []
 for run_idx in range(4):
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
-    res = assemble(operator @ u)
+    res = assemble(I @ u)
     t1 = perf_counter_ns()
     apply_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
     apply_times_s.append(apply_time_s)
