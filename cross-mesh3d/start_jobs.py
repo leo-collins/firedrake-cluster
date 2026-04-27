@@ -12,12 +12,12 @@ JOB_DIR = Path(__file__).parent / "jobs"
 JOB_TEMPLATE = """
 #!/bin/bash
 
-# PBS -N {job_name}
-# PBS -l select={num_nodes}:ncpus={cpus_per_node}:mpiprocs={cpus_per_node}:mem={mem_per_node}gb
-# PBS -l place={exclusive}
-# PBS -l walltime={wall_time}
-# PBS -j oe
-# PBS -o logs/
+#PBS -N {job_name}
+#PBS -l select={num_nodes}:ncpus={cpus_per_node}:mpiprocs={cpus_per_node}:mem={mem_per_node}gb
+#PBS -l place={exclusive}
+#PBS -l walltime={wall_time}
+#PBS -j oe
+#PBS -o logs/
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
@@ -51,7 +51,7 @@ echo "  PBS -o logs/"
 
 P={starting_proc}
 while [ "$P" -le "$NPROCS" ]; do
-    mpirun -n "$P" python {script_name}.py {dof_count} {degree} "$CSV"
+    mpirun -n "$P" python {script_name}.py {dof_count} {degree} "$CSV" "$PBS_JOBID"
     P=$((P * 2))
 done
 
