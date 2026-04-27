@@ -136,7 +136,7 @@ if __name__ == "__main__":
         print(f"Generated job script: {job_script_path}")
     
     # Make logs directory if it doesn't exist
-    logs_dir = JOB_DIR / "logs"
+    logs_dir = FILE_DIR / "logs"
     logs_dir.mkdir(exist_ok=True)
 
     # Start the job
