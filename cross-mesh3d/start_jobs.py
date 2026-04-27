@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import argparse
-from html import parser
 from pathlib import Path
 import os
 import sys
 
+# call .resolve() for compatibility with older versions of Python
 FILE_DIR = Path(__file__).parent.resolve()
 SCRIPT_DIR = FILE_DIR / "scripts"
 RESULT_DIR = FILE_DIR / "results"
@@ -130,20 +130,17 @@ if __name__ == "__main__":
 
     job_script = JOB_TEMPLATE.format_map(job_script_map)
     print(RESULT_DIR)
-    # job_script_path = JOB_DIR / f"{job_name}.pbs"
-    # with open(job_script_path, "w") as f:
-    #     f.write(job_script)
-    #     print(f"Generated job script: {job_script_path}")
+    job_script_path = JOB_DIR / f"{job_name}.pbs"
+    with open(job_script_path, "w") as f:
+        f.write(job_script)
+        print(f"Generated job script: {job_script_path}")
     
-    # # Make logs directory if it doesn't exist
-    # logs_dir = JOB_DIR / "logs"
-    # logs_dir.mkdir(exist_ok=True)
+    # Make logs directory if it doesn't exist
+    logs_dir = JOB_DIR / "logs"
+    logs_dir.mkdir(exist_ok=True)
 
-    # # Start the job
-    # os.system(f"qsub {job_script_path}")
+    # Start the job
+    os.system(f"qsub {job_script_path}")
 
-    # # delete the job script after submission
-    # os.remove(job_script_path)
-    
-
-
+    # delete the job script after submission
+    os.remove(job_script_path)
