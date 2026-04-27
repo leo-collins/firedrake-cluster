@@ -6,7 +6,7 @@ import os
 import sys
 
 SCRIPT_DIR = Path(__file__).parent / "scripts"
-RESULT_DIR = SCRIPT_DIR / "results"
+RESULT_DIR = Path(__file__).parent / "results"
 JOB_DIR = Path(__file__).parent / "jobs"
 
 JOB_TEMPLATE = """
