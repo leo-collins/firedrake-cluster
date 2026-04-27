@@ -1,0 +1,72 @@
+Application of 3D cross-mesh interpolation matrix with distributed
+Rtree. Weak scaling with 100000 dofs per core.
+Exclusive node placement
+Uses CG1 elements.
+Job file:  cross_mesh_weakscaling_matrix_application_3d_HX1.pbs
+Job ID:    551815.pbs-6
+Node:      hx1-c04-3-3
+NPROCS:    256
+RAM:       400gb
+Date:      2026-04-26T13:09:52+01:00
+CSV:       results/overlapping_weakscaling_apply_matrix_3d_CG1_100000_551815.pbs-6.csv
+nprocs=1: mesh generation=88.5071s
+nprocs=1: initial assembly time=4.39839s
+nprocs=1: run0 apply time=0.00296054s
+nprocs=1: run1 apply time=0.00270041s
+nprocs=1: run2 apply time=0.00262615s
+nprocs=1: run3 apply time=0.00258451s
+nprocs=2: mesh generation=112.418s
+nprocs=2: initial assembly time=3.691s
+nprocs=2: run0 apply time=0.00422744s
+nprocs=2: run1 apply time=0.00321155s
+nprocs=2: run2 apply time=0.00314641s
+nprocs=2: run3 apply time=0.00309995s
+nprocs=4: mesh generation=129.314s
+nprocs=4: initial assembly time=3.85873s
+nprocs=4: run0 apply time=0.00442292s
+nprocs=4: run1 apply time=0.00331962s
+nprocs=4: run2 apply time=0.00330583s
+nprocs=4: run3 apply time=0.00324435s
+nprocs=8: mesh generation=170.681s
+nprocs=8: initial assembly time=4.02189s
+nprocs=8: run0 apply time=0.00470841s
+nprocs=8: run1 apply time=0.00344509s
+nprocs=8: run2 apply time=0.00335806s
+nprocs=8: run3 apply time=0.0033705s
+nprocs=16: mesh generation=255.623s
+nprocs=16: initial assembly time=4.44276s
+nprocs=16: run0 apply time=0.00485205s
+nprocs=16: run1 apply time=0.00407474s
+nprocs=16: run2 apply time=0.00381558s
+nprocs=16: run3 apply time=0.00381411s
+nprocs=32: mesh generation=500.503s
+nprocs=32: initial assembly time=5.09472s
+nprocs=32: run0 apply time=0.00658421s
+nprocs=32: run1 apply time=0.00602853s
+nprocs=32: run2 apply time=0.00556675s
+nprocs=32: run3 apply time=0.00558469s
+nprocs=64: mesh generation=1018.05s
+nprocs=64: initial assembly time=6.39135s
+nprocs=64: run0 apply time=0.0071823s
+nprocs=64: run1 apply time=0.0060876s
+nprocs=64: run2 apply time=0.0061075s
+nprocs=64: run3 apply time=0.00705298s
+nprocs=128: mesh generation=2155.78s
+nprocs=128: initial assembly time=7.50753s
+nprocs=128: run0 apply time=0.00802141s
+nprocs=128: run1 apply time=0.00648369s
+nprocs=128: run2 apply time=0.00635688s
+nprocs=128: run3 apply time=0.00635906s
+--------------------------------------------------------------------------
+prterun noticed that process rank 112 with PID 3222621 on node hx1-c04-4-1 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 109:03:45
+CPU Percent: 6378%
+Memory usage: 414574696kb
+Approx Power usage: 1.3086
+Walltime usage: 02:03:11
+
+====================================

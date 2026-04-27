@@ -1,0 +1,2 @@
+nprocs,degree,dofs_per_core,mesh_gen_time_s,apply0,apply1,apply2,apply3
+512,3,101377.3203125,461.565034033,0.044128439,0.051149839,0.050049435,0.045541707

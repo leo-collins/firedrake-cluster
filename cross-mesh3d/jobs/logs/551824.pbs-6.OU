@@ -1,0 +1,27 @@
+Application of matfree 3D cross-mesh interpolation operator with distributed
+Rtree. Weak scaling with 100000 dofs per core.
+Exclusive node placement
+Uses CG3 elements.
+Job file:  cross_mesh_weakscaling_matfree_application_3d_HX1_512.pbs
+Job ID:    551824.pbs-6
+Node:      hx1-c05-7-1
+NPROCS:    512
+RAM:       400gb
+Date:      2026-04-27T05:35:03+01:00
+CSV:       results/overlapping_weakscaling_apply_matfree_3d_CG3_100000_551824.pbs-6.csv
+nprocs=512: mesh generation=461.565s
+nprocs=512: initial assembly time=7.44975s
+nprocs=512: run0 apply time=0.0441284s
+nprocs=512: run1 apply time=0.0511498s
+nprocs=512: run2 apply time=0.0500494s
+nprocs=512: run3 apply time=0.0455417s
+Done.
+
+====================================
+CPU Time used: 08:22:21
+CPU Percent: 6376%
+Memory usage: 55889608kb
+Approx Power usage: 0.1004
+Walltime usage: 00:08:20
+
+====================================

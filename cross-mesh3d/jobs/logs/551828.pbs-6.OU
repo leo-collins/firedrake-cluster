@@ -1,0 +1,27 @@
+Application of 3D cross-mesh interpolation matrix with distributed
+Rtree. Weak scaling with 1000000 dofs per core.
+Exclusive node placement
+Uses CG3 elements.
+Job file:  cross_mesh_weakscaling_matrix_application_3d_HX1_512.pbs
+Job ID:    551828.pbs-6
+Node:      hx1-c05-7-1
+NPROCS:    512
+RAM:       400gb
+Date:      2026-04-27T07:08:20+01:00
+CSV:       results/overlapping_weakscaling_apply_matrix_3d_CG3_1000000_551828.pbs-6.csv
+nprocs=512: mesh generation=4458.65s
+nprocs=512: initial assembly time=36.7475s
+nprocs=512: run0 apply time=0.1668s
+nprocs=512: run1 apply time=0.139458s
+nprocs=512: run2 apply time=0.140326s
+nprocs=512: run3 apply time=0.139678s
+Done.
+
+====================================
+CPU Time used: 79:20:03
+CPU Percent: 6377%
+Memory usage: 389873528kb
+Approx Power usage: 0.952
+Walltime usage: 01:15:29
+
+====================================

@@ -1,0 +1,75 @@
+Application of matfree 3D cross-mesh interpolation operator with distributed
+Rtree. Weak scaling with 1000000 dofs per core.
+Exclusive node placement
+Uses CG3 elements.
+Job file:  cross_mesh_weakscaling_matfree_application_3d_HX1.pbs
+Job ID:    551812.pbs-6
+Node:      hx1-c04-2-3
+NPROCS:    256
+RAM:       400gb
+Date:      2026-04-26T12:50:59+01:00
+CSV:       results/overlapping_weakscaling_apply_matfree_3d_CG3_1000000_551812.pbs-6.csv
+nprocs=1: mesh generation=33.5416s
+nprocs=1: initial assembly time=9.21472s
+nprocs=1: run0 apply time=0.0793473s
+nprocs=1: run1 apply time=0.0826254s
+nprocs=1: run2 apply time=0.0799133s
+nprocs=1: run3 apply time=0.0773578s
+nprocs=2: mesh generation=41.6581s
+nprocs=2: initial assembly time=11.5422s
+nprocs=2: run0 apply time=0.0964763s
+nprocs=2: run1 apply time=0.0954966s
+nprocs=2: run2 apply time=0.0974361s
+nprocs=2: run3 apply time=0.0968299s
+nprocs=4: mesh generation=50.5605s
+nprocs=4: initial assembly time=12.2163s
+nprocs=4: run0 apply time=0.105665s
+nprocs=4: run1 apply time=0.104298s
+nprocs=4: run2 apply time=0.105114s
+nprocs=4: run3 apply time=0.104709s
+nprocs=8: mesh generation=65.6006s
+nprocs=8: initial assembly time=12.9526s
+nprocs=8: run0 apply time=0.120715s
+nprocs=8: run1 apply time=0.120561s
+nprocs=8: run2 apply time=0.121669s
+nprocs=8: run3 apply time=0.121468s
+nprocs=16: mesh generation=94.1912s
+nprocs=16: initial assembly time=13.6083s
+nprocs=16: run0 apply time=0.137526s
+nprocs=16: run1 apply time=0.13678s
+nprocs=16: run2 apply time=0.13778s
+nprocs=16: run3 apply time=0.13742s
+nprocs=32: mesh generation=168.636s
+nprocs=32: initial assembly time=16.1302s
+nprocs=32: run0 apply time=0.187459s
+nprocs=32: run1 apply time=0.186551s
+nprocs=32: run2 apply time=0.188716s
+nprocs=32: run3 apply time=0.190244s
+nprocs=64: mesh generation=314.89s
+nprocs=64: initial assembly time=17.1751s
+nprocs=64: run0 apply time=0.188516s
+nprocs=64: run1 apply time=0.1862s
+nprocs=64: run2 apply time=0.186966s
+nprocs=64: run3 apply time=0.187958s
+nprocs=128: mesh generation=662.103s
+nprocs=128: initial assembly time=17.6856s
+nprocs=128: run0 apply time=0.203649s
+nprocs=128: run1 apply time=0.203096s
+nprocs=128: run2 apply time=0.207685s
+nprocs=128: run3 apply time=0.209727s
+nprocs=256: mesh generation=2119.33s
+nprocs=256: initial assembly time=23.0954s
+nprocs=256: run0 apply time=0.233907s
+nprocs=256: run1 apply time=0.238517s
+nprocs=256: run2 apply time=0.245989s
+nprocs=256: run3 apply time=0.241759s
+Done.
+
+====================================
+CPU Time used: 57:38:00
+CPU Percent: 6378%
+Memory usage: 212367644kb
+Approx Power usage: 0.6916
+Walltime usage: 01:05:03
+
+====================================
