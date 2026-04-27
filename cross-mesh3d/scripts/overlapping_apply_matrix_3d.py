@@ -27,6 +27,7 @@ degree = int(argv[2])
 if degree < 1:
     raise ValueError("degree must be >= 1")
 csv_path = Path(argv[3]) if len(argv) > 3 else None
+pbs_jobid = argv[4] if len(argv) > 4 else None
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
@@ -57,7 +58,7 @@ PETSc.Sys.Print(
 
 apply_times_s = []
 
-for run_idx in range(4):
+for run_idx in range(6):
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     res = assemble(I @ u)
@@ -77,6 +78,7 @@ if COMM_WORLD.rank == 0:
                 f,
                 fieldnames=[
                     "nprocs",
+                    "pbs_job_id",
                     "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
@@ -84,6 +86,8 @@ if COMM_WORLD.rank == 0:
                     "apply1",
                     "apply2",
                     "apply3",
+                    "apply4",
+                    "apply5",
                 ],
             )
             if write_header:
@@ -91,6 +95,7 @@ if COMM_WORLD.rank == 0:
             w.writerow(
                 {
                     "nprocs": n_cores,
+                    "pbs_job_id": pbs_jobid,
                     "degree": degree,
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
@@ -98,5 +103,7 @@ if COMM_WORLD.rank == 0:
                     "apply1": apply_times_s[1],
                     "apply2": apply_times_s[2],
                     "apply3": apply_times_s[3],
+                    "apply4": apply_times_s[4],
+                    "apply5": apply_times_s[5],
                 }
             )
