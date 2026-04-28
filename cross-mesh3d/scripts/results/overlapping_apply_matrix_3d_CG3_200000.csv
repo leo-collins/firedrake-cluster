@@ -1,0 +1,2 @@
+nprocs,pbs_job_id,degree,dofs_per_core,mesh_gen_time_s,apply0,apply1,apply2,apply3,apply4,apply5
+512,552333.pbs-6,3,201512.4453125,1003.481360402,0.029771932,0.028771659,0.027919327,0.027165378,0.029475743,0.02907603

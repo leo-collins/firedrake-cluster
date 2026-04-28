@@ -1,0 +1,57 @@
+Running overlapping_strongscaling_3d.py with DOFs=10000000, degree=1, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG1_10000000.csv.
+Job ID: 552347.pbs-6
+Node:   hx1-c04-5-2
+Date:   Mon 27 Apr 21:45:08 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG1_10000000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=400gb
+  PBS -l place=excl
+  PBS -l walltime=08:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=9806.59s
+nprocs=1: run time=198.513s
+nprocs=1: run time=138.586s
+nprocs=1: run time=140.534s
+nprocs=1: run time=137.856s
+nprocs=2: mesh generation=6229.26s
+nprocs=2: run time=105.487s
+nprocs=2: run time=74.6667s
+nprocs=2: run time=75.5229s
+nprocs=2: run time=75.6311s
+nprocs=4: mesh generation=3610.83s
+nprocs=4: run time=61.8581s
+nprocs=4: run time=45.6472s
+nprocs=4: run time=45.677s
+nprocs=4: run time=45.6477s
+nprocs=8: mesh generation=2358.6s
+nprocs=8: run time=30.9438s
+nprocs=8: run time=22.3345s
+nprocs=8: run time=22.3864s
+nprocs=8: run time=22.2471s
+nprocs=16: mesh generation=1705.39s
+nprocs=16: run time=17.1476s
+nprocs=16: run time=11.6433s
+nprocs=16: run time=11.9226s
+nprocs=16: run time=11.8459s
+nprocs=32: mesh generation=1614.14s
+nprocs=32: run time=11.2642s
+nprocs=32: run time=7.30718s
+nprocs=32: run time=7.26964s
+nprocs=32: run time=7.29664s
+nprocs=64: mesh generation=1662.5s
+nprocs=64: run time=7.59361s
+nprocs=64: run time=4.12894s
+nprocs=64: run time=4.0644s
+nprocs=64: run time=4.1245s
+=>> PBS: job killed: walltime 28844 exceeded limit 28800
+
+====================================
+CPU Time used: 75:19:37
+CPU Percent: 6376%
+Memory usage: 278566988kb
+Approx Power usage: 0.9037999999999999
+Walltime usage: 08:00:56
+
+====================================

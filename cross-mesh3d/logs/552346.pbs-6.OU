@@ -1,0 +1,67 @@
+Running overlapping_strongscaling_3d.py with DOFs=1000000, degree=1, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG1_1000000.csv.
+Job ID: 552346.pbs-6
+Node:   hx1-c04-5-2
+Date:   Mon 27 Apr 20:54:19 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG1_1000000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
+  PBS -l place=excl
+  PBS -l walltime=01:30:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=912.03s
+nprocs=1: run time=18.3025s
+nprocs=1: run time=11.7209s
+nprocs=1: run time=11.8342s
+nprocs=1: run time=11.7889s
+nprocs=2: mesh generation=567.878s
+nprocs=2: run time=10.6027s
+nprocs=2: run time=6.82342s
+nprocs=2: run time=6.84039s
+nprocs=2: run time=6.76607s
+nprocs=4: mesh generation=326.876s
+nprocs=4: run time=5.8549s
+nprocs=4: run time=3.65063s
+nprocs=4: run time=3.64697s
+nprocs=4: run time=3.6232s
+nprocs=8: mesh generation=210.213s
+nprocs=8: run time=3.48532s
+nprocs=8: run time=1.94775s
+nprocs=8: run time=1.93919s
+nprocs=8: run time=1.92913s
+nprocs=16: mesh generation=155.461s
+nprocs=16: run time=2.61293s
+nprocs=16: run time=1.07973s
+nprocs=16: run time=1.00034s
+nprocs=16: run time=1.00422s
+nprocs=32: mesh generation=145.363s
+nprocs=32: run time=1.86014s
+nprocs=32: run time=0.645584s
+nprocs=32: run time=0.592102s
+nprocs=32: run time=0.635713s
+nprocs=64: mesh generation=149.14s
+nprocs=64: run time=2.10647s
+nprocs=64: run time=0.360275s
+nprocs=64: run time=0.377404s
+nprocs=64: run time=0.376987s
+nprocs=128: mesh generation=158.274s
+nprocs=128: run time=2.59826s
+nprocs=128: run time=0.229566s
+nprocs=128: run time=0.279467s
+nprocs=128: run time=0.351415s
+nprocs=256: mesh generation=178.46s
+nprocs=256: run time=3.41632s
+nprocs=256: run time=0.736609s
+nprocs=256: run time=0.730273s
+nprocs=256: run time=0.728761s
+Job completed at Mon 27 Apr 21:44:51 BST 2026.
+
+====================================
+CPU Time used: 12:01:43
+CPU Percent: 6362%
+Memory usage: 43221948kb
+Approx Power usage: 0.14420000000000002
+Walltime usage: 00:50:36
+
+====================================

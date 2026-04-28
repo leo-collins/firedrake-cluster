@@ -1,0 +1,30 @@
+Running overlapping_apply_matrix_3d.py with DOFs=200000, degree=3, on 512 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matrix_3d_CG3_200000.csv.
+Job ID: 552343.pbs-6
+Node:   hx1-c09-4-3
+Date:   Tue 28 Apr 12:19:30 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matrix_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=excl
+  PBS -l walltime=01:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=512: mesh generation=997.66s
+nprocs=512: initial assembly time=9.29253s
+nprocs=512: run0 apply time=0.0322195s
+nprocs=512: run1 apply time=0.0264882s
+nprocs=512: run2 apply time=0.0282245s
+nprocs=512: run3 apply time=0.0269261s
+nprocs=512: run4 apply time=0.0278147s
+nprocs=512: run5 apply time=0.0274246s
+Job completed at Tue 28 Apr 12:36:46 BST 2026.
+
+====================================
+CPU Time used: 17:40:08
+CPU Percent: 6376%
+Memory usage: 92228412kb
+Approx Power usage: 0.212
+Walltime usage: 00:17:36
+
+====================================
