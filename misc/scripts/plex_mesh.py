@@ -14,7 +14,6 @@ n_cores = COMM_WORLD.size
 
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 PETSc.Sys.Print(f"n={n}")
-mesh = BoxMesh(2, 2, 2, 1.0, 1.0, 1.0, hexahedral=True)
 
 t0 = perf_counter_ns()
 plex1 = PETSc.DMPlex().createBoxMesh(
@@ -22,7 +21,7 @@ plex1 = PETSc.DMPlex().createBoxMesh(
     lower=(0.0, 0.0, 0.0),
     upper=(1.0, 1.0, 1.0),
     comm=COMM_WORLD,
-    simplex=False,
+    simplex=True,
 )
 _mark_mesh_boundaries(plex1)
 plex1 = _refine_quads_to_triangles(plex1, "left")
