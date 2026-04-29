@@ -12,7 +12,7 @@ n_cores = COMM_WORLD.size
 
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 PETSc.Sys.Print(f"n={n}")
-sys.exit(0)
+
 t0 = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
 mesh2 = UnitCubeMesh(ceil(1.01*n), ceil(1.01*n), ceil(1.01*n))
@@ -28,4 +28,5 @@ PETSc.Sys.Print(f"Avergae dofs per core: {(W.dim() + V.dim()) / (2 * n_cores):.6
 # print memory usage statistics
 process = psutil.Process()
 mem_info = process.memory_info()
-PETSc.Sys.Print(f"nprocs={n_cores}: memory usage: RSS={mem_info.rss / 1e9:.6g}GB, VMS={mem_info.vms / 1e9:.6g}GB")
+if COMM_WORLD.rank == 0:
+    print(f"nprocs={n_cores}: memory usage: RSS={mem_info.rss / 1e9:.6g}GB, VMS={mem_info.vms / 1e9:.6g}GB")

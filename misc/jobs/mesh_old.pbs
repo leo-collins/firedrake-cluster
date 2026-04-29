@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#PBS -N weakscale_cross_mesh_3d
+#PBS -l select=4:ncpus=64:mpiprocs=64:mem=200gb
+#PBS -l walltime=04:00:00
+#PBS -j oe
+#PBS -o logs/
+
+set -euo pipefail
+export OMP_NUM_THREADS=1
+
+cd $PBS_O_WORKDIR
+cd ../scripts
+
+module load buildenv/default-foss-2025b
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+
+source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+
+NPROCS=${NPROCS:-256}
+DOFS_PER_CORE=${DOFS_PER_CORE:-50000}
+DEGREE=${DEGREE:-1}
+
+echo "Generate meshes with UnitCubeMesh for weak scaling with $DOFS_PER_CORE dofs per core."
+echo "on CG$DEGREE elements."
+echo "Job file:  mesh_hierarchy.pbs"
+echo "Job ID:    $PBS_JOBID"
+echo "Node:      $(hostname)"
+echo "NPROCS:    $NPROCS"
+echo "RAM:       200gb"
+echo "Date:      $(date -Iseconds)"
+
+mpirun -n 256 python mesh_old.py "$DOFS_PER_CORE" "$DEGREE"
+
+echo "Done."

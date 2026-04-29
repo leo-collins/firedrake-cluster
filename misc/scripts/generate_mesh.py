@@ -17,7 +17,7 @@ mesh_path = mesh_dir / f"mesh{n_meshes}_{n_cores}procs_{dofs_per_core}dofs_CG{de
 
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 PETSc.Sys.Print(f"n={n}")
-
+sys.exit(0)
 t0 = perf_counter_ns()
 if n_meshes == 1:
     mesh1 = UnitCubeMesh(n, n, n, name="mesh1")
