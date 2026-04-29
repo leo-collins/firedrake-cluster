@@ -13,12 +13,14 @@
 #PBS -l select=1:ncpus=16:mem=64gb:mpiprocs=16
 #PBS -l walltime=03:00:00
 #PBS -j oe
-#PBS -o firedrake_install2.log
+#PBS -o firedrake_install.log
 
 set -euo pipefail
 
-INSTALL_DIR="$HOME/firedrake-dev2"
-NPROCS=32
+INSTALL_DIR="$HOME/firedrake-dev3"
+rm -rf $INSTALL_DIR
+mkdir $INSTALL_DIR
+NPROCS=16
 
 mkdir -p "$INSTALL_DIR/logs"
 LOGFILE="$INSTALL_DIR/logs/install_foss_$(date +%Y%m%d_%H%M%S).log"
@@ -82,7 +84,8 @@ cd "$PETSC_DIR"
     --download-hypre \
     --download-pnetcdf \
     --download-netcdf \
-    --download-metis
+    --download-metis \
+    --download-ctetgen
 
 # Build PETSc
 echo ""
@@ -106,7 +109,7 @@ echo "Cloning Firedrake"
 if [[ -d "$INSTALL_DIR/firedrake/.git" ]]; then
     echo "  Firedrake already cloned, skipping."
 else
-    git clone git@github.com:firedrakeproject/firedrake.git --branch leo/rust-rstar "$INSTALL_DIR/firedrake"
+    git clone git@github.com:firedrakeproject/firedrake.git --branch leo/distributed-rtree "$INSTALL_DIR/firedrake"
 fi
 
 # Export environment variables

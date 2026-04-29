@@ -24,7 +24,7 @@ DEGREE=${DEGREE:-1}
 
 echo "Generate mesh using plex for weak scaling with $DOFS_PER_CORE dofs per core."
 echo "on CG$DEGREE elements."
-echo "Job file:  mesh_hierarchy.pbs"
+echo "Job file:  mesh_plex.pbs"
 echo "Job ID:    $PBS_JOBID"
 echo "Node:      $(hostname)"
 echo "NPROCS:    $NPROCS"
