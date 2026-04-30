@@ -30,7 +30,7 @@ module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
 module load Python/3.13.5-GCCcore-14.3.0
 
-source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+source "$HOME/firedrake-dev3/venv-firedrake/bin/activate"
 
 NPROCS={total_cpus}
 DOFS={dof_count}
