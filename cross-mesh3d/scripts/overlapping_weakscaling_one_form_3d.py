@@ -31,24 +31,8 @@ n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
-plex1 = PETSc.DMPlex().createBoxMesh(
-    faces=(n, n, n),
-    lower=(0.0, 0.0, 0.0),
-    upper=(1.0, 1.0, 1.0),
-    comm=COMM_WORLD,
-    simplex=True,
-)
-plex2 = PETSc.DMPlex().createBoxMesh(
-    faces=(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n)),
-    lower=(0.0, 0.0, 0.0),
-    upper=(1.0, 1.0, 1.0),
-    comm=COMM_WORLD,
-    simplex=True,
-)
-_mark_mesh_boundaries(plex1)
-_mark_mesh_boundaries(plex2)
-mesh1 = Mesh(plex1)
-mesh2 = Mesh(plex2)
+mesh1 = UnitCubeMesh(n, n, n)
+mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")

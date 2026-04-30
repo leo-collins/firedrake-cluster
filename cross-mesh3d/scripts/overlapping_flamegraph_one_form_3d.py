@@ -24,24 +24,8 @@ if degree < 1:
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
-plex1 = PETSc.DMPlex().createBoxMesh(
-    faces=(n, n, n),
-    lower=(0.0, 0.0, 0.0),
-    upper=(1.0, 1.0, 1.0),
-    comm=COMM_WORLD,
-    simplex=True,
-)
-plex2 = PETSc.DMPlex().createBoxMesh(
-    faces=(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n)),
-    lower=(0.0, 0.0, 0.0),
-    upper=(1.0, 1.0, 1.0),
-    comm=COMM_WORLD,
-    simplex=True,
-)
-_mark_mesh_boundaries(plex1)
-_mark_mesh_boundaries(plex2)
-mesh1 = Mesh(plex1)
-mesh2 = Mesh(plex2)
+mesh1 = UnitCubeMesh(n, n, n)
+mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 PETSc.Sys.Print("Meshes created")
 
 V = FunctionSpace(mesh1, "CG", degree)
