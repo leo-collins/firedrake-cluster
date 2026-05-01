@@ -1,0 +1,30 @@
+Running overlapping_apply_matfree_3d.py with DOFs=200000, degree=3, on 512 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matfree_3d_CG3_200000.csv.
+Job ID: 553995.pbs-6
+Node:   hx1-c05-7-1
+Date:   Fri  1 May 15:25:52 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matfree_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=512: mesh generation=983.078s
+nprocs=512: initial assembly time=7.46897s
+nprocs=512: run0 apply time=0.0749868s
+nprocs=512: run1 apply time=0.0757735s
+nprocs=512: run2 apply time=0.0706987s
+nprocs=512: run3 apply time=0.0670609s
+nprocs=512: run4 apply time=0.0685673s
+nprocs=512: run5 apply time=0.0711074s
+Job completed at Fri  1 May 15:42:39 BST 2026.
+
+====================================
+CPU Time used: 17:07:25
+CPU Percent: 6380%
+Memory usage: 92650940kb
+Approx Power usage: 0.2054
+Walltime usage: 00:16:53
+
+====================================
