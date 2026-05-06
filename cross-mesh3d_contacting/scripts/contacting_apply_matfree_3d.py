@@ -49,9 +49,9 @@ W = FunctionSpace(mesh2, "CG", degree)
 u = Function(V).assign(1.1)
 
 # Assemble matrix-free operator
-interp = interpolate(TrialFunction(V), W)
+interp = interpolate(TrialFunction(V), W, allow_missing_dofs=True)
 t0 = perf_counter_ns()
-I = assemble(interp, mat_type="matfree", allow_missing_dofs=True)
+I = assemble(interp, mat_type="matfree")
 # apply once to build VOM
 assemble(I @ u)
 t1 = perf_counter_ns()
