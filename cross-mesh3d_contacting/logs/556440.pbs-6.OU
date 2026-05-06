@@ -1,0 +1,27 @@
+Running contacting_weakscaling_3d.py with DOFs=200000, degree=3, on 1024 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_weakscaling_3d_CG3_200000.csv.
+Job ID: 556440.pbs-6
+Node:   hx1-c09-3-1
+Date:   Wed  6 May 18:08:22 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=175gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1024: mesh generation=4165.12s
+nprocs=1024: run time=6.08442s
+nprocs=1024: run time=2.01912s
+nprocs=1024: run time=1.89977s
+nprocs=1024: run time=1.78307s
+Job completed at Wed  6 May 19:18:20 BST 2026.
+
+====================================
+CPU Time used: 73:46:43
+CPU Percent: 6366%
+Memory usage: 164367352kb
+Approx Power usage: 0.8852000000000001
+Walltime usage: 01:10:10
+
+====================================

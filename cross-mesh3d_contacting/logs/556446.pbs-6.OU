@@ -1,0 +1,27 @@
+Running contacting_strongscaling_3d.py with DOFs=10000000, degree=3, on 1024 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_strongscaling_3d_CG3_10000000.csv.
+Job ID: 556446.pbs-6
+Node:   hx1-c09-1-1
+Date:   Wed  6 May 19:18:39 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_strongscaling_3d_CG3_10000000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=200gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1024: mesh generation=139.947s
+nprocs=1024: run time=3.00052s
+nprocs=1024: run time=0.338326s
+nprocs=1024: run time=0.320416s
+nprocs=1024: run time=0.754911s
+Job completed at Wed  6 May 19:21:46 BST 2026.
+
+====================================
+CPU Time used: 01:42:47
+CPU Percent: 5037%
+Memory usage: 25471132kb
+Approx Power usage: 0.020399999999999998
+Walltime usage: 00:03:18
+
+====================================
