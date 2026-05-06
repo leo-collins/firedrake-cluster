@@ -1,0 +1,2 @@
+nprocs,pbs_job_id,degree,dofs_per_core,mesh_gen_time_s,run0,run1,run2,run3
+512,556439.pbs-6,3,201512.4453125,1065.401120108,4.663110414,1.540129548,1.500429145,1.506770533
