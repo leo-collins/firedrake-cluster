@@ -1,0 +1,94 @@
+Running contacting_apply_matrix_3d.py with DOFs=200000, degree=3, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matrix_3d_CG3_200000.csv.
+Job ID: 556000.pbs-6
+Node:   hx1-c07-1-1
+Date:   Wed  6 May 01:22:44 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matrix_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=6.99496s
+nprocs=1: initial assembly time=3.36983s
+nprocs=1: run0 apply time=0.0019607s
+nprocs=1: run1 apply time=0.00147403s
+nprocs=1: run2 apply time=0.00112015s
+nprocs=1: run3 apply time=0.00111993s
+nprocs=1: run4 apply time=0.00106025s
+nprocs=1: run5 apply time=0.00112312s
+nprocs=2: mesh generation=8.88605s
+nprocs=2: initial assembly time=1.76596s
+nprocs=2: run0 apply time=0.00292174s
+nprocs=2: run1 apply time=0.00252199s
+nprocs=2: run2 apply time=0.00207581s
+nprocs=2: run3 apply time=0.00205111s
+nprocs=2: run4 apply time=0.00206505s
+nprocs=2: run5 apply time=0.00205195s
+nprocs=4: mesh generation=10.0473s
+nprocs=4: initial assembly time=1.69481s
+nprocs=4: run0 apply time=0.00283759s
+nprocs=4: run1 apply time=0.00215185s
+nprocs=4: run2 apply time=0.0020499s
+nprocs=4: run3 apply time=0.00202921s
+nprocs=4: run4 apply time=0.00192197s
+nprocs=4: run5 apply time=0.00192576s
+nprocs=8: mesh generation=12.9966s
+nprocs=8: initial assembly time=1.69458s
+nprocs=8: run0 apply time=0.00287861s
+nprocs=8: run1 apply time=0.00182708s
+nprocs=8: run2 apply time=0.00176177s
+nprocs=8: run3 apply time=0.00170271s
+nprocs=8: run4 apply time=0.00165869s
+nprocs=8: run5 apply time=0.00163923s
+nprocs=16: mesh generation=18.5015s
+nprocs=16: initial assembly time=2.51932s
+nprocs=16: run0 apply time=0.00310097s
+nprocs=16: run1 apply time=0.00243899s
+nprocs=16: run2 apply time=0.00227717s
+nprocs=16: run3 apply time=0.00208073s
+nprocs=16: run4 apply time=0.00203109s
+nprocs=16: run5 apply time=0.0020139s
+nprocs=32: mesh generation=36.2594s
+nprocs=32: initial assembly time=2.31254s
+nprocs=32: run0 apply time=0.00426342s
+nprocs=32: run1 apply time=0.0032085s
+nprocs=32: run2 apply time=0.00326003s
+nprocs=32: run3 apply time=0.00315618s
+nprocs=32: run4 apply time=0.00313131s
+nprocs=32: run5 apply time=0.00323605s
+nprocs=64: mesh generation=69.8205s
+nprocs=64: initial assembly time=3.48485s
+nprocs=64: run0 apply time=0.0045835s
+nprocs=64: run1 apply time=0.00366357s
+nprocs=64: run2 apply time=0.00394518s
+nprocs=64: run3 apply time=0.0041302s
+nprocs=64: run4 apply time=0.00328447s
+nprocs=64: run5 apply time=0.00324642s
+nprocs=128: mesh generation=154.52s
+nprocs=128: initial assembly time=3.83779s
+nprocs=128: run0 apply time=0.00628965s
+nprocs=128: run1 apply time=0.00469999s
+nprocs=128: run2 apply time=0.00372457s
+nprocs=128: run3 apply time=0.00407512s
+nprocs=128: run4 apply time=0.0053094s
+nprocs=128: run5 apply time=0.00512101s
+nprocs=256: mesh generation=364.366s
+nprocs=256: initial assembly time=4.08656s
+nprocs=256: run0 apply time=0.0071427s
+nprocs=256: run1 apply time=0.00474398s
+nprocs=256: run2 apply time=0.00554648s
+nprocs=256: run3 apply time=0.00524666s
+nprocs=256: run4 apply time=0.00480122s
+nprocs=256: run5 apply time=0.00431315s
+Job completed at Wed  6 May 01:37:05 BST 2026.
+
+====================================
+CPU Time used: 11:16:28
+CPU Percent: 6376%
+Memory usage: 57389408kb
+Approx Power usage: 0.13520000000000001
+Walltime usage: 00:14:33
+
+====================================

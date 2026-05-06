@@ -1,0 +1,35 @@
+Running contacting_apply_matfree_3d.py with DOFs=200000, degree=3, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matfree_3d_CG3_200000.csv.
+Job ID: 555996.pbs-6
+Node:   hx1-c07-1-1
+Date:   Wed  6 May 01:21:30 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matfree_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=7.6818s
+Traceback (most recent call last):
+  File "/gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/scripts/contacting_apply_matfree_3d.py", line 54, in <module>
+    I = assemble(interp, mat_type="matfree", allow_missing_dofs=True)
+  File "petsc4py/PETSc/Log.pyx", line 250, in petsc4py.PETSc.Log.EventDecorator.decorator.wrapped_func
+  File "petsc4py/PETSc/Log.pyx", line 251, in petsc4py.PETSc.Log.EventDecorator.decorator.wrapped_func
+  File "/gpfs/home/lac224/firedrake-dev3/firedrake/firedrake/adjoint_utils/assembly.py", line 30, in wrapper
+    output = assemble(form, *args, **kwargs)
+  File "/gpfs/home/lac224/firedrake-dev3/firedrake/firedrake/assemble.py", line 151, in assemble
+    return get_assembler(expr, *args, **kwargs).assemble(**assemble_kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/home/lac224/firedrake-dev3/firedrake/firedrake/assemble.py", line 193, in get_assembler
+    return BaseFormAssembler(form, *args, **kwargs)
+TypeError: BaseFormAssembler.__init__() got an unexpected keyword argument 'allow_missing_dofs'
+
+====================================
+CPU Time used: 00:00:00
+CPU Percent: 0%
+Memory usage: 0b
+Approx Power usage: 0.0
+Walltime usage: 00:01:08
+
+====================================
