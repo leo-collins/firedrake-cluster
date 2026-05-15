@@ -1,0 +1,27 @@
+Running overlapping_strongscaling_3d.py with DOFs=10000000, degree=3, on 2048 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG3_10000000.csv.
+Job ID: 556993.pbs-6
+Node:   hx1-c09-1-1
+Date:   Wed 13 May 19:24:26 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_strongscaling_3d_CG3_10000000.csv
+PBS params: 
+  PBS -l select=32:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=2048: mesh generation=145.705s
+nprocs=2048: run time=4.98914s
+nprocs=2048: run time=1.22254s
+nprocs=2048: run time=1.052s
+nprocs=2048: run time=1.14274s
+Job completed at Wed 13 May 19:27:34 BST 2026.
+
+====================================
+CPU Time used: 01:32:46
+CPU Percent: 4829%
+Memory usage: 23050904kb
+Approx Power usage: 0.0184
+Walltime usage: 00:03:11
+
+====================================
