@@ -10,26 +10,26 @@ from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
 
-# This tests weak parallel scaling of assembly of cross-mesh interpolation
-# matrices with fully overlapping meshes.
+# This times the pieces of fully-overlapping cross-mesh interpolation applied
+# to a one-form/function.
 # Run with:
-#   mpiexec -n <nprocs> python overlapping_weakscaling_3d.py <dofs_per_core> <degree> [csv_path]
+#   mpiexec -n <nprocs> python overlapping_time_operator_oneform.py <dofs_per_core> <degree> [csv_path]
 
 if len(argv) < 3:
-	raise ValueError("Usage: overlapping_weakscaling_3d.py <dofs_per_core> <degree> [csv_path]")
+    raise ValueError("Usage: overlapping_time_operator_oneform.py <dofs_per_core> <degree> [csv_path]")
 
 n_cores = COMM_WORLD.size
 dofs_per_core = int(argv[1])
 degree = int(argv[2])
 if degree < 1:
-	raise ValueError("degree must be >= 1")
+    raise ValueError("degree must be >= 1")
 csv_path = Path(argv[3]) if len(argv) > 3 else None
 pbs_jobid = argv[4] if len(argv) > 4 else None
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
-# meshes have different number of nodes to force different parallel partitions
+# Meshes have different number of nodes to force different parallel partitions.
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
 mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
@@ -40,7 +40,9 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 V1 = FunctionSpace(mesh1, "CG", degree)
 V2 = FunctionSpace(mesh2, "CG", degree)
 
+
 def run(V1, V2):
+    f = Function(V1).assign(1.1)
     # Omega_v
     V2_element = V2.ufl_element()
     x_i = assemble(interpolate(mesh2.coordinates, VectorFunctionSpace(mesh2, V2_element))).dat.data_ro.reshape(-1, mesh2.geometric_dimension)
@@ -55,44 +57,50 @@ def run(V1, V2):
     Omega_v_io_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
     P0DG_Omega_v = FunctionSpace(Omega_v, "DG", 0)
-	
-    A_interp = interpolate(TrialFunction(V1), P0DG_Omega_v)
+
+    A_interp = interpolate(f, P0DG_Omega_v)
     t0 = perf_counter_ns()
-    A = assemble(A_interp, mat_type="aij")
+    A_f = assemble(A_interp)
     t1 = perf_counter_ns()
     A_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
     P0DG_Omega_v_io = FunctionSpace(Omega_v_io, "DG", 0)
-	
-    B_interp = interpolate(TrialFunction(P0DG_Omega_v), P0DG_Omega_v_io)
+
+    B_interp = interpolate(A_f, P0DG_Omega_v_io)
     t0 = perf_counter_ns()
-    B = assemble(B_interp, mat_type="aij")
+    B_f = assemble(B_interp)
     t1 = perf_counter_ns()
     B_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
+    C_f = Function(V2)
     t0 = perf_counter_ns()
-    AB = assemble(action(B, A))
+    C_f.dat.data_wo[:] = B_f.dat.data_ro[:]
     t1 = perf_counter_ns()
-    AB_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
-	
-    I = interpolate(TrialFunction(V1), V2)
+    C_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+
+
+    I = interpolate(f, V2)
     t0 = perf_counter_ns()
-    I_mat = assemble(I, mat_type="aij")
+    I_f = assemble(I)
     t1 = perf_counter_ns()
     I_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
-    return Omega_v_time_s, Omega_v_io_time_s, A_time_s, B_time_s, AB_time_s, I_time_s
+
+    assert np.allclose(C_f.dat.data_ro, I_f.dat.data_ro)
+
+    return Omega_v_time_s, Omega_v_io_time_s, A_time_s, B_time_s, C_time_s, I_time_s
+
 
 TIMING_NAMES = [
     "Omega_v_time_s",
     "Omega_v_io_time_s",
     "A_time_s",
     "B_time_s",
-    "AB_time_s",
+    "C_time_s",
     "I_time_s",
 ]
 N_RUNS = 10
 
-# warmup run
+# Warmup run.
 run(V1, V2)
 
 run_times_s = []
@@ -106,9 +114,9 @@ if COMM_WORLD.rank == 0:
     if csv_path is not None:
         csv_path.parent.mkdir(parents=True, exist_ok=True)
         write_header = not csv_path.exists() or csv_path.stat().st_size == 0
-        with csv_path.open("a", newline="") as f:
+        with csv_path.open("a", newline="") as csv_file:
             w = csv.DictWriter(
-                f,
+                csv_file,
                 fieldnames=[
                     "nprocs",
                     "pbs_job_id",
