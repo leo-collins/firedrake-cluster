@@ -43,7 +43,7 @@ V2 = FunctionSpace(mesh2, "CG", degree)
 def run(V1, V2):
     # Omega_v
     V2_element = V2.ufl_element()
-    x_i = assemble(interpolate(mesh2.coordinates, VectorFunctionSpace(mesh2, V2_element))).dat.data_ro.reshape(-1, 2)
+    x_i = assemble(interpolate(mesh2.coordinates, VectorFunctionSpace(mesh2, V2_element))).dat.data_ro.reshape(-1, mesh2.geometric_dimension)
     t0 = perf_counter_ns()
     Omega_v = VertexOnlyMesh(mesh1, x_i, redundant=False)
     t1 = perf_counter_ns()
