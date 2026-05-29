@@ -94,11 +94,13 @@ N_RUNS = 10
 
 # warmup run
 run(V1, V2)
+PETSc.Sys.Print(f"nprocs={n_cores}: completed warmup run")
 
 run_times_s = []
-for _ in range(N_RUNS):
+for i in range(N_RUNS):
     COMM_WORLD.barrier()
     run_times_s.append(run(V1, V2))
+    PETSc.Sys.Print(f"nprocs={n_cores}: completed run {i}")
 
 average_dofs_per_core = (V2.dim() + V1.dim()) / (2 * n_cores)
 
