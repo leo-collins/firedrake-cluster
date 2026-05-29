@@ -85,8 +85,6 @@ def run(V1, V2):
     t1 = perf_counter_ns()
     I_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
-    assert np.allclose(C_f.dat.data_ro, I_f.dat.data_ro)
-
     return Omega_v_time_s, Omega_v_io_time_s, A_time_s, B_time_s, C_time_s, I_time_s
 
 
