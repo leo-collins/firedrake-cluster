@@ -1,4 +1,5 @@
 import csv
+import gc
 from math import floor, ceil
 from pathlib import Path
 from sys import argv
@@ -100,6 +101,7 @@ N_RUNS = 10
 
 # Warmup run.
 run(V1, V2)
+gc.collect()
 PETSc.Sys.Print(f"nprocs={n_cores}: completed warmup run")
 
 run_times_s = []
@@ -107,6 +109,7 @@ for i in range(N_RUNS):
     COMM_WORLD.barrier()
     run_times_s.append(run(V1, V2))
     PETSc.Sys.Print(f"nprocs={n_cores}: completed run {i}")
+    gc.collect()
 
 average_dofs_per_core = (V2.dim() + V1.dim()) / (2 * n_cores)
 
