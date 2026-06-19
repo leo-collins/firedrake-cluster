@@ -1,5 +1,7 @@
 from math import ceil, floor
 from sys import argv
+from time import perf_counter_ns
+from mpi4py import MPI
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -34,9 +36,21 @@ W = FunctionSpace(mesh2, "CG", degree)
 interp = interpolate(TrialFunction(V), W)
 
 with PETSc.Log.Event("run0"):
+    t0 = perf_counter_ns()
     assemble(interp, mat_type="aij")
+    t1 = perf_counter_ns()
+
+t = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+PETSc.Sys.Print(f"run0: {t:.6f} s")
 
 del interp._interpolator
+mesh1._clear_caches()
+mesh2._clear_caches()
 
 with PETSc.Log.Event("run1"):
+    t0 = perf_counter_ns()
     assemble(interp, mat_type="aij")
+    t1 = perf_counter_ns()
+
+t = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+PETSc.Sys.Print(f"run1: {t:.6f} s")
