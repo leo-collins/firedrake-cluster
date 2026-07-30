@@ -1,0 +1,34 @@
+Running overlapping_time_operator_oneform.py with DOFs=200000, degree=3, on 64 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_time_operator_oneform_CG3_200000.csv.
+Job ID: 572434.pbs-6
+Node:   hx1-c03-4-4
+Date:   Fri 29 May 13:38:11 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_time_operator_oneform_CG3_200000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=64: mesh generation=73.5274s
+nprocs=64: completed warmup run
+nprocs=64: completed run 0
+nprocs=64: completed run 1
+nprocs=64: completed run 2
+nprocs=64: completed run 3
+nprocs=64: completed run 4
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 3678977 on node hx1-c03-4-4 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 00:44:55
+CPU Percent: 4038%
+Memory usage: 29777616kb
+Approx Power usage: 0.008799999999999999
+Walltime usage: 00:02:49
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=572434.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/572434.pbs-6,task_memcg=/pbs_jobs.service/jobid/572434.pbs-6,task=python,pid=3679006,uid=1831114
+

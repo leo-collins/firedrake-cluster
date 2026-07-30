@@ -1,0 +1,30 @@
+Running overlapping_apply_matrix_3d.py with DOFs=200000, degree=3, on 512 processes.
+Results will be saved to results/overlapping_apply_matrix_3d_CG3_200000.csv.
+Job ID: 552333.pbs-6
+Node:   hx1-c09-4-3
+Date:   Tue 28 Apr 12:01:25 BST 2026
+CSV:    results/overlapping_apply_matrix_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=excl
+  PBS -l walltime=01:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=512: mesh generation=1003.48s
+nprocs=512: initial assembly time=10.4231s
+nprocs=512: run0 apply time=0.0297719s
+nprocs=512: run1 apply time=0.0287717s
+nprocs=512: run2 apply time=0.0279193s
+nprocs=512: run3 apply time=0.0271654s
+nprocs=512: run4 apply time=0.0294757s
+nprocs=512: run5 apply time=0.029076s
+Job completed at Tue 28 Apr 12:19:02 BST 2026.
+
+====================================
+CPU Time used: 17:15:24
+CPU Percent: 6376%
+Memory usage: 92720352kb
+Approx Power usage: 0.207
+Walltime usage: 00:18:03
+
+====================================

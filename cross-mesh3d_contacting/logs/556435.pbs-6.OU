@@ -1,0 +1,30 @@
+Running contacting_apply_matfree_3d.py with DOFs=200000, degree=3, on 1024 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matfree_3d_CG3_200000.csv.
+Job ID: 556435.pbs-6
+Node:   hx1-c09-3-1
+Date:   Wed  6 May 10:23:07 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_apply_matfree_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=175gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1024: mesh generation=3085.35s
+nprocs=1024: initial assembly time=5.15235s
+nprocs=1024: run0 apply time=0.041262s
+nprocs=1024: run1 apply time=0.0444232s
+nprocs=1024: run2 apply time=0.0784684s
+nprocs=1024: run3 apply time=0.0544135s
+nprocs=1024: run4 apply time=0.0317621s
+nprocs=1024: run5 apply time=0.138916s
+Job completed at Wed  6 May 11:15:22 BST 2026.
+
+====================================
+CPU Time used: 54:04:44
+CPU Percent: 6376%
+Memory usage: 164562708kb
+Approx Power usage: 0.6488
+Walltime usage: 00:52:36
+
+====================================

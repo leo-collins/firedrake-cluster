@@ -1,0 +1,67 @@
+Running contacting_weakscaling_3d.py with DOFs=200000, degree=3, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_weakscaling_3d_CG3_200000.csv.
+Job ID: 556438.pbs-6
+Node:   hx1-c07-6-4
+Date:   Wed  6 May 18:10:26 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/contacting_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=7.61523s
+nprocs=1: run time=2.68077s
+nprocs=1: run time=0.762983s
+nprocs=1: run time=0.76339s
+nprocs=1: run time=0.761101s
+nprocs=2: mesh generation=8.67207s
+nprocs=2: run time=1.68869s
+nprocs=2: run time=0.81628s
+nprocs=2: run time=0.81582s
+nprocs=2: run time=0.816526s
+nprocs=4: mesh generation=10.018s
+nprocs=4: run time=1.68155s
+nprocs=4: run time=0.797255s
+nprocs=4: run time=0.792525s
+nprocs=4: run time=0.816052s
+nprocs=8: mesh generation=12.5918s
+nprocs=8: run time=1.67586s
+nprocs=8: run time=0.794538s
+nprocs=8: run time=0.796633s
+nprocs=8: run time=0.802983s
+nprocs=16: mesh generation=18.4497s
+nprocs=16: run time=1.80119s
+nprocs=16: run time=0.887995s
+nprocs=16: run time=0.846712s
+nprocs=16: run time=0.89646s
+nprocs=32: mesh generation=34.5586s
+nprocs=32: run time=2.76069s
+nprocs=32: run time=1.10439s
+nprocs=32: run time=1.12091s
+nprocs=32: run time=1.06628s
+nprocs=64: mesh generation=74.2316s
+nprocs=64: run time=3.52135s
+nprocs=64: run time=1.24056s
+nprocs=64: run time=1.24682s
+nprocs=64: run time=1.24022s
+nprocs=128: mesh generation=169.096s
+nprocs=128: run time=3.91341s
+nprocs=128: run time=1.33428s
+nprocs=128: run time=1.3179s
+nprocs=128: run time=1.35059s
+nprocs=256: mesh generation=421.712s
+nprocs=256: run time=4.04967s
+nprocs=256: run time=1.44524s
+nprocs=256: run time=1.42325s
+nprocs=256: run time=1.54015s
+Job completed at Wed  6 May 18:26:25 BST 2026.
+
+====================================
+CPU Time used: 12:06:00
+CPU Percent: 6368%
+Memory usage: 57717628kb
+Approx Power usage: 0.1452
+Walltime usage: 00:16:09
+
+====================================

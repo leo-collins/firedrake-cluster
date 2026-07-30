@@ -1,9 +1,9 @@
 import csv
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter
 import numpy as np
 from pathlib import Path
 
-PLOT_MASS_MATRIX = True
 
 def get_data(csv_path: Path):
     data = []
@@ -20,165 +20,359 @@ def get_data(csv_path: Path):
             })
     return data
 
-def plot_weakscaling(dofs_per_core: int, degree: int, job_id: str, one_form: bool = False):
-    if one_form:
-        prefix = "overlapping_weakscaling_oneform"
-    else:
-        prefix = "overlapping_weakscaling"
-    output_path = Path(__file__).parent / "img" / f"{prefix}_3d_CG{degree}_{dofs_per_core}_{job_id}.png"
-    csv_path = Path(__file__).parent.parent / "scripts" / "results" / f"{prefix}_3d_CG{degree}_{dofs_per_core}_{job_id}.csv"
+def get_data_apply(csv_path: Path):
+    data = []
+    with csv_path.open() as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            data.append({
+                "nprocs": int(row["nprocs"]),
+                "dofs_per_core": float(row["dofs_per_core"]),
+                "apply0": float(row["apply0"]),
+                "apply1": float(row["apply1"]),
+                "apply2": float(row["apply2"]),
+                "apply3": float(row["apply3"]),
+                "apply4": float(row["apply4"]),
+                "apply5": float(row["apply5"]),
+            })
+    return data
+
+def overlapping_weakscaling_3d(dofs_per_core: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_weakscaling_3d_CG{degree}_{dofs_per_core}.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_weakscaling_3d_CG{degree}_{dofs_per_core}.csv"
     data = get_data(csv_path)
     
-    nprocs = [d["nprocs"] for d in data]
-    run_times = np.array([[d["run1"], d["run2"], d["run3"]] for d in data])
-    average_run_times = np.mean(run_times, axis=1)
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
 
-    plt.figure()
-    plt.plot(nprocs, average_run_times, marker="o")
-    # plot line at 64 cores
-    plt.axvline(x=64, color="red", linestyle="--", label="64 cores", alpha=0.3)
-    plt.legend()
-    plt.xscale("log", base=2)
-    plt.ylim(0, None)
-    plt.xlabel("Number of processes")
-    plt.ylabel("Average run time (s)")
-    plt.title(f"Weak scaling of cross-mesh interpolation matrix assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
-    plt.grid(True, which="both", ls="--")
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, average_run_times, marker="o")
+    ax.set_xscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.set_ylim(0, None)
+    ax.set_xlabel("Number of cores")
+    ax.set_ylabel("Average run time (s)")
+    ax.set_title(f"Weak scaling of cross-mesh interpolation matrix assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
     plt.savefig(output_path, dpi=300)
 
-def plot_weakscaling_efficiency(dofs_per_core: int, degree: int, job_id: str, one_form: bool = False):
-    if one_form:
-        prefix = "overlapping_weakscaling_oneform"
-    else:
-        prefix = "overlapping_weakscaling"
-    output_path = Path(__file__).parent / "img" / f"{prefix}_3d_CG{degree}_{dofs_per_core}_{job_id}_efficiency.png"
-    csv_path = Path(__file__).parent.parent / "scripts" / "results" / f"{prefix}_3d_CG{degree}_{dofs_per_core}_{job_id}.csv"
+
+def overlapping_weakscaling_3d_efficiency(dofs_per_core: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_weakscaling_3d_CG{degree}_{dofs_per_core}_efficiency.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_weakscaling_3d_CG{degree}_{dofs_per_core}.csv"
     data = get_data(csv_path)
     
-    nprocs = [d["nprocs"] for d in data]
-    run_times = np.array([[d["run1"], d["run2"], d["run3"]] for d in data])
-    average_run_times = np.mean(run_times, axis=1)
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
 
-    efficiency = average_run_times[0] / average_run_times
-
-    plt.figure()
-    plt.plot(nprocs, efficiency, marker="o")
-    # plot perfect efficiency line
-    plt.plot(nprocs, np.ones_like(nprocs), linestyle="--", label="Perfect efficiency", color="black", alpha=0.7)
-    # plot line at 64 cores
-    plt.axvline(x=64, color="red", linestyle="--", label="64 cores", alpha=0.3)
-    plt.legend()
-    plt.xscale("log", base=2)
-    plt.xlabel("Number of processes")
-    plt.ylabel("Efficiency")
-    plt.ylim(0, 1.05)
-    plt.title(f"Weak scaling efficiency of cross-mesh interpolation assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
-    plt.grid(True, which="both", ls="--")
+    intranode_efficiency = average_run_times[0] / average_run_times[:7]
+    internode_efficiency = average_run_times[6] / average_run_times[6:]
+    fig = plt.figure(figsize=(10, 6))
+    ax1, ax2 = fig.subplots(1, 2, sharey=True)
+    # Plot intranode efficiency
+    ax1.plot(nprocs[:7], intranode_efficiency, marker="o")
+    ax1.set_xscale("log", base=2)
+    ax1.xaxis.set_major_formatter(ScalarFormatter())
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlabel("Number of cores")
+    ax1.set_ylabel("Efficiency")
+    ax1.set_title("Intranode efficiency")
+    ax1.grid(True, which="both", ls="--")
+    # Plot internode efficiency
+    ax2.plot(nprocs[6:], internode_efficiency, marker="o")
+    ax2.set_xscale("log", base=2)
+    ax2.xaxis.set_major_formatter(ScalarFormatter())
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlabel("Number of cores")
+    ax2.set_title("Internode efficiency")
+    ax2.grid(True, which="both", ls="--")
+    fig.suptitle(f"Weak scaling efficiency of cross-mesh interpolation assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
+    fig.tight_layout()
     plt.savefig(output_path, dpi=300)
 
-def plot_strongscaling_speedup(total_dofs: int, degree: int, job_id: str):
-    output_path = Path(__file__).parent / "img" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}_speedup.png"
-    csv_path = Path(__file__).parent.parent / "scripts" / "results" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}.csv"
+def overlapping_strongscaling_3d_speedup(total_dofs: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_speedup.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}.csv"
     data = get_data(csv_path)
     
-    nprocs = [d["nprocs"] for d in data]
-    # exclude run0 as it includes setup costs
-    run_times = np.array([[d["run1"], d["run2"], d["run3"]] for d in data])
-    average_run_times = np.mean(run_times, axis=1)
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
 
     speedup = average_run_times[0] / average_run_times
     perfect_speedup = np.array(nprocs) / nprocs[0]
 
-    plt.figure()
-    plt.plot(nprocs, speedup, marker="o")
-    plt.plot(nprocs, perfect_speedup, linestyle="--", label="Perfect speedup", color="black", alpha=0.7)
-    plt.legend()
-    plt.xscale("log", base=2)
-    plt.yscale("log", base=2)
-    plt.xlabel("Number of processes")
-    plt.ylabel("Speedup")
-    plt.title(f"Strong scaling speedup of cross-mesh interpolation matrix assembly \n (CG{degree}, total dofs={total_dofs:,})")
-    plt.grid(True, which="both", ls="--")
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, speedup, marker="o")
+    ax.plot(nprocs, perfect_speedup, linestyle="--", label="Perfect speedup", color="black", alpha=0.7)
+    ax.legend()
+    ax.set_xscale("log", base=2)
+    ax.set_yscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.yaxis.set_major_formatter(ScalarFormatter())
+    ax.set_xlabel("Number of processes")
+    ax.set_ylabel("Speedup")
+    ax.set_title(f"Strong scaling speedup of cross-mesh interpolation matrix assembly \n (CG{degree}, total dofs={total_dofs:,})")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
     plt.savefig(output_path, dpi=300)
 
 
-def plot_strongscaling_efficiency(total_dofs: int, degree: int, job_id: str):
-    output_path = Path(__file__).parent / "img" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}_efficiency.png"
-    csv_path = Path(__file__).parent.parent / "scripts" / "results" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}.csv"
+def overlapping_strongscaling_3d_efficiency(total_dofs: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_efficiency.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}.csv"
     data = get_data(csv_path)
     
-    nprocs = [d["nprocs"] for d in data]
-    run_times = np.array([[d["run0"], d["run1"], d["run2"], d["run3"]] for d in data])
-    average_run_times = np.mean(run_times, axis=1)
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
 
     speedup = average_run_times[0] / average_run_times
     efficiency = speedup / nprocs
 
-    plt.figure()
-    plt.plot(nprocs, efficiency, marker="o")
-    # plt.xscale("log", base=2)
-    plt.xlabel("Number of processes")
-    plt.ylabel("Efficiency")
-    plt.title("Strong scaling efficiency of cross-mesh interpolation assembly")
-    plt.grid(True, which="both", ls="--")
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, efficiency, marker="o")
+    ax.set_xscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.set_ylim(0, 1.05)
+    ax.set_xlabel("Number of processes")
+    ax.set_ylabel("Efficiency")
+    ax.set_title(f"Strong scaling efficiency of cross-mesh interpolation matrix assembly \n (CG{degree}, total dofs={total_dofs:,})")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
     plt.savefig(output_path, dpi=300)
 
 
-def plot_strongscaling_loglog(total_dofs: int, degree: int, job_id: str):
-    output_path = Path(__file__).parent / "img" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}.png"
-    csv_path = Path(__file__).parent.parent / "scripts" / "results" / f"overlapping_strongscaling_3d_CG{degree}_{total_dofs}_{job_id}.csv"
+def overlapping_apply_matfree_3d_weakscaling(degree: int, dofs: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_apply_matfree_3d_CG{degree}_{dofs}_apply.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_apply_matfree_3d_CG{degree}_{dofs}.csv"
+    data = get_data_apply(csv_path)
+    
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["apply0"], d["apply1"], d["apply2"], d["apply3"], d["apply4"], d["apply5"]])
+        average_run_time = np.mean(np.sort(run_times)[:3])  # take average of fastest 3 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
+
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, average_run_times, marker="o")
+    ax.set_xscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.set_ylim(0, None)
+    ax.set_xlabel("Number of cores")
+    ax.set_ylabel("Average run time (s)")
+    ax.set_title(f"Application of matfree cross-mesh interpolation operator \n (CG{degree}, dofs per core={dofs:,})")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
+    plt.savefig(output_path, dpi=300)
+
+def overlapping_apply_matfree_3d_weakscaling_efficiency(degree: int, dofs: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_apply_matfree_3d_CG{degree}_{dofs}_apply_efficiency.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_apply_matfree_3d_CG{degree}_{dofs}.csv"
+    data = get_data_apply(csv_path)
+    
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["apply0"], d["apply1"], d["apply2"], d["apply3"], d["apply4"], d["apply5"]])
+        average_run_time = np.mean(np.sort(run_times)[:3])  # take average of fastest 3 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
+
+    intranode_efficiency = average_run_times[0] / average_run_times[:7]
+    internode_efficiency = average_run_times[6] / average_run_times[6:]
+
+    fig = plt.figure(figsize=(10, 6))
+    ax1, ax2 = fig.subplots(1, 2, sharey=True)
+    # Plot intranode efficiency
+    ax1.plot(nprocs[:7], intranode_efficiency, marker="o")
+    ax1.set_xscale("log", base=2)
+    ax1.xaxis.set_major_formatter(ScalarFormatter())
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlabel("Number of cores")
+    ax1.set_ylabel("Efficiency")
+    ax1.set_title("Intranode efficiency")
+    ax1.grid(True, which="both", ls="--")
+    # Plot internode efficiency
+    ax2.plot(nprocs[6:], internode_efficiency, marker="o")
+    ax2.set_xscale("log", base=2)
+    ax2.xaxis.set_major_formatter(ScalarFormatter())
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlabel("Number of cores")
+    ax2.set_title("Internode efficiency")
+    ax2.grid(True, which="both", ls="--")
+    fig.suptitle(f"Application of matfree cross-mesh interpolation operator \n (CG{degree}, dofs per core={dofs:,})")
+    fig.tight_layout()
+    plt.savefig(output_path, dpi=300)
+
+
+def overlapping_apply_matrix_3d_weakscaling(degree: int, dofs: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_apply_matrix_3d_CG{degree}_{dofs}_apply.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_apply_matrix_3d_CG{degree}_{dofs}.csv"
+    data = get_data_apply(csv_path)
+    
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["apply0"], d["apply1"], d["apply2"], d["apply3"], d["apply4"], d["apply5"]])
+        average_run_time = np.mean(np.sort(run_times)[:3])  # take average of fastest 3 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
+
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, average_run_times, marker="o")
+    ax.set_xscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.set_ylim(0, None)
+    ax.set_xlabel("Number of cores")
+    ax.set_ylabel("Average run time (s)")
+    ax.set_title(f"Application of cross-mesh interpolation matrix \n (CG{degree}, dofs per core={dofs:,})")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
+    plt.savefig(output_path, dpi=300)
+
+def overlapping_apply_matrix_3d_weakscaling_efficiency(degree: int, dofs: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_apply_matrix_3d_CG{degree}_{dofs}_apply_efficiency.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_apply_matrix_3d_CG{degree}_{dofs}.csv"
+    data = get_data_apply(csv_path)
+    
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["apply0"], d["apply1"], d["apply2"], d["apply3"], d["apply4"], d["apply5"]])
+        average_run_time = np.mean(np.sort(run_times)[:3])  # take average of fastest 3 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
+
+    intranode_efficiency = average_run_times[0] / average_run_times[:7]
+    internode_efficiency = average_run_times[6] / average_run_times[6:]
+
+    fig = plt.figure(figsize=(10, 6))
+    ax1, ax2 = fig.subplots(1, 2, sharey=True)
+    # Plot intranode efficiency
+    ax1.plot(nprocs[:7], intranode_efficiency, marker="o")
+    ax1.set_xscale("log", base=2)
+    ax1.xaxis.set_major_formatter(ScalarFormatter())
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlabel("Number of cores")
+    ax1.set_ylabel("Efficiency")
+    ax1.set_title("Intranode efficiency")
+    ax1.grid(True, which="both", ls="--")
+    # Plot internode efficiency
+    ax2.plot(nprocs[6:], internode_efficiency, marker="o")
+    ax2.set_xscale("log", base=2)
+    ax2.xaxis.set_major_formatter(ScalarFormatter())
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlabel("Number of cores")
+    ax2.set_title("Internode efficiency")
+    ax2.grid(True, which="both", ls="--")
+    fig.suptitle(f"Application of cross-mesh interpolation matrix \n (CG{degree}, dofs per core={dofs:,})")
+    fig.tight_layout()
+    plt.savefig(output_path, dpi=300)
+
+
+def overlapping_weakscaling_oneform_3d(dofs_per_core: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_weakscaling_oneform_3d_CG{degree}_{dofs_per_core}.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_weakscaling_one_form_3d_CG{degree}_{dofs_per_core}.csv"
     data = get_data(csv_path)
     
-    nprocs = [d["nprocs"] for d in data]
-    # exclude run0 as it includes setup costs
-    run_times = np.array([[d["run1"], d["run2"], d["run3"]] for d in data])
-    average_run_times = np.mean(run_times, axis=1)
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
 
-    plt.figure()
-    plt.plot(nprocs, average_run_times, marker="o")
-    # Plot theoretical perfect scaling line
-    perfect_run_times = average_run_times[0] / np.array(nprocs)
-    plt.plot(nprocs, perfect_run_times, linestyle="--", label="Perfect scaling", color="black", alpha=0.7)
-    plt.legend()
-    plt.xscale("log", base=2)
-    plt.yscale("log", base=10)
-    plt.xlabel("Number of ranks")
-    plt.ylabel("Average run time (s)")
-    plt.title(f"Strong scaling of cross-mesh interpolation matrix assembly \n (CG{degree}, total dofs={total_dofs:,})")
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    ax.plot(nprocs, average_run_times, marker="o")
+    ax.set_xscale("log", base=2)
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.set_ylim(0, None)
+    ax.set_xlabel("Number of cores")
+    ax.set_ylabel("Average run time (s)")
+    ax.set_title(f"Weak scaling of one-form cross-mesh interpolation assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
+    ax.grid(True, which="both", ls="--")
+    fig.tight_layout()
+    plt.savefig(output_path, dpi=300)
 
-    plt.grid(True, which="both", ls="--", alpha=0.5)
-    plt.tight_layout()
+
+def overlapping_weakscaling_oneform_3d_efficiency(dofs_per_core: int, degree: int):
+    output_path = Path(__file__).parent / "img" / f"overlapping_weakscaling_oneform_3d_CG{degree}_{dofs_per_core}_efficiency.png"
+    csv_path = Path(__file__).parent.parent / "results" / f"overlapping_weakscaling_one_form_3d_CG{degree}_{dofs_per_core}.csv"
+    data = get_data(csv_path)
+    
+    nprocs = []
+    average_run_times = []
+    for d in data:
+        run_times = np.array([d["run0"], d["run1"], d["run2"], d["run3"]])
+        average_run_time = np.mean(np.sort(run_times)[:2])  # take average of fastest 2 runs
+        average_run_times.append(average_run_time)
+        nprocs.append(d["nprocs"])
+
+    intranode_efficiency = average_run_times[0] / average_run_times[:7]
+    internode_efficiency = average_run_times[6] / average_run_times[6:]
+
+    fig = plt.figure(figsize=(10, 6))
+    ax1, ax2 = fig.subplots(1, 2, sharey=True)
+    # Plot intranode efficiency
+    ax1.plot(nprocs[:7], intranode_efficiency, marker="o")
+    ax1.set_xscale("log", base=2)
+    ax1.xaxis.set_major_formatter(ScalarFormatter())
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlabel("Number of cores")
+    ax1.set_ylabel("Efficiency")
+    ax1.set_title("Intranode efficiency")
+    ax1.grid(True, which="both", ls="--")
+    # Plot internode efficiency
+    ax2.plot(nprocs[6:], internode_efficiency, marker="o")
+    ax2.set_xscale("log", base=2)
+    ax2.xaxis.set_major_formatter(ScalarFormatter())
+    ax2.set_ylim(0, 1.05)
+    ax2.set_xlabel("Number of cores")
+    ax2.set_title("Internode efficiency")
+    ax2.grid(True, which="both", ls="--")
+    fig.suptitle(f"Weak scaling efficiency of one-form cross-mesh interpolation assembly \n (CG{degree}, {dofs_per_core} dofs/core)")
+    fig.tight_layout()
     plt.savefig(output_path, dpi=300)
 
 if __name__ == "__main__":
-    # strong scaling CG3 10M dofs
-    plot_strongscaling_speedup(10000000, 3, "542212.pbs-6")
-    plot_strongscaling_loglog(10000000, 3, "542212.pbs-6")
+    overlapping_apply_matfree_3d_weakscaling(degree=3, dofs=200_000)
+    overlapping_apply_matfree_3d_weakscaling_efficiency(degree=3, dofs=200_000)
+    overlapping_apply_matrix_3d_weakscaling(degree=3, dofs=200_000)
+    overlapping_apply_matrix_3d_weakscaling_efficiency(degree=3, dofs=200_000)
+    overlapping_weakscaling_3d(dofs_per_core=200_000, degree=3)
+    overlapping_weakscaling_3d_efficiency(dofs_per_core=200_000, degree=3)
 
-    # strong scaling CG3 1M dofs
-    plot_strongscaling_speedup(1000000, 3, "542214.pbs-6")
-    plot_strongscaling_loglog(1000000, 3, "542214.pbs-6")
+    overlapping_strongscaling_3d_speedup(total_dofs=10_000_000, degree=3)
+    overlapping_strongscaling_3d_efficiency(total_dofs=10_000_000, degree=3)
 
-    # weak scaling CG3 1M dofs/core
-    plot_weakscaling(1000000, 3, "542222.pbs-6")
-    plot_weakscaling_efficiency(1000000, 3, "542222.pbs-6")
-
-    # weak scaling CG3 100k dofs/core
-    plot_weakscaling(100000, 3, "542223.pbs-6")
-    plot_weakscaling_efficiency(100000, 3, "542223.pbs-6")
-
-    # weak scaling CG3 10k dofs/core
-    plot_weakscaling(10000, 3, "542225.pbs-6")
-    plot_weakscaling_efficiency(10000, 3, "542225.pbs-6")
-
-    # plot weak scaling oneform CG3 10k dofs/core
-    plot_weakscaling(10000, 3, "542236.pbs-6", one_form=True)
-    plot_weakscaling_efficiency(10000, 3, "542236.pbs-6", one_form=True)
-
-    # plot weak scaling oneform CG3 100k dofs/core
-    plot_weakscaling(100000, 3, "542235.pbs-6", one_form=True)
-    plot_weakscaling_efficiency(100000, 3, "542235.pbs-6", one_form=True)
-
-    # plot weak scaling oneform CG3 1M dofs/core
-    plot_weakscaling(1000000, 3, "542233.pbs-6", one_form=True)
-    plot_weakscaling_efficiency(1000000, 3, "542233.pbs-6", one_form=True)
+    overlapping_weakscaling_oneform_3d(dofs_per_core=200_000, degree=3)
+    overlapping_weakscaling_oneform_3d_efficiency(dofs_per_core=200_000, degree=3)

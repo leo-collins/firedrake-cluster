@@ -1,0 +1,30 @@
+Running overlapping_apply_matfree_3d.py with DOFs=50000, degree=3, on 256 processes.
+Results will be saved to scripts/results/overlapping_apply_matfree_3d_CG3_50000.csv.
+Job ID: 552292.pbs-6
+Node:   hx1-c04-7-2
+Date:   Mon 27 Apr 16:52:07 BST 2026
+CSV:    scripts/results/overlapping_apply_matfree_3d_CG3_50000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=00:30:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=256: mesh generation=85.4857s
+nprocs=256: initial assembly time=5.43974s
+nprocs=256: run0 apply time=0.0263453s
+nprocs=256: run1 apply time=0.0247658s
+nprocs=256: run2 apply time=0.032828s
+nprocs=256: run3 apply time=0.0309316s
+nprocs=256: run4 apply time=0.0263856s
+nprocs=256: run5 apply time=0.0268136s
+Job completed at Mon 27 Apr 16:54:23 BST 2026.
+
+====================================
+CPU Time used: 00:01:26
+CPU Percent: 282%
+Memory usage: 10636292kb
+Approx Power usage: 0.0002
+Walltime usage: 00:02:30
+
+====================================

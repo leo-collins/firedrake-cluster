@@ -1,0 +1,60 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 256 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 552349.pbs-6
+Node:   hx1-c04-5-2
+Date:   Tue 28 Apr 05:46:09 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=excl
+  PBS -l walltime=00:30:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=7.42351s
+nprocs=1: run time=3.84497s
+nprocs=1: run time=2.61362s
+nprocs=1: run time=2.57399s
+nprocs=1: run time=2.55955s
+nprocs=2: mesh generation=8.68285s
+nprocs=2: run time=3.88726s
+nprocs=2: run time=2.9875s
+nprocs=2: run time=2.99101s
+nprocs=2: run time=2.98809s
+nprocs=4: mesh generation=9.91824s
+nprocs=4: run time=3.99196s
+nprocs=4: run time=3.05581s
+nprocs=4: run time=3.06379s
+nprocs=4: run time=3.06586s
+nprocs=8: mesh generation=12.5805s
+nprocs=8: run time=4.03446s
+nprocs=8: run time=3.13233s
+nprocs=8: run time=3.14144s
+nprocs=8: run time=3.1355s
+nprocs=16: mesh generation=18.2081s
+nprocs=16: run time=4.28447s
+nprocs=16: run time=3.63993s
+nprocs=16: run time=3.36865s
+nprocs=16: run time=3.37711s
+nprocs=32: mesh generation=35.9785s
+nprocs=32: run time=5.5492s
+nprocs=32: run time=4.44607s
+nprocs=32: run time=4.45016s
+nprocs=32: run time=4.42951s
+nprocs=64: mesh generation=72.3425s
+nprocs=64: run time=7.12493s
+nprocs=64: run time=5.36128s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 3843078 on node hx1-c04-5-2 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 02:26:27
+CPU Percent: 5431%
+Memory usage: 91383940kb
+Approx Power usage: 0.029200000000000004
+Walltime usage: 00:05:46
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=552349.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/552349.pbs-6,task_memcg=/pbs_jobs.service/jobid/552349.pbs-6,task=python,pid=3843078,uid=1831114
+

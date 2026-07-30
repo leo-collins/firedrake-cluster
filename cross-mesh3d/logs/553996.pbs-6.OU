@@ -1,0 +1,27 @@
+Running overlapping_apply_matfree_3d.py with DOFs=200000, degree=3, on 1024 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matfree_3d_CG3_200000.csv.
+Job ID: 553996.pbs-6
+Node:   hx1-c09-3-2
+Date:   Tue  5 May 06:40:58 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/overlapping_apply_matfree_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=100gb
+  PBS -l place=free
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+--------------------------------------------------------------------------
+prterun noticed that process rank 127 with PID 3392942 on node hx1-c09-3-3 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 00:00:00
+CPU Percent: 0%
+Memory usage: 0b
+Approx Power usage: 0.0
+Walltime usage: 00:00:57
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=553996.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/553996.pbs-6,task_memcg=/pbs_jobs.service/jobid/553996.pbs-6,task=python,pid=2577101,uid=1831114
+

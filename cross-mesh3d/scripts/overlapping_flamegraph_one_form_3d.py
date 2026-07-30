@@ -4,6 +4,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from firedrake import *
+from firedrake.utility_meshes import _mark_mesh_boundaries
 
 # This tests weak parallel scaling of assembly of cross-mesh interpolation
 # matrices with fully overlapping meshes.
@@ -24,7 +25,7 @@ n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
 mesh1 = UnitCubeMesh(n, n, n)
-mesh2 = UnitCubeMesh(ceil(1.01*n), ceil(1.01*n), ceil(1.01*n))
+mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 PETSc.Sys.Print("Meshes created")
 
 V = FunctionSpace(mesh1, "CG", degree)

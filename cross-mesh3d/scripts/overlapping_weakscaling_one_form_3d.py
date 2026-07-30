@@ -7,6 +7,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from firedrake import *
+from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
 
 # This tests weak parallel scaling of assembly of cross-mesh interpolation
@@ -23,6 +24,7 @@ degree = int(argv[2])
 if degree < 1:
 	raise ValueError("degree must be >= 1")
 csv_path = Path(argv[3]) if len(argv) > 3 else None
+pbs_jobid = argv[4] if len(argv) > 4 else None
 
 # For UnitCubeMesh, dim(CG(degree)) = (degree * n + 1)^3.
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
@@ -30,7 +32,7 @@ n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 # meshes have different number of nodes to force different parallel partitions
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
-mesh2 = UnitCubeMesh(ceil(1.01*n), ceil(1.01*n), ceil(1.01*n))
+mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 t1_mesh = perf_counter_ns()
 mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
@@ -63,6 +65,7 @@ if COMM_WORLD.rank == 0:
 				f,
 				fieldnames=[
 					"nprocs",
+					"pbs_job_id",
 					"degree",
 					"dofs_per_core",
 					"mesh_gen_time_s",
@@ -77,6 +80,7 @@ if COMM_WORLD.rank == 0:
 			w.writerow(
 				{
 					"nprocs": n_cores,
+					"pbs_job_id": pbs_jobid,
 					"degree": degree,
 					"dofs_per_core": average_dofs_per_core,
 					"mesh_gen_time_s": mesh_gen_time_s,
