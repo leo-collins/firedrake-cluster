@@ -5,8 +5,7 @@
 # Submit with:
 #   qsub install_firedrake_foss.pbs
 #
-# NOTE: Firedrake is cloned via SSH. Change to the https URL if SSH agent
-# forwarding is unavailable on the compute node:
+# NOTE: Firedrake is cloned via SSH. Change to the https URL if SSH is unavailable
 #   git clone https://github.com/firedrakeproject/firedrake.git
 
 #PBS -N firedrake_install
@@ -18,8 +17,6 @@
 set -euo pipefail
 
 INSTALL_DIR="$HOME/firedrake-dev3"
-rm -rf $INSTALL_DIR
-mkdir $INSTALL_DIR
 NPROCS=16
 
 mkdir -p "$INSTALL_DIR/logs"
@@ -36,7 +33,6 @@ module load HDF5/1.14.6-gompi-2025b
 module load Python/3.13.5-GCCcore-14.3.0
 module list
 
-mkdir -p "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 curl -fsSO https://raw.githubusercontent.com/firedrakeproject/firedrake/release/scripts/firedrake-configure
 
@@ -159,5 +155,5 @@ echo "    HDF5/1.14.6-gompi-2025b PnetCDF/1.14.1-gompi-2025b \\"
 echo "    METIS/5.1.0-GCCcore-14.3.0 netCDF/4.9.3-gompi-2025b \\"
 echo "    Python/3.13.5-GCCcore-14.3.0"
 echo "  source $INSTALL_DIR/venv-firedrake/bin/activate"
-echo "  export PETSC_DIR=$INSTALL_DIR/petsc PETSC_ARCH=arch-firedrake-default"
-echo "  export HDF5_MPI=ON HDF5_DIR=\$EBROOTHDF5"
+# echo "  export PETSC_DIR=$INSTALL_DIR/petsc PETSC_ARCH=arch-firedrake-default"
+# echo "  export HDF5_MPI=ON HDF5_DIR=\$EBROOTHDF5"
