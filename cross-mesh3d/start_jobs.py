@@ -7,7 +7,8 @@ import sys
 # call .resolve() for compatibility with older versions of Python
 FILE_DIR = Path(__file__).parent.resolve()
 SCRIPT_DIR = FILE_DIR / "scripts"
-RESULT_DIR = FILE_DIR / "results"
+# change result_dir if necessary
+RESULT_DIR = FILE_DIR / "results" / "distributed-rtree-perm"
 JOB_DIR = FILE_DIR / "jobs"
 
 JOB_TEMPLATE = """
@@ -135,11 +136,9 @@ if __name__ == "__main__":
         f.write(job_script)
         print(f"Generated job script: {job_script_path}")
     
-    # Make logs directory if it doesn't exist
     logs_dir = FILE_DIR / "logs"
     logs_dir.mkdir(exist_ok=True)
 
-    # Start the job
     os.system(f"qsub {job_script_path}")
 
     # delete the job script after submission
