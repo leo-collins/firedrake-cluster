@@ -16,7 +16,7 @@
 
 set -euo pipefail
 
-INSTALL_DIR="$HOME/firedrake-dev3"
+INSTALL_DIR="$HOME/firedrake-dev"
 NPROCS=16
 
 mkdir -p "$INSTALL_DIR/logs"
