@@ -1,0 +1,56 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 64 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-perm/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 661994.pbs-6
+Node:   hx1-c03-2-1
+Date:   Thu  6 Aug 22:28:06 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-perm/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=50gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=7.12392s
+nprocs=1: run time=4.7969s
+nprocs=1: run time=2.52255s
+nprocs=1: run time=2.53531s
+nprocs=1: run time=2.53823s
+nprocs=2: mesh generation=8.66781s
+nprocs=2: run time=3.79899s
+nprocs=2: run time=2.89095s
+nprocs=2: run time=2.87426s
+nprocs=2: run time=2.84398s
+nprocs=4: mesh generation=9.80631s
+nprocs=4: run time=3.95128s
+nprocs=4: run time=3.07752s
+nprocs=4: run time=3.01715s
+nprocs=4: run time=3.08998s
+nprocs=8: mesh generation=12.5728s
+nprocs=8: run time=3.97662s
+nprocs=8: run time=2.99247s
+nprocs=8: run time=2.9664s
+nprocs=8: run time=2.9537s
+nprocs=16: mesh generation=18.255s
+nprocs=16: run time=4.37058s
+nprocs=16: run time=3.47083s
+nprocs=16: run time=3.39218s
+nprocs=16: run time=3.41183s
+nprocs=32: mesh generation=33.6451s
+nprocs=32: run time=5.32004s
+nprocs=32: run time=4.27701s
+nprocs=32: run time=12.1159s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 1243414 on node hx1-c03-2-1 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 00:10:08
+CPU Percent: 499%
+Memory usage: 15487564kb
+Approx Power usage: 0.002
+Walltime usage: 00:04:12
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=661994.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/661994.pbs-6,task_memcg=/pbs_jobs.service/jobid/661994.pbs-6,task=python,pid=1243429,uid=1831114
+
