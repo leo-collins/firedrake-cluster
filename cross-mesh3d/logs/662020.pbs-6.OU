@@ -1,0 +1,57 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 64 processes.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-perm/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 662020.pbs-6
+Node:   hx1-c03-4-2
+Date:   Fri  7 Aug 13:19:29 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-perm/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o logs/
+nprocs=1: mesh generation=1.54737s
+nprocs=1: run time=4.24559s
+nprocs=1: run time=2.21208s
+nprocs=1: run time=2.18242s
+nprocs=1: run time=2.17112s
+nprocs=2: mesh generation=2.99595s
+nprocs=2: run time=3.44889s
+nprocs=2: run time=2.51353s
+nprocs=2: run time=2.50306s
+nprocs=2: run time=2.50313s
+nprocs=4: mesh generation=4.19074s
+nprocs=4: run time=3.47491s
+nprocs=4: run time=2.52895s
+nprocs=4: run time=2.51286s
+nprocs=4: run time=2.48836s
+nprocs=8: mesh generation=6.75474s
+nprocs=8: run time=3.62011s
+nprocs=8: run time=2.67413s
+nprocs=8: run time=2.55946s
+nprocs=8: run time=2.60416s
+nprocs=16: mesh generation=12.1828s
+nprocs=16: run time=3.90372s
+nprocs=16: run time=2.96804s
+nprocs=16: run time=2.96018s
+nprocs=16: run time=3.0121s
+nprocs=32: mesh generation=26.4111s
+nprocs=32: run time=5.52162s
+nprocs=32: run time=3.82354s
+nprocs=32: run time=3.88102s
+nprocs=32: run time=3.79549s
+nprocs=64: mesh generation=63.9283s
+nprocs=64: run time=6.50932s
+nprocs=64: run time=5.02127s
+nprocs=64: run time=5.00925s
+nprocs=64: run time=4.84911s
+Job completed at Fri  7 Aug 13:24:18 BST 2026.
+
+====================================
+CPU Time used: 02:11:19
+CPU Percent: 5273%
+Memory usage: 130853820kb
+Approx Power usage: 0.026199999999999994
+Walltime usage: 00:04:51
+
+====================================
