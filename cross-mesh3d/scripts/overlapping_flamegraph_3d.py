@@ -44,8 +44,10 @@ t = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"run0: {t:.6f} s")
 
 del interp._interpolator
-mesh1._clear_caches()
-mesh2._clear_caches()
+mesh1._rtree_cache = None
+mesh1._distributed_rtree_cache = None
+mesh2._rtree_cache = None
+mesh2._distributed_rtree_cache = None
 
 with PETSc.Log.Event("run1"):
     t0 = perf_counter_ns()
