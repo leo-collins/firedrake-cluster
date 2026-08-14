@@ -2,9 +2,7 @@ from math import ceil, floor
 from sys import argv
 from time import perf_counter_ns
 from mpi4py import MPI
-import warnings
-warnings.filterwarnings("ignore")
-
+from benchmark_utils import reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 
@@ -35,6 +33,11 @@ W = FunctionSpace(mesh2, "CG", degree)
 
 interp = interpolate(TrialFunction(V), W)
 
+# Warm generated code before profiling, then restore cold construction state.
+warmup_matrix = assemble(interp, mat_type="aij")
+del warmup_matrix
+
+reset_cross_mesh_caches(interp, mesh1)
 COMM_WORLD.barrier()
 with PETSc.Log.Event("run0"):
     t0 = perf_counter_ns()
@@ -44,14 +47,7 @@ with PETSc.Log.Event("run0"):
 t = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"run0: {t:.6f} s")
 
-# Flamegraph run1 is deliberately cold as well: rebuild the interpolator and
-# both local/distributed R-trees so the two profiles have the same cache state.
-del interp._interpolator
-mesh1._rtree_cache = None
-mesh1._distributed_rtree_cache = None
-mesh2._rtree_cache = None
-mesh2._distributed_rtree_cache = None
-
+reset_cross_mesh_caches(interp, mesh1)
 COMM_WORLD.barrier()
 with PETSc.Log.Event("run1"):
     t0 = perf_counter_ns()

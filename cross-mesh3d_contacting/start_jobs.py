@@ -87,7 +87,12 @@ def parse_args():
     parser.add_argument("--num_nodes", type=int, default=4, help="Number of nodes to use. Defaults to 4.")
     parser.add_argument("--mem", type=int, default=400, help="Memory per node in GB. Defaults to 400GB.")
     parser.add_argument("--range", action="store_true", default=False, help="If set, run range of jobs in powers of 2 from 1 up to the total number of CPUs (ncpus * num_nodes). If not set, only run the job with the total number of CPUs.")
-    parser.add_argument("--exclusive", action="store_true", default=False, help="If set, request exclusive access to nodes.")
+    parser.add_argument(
+        "--exclusive",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Request exclusive access to nodes. Use --no-exclusive to opt out.",
+    )
     parser.add_argument("--walltime", type=int, default=240, help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
     return parser.parse_args()
 

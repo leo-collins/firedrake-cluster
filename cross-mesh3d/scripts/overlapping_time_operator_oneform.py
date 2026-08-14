@@ -4,9 +4,7 @@ from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
-import warnings
-warnings.filterwarnings("ignore")
-
+from benchmark_utils import clear_spatial_index_caches, problem_metadata
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
@@ -41,6 +39,7 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V1 = FunctionSpace(mesh1, "CG", degree)
 V2 = FunctionSpace(mesh2, "CG", degree)
+metadata = problem_metadata(mesh1, V1, V2, COMM_WORLD)
 
 
 def run(V1, V2):
@@ -48,6 +47,7 @@ def run(V1, V2):
     # Omega_v
     V2_element = V2.ufl_element()
     x_i = assemble(interpolate(mesh2.coordinates, VectorFunctionSpace(mesh2, V2_element))).dat.data_ro.reshape(-1, mesh2.geometric_dimension)
+    clear_spatial_index_caches(mesh1)
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     Omega_v = VertexOnlyMesh(mesh1, x_i, redundant=False)
@@ -87,6 +87,7 @@ def run(V1, V2):
 
 
     I = interpolate(f, V2)
+    clear_spatial_index_caches(mesh1)
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     I_f = assemble(I)
@@ -133,6 +134,7 @@ if COMM_WORLD.rank == 0:
                     "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
+                    *metadata,
                 ]
                 + [
                     f"{timing_name}_run{i}"
@@ -148,6 +150,7 @@ if COMM_WORLD.rank == 0:
                 "degree": degree,
                 "dofs_per_core": average_dofs_per_core,
                 "mesh_gen_time_s": mesh_gen_time_s,
+                **metadata,
             }
             for i, run_time_s in enumerate(run_times_s):
                 for timing_name, timing_s in zip(TIMING_NAMES, run_time_s):

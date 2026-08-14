@@ -1,8 +1,6 @@
 from math import ceil, floor
 from sys import argv
-import warnings
-warnings.filterwarnings("ignore")
-
+from benchmark_utils import reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 
@@ -33,18 +31,15 @@ W = FunctionSpace(mesh2, "CG", degree)
 f = Function(V).assign(1.1)
 interp = interpolate(f, W)
 
+warmup_result = assemble(interp)
+del warmup_result
+
+reset_cross_mesh_caches(interp, mesh1)
 COMM_WORLD.barrier()
 with PETSc.Log.Event("run0"):
     assemble(interp)
 
-# Flamegraph run1 is deliberately cold as well: rebuild the interpolator and
-# both local/distributed R-trees so the two profiles have the same cache state.
-del interp._interpolator
-mesh1._rtree_cache = None
-mesh1._distributed_rtree_cache = None
-mesh2._rtree_cache = None
-mesh2._distributed_rtree_cache = None
-
+reset_cross_mesh_caches(interp, mesh1)
 COMM_WORLD.barrier()
 with PETSc.Log.Event("run1"):
     assemble(interp)

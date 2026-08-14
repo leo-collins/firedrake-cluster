@@ -3,9 +3,7 @@ from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
-import warnings
-warnings.filterwarnings("ignore")
-
+from benchmark_utils import N_RUNS, point_metadata, problem_metadata, reset_cross_mesh_caches
 from firedrake import *
 from mpi4py import MPI
 
@@ -40,21 +38,27 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
+metadata = problem_metadata(mesh1, V, W, COMM_WORLD)
 f = Function(V).assign(1.1)
 interp = interpolate(f, W, allow_missing_dofs=True)
 
+warmup_result = assemble(interp)
+metadata.update(point_metadata(interp, W.dim(), COMM_WORLD))
+del warmup_result
+PETSc.Sys.Print(f"nprocs={n_cores}: completed code warmup")
+
 run_times_s = []
-# run0 is cold: it includes first-use compilation and R-tree construction.
-# The remaining runs are warm repeated assemblies of the same interpolator.
-for run_idx in range(4):
+
+for run_idx in range(N_RUNS):
+	reset_cross_mesh_caches(interp, mesh1)
 	COMM_WORLD.barrier()
 	t0 = perf_counter_ns()
-	assemble(interp)
+	result = assemble(interp)
 	t1 = perf_counter_ns()
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
-	phase = "cold" if run_idx == 0 else "warm"
-	PETSc.Sys.Print(f"nprocs={n_cores}: {phase} run{run_idx} time={run_time_s:.6g}s")
+	PETSc.Sys.Print(f"nprocs={n_cores}: cold-index run{run_idx} time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
+	del result
 
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 
@@ -71,10 +75,8 @@ if COMM_WORLD.rank == 0:
 					"degree",
 					"dofs_per_core",
 					"mesh_gen_time_s",
-					"run0",
-					"run1",
-					"run2",
-					"run3",
+					*metadata,
+					*[f"run{i}" for i in range(N_RUNS)],
 				],
 			)
 			if write_header:
@@ -86,9 +88,7 @@ if COMM_WORLD.rank == 0:
 					"degree": degree,
 					"dofs_per_core": average_dofs_per_core,
 					"mesh_gen_time_s": mesh_gen_time_s,
-					"run0": run_times_s[0],
-					"run1": run_times_s[1],
-					"run2": run_times_s[2],
-					"run3": run_times_s[3],
+					**metadata,
+					**{f"run{i}": value for i, value in enumerate(run_times_s)},
 				}
 			)

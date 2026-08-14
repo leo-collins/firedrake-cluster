@@ -3,9 +3,7 @@ from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
-import warnings
-warnings.filterwarnings("ignore")
-
+from benchmark_utils import N_RUNS, point_metadata, problem_metadata, reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
@@ -40,21 +38,27 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
+metadata = problem_metadata(mesh1, V, W, COMM_WORLD)
 
 interp = interpolate(TrialFunction(V), W)
 
+warmup_matrix = assemble(interp, mat_type="aij")
+metadata.update(point_metadata(interp, W.dim(), COMM_WORLD))
+del warmup_matrix
+PETSc.Sys.Print(f"nprocs={n_cores}: completed code warmup")
+
 run_times_s = []
-# run0 is cold: it includes first-use compilation and R-tree construction.
-# The remaining runs are warm repeated assemblies of the same interpolator.
-for run_idx in range(4):
+
+for run_idx in range(N_RUNS):
+	reset_cross_mesh_caches(interp, mesh1)
 	COMM_WORLD.barrier()
 	t0 = perf_counter_ns()
-	assemble(interp, mat_type="aij")
+	matrix = assemble(interp, mat_type="aij")
 	t1 = perf_counter_ns()
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
-	phase = "cold" if run_idx == 0 else "warm"
-	PETSc.Sys.Print(f"nprocs={n_cores}: {phase} run{run_idx} time={run_time_s:.6g}s")
+	PETSc.Sys.Print(f"nprocs={n_cores}: cold-index run{run_idx} time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
+	del matrix
 
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 
@@ -72,10 +76,8 @@ if COMM_WORLD.rank == 0:
 					"dofs_per_core",
 					"total_dofs",
 					"mesh_gen_time_s",
-					"run0",
-					"run1",
-					"run2",
-					"run3",
+					*metadata,
+					*[f"run{i}" for i in range(N_RUNS)],
 				],
 			)
 			if write_header:
@@ -88,9 +90,7 @@ if COMM_WORLD.rank == 0:
 					"dofs_per_core": average_dofs_per_core,
 					"total_dofs": total_dofs,
 					"mesh_gen_time_s": mesh_gen_time_s,
-					"run0": run_times_s[0],
-					"run1": run_times_s[1],
-					"run2": run_times_s[2],
-					"run3": run_times_s[3],
+					**metadata,
+					**{f"run{i}": value for i, value in enumerate(run_times_s)},
 				}
 			)

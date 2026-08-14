@@ -1,15 +1,13 @@
 import csv
-import warnings
 from math import ceil, floor
 from pathlib import Path
 from sys import argv
 import os
 from time import perf_counter_ns
 
-warnings.filterwarnings("ignore")
-
 from mpi4py import MPI
 
+from benchmark_utils import problem_metadata, reset_cross_mesh_caches
 from firedrake import *
 
 # This benchmarks matrix-free cross-mesh interpolation operator construction,
@@ -45,12 +43,19 @@ PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", degree)
 W = FunctionSpace(mesh2, "CG", degree)
+metadata = problem_metadata(mesh1, V, W, COMM_WORLD)
 
 # Create function to apply interpolation to
 u = Function(V).assign(1.1)
 
 # Assemble matrix-free operator
 interp = interpolate(TrialFunction(V), W, allow_missing_dofs=True)
+warmup_operator = assemble(interp, mat_type="matfree")
+warmup_result = assemble(warmup_operator @ u)
+del warmup_result
+del warmup_operator
+reset_cross_mesh_caches(interp, mesh1)
+
 COMM_WORLD.barrier()
 t0 = perf_counter_ns()
 I = assemble(interp, mat_type="matfree")
@@ -95,6 +100,7 @@ if COMM_WORLD.rank == 0:
                     "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
+                    *metadata,
                     "assembly_time_s",
                     "first_apply_time_s",
                     "apply0",
@@ -114,6 +120,7 @@ if COMM_WORLD.rank == 0:
                     "degree": degree,
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
+                    **metadata,
                     "assembly_time_s": assembly_time_s,
                     "first_apply_time_s": first_apply_time_s,
                     "apply0": apply_times_s[0],
