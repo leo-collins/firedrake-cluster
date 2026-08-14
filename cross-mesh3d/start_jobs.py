@@ -31,7 +31,7 @@ module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
 module load Python/3.13.5-GCCcore-14.3.0
 
-source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+source "$HOME/{env}/venv-firedrake/bin/activate"
 
 NPROCS={total_cpus}
 DOFS={dof_count}
@@ -39,6 +39,7 @@ DEGREE={degree}
 CSV="{result_dir}/{script_name}_CG{degree}_{dof_count}.csv"
 
 echo "Running {script_name}.py with DOFs=$DOFS, degree=$DEGREE, on $NPROCS processes."
+echo "Firedrake environment: $HOME/{env}/venv-firedrake"
 echo "Results will be saved to $CSV."
 echo "Job ID: $PBS_JOBID"
 echo "Node:   $(hostname)"
@@ -76,6 +77,9 @@ def parse_args():
     parser.add_argument("dof_count", type=int, 
                         help="Dofs per core (for weak scaling) or total dofs (for strong scaling).")
     parser.add_argument("degree", type=int, help="Degree of the CG element.")
+    parser.add_argument("--env", choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3"),
+                        default="firedrake-dev",
+                        help="Firedrake environment directory below $HOME. Defaults to firedrake-dev.")
     parser.add_argument("--result-subdir", type=str, default="distributed-rtree-perm",
                         help="Subdirectory below results/ for CSV output. Defaults to distributed-rtree-perm.")
     parser.add_argument("--ncpus", type=int, default=64, 
@@ -135,6 +139,7 @@ if __name__ == "__main__":
         "total_cpus": total_cpus,
         "dof_count": args.dof_count,
         "degree": args.degree,
+        "env": args.env,
         "result_dir": result_dir,
         "log_dir": LOG_DIR,
         "script_name": args.script,
