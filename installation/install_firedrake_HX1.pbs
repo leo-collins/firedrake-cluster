@@ -16,7 +16,7 @@
 
 set -euo pipefail
 
-INSTALL_DIR="$HOME/firedrake-dev"
+INSTALL_DIR="$HOME/firedrake-dev3"
 NPROCS=16
 
 mkdir -p "$INSTALL_DIR/logs"
@@ -34,7 +34,7 @@ module load Python/3.13.5-GCCcore-14.3.0
 module list
 
 cd "$INSTALL_DIR"
-curl -fsSO https://raw.githubusercontent.com/firedrakeproject/firedrake/release/scripts/firedrake-configure
+curl -fsSO https://raw.githubusercontent.com/firedrakeproject/firedrake/main/scripts/firedrake-configure
 
 # Clone PETSc
 echo ""
