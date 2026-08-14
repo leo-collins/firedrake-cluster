@@ -151,4 +151,7 @@ if __name__ == "__main__":
         subprocess.run(["qsub", str(job_script_path)], check=True)
     finally:
         # Remove the temporary script whether submission succeeds or fails.
-        job_script_path.unlink(missing_ok=True)
+        try:
+            job_script_path.unlink()
+        except FileNotFoundError:
+            pass
