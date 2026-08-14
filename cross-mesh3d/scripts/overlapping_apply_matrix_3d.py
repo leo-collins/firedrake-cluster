@@ -12,10 +12,10 @@ from mpi4py import MPI
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 
-# This benchmarks the matrix-free cross-mesh interpolation operator assembly
-# and timing of its application.
+# This benchmarks explicit cross-mesh interpolation matrix assembly and
+# warmed-up application.
 # Run with:
-#   mpiexec -n <nprocs> python overlapping_matfree_3d.py <dofs_per_core> <degree> [csv_path]
+#   mpiexec -n <nprocs> python overlapping_apply_matrix_3d.py <dofs_per_core> <degree> [csv_path]
 
 if len(argv) < 3:
     raise ValueError(
@@ -34,11 +34,12 @@ pbs_jobid = argv[4] if len(argv) > 4 else None
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
+COMM_WORLD.barrier()
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
 mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 t1_mesh = perf_counter_ns()
-mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
+mesh_gen_time_s = COMM_WORLD.allreduce(t1_mesh - t0_mesh, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", degree)
@@ -47,14 +48,24 @@ W = FunctionSpace(mesh2, "CG", degree)
 # Create function to apply interpolation to
 u = Function(V).assign(1.1)
 
-# Assemble matrix-free operator
+# Assemble explicit matrix
 interp = interpolate(TrialFunction(V), W)
+COMM_WORLD.barrier()
 t0 = perf_counter_ns()
 I = assemble(interp, mat_type="aij")
 t1 = perf_counter_ns()
 assembly_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(
-    f"nprocs={n_cores}: initial assembly time={assembly_time_s:.6g}s"
+    f"nprocs={n_cores}: matrix assembly time={assembly_time_s:.6g}s"
+)
+
+COMM_WORLD.barrier()
+t0 = perf_counter_ns()
+assemble(I @ u)
+t1 = perf_counter_ns()
+first_apply_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+PETSc.Sys.Print(
+    f"nprocs={n_cores}: first matrix apply time={first_apply_time_s:.6g}s"
 )
 
 apply_times_s = []
@@ -83,6 +94,8 @@ if COMM_WORLD.rank == 0:
                     "degree",
                     "dofs_per_core",
                     "mesh_gen_time_s",
+                    "assembly_time_s",
+                    "first_apply_time_s",
                     "apply0",
                     "apply1",
                     "apply2",
@@ -100,6 +113,8 @@ if COMM_WORLD.rank == 0:
                     "degree": degree,
                     "dofs_per_core": average_dofs_per_core,
                     "mesh_gen_time_s": mesh_gen_time_s,
+                    "assembly_time_s": assembly_time_s,
+                    "first_apply_time_s": first_apply_time_s,
                     "apply0": apply_times_s[0],
                     "apply1": apply_times_s[1],
                     "apply2": apply_times_s[2],

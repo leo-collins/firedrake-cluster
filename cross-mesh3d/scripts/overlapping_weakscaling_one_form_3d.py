@@ -30,11 +30,12 @@ pbs_jobid = argv[4] if len(argv) > 4 else None
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
+COMM_WORLD.barrier()
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
 mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 t1_mesh = perf_counter_ns()
-mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
+mesh_gen_time_s = COMM_WORLD.allreduce(t1_mesh - t0_mesh, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V = FunctionSpace(mesh1, "CG", degree)
@@ -43,16 +44,17 @@ f = Function(V).assign(1.1)
 interp = interpolate(f, W)
 
 run_times_s = []
-for _ in range(4):
+# run0 is cold: it includes first-use compilation and R-tree construction.
+# The remaining runs are warm repeated assemblies of the same interpolator.
+for run_idx in range(4):
 	COMM_WORLD.barrier()
 	t0 = perf_counter_ns()
 	assemble(interp)
 	t1 = perf_counter_ns()
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
-	PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
+	phase = "cold" if run_idx == 0 else "warm"
+	PETSc.Sys.Print(f"nprocs={n_cores}: {phase} run{run_idx} time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
-	# delete cached interpolator (which includes cached VOM)
-	del interp._interpolator
 
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 

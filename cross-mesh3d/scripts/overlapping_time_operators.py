@@ -31,11 +31,12 @@ pbs_jobid = argv[4] if len(argv) > 4 else None
 n = max(floor((((dofs_per_core * n_cores) ** (1 / 3)) - 1) / degree), 1)
 
 # meshes have different number of nodes to force different parallel partitions
+COMM_WORLD.barrier()
 t0_mesh = perf_counter_ns()
 mesh1 = UnitCubeMesh(n, n, n)
 mesh2 = UnitCubeMesh(ceil(1.01 * n), ceil(1.01 * n), ceil(1.01 * n))
 t1_mesh = perf_counter_ns()
-mesh_gen_time_s = (t1_mesh - t0_mesh) / 1e9
+mesh_gen_time_s = COMM_WORLD.allreduce(t1_mesh - t0_mesh, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"nprocs={n_cores}: mesh generation={mesh_gen_time_s:.6g}s")
 
 V1 = FunctionSpace(mesh1, "CG", degree)
@@ -45,11 +46,13 @@ def run(V1, V2):
     # Omega_v
     V2_element = V2.ufl_element()
     x_i = assemble(interpolate(mesh2.coordinates, VectorFunctionSpace(mesh2, V2_element))).dat.data_ro.reshape(-1, mesh2.geometric_dimension)
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     Omega_v = VertexOnlyMesh(mesh1, x_i, redundant=False)
     t1 = perf_counter_ns()
     Omega_v_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     Omega_v_io = Omega_v.input_ordering
     t1 = perf_counter_ns()
@@ -58,6 +61,7 @@ def run(V1, V2):
     P0DG_Omega_v = FunctionSpace(Omega_v, "DG", 0)
 	
     A_interp = interpolate(TrialFunction(V1), P0DG_Omega_v)
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     A = assemble(A_interp, mat_type="aij")
     t1 = perf_counter_ns()
@@ -66,17 +70,20 @@ def run(V1, V2):
     P0DG_Omega_v_io = FunctionSpace(Omega_v_io, "DG", 0)
 	
     B_interp = interpolate(TrialFunction(P0DG_Omega_v), P0DG_Omega_v_io)
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     B = assemble(B_interp, mat_type="aij")
     t1 = perf_counter_ns()
     B_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     AB = assemble(action(B, A))
     t1 = perf_counter_ns()
     AB_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 	
     I = interpolate(TrialFunction(V1), V2)
+    COMM_WORLD.barrier()
     t0 = perf_counter_ns()
     I_mat = assemble(I, mat_type="aij")
     t1 = perf_counter_ns()

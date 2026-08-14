@@ -11,7 +11,7 @@ from firedrake.utility_meshes import _mark_mesh_boundaries
 # Run with:
 #   mpiexec -n <nprocs> python overlapping_flamegraph3d.py <dofs_per_core> <degree> -log_view :foo.txt:ascii_flamegraph
 
-if len(argv) < 2:
+if len(argv) < 3:
     raise ValueError("Usage: overlapping_flamegraph3d.py <dofs_per_core> <degree>")
 
 n_cores = COMM_WORLD.size
@@ -33,10 +33,18 @@ W = FunctionSpace(mesh2, "CG", degree)
 f = Function(V).assign(1.1)
 interp = interpolate(f, W)
 
+COMM_WORLD.barrier()
 with PETSc.Log.Event("run0"):
     assemble(interp)
 
+# Flamegraph run1 is deliberately cold as well: rebuild the interpolator and
+# both local/distributed R-trees so the two profiles have the same cache state.
 del interp._interpolator
+mesh1._rtree_cache = None
+mesh1._distributed_rtree_cache = None
+mesh2._rtree_cache = None
+mesh2._distributed_rtree_cache = None
 
+COMM_WORLD.barrier()
 with PETSc.Log.Event("run1"):
     assemble(interp)
