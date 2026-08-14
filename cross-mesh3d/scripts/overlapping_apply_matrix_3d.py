@@ -3,6 +3,9 @@ from math import ceil, floor
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
+import warnings
+
+warnings.filterwarnings("ignore")
 
 from mpi4py import MPI
 

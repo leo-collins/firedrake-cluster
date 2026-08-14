@@ -1,6 +1,10 @@
 from math import ceil, floor
 from sys import argv
 from time import perf_counter_ns
+import warnings
+
+warnings.filterwarnings("ignore")
+
 from mpi4py import MPI
 from benchmark_utils import reset_cross_mesh_caches
 from firedrake import *

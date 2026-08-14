@@ -4,6 +4,10 @@ from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
+import warnings
+
+warnings.filterwarnings("ignore")
+
 from benchmark_utils import clear_spatial_index_caches, problem_metadata
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries

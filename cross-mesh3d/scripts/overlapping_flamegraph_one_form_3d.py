@@ -1,5 +1,9 @@
 from math import ceil, floor
 from sys import argv
+import warnings
+
+warnings.filterwarnings("ignore")
+
 from benchmark_utils import reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries

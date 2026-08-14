@@ -3,6 +3,10 @@ from math import floor, ceil
 from pathlib import Path
 from sys import argv
 from time import perf_counter_ns
+import warnings
+
+warnings.filterwarnings("ignore")
+
 from benchmark_utils import N_RUNS, point_metadata, problem_metadata, reset_cross_mesh_caches
 from firedrake import *
 from mpi4py import MPI

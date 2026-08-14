@@ -1,4 +1,9 @@
+import warnings
+
 import numpy as np
+
+warnings.filterwarnings("ignore")
+
 from firedrake import *
 from time import perf_counter_ns
 from mpi4py import MPI
