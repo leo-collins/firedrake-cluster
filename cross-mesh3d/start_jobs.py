@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 import argparse
 from pathlib import Path
-import os
+import subprocess
 import sys
 
 # call .resolve() for compatibility with older versions of Python
 FILE_DIR = Path(__file__).parent.resolve()
 SCRIPT_DIR = FILE_DIR / "scripts"
-# change result_dir if necessary
-RESULT_DIR = FILE_DIR / "results" / "distributed-rtree-perm"
+RESULTS_DIR = FILE_DIR / "results"
 JOB_DIR = FILE_DIR / "jobs"
+LOG_DIR = FILE_DIR / "logs"
 
 JOB_TEMPLATE = """
 #!/bin/bash
@@ -19,13 +19,13 @@ JOB_TEMPLATE = """
 #PBS -l place={exclusive}
 #PBS -l walltime={wall_time}
 #PBS -j oe
-#PBS -o logs/
+#PBS -o {log_dir}/
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
 
-cd $PBS_O_WORKDIR
-cd {script_dir}
+cd "$PBS_O_WORKDIR"
+cd "{script_dir}"
 
 module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
@@ -49,7 +49,7 @@ echo "  PBS -l select={num_nodes}:ncpus={cpus_per_node}:mpiprocs={cpus_per_node}
 echo "  PBS -l place={exclusive}"
 echo "  PBS -l walltime={wall_time}"
 echo "  PBS -j oe"
-echo "  PBS -o logs/"
+echo "  PBS -o {log_dir}/"
 
 P={starting_proc}
 while [ "$P" -le "$NPROCS" ]; do
@@ -76,13 +76,15 @@ def parse_args():
     parser.add_argument("dof_count", type=int, 
                         help="Dofs per core (for weak scaling) or total dofs (for strong scaling).")
     parser.add_argument("degree", type=int, help="Degree of the CG element.")
+    parser.add_argument("--result-subdir", type=str, default="distributed-rtree-perm",
+                        help="Subdirectory below results/ for CSV output. Defaults to distributed-rtree-perm.")
     parser.add_argument("--ncpus", type=int, default=64, 
                         help="CPUs per node to run. On HX1, the maximum per node is 64.")
     parser.add_argument("--num_nodes", type=int, default=4, help="Number of nodes to use. Defaults to 4.")
     parser.add_argument("--mem", type=int, default=400, help="Memory per node in GB. Defaults to 400GB.")
     parser.add_argument("--range", action="store_true", default=False, help="If set, run range of jobs in powers of 2 from 1 up to the total number of CPUs (ncpus * num_nodes). If not set, only run the job with the total number of CPUs.")
     parser.add_argument("--exclusive", action="store_true", default=False, help="If set, request exclusive access to nodes.")
-    parser.add_argument("--walltime", type=int, default="240", help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
+    parser.add_argument("--walltime", type=int, default=240, help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
     return parser.parse_args()
 
 def get_time_str(minutes: int) -> str:
@@ -92,6 +94,11 @@ def get_time_str(minutes: int) -> str:
 
 if __name__ == "__main__":
     args = parse_args()
+    result_subdir = Path(args.result_subdir)
+    if result_subdir.is_absolute() or ".." in result_subdir.parts:
+        print("Error: --result-subdir must stay below the results directory.")
+        sys.exit(2)
+    result_dir = RESULTS_DIR / result_subdir
 
     if not check_script(args.script):
         print(f"Error: Script '{args.script}.py' not found in {SCRIPT_DIR}.")
@@ -113,6 +120,9 @@ if __name__ == "__main__":
 
     job_name = f"{args.script}_CG{args.degree}_{args.dof_count}"
 
+    result_dir.mkdir(parents=True, exist_ok=True)
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+
     job_script_map = {
         "job_name": job_name,
         "num_nodes": args.num_nodes,
@@ -125,21 +135,20 @@ if __name__ == "__main__":
         "total_cpus": total_cpus,
         "dof_count": args.dof_count,
         "degree": args.degree,
-        "result_dir": RESULT_DIR,
+        "result_dir": result_dir,
+        "log_dir": LOG_DIR,
         "script_name": args.script,
     }
 
     job_script = JOB_TEMPLATE.format_map(job_script_map)
-    print(RESULT_DIR)
+    print(result_dir)
     job_script_path = JOB_DIR / f"{job_name}.pbs"
-    with open(job_script_path, "w") as f:
-        f.write(job_script)
-        print(f"Generated job script: {job_script_path}")
-    
-    logs_dir = FILE_DIR / "logs"
-    logs_dir.mkdir(exist_ok=True)
+    try:
+        with open(job_script_path, "w") as f:
+            f.write(job_script)
+            print(f"Generated job script: {job_script_path}")
 
-    os.system(f"qsub {job_script_path}")
-
-    # delete the job script after submission
-    os.remove(job_script_path)
+        subprocess.run(["qsub", str(job_script_path)], check=True)
+    finally:
+        # Remove the temporary script whether submission succeeds or fails.
+        job_script_path.unlink(missing_ok=True)

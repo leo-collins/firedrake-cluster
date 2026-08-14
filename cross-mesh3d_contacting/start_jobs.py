@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from pathlib import Path
-import os
+import subprocess
 import sys
 
 # call .resolve() for compatibility with older versions of Python
@@ -9,6 +9,7 @@ FILE_DIR = Path(__file__).parent.resolve()
 SCRIPT_DIR = FILE_DIR / "scripts"
 RESULT_DIR = FILE_DIR / "results"
 JOB_DIR = FILE_DIR / "jobs"
+LOG_DIR = FILE_DIR / "logs"
 
 JOB_TEMPLATE = """
 #!/bin/bash
@@ -18,13 +19,13 @@ JOB_TEMPLATE = """
 #PBS -l place={exclusive}
 #PBS -l walltime={wall_time}
 #PBS -j oe
-#PBS -o logs/
+#PBS -o {log_dir}/
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
 
-cd $PBS_O_WORKDIR
-cd {script_dir}
+cd "$PBS_O_WORKDIR"
+cd "{script_dir}"
 
 module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
@@ -48,7 +49,7 @@ echo "  PBS -l select={num_nodes}:ncpus={cpus_per_node}:mpiprocs={cpus_per_node}
 echo "  PBS -l place={exclusive}"
 echo "  PBS -l walltime={wall_time}"
 echo "  PBS -j oe"
-echo "  PBS -o logs/"
+echo "  PBS -o {log_dir}/"
 
 P={starting_proc}
 while [ "$P" -le "$NPROCS" ]; do
@@ -81,7 +82,7 @@ def parse_args():
     parser.add_argument("--mem", type=int, default=400, help="Memory per node in GB. Defaults to 400GB.")
     parser.add_argument("--range", action="store_true", default=False, help="If set, run range of jobs in powers of 2 from 1 up to the total number of CPUs (ncpus * num_nodes). If not set, only run the job with the total number of CPUs.")
     parser.add_argument("--exclusive", action="store_true", default=False, help="If set, request exclusive access to nodes.")
-    parser.add_argument("--walltime", type=int, default="240", help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
+    parser.add_argument("--walltime", type=int, default=240, help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
     return parser.parse_args()
 
 def get_time_str(minutes: int) -> str:
@@ -112,6 +113,9 @@ if __name__ == "__main__":
 
     job_name = f"{args.script}_CG{args.degree}_{args.dof_count}"
 
+    RESULT_DIR.mkdir(parents=True, exist_ok=True)
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+
     job_script_map = {
         "job_name": job_name,
         "num_nodes": args.num_nodes,
@@ -125,22 +129,19 @@ if __name__ == "__main__":
         "dof_count": args.dof_count,
         "degree": args.degree,
         "result_dir": RESULT_DIR,
+        "log_dir": LOG_DIR,
         "script_name": args.script,
     }
 
     job_script = JOB_TEMPLATE.format_map(job_script_map)
     print(RESULT_DIR)
     job_script_path = JOB_DIR / f"{job_name}.pbs"
-    with open(job_script_path, "w") as f:
-        f.write(job_script)
-        print(f"Generated job script: {job_script_path}")
-    
-    # Make logs directory if it doesn't exist
-    logs_dir = FILE_DIR / "logs"
-    logs_dir.mkdir(exist_ok=True)
+    try:
+        with open(job_script_path, "w") as f:
+            f.write(job_script)
+            print(f"Generated job script: {job_script_path}")
 
-    # Start the job
-    os.system(f"qsub {job_script_path}")
-
-    # delete the job script after submission
-    os.remove(job_script_path)
+        subprocess.run(["qsub", str(job_script_path)], check=True)
+    finally:
+        # Remove the temporary script whether submission succeeds or fails.
+        job_script_path.unlink(missing_ok=True)
