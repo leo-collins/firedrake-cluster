@@ -7,7 +7,7 @@ import sys
 # call .resolve() for compatibility with older versions of Python
 FILE_DIR = Path(__file__).parent.resolve()
 SCRIPT_DIR = FILE_DIR / "scripts"
-RESULT_DIR = FILE_DIR / "results"
+RESULTS_DIR = FILE_DIR / "results"
 JOB_DIR = FILE_DIR / "jobs"
 LOG_DIR = FILE_DIR / "logs"
 
@@ -76,6 +76,8 @@ def parse_args():
     parser.add_argument("dof_count", type=int, 
                         help="Dofs per core (for weak scaling) or total dofs (for strong scaling).")
     parser.add_argument("degree", type=int, help="Degree of the CG element.")
+    parser.add_argument("--result-subdir", type=str, default=".",
+                        help="Subdirectory below results/ for CSV output. Defaults to results/.")
     parser.add_argument("--ncpus", type=int, default=64, 
                         help="CPUs per node to run. On HX1, the maximum per node is 64.")
     parser.add_argument("--num_nodes", type=int, default=4, help="Number of nodes to use. Defaults to 4.")
@@ -92,6 +94,11 @@ def get_time_str(minutes: int) -> str:
 
 if __name__ == "__main__":
     args = parse_args()
+    result_subdir = Path(args.result_subdir)
+    if result_subdir.is_absolute() or ".." in result_subdir.parts:
+        print("Error: --result-subdir must stay below the results directory.")
+        sys.exit(2)
+    result_dir = RESULTS_DIR / result_subdir
 
     if not check_script(args.script):
         print(f"Error: Script '{args.script}.py' not found in {SCRIPT_DIR}.")
@@ -113,7 +120,7 @@ if __name__ == "__main__":
 
     job_name = f"{args.script}_CG{args.degree}_{args.dof_count}"
 
-    RESULT_DIR.mkdir(parents=True, exist_ok=True)
+    result_dir.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     job_script_map = {
@@ -128,13 +135,13 @@ if __name__ == "__main__":
         "total_cpus": total_cpus,
         "dof_count": args.dof_count,
         "degree": args.degree,
-        "result_dir": RESULT_DIR,
+        "result_dir": result_dir,
         "log_dir": LOG_DIR,
         "script_name": args.script,
     }
 
     job_script = JOB_TEMPLATE.format_map(job_script_map)
-    print(RESULT_DIR)
+    print(result_dir)
     job_script_path = JOB_DIR / f"{job_name}.pbs"
     try:
         with open(job_script_path, "w") as f:
