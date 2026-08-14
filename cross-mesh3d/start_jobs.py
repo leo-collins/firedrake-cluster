@@ -89,9 +89,9 @@ def parse_args():
     parser.add_argument("--range", action="store_true", default=False, help="If set, run range of jobs in powers of 2 from 1 up to the total number of CPUs (ncpus * num_nodes). If not set, only run the job with the total number of CPUs.")
     parser.add_argument(
         "--exclusive",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="Request exclusive access to nodes. Use --no-exclusive to opt out.",
+        action="store_true",
+        default=False,
+        help="Request exclusive access to nodes.",
     )
     parser.add_argument("--walltime", type=int, default=240, help="Wall time for the job in minutes. Defaults to 240 minutes (4 hours).")
     return parser.parse_args()
@@ -130,6 +130,7 @@ if __name__ == "__main__":
     job_name = f"{args.script}_CG{args.degree}_{args.dof_count}"
 
     result_dir.mkdir(parents=True, exist_ok=True)
+    JOB_DIR.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     job_script_map = {
