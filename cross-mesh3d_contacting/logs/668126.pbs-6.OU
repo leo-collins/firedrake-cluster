@@ -1,0 +1,107 @@
+Running contacting_weakscaling_3d.py with DOFs=200000, degree=3, on 64 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_weakscaling_3d_CG3_200000.csv.
+Job ID: 668126.pbs-6
+Node:   hx1-c03-1-4
+Date:   Sat 15 Aug 16:00:18 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/logs/
+nprocs=1: mesh generation=1.54661s
+nprocs=1: completed code warmup
+nprocs=1: cold-index run0 time=0.572134s
+nprocs=1: cold-index run1 time=0.578813s
+nprocs=1: cold-index run2 time=0.572825s
+nprocs=1: cold-index run3 time=0.576393s
+nprocs=1: cold-index run4 time=0.595037s
+nprocs=1: cold-index run5 time=0.573373s
+nprocs=1: cold-index run6 time=0.572332s
+nprocs=1: cold-index run7 time=0.573112s
+nprocs=1: cold-index run8 time=0.570346s
+nprocs=1: cold-index run9 time=0.569948s
+nprocs=2: mesh generation=3.0264s
+nprocs=2: completed code warmup
+nprocs=2: cold-index run0 time=0.67133s
+nprocs=2: cold-index run1 time=0.671232s
+nprocs=2: cold-index run2 time=0.67154s
+nprocs=2: cold-index run3 time=0.681305s
+nprocs=2: cold-index run4 time=0.67092s
+nprocs=2: cold-index run5 time=0.649945s
+nprocs=2: cold-index run6 time=0.658845s
+nprocs=2: cold-index run7 time=0.650107s
+nprocs=2: cold-index run8 time=0.654425s
+nprocs=2: cold-index run9 time=0.691289s
+nprocs=4: mesh generation=4.225s
+nprocs=4: completed code warmup
+nprocs=4: cold-index run0 time=0.665562s
+nprocs=4: cold-index run1 time=0.635748s
+nprocs=4: cold-index run2 time=0.612936s
+nprocs=4: cold-index run3 time=0.653314s
+nprocs=4: cold-index run4 time=0.637675s
+nprocs=4: cold-index run5 time=0.635429s
+nprocs=4: cold-index run6 time=0.645242s
+nprocs=4: cold-index run7 time=0.652189s
+nprocs=4: cold-index run8 time=0.610378s
+nprocs=4: cold-index run9 time=0.640538s
+nprocs=8: mesh generation=6.81252s
+nprocs=8: completed code warmup
+nprocs=8: cold-index run0 time=0.61533s
+nprocs=8: cold-index run1 time=0.605138s
+nprocs=8: cold-index run2 time=0.617606s
+nprocs=8: cold-index run3 time=0.619098s
+nprocs=8: cold-index run4 time=0.610512s
+nprocs=8: cold-index run5 time=0.618694s
+nprocs=8: cold-index run6 time=0.615968s
+nprocs=8: cold-index run7 time=0.634252s
+nprocs=8: cold-index run8 time=0.60713s
+nprocs=8: cold-index run9 time=0.608098s
+nprocs=16: mesh generation=12.245s
+nprocs=16: completed code warmup
+nprocs=16: cold-index run0 time=0.680266s
+nprocs=16: cold-index run1 time=0.690582s
+nprocs=16: cold-index run2 time=0.680274s
+nprocs=16: cold-index run3 time=0.685511s
+nprocs=16: cold-index run4 time=0.6896s
+nprocs=16: cold-index run5 time=0.686343s
+nprocs=16: cold-index run6 time=0.679987s
+nprocs=16: cold-index run7 time=0.701115s
+nprocs=16: cold-index run8 time=0.68042s
+nprocs=16: cold-index run9 time=0.714733s
+nprocs=32: mesh generation=28.2225s
+nprocs=32: completed code warmup
+nprocs=32: cold-index run0 time=0.817694s
+nprocs=32: cold-index run1 time=0.830214s
+nprocs=32: cold-index run2 time=0.844344s
+nprocs=32: cold-index run3 time=0.812605s
+nprocs=32: cold-index run4 time=0.838192s
+nprocs=32: cold-index run5 time=0.801233s
+nprocs=32: cold-index run6 time=0.843536s
+nprocs=32: cold-index run7 time=0.887623s
+nprocs=32: cold-index run8 time=0.825067s
+nprocs=32: cold-index run9 time=0.86082s
+nprocs=64: mesh generation=60.8251s
+nprocs=64: completed code warmup
+nprocs=64: cold-index run0 time=1.00227s
+nprocs=64: cold-index run1 time=0.953621s
+nprocs=64: cold-index run2 time=0.954458s
+nprocs=64: cold-index run3 time=0.995533s
+nprocs=64: cold-index run4 time=0.960036s
+nprocs=64: cold-index run5 time=1.04443s
+nprocs=64: cold-index run6 time=1.00021s
+nprocs=64: cold-index run7 time=1.11413s
+nprocs=64: cold-index run8 time=0.956144s
+nprocs=64: cold-index run9 time=0.993686s
+Job completed at Sat 15 Aug 16:04:05 BST 2026.
+
+====================================
+CPU Time used: 01:21:29
+CPU Percent: 3826%
+Memory usage: 30118456kb
+Approx Power usage: 0.016200000000000003
+Walltime usage: 00:04:13
+
+====================================

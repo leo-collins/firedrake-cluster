@@ -1,0 +1,32 @@
+Running contacting_apply_matfree_3d.py with DOFs=200000, degree=3, on 128 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev2/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree/contacting_apply_matfree_3d_CG3_200000.csv.
+Job ID: 668145.pbs-6
+Node:   hx1-c04-2-4
+Date:   Sat 15 Aug 16:19:31 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree/contacting_apply_matfree_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=2:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/logs/
+nprocs=128: mesh generation=111.541s
+nprocs=128: matfree construction time=0.00357745s
+nprocs=128: first matfree apply time=1.0064s
+nprocs=128: run0 apply time=0.028171s
+nprocs=128: run1 apply time=0.0334115s
+nprocs=128: run2 apply time=0.0363848s
+nprocs=128: run3 apply time=0.0245999s
+nprocs=128: run4 apply time=0.0244068s
+nprocs=128: run5 apply time=0.0247215s
+Job completed at Sat 15 Aug 16:22:03 BST 2026.
+
+====================================
+CPU Time used: 00:50:06
+CPU Percent: 3360%
+Memory usage: 32490980kb
+Approx Power usage: 0.01
+Walltime usage: 00:02:46
+
+====================================

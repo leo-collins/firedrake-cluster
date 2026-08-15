@@ -1,0 +1,35 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 256 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-refactor/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 668116.pbs-6
+Node:   hx1-c04-2-3
+Date:   Sat 15 Aug 16:00:02 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-refactor/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=4:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/logs/
+nprocs=256: mesh generation=381.113s
+nprocs=256: completed code warmup
+nprocs=256: cold-index run0 time=6.27107s
+nprocs=256: cold-index run1 time=6.29805s
+nprocs=256: cold-index run2 time=6.26958s
+nprocs=256: cold-index run3 time=6.49026s
+nprocs=256: cold-index run4 time=6.32295s
+nprocs=256: cold-index run5 time=6.38876s
+nprocs=256: cold-index run6 time=6.40375s
+nprocs=256: cold-index run7 time=6.43901s
+nprocs=256: cold-index run8 time=6.3799s
+nprocs=256: cold-index run9 time=6.4291s
+Job completed at Sat 15 Aug 16:08:11 BST 2026.
+
+====================================
+CPU Time used: 07:05:09
+CPU Percent: 6367%
+Memory usage: 66248252kb
+Approx Power usage: 0.085
+Walltime usage: 00:08:19
+
+====================================

@@ -1,0 +1,32 @@
+Running contacting_apply_matrix_3d.py with DOFs=200000, degree=3, on 512 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_apply_matrix_3d_CG3_200000.csv.
+Job ID: 668141.pbs-6
+Node:   hx1-c08-4-4
+Date:   Sat 15 Aug 16:18:44 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_apply_matrix_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=200gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/logs/
+nprocs=512: mesh generation=986.646s
+nprocs=512: matrix assembly time=1.2743s
+nprocs=512: first matrix apply time=0.00403209s
+nprocs=512: run0 apply time=0.00449838s
+nprocs=512: run1 apply time=0.00399819s
+nprocs=512: run2 apply time=0.00389912s
+nprocs=512: run3 apply time=0.00388281s
+nprocs=512: run4 apply time=0.00380344s
+nprocs=512: run5 apply time=0.00390237s
+Job completed at Sat 15 Aug 16:36:27 BST 2026.
+
+====================================
+CPU Time used: 17:08:17
+CPU Percent: 6378%
+Memory usage: 92957936kb
+Approx Power usage: 0.2056
+Walltime usage: 00:18:01
+
+====================================
