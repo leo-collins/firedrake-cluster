@@ -1,0 +1,39 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 128 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-refactor/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 668115.pbs-6
+Node:   hx1-c04-8-4
+Date:   Sat 15 Aug 00:56:31 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree-refactor/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=2:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/logs/
+nprocs=128: mesh generation=143.164s
+nprocs=128: completed code warmup
+nprocs=128: cold-index run0 time=5.82517s
+nprocs=128: cold-index run1 time=5.73288s
+nprocs=128: cold-index run2 time=5.98482s
+[hx1-c04-8-4:2016359:0:2016359]      cma_ep.c:85   process_vm_readv(pid=2016398 {0x14fda2328050,524288}-->{0x86fff200,524288}) returned -1: No such process
+[hx1-c04-8-4:2016399:0:2016399]      cma_ep.c:85   process_vm_readv(pid=2016338 {0x84e9d650,524288}-->{0x94cde520,524288}) returned -1: No such process
+[hx1-c04-8-4:2016390:0:2016390]      cma_ep.c:85   process_vm_readv(pid=2016398 {0x85416ed0,524288}-->{0x87aec380,524288}) returned -1: No such process
+[hx1-c04-8-4:2016397:0:2016397]      cma_ep.c:85   process_vm_readv(pid=2016338 {0x153684d3d010,524288}-->{0x954170e0,524288}) returned -1: No such process
+[hx1-c04-8-4:2016356:0:2016356]      cma_ep.c:85   process_vm_readv(pid=2016398 {0x14966162d7d0,524288}-->{0x875a4a20,524288}) returned -1: No such process
+[hx1-c04-8-4:2016400:0:2016400]      cma_ep.c:85   process_vm_readv(pid=2016338 {0x82be9810,524288}-->{0x941cfd00,524288}) returned -1: No such process
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 2016338 on node hx1-c04-8-4 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 03:04:37
+CPU Percent: 6217%
+Memory usage: 128754580kb
+Approx Power usage: 0.036800000000000006
+Walltime usage: 00:04:40
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=668115.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/668115.pbs-6,task_memcg=/pbs_jobs.service/jobid/668115.pbs-6,task=python,pid=2016398,uid=1831114
+

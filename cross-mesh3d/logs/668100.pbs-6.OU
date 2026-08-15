@@ -1,0 +1,37 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 2048 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev2/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 668100.pbs-6
+Node:   hx1-c08-2-4
+Date:   Sat 15 Aug 02:02:01 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/distributed-rtree/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=32:ncpus=64:mpiprocs=64:mem=315gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/logs/
+nprocs=2048: mesh generation=8800.74s
+nprocs=2048: completed code warmup
+nprocs=2048: cold-index run0 time=7.8907s
+nprocs=2048: cold-index run1 time=7.34828s
+nprocs=2048: cold-index run2 time=7.34228s
+nprocs=2048: cold-index run3 time=7.54236s
+nprocs=2048: cold-index run4 time=7.64508s
+nprocs=2048: cold-index run5 time=7.39472s
+nprocs=2048: cold-index run6 time=7.80446s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 1988721 on node hx1-c08-2-4 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 169:16:21
+CPU Percent: 6379%
+Memory usage: 307794956kb
+Approx Power usage: 2.0312
+Walltime usage: 03:20:51
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=668100.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/668100.pbs-6,task_memcg=/pbs_jobs.service/jobid/668100.pbs-6,task=python,pid=1988721,uid=1831114
+

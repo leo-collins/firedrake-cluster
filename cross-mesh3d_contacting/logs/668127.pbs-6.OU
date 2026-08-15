@@ -1,0 +1,35 @@
+Running contacting_weakscaling_3d.py with DOFs=200000, degree=3, on 128 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_weakscaling_3d_CG3_200000.csv.
+Job ID: 668127.pbs-6
+Node:   hx1-c04-8-4
+Date:   Sat 15 Aug 01:04:36 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/results/distributed-rtree-perm/contacting_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=2:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d_contacting/logs/
+nprocs=128: mesh generation=143.74s
+nprocs=128: completed code warmup
+nprocs=128: cold-index run0 time=1.20174s
+nprocs=128: cold-index run1 time=1.10165s
+nprocs=128: cold-index run2 time=1.07041s
+nprocs=128: cold-index run3 time=1.12934s
+nprocs=128: cold-index run4 time=1.1631s
+nprocs=128: cold-index run5 time=1.05425s
+nprocs=128: cold-index run6 time=1.10328s
+nprocs=128: cold-index run7 time=1.06316s
+nprocs=128: cold-index run8 time=1.07082s
+nprocs=128: cold-index run9 time=1.07107s
+Job completed at Sat 15 Aug 01:07:42 BST 2026.
+
+====================================
+CPU Time used: 01:57:33
+CPU Percent: 5793%
+Memory usage: 39121668kb
+Approx Power usage: 0.023399999999999997
+Walltime usage: 00:03:12
+
+====================================
