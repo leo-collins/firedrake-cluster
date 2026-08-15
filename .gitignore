@@ -1,4 +1,3 @@
 .DS_Store
 */meshes
-*/__pycache__
-
+__pycache__/

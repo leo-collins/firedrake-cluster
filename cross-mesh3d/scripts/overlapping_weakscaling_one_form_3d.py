@@ -64,6 +64,7 @@ for run_idx in range(N_RUNS):
 	run_times_s.append(run_time_s)
 	del result
 
+reset_cross_mesh_caches(interp, mesh1)
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 
 if COMM_WORLD.rank == 0:

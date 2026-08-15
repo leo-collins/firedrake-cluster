@@ -1,7 +1,8 @@
-import gc
 from importlib.util import find_spec
 from pathlib import Path
 import subprocess
+
+from firedrake.petsc import garbage_cleanup
 
 
 N_RUNS = 10
@@ -45,7 +46,7 @@ def reset_cross_mesh_caches(interpolate_expr, source_mesh):
     """Reset cross-mesh construction state while retaining compiled code."""
     interpolate_expr.__dict__.pop("_interpolator", None)
     clear_spatial_index_caches(source_mesh)
-    gc.collect()
+    garbage_cleanup(source_mesh)
 
 
 def problem_metadata(source_mesh, source_space, target_space, comm):

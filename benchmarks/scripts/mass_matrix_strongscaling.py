@@ -7,6 +7,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from firedrake import *
+from firedrake.petsc import garbage_cleanup
 from mpi4py import MPI
 
 # This tests weak parallel scaling of assembly of a mass matrix
@@ -41,11 +42,13 @@ for _ in range(4):
     mass = inner(TrialFunction(V), TestFunction(W)) * dx
     COMM_WORLD.barrier()
     t0 = perf_counter_ns()
-    assemble(mass, mat_type="aij")
+    matrix = assemble(mass, mat_type="aij")
     t1 = perf_counter_ns()
     run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
     PETSc.Sys.Print(f"nprocs={n_cores}: run time={run_time_s:.6g}s")
     run_times_s.append(run_time_s)
+    del matrix
+    garbage_cleanup(mesh)
 
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 

@@ -60,3 +60,4 @@ with PETSc.Log.Event("run1"):
 
 t = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 PETSc.Sys.Print(f"run1: {t:.6f} s")
+reset_cross_mesh_caches(interp, mesh1)

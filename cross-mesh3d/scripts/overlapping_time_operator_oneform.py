@@ -1,5 +1,4 @@
 import csv
-import gc
 from math import floor, ceil
 from pathlib import Path
 from sys import argv
@@ -10,6 +9,7 @@ warnings.filterwarnings("ignore")
 
 from benchmark_utils import clear_spatial_index_caches, problem_metadata
 from firedrake import *
+from firedrake.petsc import garbage_cleanup
 from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
 
@@ -113,7 +113,7 @@ N_RUNS = 10
 
 # Warmup run.
 run(V1, V2)
-gc.collect()
+garbage_cleanup(mesh1)
 PETSc.Sys.Print(f"nprocs={n_cores}: completed warmup run")
 
 run_times_s = []
@@ -121,7 +121,7 @@ for i in range(N_RUNS):
     COMM_WORLD.barrier()
     run_times_s.append(run(V1, V2))
     PETSc.Sys.Print(f"nprocs={n_cores}: completed run {i}")
-    gc.collect()
+    garbage_cleanup(mesh1)
 
 average_dofs_per_core = (V2.dim() + V1.dim()) / (2 * n_cores)
 

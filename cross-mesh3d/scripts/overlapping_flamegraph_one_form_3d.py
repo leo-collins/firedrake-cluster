@@ -47,3 +47,5 @@ reset_cross_mesh_caches(interp, mesh1)
 COMM_WORLD.barrier()
 with PETSc.Log.Event("run1"):
     assemble(interp)
+
+reset_cross_mesh_caches(interp, mesh1)

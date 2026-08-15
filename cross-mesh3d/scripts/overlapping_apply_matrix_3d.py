@@ -88,6 +88,9 @@ for run_idx in range(6):
     apply_times_s.append(apply_time_s)
     PETSc.Sys.Print(f"nprocs={n_cores}: run{run_idx} apply time={apply_time_s:.6g}s")
 
+del res
+del I
+reset_cross_mesh_caches(interp, mesh1)
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 
 if COMM_WORLD.rank == 0:
