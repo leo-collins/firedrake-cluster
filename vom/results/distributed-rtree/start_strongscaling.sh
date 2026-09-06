@@ -11,4 +11,4 @@ python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 2 --me
 python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 4 --mem 150 --exclusive
 python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 8 --mem 200 --exclusive
 python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 16 --mem 230 --exclusive
-python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 32 --mem 315 --exclusive
+python3 "$START_JOBS" vom_strongscaling_3d 2000000 --ncpus 64 --num_nodes 32 --mem 315 --walltime 720 --exclusive
