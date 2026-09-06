@@ -27,9 +27,16 @@ pbs_job_id = argv[3] if len(argv) > 3 else None
 if points_per_core < 1:
     raise ValueError("points_per_core must be >= 1")
 
-# Keep approximately 50,000 mesh vertices per core.
-mesh_n = round(37 * nprocs ** (1 / 3) - 1)
+# Keep approximately 25,000 mesh cells per core.
+target_mesh_cells_per_core = 25_000
+mesh_n = max(round((target_mesh_cells_per_core * nprocs / 6) ** (1 / 3)), 1)
+total_mesh_cells = 6 * mesh_n**3
+PETSc.Sys.Print(
+    f"nprocs={nprocs}: constructing UnitCubeMesh({mesh_n}, {mesh_n}, {mesh_n}) "
+    f"with {total_mesh_cells} tetrahedra"
+)
 mesh = UnitCubeMesh(mesh_n, mesh_n, mesh_n)
+PETSc.Sys.Print(f"nprocs={nprocs}: mesh construction complete")
 mesh.tolerance = 0.5
 total_mesh_vertices = (mesh_n + 1) ** 3
 
@@ -74,6 +81,8 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         "nprocs",
         "pbs_job_id",
         "mesh_n",
+        "mesh_cells_per_core",
+        "total_mesh_cells",
         "mesh_vertices_per_core",
         "total_mesh_vertices",
         "points_per_core",
@@ -89,6 +98,8 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
             "nprocs": nprocs,
             "pbs_job_id": pbs_job_id,
             "mesh_n": mesh_n,
+            "mesh_cells_per_core": total_mesh_cells / nprocs,
+            "total_mesh_cells": total_mesh_cells,
             "mesh_vertices_per_core": total_mesh_vertices / nprocs,
             "total_mesh_vertices": total_mesh_vertices,
             "points_per_core": points_per_core,
