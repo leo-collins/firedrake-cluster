@@ -1,0 +1,29 @@
+Running vom_weakscaling_3d.py on 1024 processes.
+POINT_COUNT=100000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_weakscaling_3d_100000.csv.
+Job ID: 672487.pbs-6
+Node:   hx1-c08-1-1
+Date:   Sun  6 Sep 16:47:27 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_weakscaling_3d_100000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=400gb
+  PBS -l place=excl
+  PBS -l walltime=12:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+--------------------------------------------------------------------------
+prterun noticed that process rank 951 with PID 215737 on node hx1-c08-8-2 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 00:03:19
+CPU Percent: 744%
+Memory usage: 10965392kb
+Approx Power usage: 0.0006000000000000001
+Walltime usage: 00:01:43
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=672487.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/672487.pbs-6,task_memcg=/pbs_jobs.service/jobid/672487.pbs-6,task=python,pid=219418,uid=1831114
+

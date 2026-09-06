@@ -1,0 +1,36 @@
+Running vom_weakscaling_3d.py on 128 processes.
+POINT_COUNT=100000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_weakscaling_3d_100000.csv.
+Job ID: 672484.pbs-6
+Node:   hx1-c04-7-1
+Date:   Sun  6 Sep 12:20:47 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_weakscaling_3d_100000.csv
+PBS params: 
+  PBS -l select=2:ncpus=64:mpiprocs=64:mem=150gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+nprocs=128: run 0 time=3.443784s
+nprocs=128: run 1 time=3.315154s
+nprocs=128: run 2 time=3.345709s
+nprocs=128: run 3 time=3.233255s
+nprocs=128: run 4 time=3.218564s
+nprocs=128: run 5 time=3.266534s
+nprocs=128: run 6 time=3.206417s
+nprocs=128: run 7 time=3.159751s
+nprocs=128: run 8 time=3.150939s
+nprocs=128: run 9 time=3.178417s
+Average VOM creation time: 3.251852s
+Standard deviation: 0.088004s
+Job completed at Sun  6 Sep 12:31:19 BST 2026.
+
+====================================
+CPU Time used: 08:31:17
+CPU Percent: 6369%
+Memory usage: 117873824kb
+Approx Power usage: 0.10220000000000001
+Walltime usage: 00:10:36
+
+====================================
