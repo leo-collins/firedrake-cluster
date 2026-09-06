@@ -29,8 +29,14 @@ if total_points < nprocs:
         "total_points must be at least the number of MPI processes"
     )
 
-mesh_n = 36
+mesh_n = 162
+total_mesh_cells = 6 * mesh_n**3
+PETSc.Sys.Print(
+    f"nprocs={nprocs}: constructing UnitCubeMesh({mesh_n}, {mesh_n}, {mesh_n}) "
+    f"with {total_mesh_cells} tetrahedra"
+)
 mesh = UnitCubeMesh(mesh_n, mesh_n, mesh_n)
+PETSc.Sys.Print(f"nprocs={nprocs}: mesh construction complete")
 mesh.tolerance = 0.5
 total_mesh_vertices = (mesh_n + 1) ** 3
 
@@ -80,6 +86,8 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         "nprocs",
         "pbs_job_id",
         "mesh_n",
+        "mesh_cells_per_core",
+        "total_mesh_cells",
         "mesh_vertices_per_core",
         "total_mesh_vertices",
         "points_per_core",
@@ -95,6 +103,8 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
             "nprocs": nprocs,
             "pbs_job_id": pbs_job_id,
             "mesh_n": mesh_n,
+            "mesh_cells_per_core": total_mesh_cells / nprocs,
+            "total_mesh_cells": total_mesh_cells,
             "mesh_vertices_per_core": total_mesh_vertices / nprocs,
             "total_mesh_vertices": total_mesh_vertices,
             "points_per_core": total_points / nprocs,
