@@ -1,0 +1,24 @@
+Running vom_strongscaling_3d.py on 2048 processes.
+POINT_COUNT=2000000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_2000000.csv.
+Job ID: 670752.pbs-6
+Node:   hx1-c08-5-4
+Date:   Sat  5 Sep 20:01:10 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_2000000.csv
+PBS params: 
+  PBS -l select=32:ncpus=64:mpiprocs=64:mem=315gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+=>> PBS: job killed: walltime 14451 exceeded limit 14400
+
+====================================
+CPU Time used: 253:58:42
+CPU Percent: 6377%
+Memory usage: 22774244kb
+Approx Power usage: 3.0476
+Walltime usage: 04:01:03
+
+====================================
