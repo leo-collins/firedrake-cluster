@@ -1,0 +1,33 @@
+Running vom_strongscaling_3d.py on 1024 processes.
+POINT_COUNT=100000000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv.
+Job ID: 672876.pbs-6
+Node:   hx1-c08-1-4
+Date:   Sun  6 Sep 23:00:40 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=230gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+nprocs=1024: constructing UnitCubeMesh(162, 162, 162) with 25509168 tetrahedra
+nprocs=1024: mesh construction complete
+nprocs=1024: run 0 time=21.518818s
+nprocs=1024: run 1 time=11.530295s
+nprocs=1024: run 2 time=12.902879s
+nprocs=1024: run 3 time=10.539875s
+nprocs=1024: run 4 time=10.667962s
+nprocs=1024: run 5 time=10.119055s
+nprocs=1024: run 6 time=9.873544s
+=>> PBS: job killed: walltime 14465 exceeded limit 14400
+
+====================================
+CPU Time used: 253:43:55
+CPU Percent: 6369%
+Memory usage: 85282988kb
+Approx Power usage: 3.0446
+Walltime usage: 04:01:17
+
+====================================

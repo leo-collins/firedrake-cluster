@@ -1,0 +1,38 @@
+Running vom_strongscaling_3d.py on 512 processes.
+POINT_COUNT=100000000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv.
+Job ID: 672875.pbs-6
+Node:   hx1-c08-1-1
+Date:   Sun  6 Sep 23:00:41 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=200gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+nprocs=512: constructing UnitCubeMesh(162, 162, 162) with 25509168 tetrahedra
+nprocs=512: mesh construction complete
+nprocs=512: run 0 time=10.378239s
+nprocs=512: run 1 time=5.993062s
+nprocs=512: run 2 time=6.034636s
+nprocs=512: run 3 time=6.041881s
+nprocs=512: run 4 time=5.677212s
+nprocs=512: run 5 time=5.803723s
+nprocs=512: run 6 time=5.844076s
+nprocs=512: run 7 time=5.100181s
+nprocs=512: run 8 time=5.308685s
+nprocs=512: run 9 time=5.904066s
+Average VOM creation time: 6.208576s
+Standard deviation: 1.421294s
+Job completed at Sun  6 Sep 23:13:51 BST 2026.
+
+====================================
+CPU Time used: 13:09:33
+CPU Percent: 6375%
+Memory usage: 79323204kb
+Approx Power usage: 0.15780000000000002
+Walltime usage: 00:13:17
+
+====================================
