@@ -77,9 +77,12 @@ def parse_args():
     parser.add_argument("dof_count", type=int, 
                         help="Dofs per core (for weak scaling) or total dofs (for strong scaling).")
     parser.add_argument("degree", type=int, help="Degree of the CG element.")
-    parser.add_argument("--env", choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3"),
-                        default="firedrake-dev",
-                        help="Firedrake environment directory below $HOME. Defaults to firedrake-dev.")
+    parser.add_argument(
+        "--env",
+        choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3"),
+        required=True,
+        help="Firedrake environment directory below $HOME.",
+    )
     parser.add_argument("--result-subdir", type=str, default="distributed-rtree-perm",
                         help="Subdirectory below results/ for CSV output. Defaults to distributed-rtree-perm.")
     parser.add_argument("--ncpus", type=int, default=64, 

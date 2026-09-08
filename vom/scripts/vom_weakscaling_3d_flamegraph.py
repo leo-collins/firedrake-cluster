@@ -1,5 +1,6 @@
 import csv
 import fcntl
+import os
 import sys
 from pathlib import Path
 from time import perf_counter_ns
@@ -13,8 +14,8 @@ from mpi4py import MPI
 # Run with:
 #   mpiexec -n <nranks> python vom_weakscaling_3d_flamegraph.py \
 #       <points_per_rank> [csv_path] [pbs_job_id]
-# If the caller does not supply -log_view, write the flamegraph alongside the
-# launch script using the MPI size in the filename.
+# VOM_FLAMEGRAPH_SUBDIR selects the experiment directory below vom/flamegraphs.
+# An explicit -log_view overrides the default flamegraph destination.
 if len(sys.argv) < 2:
     raise ValueError(
         "Usage: vom_weakscaling_3d_flamegraph.py "
@@ -29,10 +30,17 @@ pbs_job_id = sys.argv[3] if len(sys.argv) > 3 else None
 if points_per_rank < 1:
     raise ValueError("points_per_rank must be >= 1")
 
+flamegraph_subdir = Path(
+    os.environ.get("VOM_FLAMEGRAPH_SUBDIR", "distributed-rtree-logging")
+)
+if flamegraph_subdir.is_absolute() or ".." in flamegraph_subdir.parts:
+    raise ValueError(
+        "VOM_FLAMEGRAPH_SUBDIR must stay below the flamegraphs directory"
+    )
 flamegraph_dir = (
     Path(__file__).resolve().parents[1]
     / "flamegraphs"
-    / "distributed-rtree-logging"
+    / flamegraph_subdir
 )
 if comm.rank == 0:
     flamegraph_dir.mkdir(parents=True, exist_ok=True)

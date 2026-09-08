@@ -24,6 +24,7 @@ JOB_TEMPLATE = """
 
 set -euo pipefail
 export OMP_NUM_THREADS=1
+export VOM_FLAMEGRAPH_SUBDIR="{result_subdir}"
 
 cd "$PBS_O_WORKDIR"
 cd "{script_dir}"
@@ -32,13 +33,14 @@ module load buildenv/default-foss-2025b
 module load HDF5/1.14.6-gompi-2025b
 module load Python/3.13.5-GCCcore-14.3.0
 
-source "$HOME/firedrake-dev/venv-firedrake/bin/activate"
+source "$HOME/{env}/venv-firedrake/bin/activate"
 
 NPROCS={total_cpus}
 POINT_COUNT={point_count}
 CSV="{result_dir}/{script_name}_{point_count}.csv"
 
 echo "Running {script_name}.py on $NPROCS processes."
+echo "Firedrake environment: $HOME/{env}/venv-firedrake"
 echo "POINT_COUNT=$POINT_COUNT."
 echo "VertexOnlyMesh will be constructed with redundant=False."
 echo "Results will be saved to $CSV."
@@ -97,6 +99,18 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--env",
+        choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3"),
+        required=True,
+        help=(
+            "Firedrake environment directory below $HOME."
+        ),
+    )
+    parser.add_argument(
+        "--log-subdir",
+        help="Optional subdirectory below logs/ for PBS output.",
+    )
+    parser.add_argument(
         "--ncpus",
         type=int,
         default=64,
@@ -149,6 +163,11 @@ if __name__ == "__main__":
         print("Error: --result-subdir must stay below the results directory.")
         sys.exit(2)
     result_dir = RESULTS_DIR / result_subdir
+    log_subdir = Path(args.log_subdir) if args.log_subdir else Path()
+    if log_subdir.is_absolute() or ".." in log_subdir.parts:
+        print("Error: --log-subdir must stay below the logs directory.")
+        sys.exit(2)
+    log_dir = LOG_DIR / log_subdir
 
     if not check_script(args.script):
         print(f"Error: Script '{args.script}.py' not found in {SCRIPT_DIR}.")
@@ -179,7 +198,7 @@ if __name__ == "__main__":
 
     result_dir.mkdir(parents=True, exist_ok=True)
     JOB_DIR.mkdir(parents=True, exist_ok=True)
-    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_dir.mkdir(parents=True, exist_ok=True)
 
     job_script_map = {
         "job_name": job_name,
@@ -193,13 +212,17 @@ if __name__ == "__main__":
         "script_dir": SCRIPT_DIR,
         "total_cpus": total_cpus,
         "point_count": args.point_count,
+        "env": args.env,
         "result_dir": result_dir,
-        "log_dir": LOG_DIR,
+        "result_subdir": result_subdir,
+        "log_dir": log_dir,
         "script_name": args.script,
     }
 
     job_script = JOB_TEMPLATE.format_map(job_script_map)
-    job_script_path = JOB_DIR / f"{job_name}.pbs"
+    job_script_path = JOB_DIR / (
+        f"{job_name}_{str(result_subdir).replace('/', '_')}_{total_cpus}.pbs"
+    )
     try:
         with job_script_path.open("w") as f:
             f.write(job_script)
