@@ -1,0 +1,117 @@
+Running vom_strongscaling_3d.py on 2048 processes.
+POINT_COUNT=100000000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv.
+Job ID: 672877.pbs-6
+Node:   hx1-c08-1-1
+Date:   Mon  7 Sep 03:02:07 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree/vom_strongscaling_3d_100000000.csv
+PBS params: 
+  PBS -l select=32:ncpus=64:mpiprocs=64:mem=315gb
+  PBS -l place=excl
+  PBS -l walltime=12:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+nprocs=2048: constructing UnitCubeMesh(162, 162, 162) with 25509168 tetrahedra
+nprocs=2048: mesh construction complete
+nprocs=2048: run 0 time=42.861582s
+[hx1-c08-5-1:277073:0:277073] ib_mlx5_log.c:179  Transport retry count exceeded on mlx5_0:1/IB (synd 0x15 vend 0x81 hw_synd 0/0)
+[hx1-c08-5-1:277073:0:277073] ib_mlx5_log.c:179  DCI QP 0x8640 wqe[4452]: SEND s-e [rqpn 0xbba7 rlid 305] [va 0x518fb00 len 438 lkey 0x1e6120] 
+==== backtrace (tid: 277073) ====
+ 0 0x000000000001391e uct_ib_mlx5_completion_with_err()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/ib_mlx5_log.c:179
+ 1 0x0000000000046b7c uct_dc_mlx5_ep_handle_failure()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/dc/dc_mlx5_ep.c:1771
+ 2 0x0000000000014a05 uct_ib_mlx5_check_completion()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/ib_mlx5.c:477
+ 3 0x000000000004953f uct_ib_mlx5_poll_cq()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/ib_mlx5.inl:178
+ 4 0x000000000004953f uct_dc_mlx5_poll_tx()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/dc/dc_mlx5.c:282
+ 5 0x000000000004953f uct_dc_mlx5_iface_progress()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/dc/dc_mlx5.c:326
+ 6 0x000000000004953f uct_dc_mlx5_iface_progress_ll()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/mlx5/dc/dc_mlx5.c:336
+ 7 0x0000000000050a3a ucs_callbackq_dispatch()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/ucs/datastruct/callbackq.h:215
+ 8 0x0000000000050a3a uct_worker_progress()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/api/uct.h:2823
+ 9 0x0000000000050a3a ucp_worker_progress()  /dev/shm/hpcsw/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/ucp/core/ucp_worker.c:3059
+10 0x0000000000029c8b opal_progress()  ???:0
+11 0x0000000000094b95 ompi_request_default_wait_all()  ???:0
+12 0x00000000000dc75f MPI_Waitall()  ???:0
+13 0x00000000008db421 PetscSFLinkFinishCommunication_Default()  sfmpi.c:0
+14 0x00000000008d912e PetscSFBcastEnd_Basic()  :0
+15 0x00000000009b2b57 PetscSFBcastEnd()  ???:0
+16 0x000000000027b68e __pyx_pw_8petsc4py_5PETSc_2SF_43bcastEnd()  PETSc.c:0
+17 0x0000000000183fff _PyObject_VectorcallTstate()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/./Include/internal/pycore_call.h:168
+18 0x0000000000183fff PyObject_Vectorcall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:327
+19 0x0000000000192b76 _PyEval_EvalFrameDefault()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/generated_cases.c.h:1843
+20 0x00000000001c1386 _PyVectorcall_Call()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:285
+21 0x000000000020f21f __Pyx_PyObject_Call()  PETSc.c:0
+22 0x000000000043e7e2 __pyx_pw_8petsc4py_5PETSc_3Log_14EventDecorator_9decorator_1wrapped_func()  PETSc.c:0
+23 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:242
+24 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:244
+25 0x000000000019bb76 _PyEval_EvalFrameDefault()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/generated_cases.c.h:1502
+26 0x00000000001c1386 _PyVectorcall_Call()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:285
+27 0x000000000020f21f __Pyx_PyObject_Call()  PETSc.c:0
+28 0x000000000043e7e2 __pyx_pw_8petsc4py_5PETSc_3Log_14EventDecorator_9decorator_1wrapped_func()  PETSc.c:0
+29 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:242
+30 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:244
+31 0x000000000019bb76 _PyEval_EvalFrameDefault()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/generated_cases.c.h:1502
+32 0x00000000001c1386 _PyVectorcall_Call()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:285
+33 0x000000000020f21f __Pyx_PyObject_Call()  PETSc.c:0
+34 0x000000000043e7e2 __pyx_pw_8petsc4py_5PETSc_3Log_14EventDecorator_9decorator_1wrapped_func()  PETSc.c:0
+35 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:242
+36 0x000000000018225d _PyObject_MakeTpCall()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Objects/call.c:244
+37 0x000000000019bb76 _PyEval_EvalFrameDefault()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/generated_cases.c.h:1502
+38 0x000000000022029a PyEval_EvalCode()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/ceval.c:604
+39 0x000000000025662c run_eval_code_obj()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:1381
+40 0x0000000000253dd1 run_mod()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:1466
+41 0x0000000000253dd1 Py_DECREF()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/./Include/object.h:944
+42 0x0000000000253dd1 run_mod()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:1467
+43 0x0000000000250d95 pyrun_file()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:1295
+44 0x0000000000250a22 _PyRun_SimpleFileObject()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:517
+45 0x000000000025082a _PyRun_AnyFileObject()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Python/pythonrun.c:77
+46 0x000000000024f0c1 pymain_run_file_obj()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Modules/main.c:410
+47 0x000000000024f0c1 pymain_run_file()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Modules/main.c:429
+48 0x000000000024f0c1 pymain_run_python()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Modules/main.c:696
+49 0x000000000024f0c1 Py_RunMain()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Modules/main.c:775
+50 0x000000000020fb57 Py_BytesMain()  /dev/shm/hpcsw/Python/3.13.5/GCCcore-14.3.0/Python-3.13.5/Modules/main.c:829
+51 0x000000000003a7e5 __libc_start_main()  ???:0
+52 0x000000000040106e _start()  ???:0
+=================================
+[hx1-c08-5-1:277073] *** Process received signal ***
+[hx1-c08-5-1:277073] Signal: Aborted (6)
+[hx1-c08-5-1:277073] Signal code:  (-6)
+[hx1-c08-5-1:277073] [ 0] /lib64/libpthread.so.0(+0x12d20)[0x14774712fd20]
+[hx1-c08-5-1:277073] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x147746b9152f]
+[hx1-c08-5-1:277073] [ 2] /lib64/libc.so.6(abort+0x127)[0x147746b64e65]
+[hx1-c08-5-1:277073] [ 3] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/libucs.so.0(+0x2e13b)[0x14773affa13b]
+[hx1-c08-5-1:277073] [ 4] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/libucs.so.0(+0x32041)[0x14773affe041]
+[hx1-c08-5-1:277073] [ 5] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/libucs.so.0(ucs_log_dispatch+0xdd)[0x14773affe37d]
+[hx1-c08-5-1:277073] [ 6] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/ucx/libuct_ib_mlx5.so.0(uct_ib_mlx5_completion_with_err+0x48e)[0x14772f35f91e]
+[hx1-c08-5-1:277073] [ 7] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/ucx/libuct_ib_mlx5.so.0(uct_dc_mlx5_ep_handle_failure+0xac)[0x14772f392b7c]
+[hx1-c08-5-1:277073] [ 8] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/ucx/libuct_ib_mlx5.so.0(uct_ib_mlx5_check_completion+0x35)[0x14772f360a05]
+[hx1-c08-5-1:277073] [ 9] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/ucx/libuct_ib_mlx5.so.0(+0x4953f)[0x14772f39553f]
+[hx1-c08-5-1:277073] [10] /gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64/libucp.so.0(ucp_worker_progress+0x5a)[0x14773b0c2a3a]
+[hx1-c08-5-1:277073] [11] /gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib/libopen-pal.so.80(opal_progress+0x2b)[0x14773b93ec8b]
+[hx1-c08-5-1:277073] [12] /gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib/libmpi.so.40(ompi_request_default_wait_all+0x285)[0x14773eda4b95]
+[hx1-c08-5-1:277073] [13] /gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib/libmpi.so.40(PMPI_Waitall+0x8f)[0x14773edec75f]
+[hx1-c08-5-1:277073] [14] /gpfs/home/lac224/firedrake-dev/petsc/arch-firedrake-default/lib/libpetsc.so.3.025(+0x8db421)[0x14773f95b421]
+[hx1-c08-5-1:277073] [15] /gpfs/home/lac224/firedrake-dev/petsc/arch-firedrake-default/lib/libpetsc.so.3.025(+0x8d912e)[0x14773f95912e]
+[hx1-c08-5-1:277073] [16] /gpfs/home/lac224/firedrake-dev/petsc/arch-firedrake-default/lib/libpetsc.so.3.025(PetscSFBcastEnd+0x47)[0x14773fa32b57]
+[hx1-c08-5-1:277073] [17] /gpfs/home/lac224/firedrake-dev/venv-firedrake/lib/python3.13/site-packages/petsc4py/lib/arch-firedrake-default/PETSc.cpython-313-x86_64-linux-gnu.so(+0x27b68e)[0x1477412d368e]
+[hx1-c08-5-1:277073] [18] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(PyObject_Vectorcall+0x4f)[0x147747a46fff]
+[hx1-c08-5-1:277073] [19] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(_PyEval_EvalFrameDefault+0x1166)[0x147747a55b76]
+[hx1-c08-5-1:277073] [20] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(+0x1c1386)[0x147747a84386]
+[hx1-c08-5-1:277073] [21] /gpfs/home/lac224/firedrake-dev/venv-firedrake/lib/python3.13/site-packages/petsc4py/lib/arch-firedrake-default/PETSc.cpython-313-x86_64-linux-gnu.so(+0x20f21f)[0x14774126721f]
+[hx1-c08-5-1:277073] [22] /gpfs/home/lac224/firedrake-dev/venv-firedrake/lib/python3.13/site-packages/petsc4py/lib/arch-firedrake-default/PETSc.cpython-313-x86_64-linux-gnu.so(+0x43e7e2)[0x1477414967e2]
+[hx1-c08-5-1:277073] [23] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(_PyObject_MakeTpCall+0x13d)[0x147747a4525d]
+[hx1-c08-5-1:277073] [24] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(_PyEval_EvalFrameDefault+0xa166)[0x147747a5eb76]
+[hx1-c08-5-1:277073] [25] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(+0x1c1386)[0x147747a84386]
+[hx1-c08-5-1:277073] [26] /gpfs/home/lac224/firedrake-dev/venv-firedrake/lib/python3.13/site-packages/petsc4py/lib/arch-firedrake-default/PETSc.cpython-313-x86_64-linux-gnu.so(+0x20f21f)[0x14774126721f]
+[hx1-c08-5-1:277073] [27] /gpfs/home/lac224/firedrake-dev/venv-firedrake/lib/python3.13/site-packages/petsc4py/lib/arch-firedrake-default/PETSc.cpython-313-x86_64-linux-gnu.so(+0x43e7e2)[0x1477414967e2]
+[hx1-c08-5-1:277073] [28] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(_PyObject_MakeTpCall+0x13d)[0x147747a4525d]
+[hx1-c08-5-1:277073] [29] /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib/libpython3.13.so.1.0(_PyEval_EvalFrameDefault+0xa166)[0x147747a5eb76]
+[hx1-c08-5-1:277073] *** End of error message ***
+
+====================================
+CPU Time used: 23:43:05
+CPU Percent: 6379%
+Memory usage: 79610420kb
+Approx Power usage: 0.28459999999999996
+Walltime usage: 09:22:20
+
+====================================

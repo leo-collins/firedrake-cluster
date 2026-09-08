@@ -1,0 +1,38 @@
+Running vom_weakscaling_3d_flamegraph.py on 512 processes.
+POINT_COUNT=100000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-logging/vom_weakscaling_3d_flamegraph_100000.csv.
+Job ID: 674662.pbs-6
+Node:   hx1-c08-3-1
+Date:   Mon  7 Sep 15:44:18 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-logging/vom_weakscaling_3d_flamegraph_100000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=400gb
+  PBS -l place=excl
+  PBS -l walltime=12:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/
+nprocs=512: UnitCubeMesh(129, 129, 129), cells/rank=25156.5, points/rank=100000
+run 00: max=9.225571s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 01: max=7.708963s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 02: max=5.551990s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 03: max=5.256074s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 04: max=4.399993s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 05: max=4.155837s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 06: max=4.037225s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 07: max=3.741860s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 08: max=3.826062s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+run 09: max=4.556390s; candidates[min/median/max]=184028/316778.5/668134, boxes[min/median/max]=1/8.0/64, total_boxes=2836, input_peers[min/median/max]=512/512.0/512
+final-root-fanout[min/median/max]=1/3.0/9
+Diagnostics: /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-logging/vom_weakscaling_3d_flamegraph_100000.csv
+VOM time[min/median/max]=3.741860/4.478191/9.225571s
+Job completed at Mon  7 Sep 15:51:11 BST 2026.
+
+====================================
+CPU Time used: 05:40:58
+CPU Percent: 6380%
+Memory usage: 47475028kb
+Approx Power usage: 0.068
+Walltime usage: 00:07:00
+
+====================================
