@@ -1,0 +1,31 @@
+Running vom_weakscaling_3d_flamegraph.py on 1024 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev2/venv-firedrake
+POINT_COUNT=100000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-exclude-halos-logging/vom_weakscaling_3d_flamegraph_100000.csv.
+Job ID: 687249.pbs-6
+Node:   hx1-c08-6-4
+Date:   Tue  8 Sep 19:50:35 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-exclude-halos-logging/vom_weakscaling_3d_flamegraph_100000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=400gb
+  PBS -l place=excl
+  PBS -l walltime=12:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/distributed-rtree-exclude-halos-logging/
+nprocs=1024: UnitCubeMesh(162, 162, 162), cells/rank=24911.3, points/rank=100000
+run 00: max=21.616567s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 01: max=21.964884s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 02: max=17.239062s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 03: max=24.373020s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 04: max=18.186154s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 05: max=21.774110s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+
+====================================
+CPU Time used: 262:23:20
+CPU Percent: 6380%
+Memory usage: 79969448kb
+Approx Power usage: 3.1486
+Walltime usage: 04:10:08
+
+====================================
