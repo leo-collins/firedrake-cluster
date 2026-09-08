@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 START_JOBS="$SCRIPT_DIR/../../start_jobs.py"
-ENV="firedrake-dev"
+ENV="firedrake-dev2"
 EXPERIMENT=distributed-rtree-exclude-halos-logging
 
 # Install the Firedrake variant that excludes VOM halos before submitting.

@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 START_JOBS="$SCRIPT_DIR/../../start_jobs.py"
-ENV="firedrake-dev"
+ENV="firedrake-dev3"
 EXPERIMENT=distributed-rtree-alltoall-logging
 
 # Install the Firedrake all-to-all discovery variant before submitting.
