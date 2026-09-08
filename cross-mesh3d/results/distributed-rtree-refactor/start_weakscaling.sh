@@ -9,9 +9,9 @@ ENV="firedrake-dev"
 # Start jobs ranging from 1-2048 cores, running `overlapping_weakscaling_3d.py`
 # with 200,000 dofs per core and CG3 elements
 
-python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 1 --mem 150 --exclusive --range
+python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 1 --mem 35 --walltime 15 --exclusive --range
 python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 2 --mem 150 --exclusive
-python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 4 --mem 150 --exclusive
+python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 4 --mem 70 --walltime 15 --exclusive
 python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 8 --mem 200 --exclusive
-python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 16 --mem 230 --exclusive
-python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 32 --mem 315 --exclusive
+python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 16 --mem 165 --walltime 70 --exclusive
+python3 "$START_JOBS" overlapping_weakscaling_3d 200000 3 --env "$ENV" --result-subdir distributed-rtree-refactor --ncpus 64 --num_nodes 32 --mem 310 --walltime 230 --exclusive
