@@ -13,13 +13,13 @@ from mpi4py import MPI
 
 # Run with:
 #   mpiexec -n <nranks> python vom_weakscaling_3d_flamegraph.py \
-#       <points_per_rank> [csv_path] [pbs_job_id]
+#       <points_per_rank> [csv_path] [pbs_job_id] [n_runs]
 # VOM_FLAMEGRAPH_SUBDIR selects the experiment directory below vom/flamegraphs.
 # An explicit -log_view overrides the default flamegraph destination.
 if len(sys.argv) < 2:
     raise ValueError(
         "Usage: vom_weakscaling_3d_flamegraph.py "
-        "<points_per_rank> [csv_path] [pbs_job_id]"
+        "<points_per_rank> [csv_path] [pbs_job_id] [n_runs]"
     )
 
 comm = MPI.COMM_WORLD
@@ -27,8 +27,11 @@ nprocs = comm.size
 points_per_rank = int(sys.argv[1])
 csv_path = Path(sys.argv[2]) if len(sys.argv) > 2 else None
 pbs_job_id = sys.argv[3] if len(sys.argv) > 3 else None
+n_runs = int(sys.argv[4]) if len(sys.argv) > 4 else 10
 if points_per_rank < 1:
     raise ValueError("points_per_rank must be >= 1")
+if n_runs < 1:
+    raise ValueError("n_runs must be >= 1")
 
 flamegraph_subdir = Path(
     os.environ.get("VOM_FLAMEGRAPH_SUBDIR", "distributed-rtree-logging")
@@ -126,7 +129,7 @@ with PETSc.Log.Event("create_vom_warmup"):
 times = []
 last_candidate_sf = None
 final_rank_diagnostics = None
-for run in range(10):
+for run in range(n_runs):
     del vom
     clear_spatial_index_caches(mesh)
     garbage_cleanup(mesh)
@@ -161,7 +164,7 @@ for run in range(10):
     times.append(max_time)
 
     if comm.rank == 0:
-        if run == 9:
+        if run == n_runs - 1:
             final_rank_diagnostics = gathered
         candidates = [row["candidate_leaves"] for row in gathered]
         boxes_per_rank = [row["partition_boxes"] for row in gathered]

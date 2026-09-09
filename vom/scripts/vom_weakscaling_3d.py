@@ -11,21 +11,24 @@ from mpi4py import MPI
 
 # Run with:
 #   mpiexec -n <nprocs> python vom_weakscaling_3d.py \
-#       <points_per_core> [csv_path] [pbs_job_id]
+#       <points_per_core> [csv_path] [pbs_job_id] [n_runs]
 
 if len(argv) < 2:
     raise ValueError(
         "Usage: vom_weakscaling_3d.py "
-        "<points_per_core> [csv_path] [pbs_job_id]"
+        "<points_per_core> [csv_path] [pbs_job_id] [n_runs]"
     )
 
 nprocs = COMM_WORLD.size
 points_per_core = int(argv[1])
 csv_path = Path(argv[2]) if len(argv) > 2 else None
 pbs_job_id = argv[3] if len(argv) > 3 else None
+n_runs = int(argv[4]) if len(argv) > 4 else 10
 
 if points_per_core < 1:
     raise ValueError("points_per_core must be >= 1")
+if n_runs < 1:
+    raise ValueError("n_runs must be >= 1")
 
 # Keep approximately 25,000 mesh cells per core.
 target_mesh_cells_per_core = 25_000
@@ -50,7 +53,7 @@ total_points = points_per_core * nprocs
 vom = VertexOnlyMesh(mesh, points, redundant=False)
 
 times = []
-for run in range(10):
+for run in range(n_runs):
     del vom
     mesh._partition_rtree_cache = None
     mesh._rtree_cache = None
@@ -89,7 +92,7 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         "total_points",
         "mean_time_s",
         "std_time_s",
-    ] + [f"run{i}" for i in range(10)]
+    ] + [f"run{i}" for i in range(n_runs)]
     with csv_path.open("a", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         if write_header:
