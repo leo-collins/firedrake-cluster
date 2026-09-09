@@ -37,11 +37,13 @@ source "$HOME/{env}/venv-firedrake/bin/activate"
 
 NPROCS={total_cpus}
 POINT_COUNT={point_count}
+N_RUNS={n_runs}
 CSV="{result_dir}/{script_name}_{point_count}.csv"
 
 echo "Running {script_name}.py on $NPROCS processes."
 echo "Firedrake environment: $HOME/{env}/venv-firedrake"
 echo "POINT_COUNT=$POINT_COUNT."
+echo "N_RUNS=$N_RUNS."
 echo "VertexOnlyMesh will be constructed with redundant=False."
 echo "Results will be saved to $CSV."
 echo "Job ID: $PBS_JOBID"
@@ -58,7 +60,7 @@ echo "  PBS -o {log_dir}/"
 P={starting_proc}
 while [ "$P" -le "$NPROCS" ]; do
     mpirun -n "$P" python {script_name}.py \
-        {point_count} "$CSV" "$PBS_JOBID"
+        {point_count} "$CSV" "$PBS_JOBID" "$N_RUNS"
     P=$((P * 2))
 done
 
@@ -147,6 +149,12 @@ def parse_args():
         default=240,
         help="Wall time in minutes. Defaults to 240 (4 hours).",
     )
+    parser.add_argument(
+        "--n_runs",
+        type=int,
+        default=10,
+        help="Number of measured runs. Defaults to 10.",
+    )
     return parser.parse_args()
 
 
@@ -193,6 +201,10 @@ if __name__ == "__main__":
         print("Error: walltime must be at least 1 minute.")
         sys.exit(1)
 
+    if args.n_runs < 1:
+        print("Error: n_runs must be at least 1.")
+        sys.exit(1)
+
     total_cpus = args.ncpus * args.num_nodes
     job_name = f"{args.script}_{args.point_count}"
 
@@ -212,6 +224,7 @@ if __name__ == "__main__":
         "script_dir": SCRIPT_DIR,
         "total_cpus": total_cpus,
         "point_count": args.point_count,
+        "n_runs": args.n_runs,
         "env": args.env,
         "result_dir": result_dir,
         "result_subdir": result_subdir,
