@@ -1,0 +1,33 @@
+Running vom_weakscaling_3d_flamegraph.py on 1024 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+POINT_COUNT=100000.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-alltoall-logging/vom_weakscaling_3d_flamegraph_100000.csv.
+Job ID: 687256.pbs-6
+Node:   hx1-c08-6-4
+Date:   Wed  9 Sep 00:00:56 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/distributed-rtree-alltoall-logging/vom_weakscaling_3d_flamegraph_100000.csv
+PBS params: 
+  PBS -l select=16:ncpus=64:mpiprocs=64:mem=400gb
+  PBS -l place=excl
+  PBS -l walltime=12:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/distributed-rtree-alltoall-logging/
+nprocs=1024: UnitCubeMesh(162, 162, 162), cells/rank=24911.3, points/rank=100000
+run 00: max=27.767704s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 01: max=20.237753s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 02: max=24.107611s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 03: max=20.575205s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 04: max=20.667492s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 05: max=20.629321s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 06: max=21.367592s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+run 07: max=21.728355s; candidates[min/median/max]=177889/325614.5/1419246, boxes[min/median/max]=1/8.0/64, total_boxes=6372, input_peers[min/median/max]=1024/1024.0/1024
+
+====================================
+CPU Time used: 708:50:47
+CPU Percent: 6380%
+Memory usage: 85276652kb
+Approx Power usage: 8.506
+Walltime usage: 11:10:10
+
+====================================
