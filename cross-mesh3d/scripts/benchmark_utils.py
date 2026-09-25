@@ -2,10 +2,26 @@ from importlib.util import find_spec
 from pathlib import Path
 import subprocess
 
+import numpy as np
+from firedrake.mesh import VertexOnlyMeshSF
 from firedrake.petsc import garbage_cleanup
 
 
 N_RUNS = 10
+
+# Retain the candidate SF from the most recent VOM construction. Reading its
+# graph after assembly keeps diagnostics out of the measured assembly path.
+_candidate_sf = None
+_original_candidate_sf = VertexOnlyMeshSF.candidate_sf
+
+
+def _recording_candidate_sf(cls, parent_mesh, root_coordinates):
+    global _candidate_sf
+    _candidate_sf = _original_candidate_sf(parent_mesh, root_coordinates)
+    return _candidate_sf
+
+
+VertexOnlyMeshSF.candidate_sf = classmethod(_recording_candidate_sf)
 
 _SPATIAL_INDEX_CACHE_NAMES = (
     "_bounding_box_coords_cache",
@@ -70,3 +86,38 @@ def point_metadata(interpolate_expr, target_dofs, comm):
         "found_target_points": found_points,
         "missing_target_points": target_dofs - found_points,
     }
+
+
+def rank_diagnostic_metadata(vom, parent_mesh, local_time_s, comm):
+    """Summarize the final construction's per-rank VOM diagnostics."""
+    if _candidate_sf is None:
+        raise RuntimeError("VOM construction did not create a candidate SF")
+    boxes = parent_mesh._box_ratio_heuristic
+    side_lengths = boxes[:, 1, :] - boxes[:, 0, :]
+    rank_diagnostics = {
+        "local_time_s": local_time_s,
+        "candidate_roots": _candidate_sf.nroots,
+        "candidate_leaves": _candidate_sf.nleaves,
+        "candidate_input_peers": np.unique(_candidate_sf.input_ranks).size,
+        "partition_boxes": boxes.shape[0],
+        "partition_box_volume_sum": np.prod(side_lengths, axis=1).sum(),
+        "parent_owned_cells": parent_mesh.cell_set.size,
+        "parent_halo_cells": parent_mesh.cell_set.total_size - parent_mesh.cell_set.size,
+        "vom_owned_points": vom.cell_set.size,
+        "vom_halo_points": vom.cell_set.total_size - vom.cell_set.size,
+    }
+    gathered = comm.gather(rank_diagnostics, root=0)
+    if comm.rank != 0:
+        return {}
+    output = {}
+    for name in rank_diagnostics:
+        values = np.asarray([row[name] for row in gathered])
+        output[f"{name}_min"] = values.min()
+        output[f"{name}_median"] = np.median(values)
+        output[f"{name}_max"] = values.max()
+    return output
+
+
+def interpolation_vom(interpolate_expr):
+    point_evaluation, _ = interpolate_expr._interpolator._symbolic_expressions
+    return point_evaluation.function_space().mesh()

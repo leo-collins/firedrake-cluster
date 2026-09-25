@@ -7,7 +7,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-from benchmark_utils import N_RUNS, point_metadata, problem_metadata, reset_cross_mesh_caches
+from benchmark_utils import N_RUNS, interpolation_vom, point_metadata, problem_metadata, rank_diagnostic_metadata, reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 from mpi4py import MPI
@@ -59,11 +59,13 @@ for run_idx in range(N_RUNS):
 	t0 = perf_counter_ns()
 	matrix = assemble(interp, mat_type="aij")
 	t1 = perf_counter_ns()
+	local_time_s = (t1 - t0) / 1e9
 	run_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
 	PETSc.Sys.Print(f"nprocs={n_cores}: cold-index run{run_idx} time={run_time_s:.6g}s")
 	run_times_s.append(run_time_s)
 	del matrix
 
+metadata.update(rank_diagnostic_metadata(interpolation_vom(interp), mesh1, local_time_s, COMM_WORLD))
 reset_cross_mesh_caches(interp, mesh1)
 average_dofs_per_core = (W.dim() + V.dim()) / (2 * n_cores)
 

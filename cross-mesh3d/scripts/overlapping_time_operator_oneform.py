@@ -7,7 +7,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-from benchmark_utils import clear_spatial_index_caches, problem_metadata
+from benchmark_utils import clear_spatial_index_caches, interpolation_vom, problem_metadata, rank_diagnostic_metadata
 from firedrake import *
 from firedrake.petsc import garbage_cleanup
 from firedrake.utility_meshes import _mark_mesh_boundaries
@@ -46,7 +46,7 @@ V2 = FunctionSpace(mesh2, "CG", degree)
 metadata = problem_metadata(mesh1, V1, V2, COMM_WORLD)
 
 
-def run(V1, V2):
+def run(V1, V2, collect_diagnostics=False):
     f = Function(V1).assign(1.1)
     # Omega_v
     V2_element = V2.ufl_element()
@@ -97,6 +97,8 @@ def run(V1, V2):
     I_f = assemble(I)
     t1 = perf_counter_ns()
     I_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+    if collect_diagnostics:
+        metadata.update(rank_diagnostic_metadata(interpolation_vom(I), mesh1, (t1 - t0) / 1e9, COMM_WORLD))
 
     return Omega_v_time_s, Omega_v_io_time_s, A_time_s, B_time_s, C_time_s, I_time_s
 
@@ -119,7 +121,7 @@ PETSc.Sys.Print(f"nprocs={n_cores}: completed warmup run")
 run_times_s = []
 for i in range(N_RUNS):
     COMM_WORLD.barrier()
-    run_times_s.append(run(V1, V2))
+    run_times_s.append(run(V1, V2, collect_diagnostics=i == N_RUNS - 1))
     PETSc.Sys.Print(f"nprocs={n_cores}: completed run {i}")
     garbage_cleanup(mesh1)
 

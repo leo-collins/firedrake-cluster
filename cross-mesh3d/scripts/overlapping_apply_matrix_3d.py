@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 
 from mpi4py import MPI
 
-from benchmark_utils import point_metadata, problem_metadata, reset_cross_mesh_caches
+from benchmark_utils import interpolation_vom, point_metadata, problem_metadata, rank_diagnostic_metadata, reset_cross_mesh_caches
 from firedrake import *
 from firedrake.utility_meshes import _mark_mesh_boundaries
 
@@ -63,7 +63,9 @@ COMM_WORLD.barrier()
 t0 = perf_counter_ns()
 I = assemble(interp, mat_type="aij")
 t1 = perf_counter_ns()
+local_time_s = (t1 - t0) / 1e9
 assembly_time_s = COMM_WORLD.allreduce(t1 - t0, op=MPI.MAX) / 1e9
+metadata.update(rank_diagnostic_metadata(interpolation_vom(interp), mesh1, local_time_s, COMM_WORLD))
 PETSc.Sys.Print(
     f"nprocs={n_cores}: matrix assembly time={assembly_time_s:.6g}s"
 )
