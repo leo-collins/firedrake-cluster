@@ -1,0 +1,101 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 64 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/vom-exclude-halos-perm/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 711461.pbs-6
+Node:   hx1-c03-4-4
+Date:   Sat 26 Sep 02:57:56 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/vom-exclude-halos-perm/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=35gb
+  PBS -l place=excl
+  PBS -l walltime=00:15:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/logs/
+nprocs=1: mesh generation=1.59704s
+nprocs=1: completed code warmup
+nprocs=1: cold-index run0 time=2.20134s
+nprocs=1: cold-index run1 time=2.19501s
+nprocs=1: cold-index run2 time=2.18263s
+nprocs=1: cold-index run3 time=2.19183s
+nprocs=1: cold-index run4 time=2.18815s
+nprocs=1: cold-index run5 time=2.20162s
+nprocs=1: cold-index run6 time=2.18646s
+nprocs=1: cold-index run7 time=2.18689s
+nprocs=1: cold-index run8 time=2.20168s
+nprocs=1: cold-index run9 time=2.17697s
+nprocs=2: mesh generation=3.01538s
+nprocs=2: completed code warmup
+nprocs=2: cold-index run0 time=2.54323s
+nprocs=2: cold-index run1 time=2.52204s
+nprocs=2: cold-index run2 time=2.5405s
+nprocs=2: cold-index run3 time=2.51227s
+nprocs=2: cold-index run4 time=2.51101s
+nprocs=2: cold-index run5 time=2.45887s
+nprocs=2: cold-index run6 time=2.52049s
+nprocs=2: cold-index run7 time=2.59527s
+nprocs=2: cold-index run8 time=2.51926s
+nprocs=2: cold-index run9 time=2.49692s
+nprocs=4: mesh generation=4.2017s
+nprocs=4: completed code warmup
+nprocs=4: cold-index run0 time=2.40215s
+nprocs=4: cold-index run1 time=2.40942s
+nprocs=4: cold-index run2 time=2.39698s
+nprocs=4: cold-index run3 time=2.42079s
+nprocs=4: cold-index run4 time=2.41885s
+nprocs=4: cold-index run5 time=2.41368s
+nprocs=4: cold-index run6 time=2.41128s
+nprocs=4: cold-index run7 time=2.41013s
+nprocs=4: cold-index run8 time=2.39772s
+nprocs=4: cold-index run9 time=2.42816s
+nprocs=8: mesh generation=6.77627s
+nprocs=8: completed code warmup
+nprocs=8: cold-index run0 time=2.48913s
+nprocs=8: cold-index run1 time=2.58895s
+nprocs=8: cold-index run2 time=2.47408s
+nprocs=8: cold-index run3 time=2.4858s
+nprocs=8: cold-index run4 time=2.54594s
+nprocs=8: cold-index run5 time=2.50559s
+nprocs=8: cold-index run6 time=2.53956s
+nprocs=8: cold-index run7 time=2.47525s
+nprocs=8: cold-index run8 time=2.50472s
+nprocs=8: cold-index run9 time=2.471s
+nprocs=16: mesh generation=12.279s
+nprocs=16: completed code warmup
+nprocs=16: cold-index run0 time=2.64628s
+nprocs=16: cold-index run1 time=2.76817s
+nprocs=16: cold-index run2 time=2.73609s
+nprocs=16: cold-index run3 time=2.65859s
+nprocs=16: cold-index run4 time=2.66191s
+nprocs=16: cold-index run5 time=2.65216s
+nprocs=16: cold-index run6 time=2.7121s
+nprocs=16: cold-index run7 time=2.73369s
+nprocs=16: cold-index run8 time=2.6616s
+nprocs=16: cold-index run9 time=2.70568s
+nprocs=32: mesh generation=24.6376s
+nprocs=32: completed code warmup
+nprocs=32: cold-index run0 time=3.29184s
+nprocs=32: cold-index run1 time=3.23587s
+nprocs=32: cold-index run2 time=3.23717s
+nprocs=32: cold-index run3 time=3.1868s
+nprocs=32: cold-index run4 time=3.18711s
+nprocs=32: cold-index run5 time=3.19993s
+nprocs=32: cold-index run6 time=3.24586s
+nprocs=32: cold-index run7 time=3.24125s
+nprocs=32: cold-index run8 time=3.24784s
+nprocs=32: cold-index run9 time=3.24789s
+nprocs=64: mesh generation=50.6639s
+--------------------------------------------------------------------------
+prterun noticed that process rank 0 with PID 2734423 on node hx1-c03-4-4 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 00:57:37
+CPU Percent: 2368%
+Memory usage: 32502956kb
+Approx Power usage: 0.011399999999999999
+Walltime usage: 00:07:35
+
+====================================
+Cgroup mem limit exceeded: oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=711461.pbs-6,mems_allowed=0-1,oom_memcg=/pbs_jobs.service/jobid/711461.pbs-6,task_memcg=/pbs_jobs.service/jobid/711461.pbs-6,task=python,pid=2734471,uid=1831114
+
