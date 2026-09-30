@@ -1,0 +1,40 @@
+Running vom_weakscaling_3d.py on 64 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+POINT_COUNT=100000.
+N_RUNS=10.
+VertexOnlyMesh will be constructed with redundant=False.
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/vom/results/vom-exclude-halos-perm/vom_weakscaling_3d_100000.csv.
+Job ID: 712183.pbs-6
+Node:   hx1-c03-4-2
+Date:   Wed 30 Sep 03:09:00 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/vom/results/vom-exclude-halos-perm/vom_weakscaling_3d_100000.csv
+PBS params: 
+  PBS -l select=1:ncpus=64:mpiprocs=64:mem=50gb
+  PBS -l place=excl
+  PBS -l walltime=00:15:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/vom/logs/vom-exclude-halos-perm/
+nprocs=64: constructing UnitCubeMesh(64, 64, 64) with 1572864 tetrahedra
+nprocs=64: mesh construction complete
+nprocs=64: run 0 time=0.885587s
+nprocs=64: run 1 time=0.875068s
+nprocs=64: run 2 time=0.907759s
+nprocs=64: run 3 time=1.049080s
+nprocs=64: run 4 time=0.876826s
+nprocs=64: run 5 time=0.876523s
+nprocs=64: run 6 time=0.867199s
+nprocs=64: run 7 time=0.884759s
+nprocs=64: run 8 time=0.896898s
+nprocs=64: run 9 time=0.899896s
+Average VOM creation time: 0.901959s
+Standard deviation: 0.050480s
+Job completed at Wed 30 Sep 03:09:53 BST 2026.
+
+====================================
+CPU Time used: 00:23:13
+CPU Percent: 2500%
+Memory usage: 28471796kb
+Approx Power usage: 0.004600000000000001
+Walltime usage: 00:01:04
+
+====================================
