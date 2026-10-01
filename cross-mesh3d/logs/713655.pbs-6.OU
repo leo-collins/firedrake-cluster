@@ -1,0 +1,27 @@
+Running overlapping_weakscaling_3d.py with DOFs=200000, degree=3, on 128 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev3/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/vom-exclude-halos-perm/overlapping_weakscaling_3d_CG3_200000.csv.
+Job ID: 713655.pbs-6
+Node:   hx1-c04-4-2
+Date:   Thu  1 Oct 13:24:17 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/results/vom-exclude-halos-perm/overlapping_weakscaling_3d_CG3_200000.csv
+PBS params: 
+  PBS -l select=2:ncpus=64:mpiprocs=64:mem=50gb
+  PBS -l place=excl
+  PBS -l walltime=00:15:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/cross-mesh3d/logs/
+nprocs=128: mesh generation=375.084s
+--------------------------------------------------------------------------
+prterun noticed that process rank 102 with PID 446478 on node hx1-c04-5-2 exited on
+signal 9 (Killed).
+--------------------------------------------------------------------------
+
+====================================
+CPU Time used: 06:58:31
+CPU Percent: 6355%
+Memory usage: 41865300kb
+Approx Power usage: 0.0836
+Walltime usage: 00:08:09
+
+====================================
