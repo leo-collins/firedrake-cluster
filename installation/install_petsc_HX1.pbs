@@ -1,0 +1,95 @@
+#!/bin/bash
+# PETSc installation using the HX1 foss-2025b toolchain.
+# Submit with: qsub install_petsc_HX1.pbs
+
+#PBS -N petsc_install
+#PBS -l select=1:ncpus=16:mem=64gb:mpiprocs=16
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -o petsc_install.log
+
+set -euo pipefail
+
+INSTALL_DIR="$HOME/firedrake-dev"
+NPROCS=16
+
+mkdir -p "$INSTALL_DIR/logs"
+LOGFILE="$INSTALL_DIR/logs/install_foss_$(date +%Y%m%d_%H%M%S).log"
+exec > >(tee -a "$LOGFILE") 2>&1
+
+# Load modules
+echo ""
+echo "Loading modules"
+module purge
+module load buildenv/default-foss-2025b
+module load CMake/4.0.3-GCCcore-14.3.0
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+module list
+
+cd "$INSTALL_DIR"
+curl -fsSO https://raw.githubusercontent.com/firedrakeproject/firedrake/release/scripts/firedrake-configure
+
+# Clone PETSc
+echo ""
+echo "Cloning PETSc"
+if [[ -d "$INSTALL_DIR/petsc/.git" ]]; then
+    echo "  PETSc already cloned, skipping."
+else
+    git clone https://gitlab.com/petsc/petsc.git "$INSTALL_DIR/petsc"
+fi
+
+# Configure PETSc
+echo ""
+echo "Configuring PETSc"
+export PETSC_DIR="$INSTALL_DIR/petsc"
+export PETSC_ARCH=arch-firedrake-default
+
+cd "$PETSC_DIR"
+
+./configure \
+    --with-cc=mpicc \
+    --with-cxx=mpicxx \
+    --with-fc=mpif90 \
+    --with-c2html=0 \
+    --with-debugging=0 \
+    --with-fortran-bindings=0 \
+    --with-shared-libraries=1 \
+    --with-strict-petscerrorcode \
+    PETSC_ARCH="$PETSC_ARCH" \
+    --COPTFLAGS='-O3 -march=native -mtune=native' \
+    --CXXOPTFLAGS='-O3 -march=native -mtune=native' \
+    --FOPTFLAGS='-O3 -march=native -mtune=native' \
+    --with-blaslapack-dir="$EBROOTFLEXIBLAS" \
+    --with-scalapack-dir="$EBROOTSCALAPACK" \
+    --with-fftw-dir="$EBROOTFFTW" \
+    --with-hwloc-dir="$EBROOTHWLOC" \
+    --with-zlib-dir="$EBROOTZLIB" \
+    --with-hdf5-dir="$EBROOTHDF5" \
+    --download-bison \
+    --download-ptscotch \
+    --download-suitesparse \
+    --download-superlu_dist \
+    --download-mumps \
+    --download-hypre \
+    --download-pnetcdf \
+    --download-netcdf \
+    --download-metis \
+    --download-ctetgen
+
+# Build PETSc
+echo ""
+echo "Building PETSc"
+make -j"$NPROCS" PETSC_DIR="$PETSC_DIR" PETSC_ARCH="$PETSC_ARCH" all
+
+# Check PETSc
+echo ""
+echo "Running PETSc check"
+PETSC_CHECK_LOG="$INSTALL_DIR/logs/petsc_check_$(date +%Y%m%d_%H%M%S).log"
+if ! make PETSC_DIR="$PETSC_DIR" PETSC_ARCH="$PETSC_ARCH" check 2>&1 | tee "$PETSC_CHECK_LOG"; then
+    echo "ERROR: make check failed. See $PETSC_CHECK_LOG for details."
+    exit 1
+fi
+echo "  PETSc checks passed. Log: $PETSC_CHECK_LOG"
+cd "$INSTALL_DIR"
+
