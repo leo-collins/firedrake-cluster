@@ -4,7 +4,7 @@
 # Firedrake is cloned via SSH; use HTTPS if SSH is unavailable.
 
 #PBS -N firedrake_install
-#PBS -l select=1:ncpus=16:mem=64gb:mpiprocs=16
+#PBS -l select=1:ncpus=3:mem=64gb:mpiprocs=3
 #PBS -l walltime=03:00:00
 #PBS -j oe
 #PBS -o firedrake_install.log
@@ -35,7 +35,7 @@ echo "Cloning Firedrake"
 if [[ -d "$INSTALL_DIR/firedrake/.git" ]]; then
     echo "  Firedrake already cloned, skipping."
 else
-    git clone git@github.com:firedrakeproject/firedrake.git --branch leo/distributed-rtree "$INSTALL_DIR/firedrake"
+    git clone git@github.com:firedrakeproject/firedrake.git --branch leo/distributed-rtree-refactor "$INSTALL_DIR/firedrake"
 fi
 
 # Export environment variables
