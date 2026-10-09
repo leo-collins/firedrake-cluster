@@ -1,0 +1,675 @@
+
+Loading modules
+
+Currently Loaded Modules:
+  1) GCCcore/14.3.0                      24) foss/2025b
+  2) zlib/1.3.1-GCCcore-14.3.0           25) buildenv/default-foss-2025b
+  3) binutils/2.44-GCCcore-14.3.0        26) ncurses/6.5-GCCcore-14.3.0
+  4) GCC/14.3.0                          27) bzip2/1.0.8-GCCcore-14.3.0
+  5) numactl/2.0.19-GCCcore-14.3.0       28) libidn2/2.3.8-GCCcore-14.3.0
+  6) XZ/5.8.1-GCCcore-14.3.0             29) libiconv/1.18-GCCcore-14.3.0
+  7) libxml2/2.14.3-GCCcore-14.3.0       30) libunistring/1.3-GCCcore-14.3.0
+  8) libpciaccess/0.18.1-GCCcore-14.3.0  31) libpsl/0.21.5-GCCcore-14.3.0
+  9) hwloc/2.12.1-GCCcore-14.3.0         32) cURL/8.14.1-GCCcore-14.3.0
+ 10) OpenSSL/3                           33) lz4/1.10.0-GCCcore-14.3.0
+ 11) libevent/2.1.12-GCCcore-14.3.0      34) gzip/1.14-GCCcore-14.3.0
+ 12) UCX/1.19.0-GCCcore-14.3.0           35) zstd/1.5.7-GCCcore-14.3.0
+ 13) libfabric/2.1.0-GCCcore-14.3.0      36) libarchive/3.8.1-GCCcore-14.3.0
+ 14) PMIx/5.0.8-GCCcore-14.3.0           37) CMake/4.0.3-GCCcore-14.3.0
+ 15) PRRTE/3.0.11-GCCcore-14.3.0         38) libaec/1.1.4-GCCcore-14.3.0
+ 16) UCC/1.4.4-GCCcore-14.3.0            39) Perl/5.40.2-GCCcore-14.3.0
+ 17) OpenMPI/5.0.8-GCC-14.3.0            40) HDF5/1.14.6-gompi-2025b
+ 18) OpenBLAS/0.3.30-GCC-14.3.0          41) libreadline/8.2-GCCcore-14.3.0
+ 19) FlexiBLAS/3.4.5-GCC-14.3.0          42) libtommath/1.3.0-GCCcore-14.3.0
+ 20) FFTW/3.3.10-GCC-14.3.0              43) Tcl/9.0.1-GCCcore-14.3.0
+ 21) gompi/2025b                         44) SQLite/3.50.1-GCCcore-14.3.0
+ 22) FFTW.MPI/3.3.10-gompi-2025b         45) libffi/3.5.1-GCCcore-14.3.0
+ 23) ScaLAPACK/2.2.2-gompi-2025b-fb      46) Python/3.13.5-GCCcore-14.3.0
+
+ 
+
+
+Cloning Firedrake
+Cloning into '/gpfs/home/lac224/firedrake-dev-int64/firedrake'...
+  Python: /gpfs/home/lac224/firedrake-dev-int64/venv-firedrake/bin/python3 (Python 3.13.5)
+Installing petsc4py
+Processing ./petsc/src/binding/petsc4py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: petsc4py
+  Building wheel for petsc4py (pyproject.toml): started
+  Building wheel for petsc4py (pyproject.toml): still running...
+  Building wheel for petsc4py (pyproject.toml): finished with status 'done'
+  Created wheel for petsc4py: filename=petsc4py-3.27.0.dev0-cp313-cp313-linux_x86_64.whl size=2349929 sha256=d042f2e7ee20b8a82561c02ee7016bb1037f33f7bc1743f8bc7e60020f25f3fc
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-yetaih5a/wheels/83/34/4c/41812ad340c7a98b606d9bcc26780d6adf5b57d6a4fb25c43f
+Successfully built petsc4py
+Installing collected packages: petsc4py
+Successfully installed petsc4py-3.27.0.dev0
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Installing Firedrake build requirements
+Ignoring mpi4py: markers 'python_version < "3.13"' don't match your environment
+Collecting Cython>=3.0 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 2))
+  Downloading cython-3.3.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (28 kB)
+Collecting firedrake-rtree>=2026.3.0 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 3))
+  Downloading firedrake_rtree-2026.3.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (855 bytes)
+Collecting libsupermesh>=2026.3 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 4))
+  Downloading libsupermesh-2026.3.tar.gz (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 269.8 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting mpi4py>3 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 5))
+  Downloading mpi4py-4.1.2-cp313-cp313-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (16 kB)
+Collecting numpy (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 7))
+  Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pkgconfig (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 8))
+  Downloading pkgconfig-1.6.0-py3-none-any.whl.metadata (4.9 kB)
+Collecting petsctools (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 9))
+  Downloading petsctools-2026.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting pybind11 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 10))
+  Downloading pybind11-3.1.0-py3-none-any.whl.metadata (10 kB)
+Collecting rtree>=1.2 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 11))
+  Downloading rtree-1.4.1-py3-none-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+Collecting setuptools>=77.0.3 (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 12))
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting hatchling (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 15))
+  Downloading hatchling-1.32.4-py3-none-any.whl.metadata (3.9 kB)
+Collecting meson-python (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 16))
+  Downloading meson_python-0.22.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting scikit_build_core (from -r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 17))
+  Downloading scikit_build_core-1.1.1-py3-none-any.whl.metadata (19 kB)
+Collecting cffi (from firedrake-rtree>=2026.3.0->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 3))
+  Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting packaging (from petsctools->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 9))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pathspec>=0.10.1 (from hatchling->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 15))
+  Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+Collecting pluggy>=1.0.0 (from hatchling->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 15))
+  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting tomlkit>=0.11.1 (from hatchling->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 15))
+  Downloading tomlkit-0.15.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting trove-classifiers (from hatchling->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 15))
+  Downloading trove_classifiers-2026.9.21.13-py3-none-any.whl.metadata (2.4 kB)
+Collecting meson>=1.2.3 (from meson-python->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 16))
+  Downloading meson-1.12.1-py3-none-any.whl.metadata (1.7 kB)
+Collecting pyproject-metadata>=0.9.0 (from meson-python->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 16))
+  Downloading pyproject_metadata-0.12.1-py3-none-any.whl.metadata (6.5 kB)
+Collecting pycparser (from cffi->firedrake-rtree>=2026.3.0->-r /gpfs/home/lac224/firedrake-dev-int64/firedrake/requirements-build.txt (line 3))
+  Downloading pycparser-3.1-py3-none-any.whl.metadata (8.2 kB)
+Downloading cython-3.3.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 229.5 MB/s eta 0:00:00
+Downloading firedrake_rtree-2026.3.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (260 kB)
+Downloading mpi4py-4.1.2-cp313-cp313-manylinux1_x86_64.manylinux_2_5_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 230.2 MB/s eta 0:00:00
+Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 379.6 MB/s eta 0:00:00
+Downloading pkgconfig-1.6.0-py3-none-any.whl (7.1 kB)
+Downloading petsctools-2026.1-py3-none-any.whl (22 kB)
+Downloading pybind11-3.1.0-py3-none-any.whl (319 kB)
+Downloading rtree-1.4.1-py3-none-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (507 kB)
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 1.0 GB/s eta 0:00:00
+Downloading hatchling-1.32.4-py3-none-any.whl (78 kB)
+Downloading meson_python-0.22.1-py3-none-any.whl (31 kB)
+Downloading scikit_build_core-1.1.1-py3-none-any.whl (293 kB)
+Downloading meson-1.12.1-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 1.2 GB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading pyproject_metadata-0.12.1-py3-none-any.whl (23 kB)
+Downloading tomlkit-0.15.1-py3-none-any.whl (49 kB)
+Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading pycparser-3.1-py3-none-any.whl (48 kB)
+Downloading trove_classifiers-2026.9.21.13-py3-none-any.whl (14 kB)
+Building wheels for collected packages: libsupermesh
+  Building wheel for libsupermesh (pyproject.toml): started
+  Building wheel for libsupermesh (pyproject.toml): finished with status 'done'
+  Created wheel for libsupermesh: filename=libsupermesh-2026.3-cp313-cp313-linux_x86_64.whl size=287089 sha256=09699b5410bc7bb47a133ff036598fbd218887eb4461db400adf8e64c0ec7be5
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-1w7701dd/wheels/73/4a/68/dd4e131477b0e83922687809b5cfea395481a14535f0dcd8c5
+Successfully built libsupermesh
+Installing collected packages: trove-classifiers, tomlkit, setuptools, rtree, pycparser, pybind11, pluggy, pkgconfig, pathspec, packaging, numpy, mpi4py, meson, Cython, scikit_build_core, pyproject-metadata, petsctools, libsupermesh, hatchling, cffi, meson-python, firedrake-rtree
+
+Successfully installed Cython-3.3.0 cffi-2.1.1 firedrake-rtree-2026.3.0 hatchling-1.32.4 libsupermesh-2026.3 meson-1.12.1 meson-python-0.22.1 mpi4py-4.1.2 numpy-2.5.3 packaging-26.3 pathspec-1.1.1 petsctools-2026.1 pkgconfig-1.6.0 pluggy-1.6.0 pybind11-3.1.0 pycparser-3.1 pyproject-metadata-0.12.1 rtree-1.4.1 scikit_build_core-1.1.1 setuptools-84.0.0 tomlkit-0.15.1 trove-classifiers-2026.9.21.13
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Installing Firedrake
+Obtaining file:///gpfs/home/lac224/firedrake-dev-int64/firedrake
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting cachetools (from firedrake==2026.11.0.dev0)
+  Downloading cachetools-7.2.1-py3-none-any.whl.metadata (5.5 kB)
+Collecting decorator<=4.4.2 (from firedrake==2026.11.0.dev0)
+  Downloading decorator-4.4.2-py2.py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: mpi4py>3 in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (4.1.2)
+Collecting fenics-ufl@ git+https://github.com/FEniCS/ufl.git@main (from firedrake==2026.11.0.dev0)
+  Cloning https://github.com/FEniCS/ufl.git (to revision main) to /var/tmp/pbs.716850.pbs-6/pip-install-7if8wa64/fenics-ufl_fa41306a88bc44dd8ddf80343449ac2e
+  Running command git clone --filter=blob:none --quiet https://github.com/FEniCS/ufl.git /var/tmp/pbs.716850.pbs-6/pip-install-7if8wa64/fenics-ufl_fa41306a88bc44dd8ddf80343449ac2e
+  Resolved https://github.com/FEniCS/ufl.git to commit d9334ba7a51a7426d56f49648dce97522b3f1b2c
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting firedrake-fiat@ git+https://github.com/firedrakeproject/fiat.git@main (from firedrake==2026.11.0.dev0)
+  Cloning https://github.com/firedrakeproject/fiat.git (to revision main) to /var/tmp/pbs.716850.pbs-6/pip-install-7if8wa64/firedrake-fiat_846b2dd70a5c4ebf9002485e8758d955
+  Running command git clone --filter=blob:none --quiet https://github.com/firedrakeproject/fiat.git /var/tmp/pbs.716850.pbs-6/pip-install-7if8wa64/firedrake-fiat_846b2dd70a5c4ebf9002485e8758d955
+  Resolved https://github.com/firedrakeproject/fiat.git to commit 31ac887cca46a140bd0afd95147cfaf10acc0b7f
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting h5py>3.12.1 (from firedrake==2026.11.0.dev0)
+  Downloading h5py-3.16.0.tar.gz (446 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: firedrake-rtree>=2026.3.0 in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (2026.3.0)
+Collecting immutabledict (from firedrake==2026.11.0.dev0)
+  Downloading immutabledict-4.3.1-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: libsupermesh>=2026.1 in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (2026.3)
+Collecting loopy>2024.1 (from firedrake==2026.11.0.dev0)
+  Downloading loopy-2025.2-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: numpy in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (2.5.3)
+Requirement already satisfied: packaging in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (26.3)
+Requirement already satisfied: petsctools>=2026.1 in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (2026.1)
+Requirement already satisfied: pkgconfig in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (1.6.0)
+Collecting progress (from firedrake==2026.11.0.dev0)
+  Downloading progress-1.6.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting pyadjoint-ad>=2026.10 (from firedrake==2026.11.0.dev0)
+  Downloading pyadjoint_ad-2026.10.0-py3-none-any.whl.metadata (3.1 kB)
+Requirement already satisfied: pycparser in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (3.1)
+Collecting pytools[siphash] (from firedrake==2026.11.0.dev0)
+  Downloading pytools-2026.1.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting requests (from firedrake==2026.11.0.dev0)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Requirement already satisfied: rtree>=1.2 in ./venv-firedrake/lib/python3.13/site-packages (from firedrake==2026.11.0.dev0) (1.4.1)
+Collecting scipy (from firedrake==2026.11.0.dev0)
+  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting sympy (from firedrake==2026.11.0.dev0)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting islpy<2026.2 (from firedrake==2026.11.0.dev0)
+  Downloading islpy-2026.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+Collecting recursivenodes (from firedrake-fiat@ git+https://github.com/firedrakeproject/fiat.git@main->firedrake==2026.11.0.dev0)
+  Downloading recursivenodes-0.2.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting symengine (from firedrake-fiat@ git+https://github.com/firedrakeproject/fiat.git@main->firedrake==2026.11.0.dev0)
+  Downloading symengine-0.14.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.3 kB)
+Collecting mpi-pytest>=2026.0 (from firedrake==2026.11.0.dev0)
+  Downloading mpi_pytest-2026.0-py3-none-any.whl.metadata (6.1 kB)
+Collecting pytest (from firedrake==2026.11.0.dev0)
+  Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting bibtexparser>=2 (from firedrake==2026.11.0.dev0)
+  Downloading bibtexparser-2.1.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting ipykernel (from firedrake==2026.11.0.dev0)
+  Downloading ipykernel-7.4.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting ipympl (from firedrake==2026.11.0.dev0)
+  Downloading ipympl-0.10.0-py3-none-any.whl.metadata (9.4 kB)
+Collecting jupytext (from firedrake==2026.11.0.dev0)
+  Downloading jupytext-1.19.6-py3-none-any.whl.metadata (15 kB)
+Collecting matplotlib (from firedrake==2026.11.0.dev0)
+  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting nbsphinx (from firedrake==2026.11.0.dev0)
+  Downloading nbsphinx-0.9.8-py3-none-any.whl.metadata (2.1 kB)
+Collecting networkx (from firedrake==2026.11.0.dev0)
+  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting numpydoc (from firedrake==2026.11.0.dev0)
+  Downloading numpydoc-1.11.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting pdf2image (from firedrake==2026.11.0.dev0)
+  Downloading pdf2image-1.17.0-py3-none-any.whl.metadata (6.2 kB)
+Collecting pygraphviz (from firedrake==2026.11.0.dev0)
+  Downloading pygraphviz-2.0.3-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.5 kB)
+Collecting pylit (from firedrake==2026.11.0.dev0)
+  Downloading pylit-0.8.0-py2.py3-none-any.whl.metadata (2.2 kB)
+Collecting sphinx (from firedrake==2026.11.0.dev0)
+  Downloading sphinx-9.1.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting sphinx-autobuild (from firedrake==2026.11.0.dev0)
+  Downloading sphinx_autobuild-2025.8.25-py3-none-any.whl.metadata (8.5 kB)
+Collecting sphinx-reredirects (from firedrake==2026.11.0.dev0)
+  Downloading sphinx_reredirects-1.1.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting sphinxcontrib-bibtex (from firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_bibtex-2.7.0-py3-none-any.whl.metadata (6.0 kB)
+Collecting sphinxcontrib-jquery (from firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl.metadata (2.6 kB)
+Collecting sphinxcontrib-svg2pdfconverter (from firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_svg2pdfconverter-2.1.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting sphinxcontrib-youtube (from firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_youtube-1.5.0-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting sphinx-copybutton (from firedrake==2026.11.0.dev0)
+  Downloading sphinx_copybutton-0.5.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting vtk (from firedrake==2026.11.0.dev0)
+  Downloading vtk-9.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.6 kB)
+Collecting pylatexenc~=2.10 (from bibtexparser>=2->firedrake==2026.11.0.dev0)
+  Downloading pylatexenc-2.11-py2.py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: cffi in ./venv-firedrake/lib/python3.13/site-packages (from firedrake-rtree>=2026.3.0->firedrake==2026.11.0.dev0) (2.1.1)
+Collecting cgen>=2025.1 (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading cgen-2025.1.tar.gz (19 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting codepy>=2017.1 (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading codepy-2025.1-py3-none-any.whl.metadata (2.0 kB)
+Collecting colorama (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting constantdict (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading constantdict-2025.3-py3-none-any.whl.metadata (4.5 kB)
+Collecting genpy>=2016.1.2 (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading genpy-2022.1.tar.gz (6.7 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting mako (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+Collecting pymbolic>=2024.2.2 (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading pymbolic-2025.1-py3-none-any.whl.metadata (3.1 kB)
+Collecting typing-extensions>=4 (from loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting platformdirs>=2.2.0 (from codepy>=2017.1->loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading platformdirs-4.12.4-py3-none-any.whl.metadata (5.5 kB)
+Collecting checkpoint_schedules (from pyadjoint-ad>=2026.10->firedrake==2026.11.0.dev0)
+  Downloading checkpoint_schedules-1.0.4-py3-none-any.whl.metadata (3.3 kB)
+Collecting siphash24>=1.6 (from pytools[siphash]->firedrake==2026.11.0.dev0)
+  Downloading siphash24-1.9-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting comm>=0.1.1 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading comm-0.2.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting debugpy>=1.6.5 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading debugpy-1.8.22-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting ipython>=7.23.1 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading ipython-9.17.1-py3-none-any.whl.metadata (4.6 kB)
+Collecting jupyter-client>=8.9.0 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading jupyter_client-8.10.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting jupyter-core!=6.0.*,>=5.1 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading jupyter_core-5.9.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting matplotlib-inline>=0.1 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading matplotlib_inline-0.2.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting nest-asyncio2>=1.7.0 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading nest_asyncio2-1.7.4-py3-none-any.whl.metadata (7.0 kB)
+Collecting pyzmq>=25 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting tornado>=6.5.7 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading tornado-6.5.10-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (2.8 kB)
+Collecting traitlets>=5.4.0 (from ipykernel->firedrake==2026.11.0.dev0)
+  Downloading traitlets-5.16.1-py3-none-any.whl.metadata (10 kB)
+Collecting ipython-pygments-lexers>=1.0.0 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi>=0.18.2 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading jedi-0.20.0-py2.py3-none-any.whl.metadata (23 kB)
+Collecting pexpect>4.6 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+Collecting psutil>=7 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting pygments>=2.14.0 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting stack_data>=0.6.0 (from ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting wcwidth>=0.1.4 (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+Collecting parso<0.9.0,>=0.8.6 (from jedi>=0.18.2->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading parso-0.8.7-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting python-dateutil>=2.8.2 (from jupyter-client>=8.9.0->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting ptyprocess>=0.5 (from pexpect>4.6->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->jupyter-client>=8.9.0->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting executing>=1.2.0 (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting asttokens>=2.1.0 (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading asttokens-3.0.2-py3-none-any.whl.metadata (5.7 kB)
+Collecting pure-eval (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->firedrake==2026.11.0.dev0)
+  Downloading pure_eval-0.2.4-py3-none-any.whl.metadata (6.4 kB)
+Collecting ipywidgets<9,>=7.6.0 (from ipympl->firedrake==2026.11.0.dev0)
+  Downloading ipywidgets-8.1.9-py3-none-any.whl.metadata (2.4 kB)
+Collecting pillow (from ipympl->firedrake==2026.11.0.dev0)
+  Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting widgetsnbextension~=4.0.16 (from ipywidgets<9,>=7.6.0->ipympl->firedrake==2026.11.0.dev0)
+  Downloading widgetsnbextension-4.0.16-py3-none-any.whl.metadata (1.6 kB)
+Collecting jupyterlab_widgets~=3.0.17 (from ipywidgets<9,>=7.6.0->ipympl->firedrake==2026.11.0.dev0)
+  Downloading jupyterlab_widgets-3.0.17-py3-none-any.whl.metadata (20 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->firedrake==2026.11.0.dev0)
+  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib->firedrake==2026.11.0.dev0)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib->firedrake==2026.11.0.dev0)
+  Downloading fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->firedrake==2026.11.0.dev0)
+  Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting pyparsing>=3 (from matplotlib->firedrake==2026.11.0.dev0)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting markdown-it-py>=1.0 (from jupytext->firedrake==2026.11.0.dev0)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting mdit-py-plugins (from jupytext->firedrake==2026.11.0.dev0)
+  Downloading mdit_py_plugins-0.6.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting nbformat (from jupytext->firedrake==2026.11.0.dev0)
+  Downloading nbformat-5.11.1-py3-none-any.whl.metadata (3.7 kB)
+Collecting pyyaml (from jupytext->firedrake==2026.11.0.dev0)
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=1.0->jupytext->firedrake==2026.11.0.dev0)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting MarkupSafe>=2.0 (from mako->loopy>2024.1->firedrake==2026.11.0.dev0)
+  Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting fastjsonschema>=2.15 (from nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading fastjsonschema-2.22.2-py3-none-any.whl.metadata (2.1 kB)
+Collecting jsonschema>=2.6 (from nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting attrs>=22.2.0 (from jsonschema>=2.6->nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=2.6->nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=2.6->nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=2.6->nbformat->jupytext->firedrake==2026.11.0.dev0)
+  Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting docutils>=0.18.1 (from nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading docutils-0.23-py3-none-any.whl.metadata (15 kB)
+Collecting jinja2 (from nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting nbconvert!=5.4,>=5.3 (from nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading nbconvert-7.17.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting beautifulsoup4 (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting bleach!=5.0.0 (from bleach[css]!=5.0.0->nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading bleach-6.4.0-py3-none-any.whl.metadata (32 kB)
+Collecting defusedxml (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting jupyterlab-pygments (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
+Collecting mistune<4,>=2.0.3 (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading mistune-3.3.4-py3-none-any.whl.metadata (1.9 kB)
+Collecting nbclient>=0.5.0 (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading nbclient-0.11.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pandocfilters>=1.4.1 (from nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
+Collecting webencodings (from bleach!=5.0.0->bleach[css]!=5.0.0->nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading webencodings-0.6.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting tinycss2>=1.1.0 (from bleach[css]!=5.0.0->nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading tinycss2-1.5.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting sphinxcontrib-applehelp>=1.0.7 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-devhelp>=1.0.6 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-htmlhelp>=2.0.6 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-jsmath>=1.0.1 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting sphinxcontrib-qthelp>=1.0.6 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting sphinxcontrib-serializinghtml>=1.1.9 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting docutils>=0.18.1 (from nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading docutils-0.22.4-py3-none-any.whl.metadata (15 kB)
+Collecting snowballstemmer>=2.2 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading snowballstemmer-3.1.1-py3-none-any.whl.metadata (7.9 kB)
+Collecting babel>=2.13 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading babel-2.18.0-py3-none-any.whl.metadata (2.2 kB)
+Collecting alabaster>=0.7.14 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading alabaster-1.0.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting imagesize>=1.3 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading imagesize-2.0.1-py3-none-any.whl.metadata (7.0 kB)
+Collecting roman-numerals>=1.0.0 (from sphinx->firedrake==2026.11.0.dev0)
+  Downloading roman_numerals-4.1.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting charset_normalizer<4,>=2 (from requests->firedrake==2026.11.0.dev0)
+  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting idna<4,>=2.5 (from requests->firedrake==2026.11.0.dev0)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests->firedrake==2026.11.0.dev0)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests->firedrake==2026.11.0.dev0)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting soupsieve>=1.6.1 (from beautifulsoup4->nbconvert!=5.4,>=5.3->nbsphinx->firedrake==2026.11.0.dev0)
+  Downloading soupsieve-2.10-py3-none-any.whl.metadata (4.4 kB)
+Collecting iniconfig>=1.0.1 (from pytest->firedrake==2026.11.0.dev0)
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Requirement already satisfied: pluggy<2,>=1.5 in ./venv-firedrake/lib/python3.13/site-packages (from pytest->firedrake==2026.11.0.dev0) (1.6.0)
+WARNING: pytools 2026.1.1 does not provide the extra 'siphash'
+Collecting starlette>=0.35 (from sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting uvicorn>=0.25 (from sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting watchfiles>=0.20 (from sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=11 (from sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading websockets-17.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting anyio<5,>=4.0.0 (from starlette>=0.35->sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting click>=7.0 (from uvicorn>=0.25->sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn>=0.25->sphinx-autobuild->firedrake==2026.11.0.dev0)
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting pybtex>=0.25 (from sphinxcontrib-bibtex->firedrake==2026.11.0.dev0)
+  Downloading pybtex-0.26.1-py3-none-any.whl.metadata (1.9 kB)
+Collecting pybtex-docutils>=1.0.2 (from sphinxcontrib-bibtex->firedrake==2026.11.0.dev0)
+  Downloading pybtex_docutils-1.0.3-py3-none-any.whl.metadata (4.3 kB)
+Collecting latexcodec>=1.0.4 (from pybtex>=0.25->sphinxcontrib-bibtex->firedrake==2026.11.0.dev0)
+  Downloading latexcodec-3.0.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy->firedrake==2026.11.0.dev0)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading decorator-4.4.2-py2.py3-none-any.whl (9.2 kB)
+Downloading islpy-2026.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 107.6 MB/s eta 0:00:00
+Downloading bibtexparser-2.1.0-py3-none-any.whl (50 kB)
+Downloading pylatexenc-2.11-py2.py3-none-any.whl (137 kB)
+Downloading loopy-2025.2-py3-none-any.whl (552 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.4/552.4 kB 155.9 MB/s eta 0:00:00
+Downloading codepy-2025.1-py3-none-any.whl (22 kB)
+Downloading mpi_pytest-2026.0-py3-none-any.whl (11 kB)
+Downloading platformdirs-4.12.4-py3-none-any.whl (32 kB)
+Downloading pyadjoint_ad-2026.10.0-py3-none-any.whl (65 kB)
+Downloading pymbolic-2025.1-py3-none-any.whl (138 kB)
+Downloading pytools-2026.1.1-py3-none-any.whl (99 kB)
+Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 294.6 MB/s eta 0:00:00
+Downloading siphash24-1.9-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (101 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading cachetools-7.2.1-py3-none-any.whl (17 kB)
+Downloading checkpoint_schedules-1.0.4-py3-none-any.whl (41 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading constantdict-2025.3-py3-none-any.whl (7.7 kB)
+Downloading immutabledict-4.3.1-py3-none-any.whl (5.0 kB)
+Downloading ipykernel-7.4.0-py3-none-any.whl (123 kB)
+Downloading comm-0.2.3-py3-none-any.whl (7.3 kB)
+Downloading debugpy-1.8.22-py2.py3-none-any.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 372.4 MB/s eta 0:00:00
+Downloading ipython-9.17.1-py3-none-any.whl (639 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 639.0/639.0 kB 990.6 MB/s eta 0:00:00
+Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Downloading jedi-0.20.0-py2.py3-none-any.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 649.4 MB/s eta 0:00:00
+Downloading parso-0.8.7-py2.py3-none-any.whl (107 kB)
+Downloading jupyter_client-8.10.0-py3-none-any.whl (110 kB)
+Downloading jupyter_core-5.9.1-py3-none-any.whl (29 kB)
+Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
+Downloading nest_asyncio2-1.7.4-py3-none-any.whl (8.5 kB)
+Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 1.1 GB/s eta 0:00:00
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (872 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 872.3/872.3 kB 1.1 GB/s eta 0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading asttokens-3.0.2-py3-none-any.whl (28 kB)
+Downloading executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Downloading tornado-6.5.10-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (467 kB)
+Downloading traitlets-5.16.1-py3-none-any.whl (86 kB)
+Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 1.1 GB/s eta 0:00:00
+Downloading ipympl-0.10.0-py3-none-any.whl (519 kB)
+Downloading ipywidgets-8.1.9-py3-none-any.whl (140 kB)
+Downloading jupyterlab_widgets-3.0.17-py3-none-any.whl (217 kB)
+Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 168.9 MB/s eta 0:00:00
+Downloading widgetsnbextension-4.0.16-py3-none-any.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 583.3 MB/s eta 0:00:00
+Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 372.0 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 54.8 MB/s eta 0:00:00
+Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 344.7 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading jupytext-1.19.6-py3-none-any.whl (230 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+Downloading mdit_py_plugins-0.6.1-py3-none-any.whl (66 kB)
+Downloading nbformat-5.11.1-py3-none-any.whl (79 kB)
+Downloading fastjsonschema-2.22.2-py3-none-any.whl (27 kB)
+Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading rpds_py-2026.9.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (370 kB)
+Downloading nbsphinx-0.9.8-py3-none-any.whl (31 kB)
+Downloading nbconvert-7.17.1-py3-none-any.whl (261 kB)
+Downloading mistune-3.3.4-py3-none-any.whl (66 kB)
+Downloading bleach-6.4.0-py3-none-any.whl (165 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading nbclient-0.11.0-py3-none-any.whl (25 kB)
+Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+Downloading sphinx-9.1.0-py3-none-any.whl (3.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 362.5 MB/s eta 0:00:00
+Downloading docutils-0.22.4-py3-none-any.whl (633 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 633.2/633.2 kB 983.3 MB/s eta 0:00:00
+Downloading alabaster-1.0.0-py3-none-any.whl (13 kB)
+Downloading babel-2.18.0-py3-none-any.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 466.5 MB/s eta 0:00:00
+Downloading imagesize-2.0.1-py3-none-any.whl (14 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading roman_numerals-4.1.0-py3-none-any.whl (7.7 kB)
+Downloading snowballstemmer-3.1.1-py3-none-any.whl (104 kB)
+Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl (119 kB)
+Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl (82 kB)
+Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)
+Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl (88 kB)
+Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+Downloading tinycss2-1.5.1-py3-none-any.whl (28 kB)
+Downloading webencodings-0.6.1-py3-none-any.whl (8.7 kB)
+Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+Downloading soupsieve-2.10-py3-none-any.whl (38 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 448.7 MB/s eta 0:00:00
+Downloading numpydoc-1.11.0-py3-none-any.whl (71 kB)
+Downloading pdf2image-1.17.0-py3-none-any.whl (11 kB)
+Downloading progress-1.6.1-py3-none-any.whl (9.8 kB)
+Downloading pure_eval-0.2.4-py3-none-any.whl (11 kB)
+Downloading pygraphviz-2.0.3-cp313-cp313-manylinux_2_28_x86_64.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 195.6 MB/s eta 0:00:00
+Downloading pylit-0.8.0-py2.py3-none-any.whl (32 kB)
+Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 378.4 MB/s eta 0:00:00
+Downloading recursivenodes-0.2.0-py3-none-any.whl (42 kB)
+Downloading sphinx_autobuild-2025.8.25-py3-none-any.whl (12 kB)
+Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+Downloading websockets-17.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (225 kB)
+Downloading sphinx_copybutton-0.5.2-py3-none-any.whl (13 kB)
+Downloading sphinx_reredirects-1.1.0-py3-none-any.whl (6.4 kB)
+Downloading sphinxcontrib_bibtex-2.7.0-py3-none-any.whl (40 kB)
+Downloading pybtex-0.26.1-py3-none-any.whl (126 kB)
+Downloading latexcodec-3.0.1-py3-none-any.whl (18 kB)
+Downloading pybtex_docutils-1.0.3-py3-none-any.whl (6.4 kB)
+Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+Downloading sphinxcontrib_svg2pdfconverter-2.1.0-py3-none-any.whl (9.3 kB)
+Downloading sphinxcontrib_youtube-1.5.0-py2.py3-none-any.whl (7.7 kB)
+Downloading symengine-0.14.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.3/50.3 MB 32.9 MB/s eta 0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 840.7 MB/s eta 0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 1.1 GB/s eta 0:00:00
+Downloading vtk-9.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (139.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.7/139.7 MB 212.7 MB/s eta 0:00:00
+Building wheels for collected packages: firedrake, fenics-ufl, firedrake-fiat, h5py, cgen, genpy
+  Building editable for firedrake (pyproject.toml): started
+  Building editable for firedrake (pyproject.toml): finished with status 'done'
+  Created wheel for firedrake: filename=firedrake-2026.11.0.dev0-0.editable-cp313-cp313-linux_x86_64.whl size=24390 sha256=1c3ee5c8d49611af54a5fb4fd43411a0443f9ecb7bd43a16f2af1004ec871a88
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/02/a0/b6/2e833d02ec3b868142f7062840c90ff9fa314b44fbdbce487c
+  Building wheel for fenics-ufl (pyproject.toml): started
+  Building wheel for fenics-ufl (pyproject.toml): finished with status 'done'
+  Created wheel for fenics-ufl: filename=fenics_ufl-2026.2.0.dev0-py3-none-any.whl size=282259 sha256=2a948ef2b7b3b7678129d4654a49a21a9da9fa61f3654eae52f78d55dc2ddfca
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/45/91/28/ae9dd275ded4026e4fa174bc42a7fdc45d937ed7e1ee3281ba
+  Building wheel for firedrake-fiat (pyproject.toml): started
+  Building wheel for firedrake-fiat (pyproject.toml): finished with status 'done'
+  Created wheel for firedrake-fiat: filename=firedrake_fiat-2026.11.0.dev0-py3-none-any.whl size=499249 sha256=36620d35222e7fe8535fa182133ee7d356e84a16652ec00b957eeb4d726d600e
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/aa/41/97/36de0b720f4a28260dc77dc2a044875dfbbbded430f432d1c0
+  Building wheel for h5py (pyproject.toml): started
+  Building wheel for h5py (pyproject.toml): still running...
+  Building wheel for h5py (pyproject.toml): finished with status 'done'
+  Created wheel for h5py: filename=h5py-3.16.0-cp313-cp313-linux_x86_64.whl size=1980009 sha256=f4b009a4403d0dfe09cb07f08884a723567e4af9598e6726f3a3f9b09d2a5107
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/ff/aa/63/c86f01adb4713398492dd138b233275bf80cdc6349502b63dc
+  Building wheel for cgen (pyproject.toml): started
+  Building wheel for cgen (pyproject.toml): finished with status 'done'
+  Created wheel for cgen: filename=cgen-2025.1-py3-none-any.whl size=19881 sha256=900662cc208a30be925962dda8cf9e990c0e77c4bb70a636b0006bceeffdc4c1
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/0a/89/c3/ddc3bbe5c34a56e173f65c25c711a04341e6c7440d90969746
+  Building wheel for genpy (pyproject.toml): started
+  Building wheel for genpy (pyproject.toml): finished with status 'done'
+  Created wheel for genpy: filename=genpy-2022.1-py3-none-any.whl size=5818 sha256=ee396c2380c4e5de82a7cd6b3fab95bba525ff2596f183a38530c33af6211ee7
+  Stored in directory: /var/tmp/pbs.716850.pbs-6/pip-ephem-wheel-cache-9d3px89a/wheels/8c/29/b7/7308ec4aa0f6eedb85f3260b203914fb73093c5cec7c218fc2
+Successfully built firedrake fenics-ufl firedrake-fiat h5py cgen genpy
+Installing collected packages: pylatexenc, pure-eval, ptyprocess, mpmath, widgetsnbextension, websockets, webencodings, wcwidth, urllib3, typing-extensions, traitlets, tornado, sympy, symengine, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, soupsieve, snowballstemmer, six, siphash24, scipy, rpds-py, roman-numerals, recursivenodes, pyzmq, pyyaml, pyparsing, pylit, pygraphviz, pygments, psutil, progress, platformdirs, pillow, pexpect, parso, pandocfilters, networkx, nest-asyncio2, mistune, mdurl, MarkupSafe, latexcodec, kiwisolver, jupyterlab_widgets, jupyterlab-pygments, islpy, iniconfig, immutabledict, imagesize, idna, h5py, h11, fonttools, fenics-ufl, fastjsonschema, executing, docutils, defusedxml, decorator, debugpy, cycler, contourpy, constantdict, comm, colorama, click, checkpoint_schedules, charset_normalizer, certifi, cachetools, bibtexparser, babel, attrs, asttokens, alabaster, uvicorn, tinycss2, stack_data, requests, referencing, pytools, python-dateutil, pytest, pybtex, pyadjoint-ad, prompt_toolkit, pdf2image, matplotlib-inline, markdown-it-py, mako, jupyter-core, jinja2, jedi, ipython-pygments-lexers, firedrake-fiat, bleach, beautifulsoup4, anyio, watchfiles, starlette, sphinx, pymbolic, pybtex-docutils, mpi-pytest, mdit-py-plugins, matplotlib, jupyter-client, jsonschema-specifications, ipython, genpy, cgen, vtk, sphinxcontrib-youtube, sphinxcontrib-svg2pdfconverter, sphinxcontrib-jquery, sphinxcontrib-bibtex, sphinx-reredirects, sphinx-copybutton, sphinx-autobuild, numpydoc, jsonschema, ipywidgets, ipykernel, codepy, nbformat, loopy, ipympl, nbclient, jupytext, firedrake, nbconvert, nbsphinx
+
+Successfully installed MarkupSafe-3.0.4 alabaster-1.0.0 anyio-4.15.1 asttokens-3.0.2 attrs-26.1.0 babel-2.18.0 beautifulsoup4-4.15.0 bibtexparser-2.1.0 bleach-6.4.0 cachetools-7.2.1 certifi-2026.7.22 cgen-2025.1 charset_normalizer-3.5.2 checkpoint_schedules-1.0.4 click-8.5.0 codepy-2025.1 colorama-0.4.6 comm-0.2.3 constantdict-2025.3 contourpy-1.4.0 cycler-0.12.1 debugpy-1.8.22 decorator-4.4.2 defusedxml-0.7.1 docutils-0.22.4 executing-2.2.1 fastjsonschema-2.22.2 fenics-ufl-2026.2.0.dev0 firedrake-2026.11.0.dev0 firedrake-fiat-2026.11.0.dev0 fonttools-4.66.1 genpy-2022.1 h11-0.16.0 h5py-3.16.0 idna-3.20 imagesize-2.0.1 immutabledict-4.3.1 iniconfig-2.3.1 ipykernel-7.4.0 ipympl-0.10.0 ipython-9.17.1 ipython-pygments-lexers-1.1.1 ipywidgets-8.1.9 islpy-2026.1 jedi-0.20.0 jinja2-3.1.6 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 jupyter-client-8.10.0 jupyter-core-5.9.1 jupyterlab-pygments-0.3.0 jupyterlab_widgets-3.0.17 jupytext-1.19.6 kiwisolver-1.5.1 latexcodec-3.0.1 loopy-2025.2 mako-1.4.3 markdown-it-py-4.2.0 matplotlib-3.11.2 matplotlib-inline-0.2.2 mdit-py-plugins-0.6.1 mdurl-0.1.2 mistune-3.3.4 mpi-pytest-2026.0 mpmath-1.3.0 nbclient-0.11.0 nbconvert-7.17.1 nbformat-5.11.1 nbsphinx-0.9.8 nest-asyncio2-1.7.4 networkx-3.7 numpydoc-1.11.0 pandocfilters-1.5.1 parso-0.8.7 pdf2image-1.17.0 pexpect-4.9.0 pillow-12.3.0 platformdirs-4.12.4 progress-1.6.1 prompt_toolkit-3.0.53 psutil-7.2.2 ptyprocess-0.7.0 pure-eval-0.2.4 pyadjoint-ad-2026.10.0 pybtex-0.26.1 pybtex-docutils-1.0.3 pygments-2.21.0 pygraphviz-2.0.3 pylatexenc-2.11 pylit-0.8.0 pymbolic-2025.1 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 pytools-2026.1.1 pyyaml-6.0.3 pyzmq-27.2.0 recursivenodes-0.2.0 referencing-0.37.0 requests-2.34.2 roman-numerals-4.1.0 rpds-py-2026.9.1 scipy-1.18.1 siphash24-1.9 six-1.17.0 snowballstemmer-3.1.1 soupsieve-2.10 sphinx-9.1.0 sphinx-autobuild-2025.8.25 sphinx-copybutton-0.5.2 sphinx-reredirects-1.1.0 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-bibtex-2.7.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0 sphinxcontrib-svg2pdfconverter-2.1.0 sphinxcontrib-youtube-1.5.0 stack_data-0.6.3 starlette-1.7.0 symengine-0.14.1 sympy-1.14.0 tinycss2-1.5.1 tornado-6.5.10 traitlets-5.16.1 typing-extensions-4.16.0 urllib3-2.8.0 uvicorn-0.54.0 vtk-9.7.1 watchfiles-1.3.0 wcwidth-0.9.2 webencodings-0.6.1 websockets-17.2 widgetsnbextension-4.0.16
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+PETSc and Firedrake use 64-bit indices
+
+Running firedrake-check
+    Running serial smoke tests
+................................s                                        [100%]
+32 passed, 1 skipped, 3 deselected in 50.69s
+    Tests passed
+    Running parallel smoke tests (nprocs=2)
+[32m.[0m[32m.[0m[32m                                                                        [100%][0m[32m                                                                        [100%][0m
+[32m[32m[1m1 passed[0m[32m in 2.81s[0m[0m
+
+[32m[32m[1m1 passed[0m[32m in 2.81s[0m[0m
+    Tests passed
+    Running parallel smoke tests (nprocs=3)
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                                       [100%][0m[32m                                                                       [100%][0m[32m                                                                       [100%][0m
+
+
+[32m[32m[1m2 passed[0m[32m in 18.90s[0m[0m
+[32m[32m[1m2 passed[0m[32m in 18.90s[0m[0m
+[32m[32m[1m2 passed[0m[32m in 18.91s[0m[0m
+    Tests passed
+Installation complete: 2026-10-09T13:50:32+01:00
+
+To use Firedrake in future sessions:
+  source /gpfs/home/lac224/firedrake-dev-int64/activate-firedrake.sh
+
+====================================
+CPU Time used: 00:07:13
+CPU Percent: 106%
+Memory usage: 2681264kb
+Approx Power usage: 0.0014
+Walltime usage: 00:08:36
+
+====================================

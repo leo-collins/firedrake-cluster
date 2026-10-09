@@ -1,0 +1,1630 @@
+
+Loading modules
+
+Currently Loaded Modules:
+  1) GCCcore/14.3.0                      24) foss/2025b
+  2) zlib/1.3.1-GCCcore-14.3.0           25) buildenv/default-foss-2025b
+  3) binutils/2.44-GCCcore-14.3.0        26) ncurses/6.5-GCCcore-14.3.0
+  4) GCC/14.3.0                          27) bzip2/1.0.8-GCCcore-14.3.0
+  5) numactl/2.0.19-GCCcore-14.3.0       28) libidn2/2.3.8-GCCcore-14.3.0
+  6) XZ/5.8.1-GCCcore-14.3.0             29) libiconv/1.18-GCCcore-14.3.0
+  7) libxml2/2.14.3-GCCcore-14.3.0       30) libunistring/1.3-GCCcore-14.3.0
+  8) libpciaccess/0.18.1-GCCcore-14.3.0  31) libpsl/0.21.5-GCCcore-14.3.0
+  9) hwloc/2.12.1-GCCcore-14.3.0         32) cURL/8.14.1-GCCcore-14.3.0
+ 10) OpenSSL/3                           33) lz4/1.10.0-GCCcore-14.3.0
+ 11) libevent/2.1.12-GCCcore-14.3.0      34) gzip/1.14-GCCcore-14.3.0
+ 12) UCX/1.19.0-GCCcore-14.3.0           35) zstd/1.5.7-GCCcore-14.3.0
+ 13) libfabric/2.1.0-GCCcore-14.3.0      36) libarchive/3.8.1-GCCcore-14.3.0
+ 14) PMIx/5.0.8-GCCcore-14.3.0           37) CMake/4.0.3-GCCcore-14.3.0
+ 15) PRRTE/3.0.11-GCCcore-14.3.0         38) libaec/1.1.4-GCCcore-14.3.0
+ 16) UCC/1.4.4-GCCcore-14.3.0            39) Perl/5.40.2-GCCcore-14.3.0
+ 17) OpenMPI/5.0.8-GCC-14.3.0            40) HDF5/1.14.6-gompi-2025b
+ 18) OpenBLAS/0.3.30-GCC-14.3.0          41) libreadline/8.2-GCCcore-14.3.0
+ 19) FlexiBLAS/3.4.5-GCC-14.3.0          42) libtommath/1.3.0-GCCcore-14.3.0
+ 20) FFTW/3.3.10-GCC-14.3.0              43) Tcl/9.0.1-GCCcore-14.3.0
+ 21) gompi/2025b                         44) SQLite/3.50.1-GCCcore-14.3.0
+ 22) FFTW.MPI/3.3.10-gompi-2025b         45) libffi/3.5.1-GCCcore-14.3.0
+ 23) ScaLAPACK/2.2.2-gompi-2025b-fb      46) Python/3.13.5-GCCcore-14.3.0
+
+ 
+
+
+Cloning PETSc
+Cloning into '/gpfs/home/lac224/firedrake-dev-int64/petsc'...
+Updating files:  44% (5151/11522)Updating files:  45% (5185/11522)Updating files:  46% (5301/11522)Updating files:  47% (5416/11522)Updating files:  48% (5531/11522)Updating files:  49% (5646/11522)Updating files:  50% (5761/11522)Updating files:  51% (5877/11522)Updating files:  52% (5992/11522)Updating files:  53% (6107/11522)Updating files:  54% (6222/11522)Updating files:  55% (6338/11522)Updating files:  56% (6453/11522)Updating files:  57% (6568/11522)Updating files:  58% (6683/11522)Updating files:  59% (6798/11522)Updating files:  60% (6914/11522)Updating files:  61% (7029/11522)Updating files:  62% (7144/11522)Updating files:  63% (7259/11522)Updating files:  64% (7375/11522)Updating files:  65% (7490/11522)Updating files:  66% (7605/11522)Updating files:  67% (7720/11522)Updating files:  68% (7835/11522)Updating files:  69% (7951/11522)Updating files:  70% (8066/11522)Updating files:  71% (8181/11522)Updating files:  72% (8296/11522)Updating files:  73% (8412/11522)Updating files:  74% (8527/11522)Updating files:  75% (8642/11522)Updating files:  76% (8757/11522)Updating files:  77% (8872/11522)Updating files:  78% (8988/11522)Updating files:  79% (9103/11522)Updating files:  80% (9218/11522)Updating files:  81% (9333/11522)Updating files:  82% (9449/11522)Updating files:  83% (9564/11522)Updating files:  84% (9679/11522)Updating files:  85% (9794/11522)Updating files:  86% (9909/11522)Updating files:  87% (10025/11522)Updating files:  88% (10140/11522)Updating files:  89% (10255/11522)Updating files:  90% (10370/11522)Updating files:  91% (10486/11522)Updating files:  92% (10601/11522)Updating files:  93% (10716/11522)Updating files:  94% (10831/11522)Updating files:  95% (10946/11522)Updating files:  96% (11062/11522)Updating files:  97% (11177/11522)Updating files:  98% (11292/11522)Updating files:  99% (11407/11522)Updating files:  99% (11432/11522)Updating files: 100% (11522/11522)Updating files: 100% (11522/11522), done.
+
+Configuring PETSc
+=============================================================================================
+                         Configuring PETSc to compile on your system
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+     Found environment variable: CC=gcc. Ignoring it, since it's also set on command line
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+    Found environment variable: CXX=g++. Ignoring it, since it's also set on command line
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: FC=gfortran. Ignoring it, since it's also set on command line
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: F77=gfortran. Ignoring it! Use "./configure F77=$F77" if you
+  really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: F90=gfortran. Ignoring it! Use "./configure F90=$F90" if you
+  really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: CFLAGS=-O2 -ftree-vectorize -march=native -fno-math-errno.
+  Ignoring it! Use "./configure CFLAGS=$CFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: CXXFLAGS=-O2 -ftree-vectorize -march=native -fno-math-errno.
+  Ignoring it! Use "./configure CXXFLAGS=$CXXFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: FCFLAGS=-O2 -ftree-vectorize -march=native -fno-math-errno.
+  Ignoring it! Use "./configure FCFLAGS=$FCFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: FFLAGS=-O2 -ftree-vectorize -march=native -fno-math-errno.
+  Ignoring it! Use "./configure FFLAGS=$FFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: F90FLAGS=-O2 -ftree-vectorize -march=native -fno-math-errno.
+  Ignoring it! Use "./configure F90FLAGS=$F90FLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable:
+  CPPFLAGS=-I/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/include
+  -I/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/include
+  -I/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/include/flexiblas. Ignoring
+  it! Use "./configure CPPFLAGS=$CPPFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable:
+  LDFLAGS=-L/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib64
+  -L/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib
+  -L/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib64
+  -L/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib
+  -L/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib64
+  -L/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib
+  -L/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib64
+  -L/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib. Ignoring it! Use "./configure
+  LDFLAGS=$LDFLAGS" if you really want to use this value
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Found environment variable: LIBS=-lm -lpthread. Ignoring it! Use "./configure LIBS=$LIBS"
+  if you really want to use this value
+=============================================================================================
+=============================================================================================
+        Trying to download https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.gz for BISON
+=============================================================================================
+=============================================================================================
+                  Running configure on BISON; this may take several minutes
+=============================================================================================
+=============================================================================================
+                     Running make on BISON; this may take several minutes
+=============================================================================================
+=============================================================================================
+                 Running make install on BISON; this may take several minutes
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using version 2.12.1 of package HWLOC, PETSc is tested with 2.15. Suggest using
+  --download-hwloc for a compatible hwloc
+=============================================================================================
+=============================================================================================
+              Trying to download https://bitbucket.org/petsc/ctetgen for CTETGEN
+=============================================================================================
+=============================================================================================
+  Trying to download https://parallel-netcdf.github.io/Release/pnetcdf-1.14.1.tar.gz for
+  PNETCDF
+=============================================================================================
+=============================================================================================
+                 Running configure on PNETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+                    Running make on PNETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+                Running make install on PNETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+            Trying to download https://bitbucket.org/petsc/pkg-metis.git for METIS
+=============================================================================================
+=============================================================================================
+                 Configuring METIS with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+                Compiling and installing METIS; this may take several minutes
+=============================================================================================
+=============================================================================================
+  Trying to download
+  https://downloads.unidata.ucar.edu/netcdf-c/4.10.1/netcdf-c-4.10.1.tar.gz for NETCDF
+=============================================================================================
+=============================================================================================
+                  Running configure on NETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+                    Running make on NETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+                Running make install on NETCDF; this may take several minutes
+=============================================================================================
+=============================================================================================
+          Trying to download https://gitlab.inria.fr/scotch/scotch.git for PTSCOTCH
+=============================================================================================
+=============================================================================================
+                Configuring PTSCOTCH with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+               Compiling and installing PTSCOTCH; this may take several minutes
+=============================================================================================
+=============================================================================================
+         Trying to download https://github.com/xiaoyeli/superlu_dist for SUPERLU_DIST
+=============================================================================================
+=============================================================================================
+              Configuring SUPERLU_DIST with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+             Compiling and installing SUPERLU_DIST; this may take several minutes
+=============================================================================================
+                **************************************************************************************************                Please register to use MUMPS at https://mumps-solver.org/index.php?page=dwnld#form                **************************************************************************************************
+=============================================================================================
+           Trying to download https://mumps-solver.org/MUMPS_5.9.1.tar.gz for MUMPS
+=============================================================================================
+=============================================================================================
+                        Compiling MUMPS; this may take several minutes
+=============================================================================================
+=============================================================================================
+                       Installing MUMPS; this may take several minutes
+=============================================================================================
+=============================================================================================
+    Trying to download https://github.com/DrTimothyAldenDavis/SuiteSparse for SUITESPARSE
+=============================================================================================
+=============================================================================================
+              Configuring SUITESPARSE with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+             Compiling and installing SUITESPARSE; this may take several minutes
+=============================================================================================
+=============================================================================================
+              Trying to download https://github.com/hypre-space/hypre for HYPRE
+=============================================================================================
+=============================================================================================
+  hypre examples are available at
+  arch-firedrake-int64/externalpackages/git.hypre/src/examples
+=============================================================================================
+=============================================================================================
+                  Running configure on HYPRE; this may take several minutes
+=============================================================================================
+=============================================================================================
+                     Running make on HYPRE; this may take several minutes
+=============================================================================================
+=============================================================================================
+                 Running make install on HYPRE; this may take several minutes
+=============================================================================================
+=============================================================================================
+                       Compiling Ctetgen; this may take several minutes
+=============================================================================================
+=============================================================================================
+                      Installing Ctetgen; this may take several minutes
+=============================================================================================
+Compilers:
+  C Compiler:  mpicc  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native 
+    Version: gcc (GCC) 14.3.0
+  C++ Compiler:  mpicxx  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -Wno-psabi -Wno-lto-type-mismatch -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native  -std=gnu++20 -fPIC 
+    Version: g++ (GCC) 14.3.0
+  Fortran Compiler:  mpif90  -fPIC -Wall -ffree-line-length-none -ffree-line-length-0 -Wno-lto-type-mismatch -Wno-unused-dummy-argument -O3 -march=native -mtune=native  
+    Version: GNU Fortran (GCC) 14.3.0
+Linkers:
+  Shared linker:   mpicc  -shared  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native
+  Dynamic linker:   mpicc  -shared  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native
+  Libraries linked against:   -lquadmath -ldl 
+Intel instruction sets found on CPU:
+  AVX2
+  AVX512: avx512f avx512dq avx512ifma avx512cd avx512bw avx512vl avx512vbmi avx512_vbmi2 avx512_vnni avx512_bitalg avx512_vpopcntdq
+Intel instruction sets utilizable by compiler:
+  AVX2
+  AVX512: AVX512F AVX512BITALG AVX512VBMI2 AVX512VBMI AVX512IFMA AVX512BW AVX512CD AVX512VPOPCNTDQ AVX512DQ AVX512VL AVX512VNNI
+Intel instruction sets utilizable by compiler:
+  AVX2
+  AVX512: AVX512F AVX512BITALG AVX512VBMI2 AVX512VBMI AVX512IFMA AVX512BW AVX512DQ AVX512CD AVX512VPOPCNTDQ AVX512VL AVX512VNNI
+Python:
+  Executable: /gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/bin/python3
+BlasLapack:
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib64 -L/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib64 -lflexiblas
+  Unknown if this uses OpenMP (try export OMP_NUM_THREADS=<1-4> yourprogram -log_view) 
+  uses 4 byte integers
+MPI:
+  Version:    3
+  mpiexec: /gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/bin/mpiexec
+  Implementation: openmpi
+  OMPI_VERSION: 5.0.8
+hwloc:
+  Version:    2.12.1
+  Includes:   -I/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/include
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib -lhwloc
+pthread:
+  Libraries:  -lpthread
+CMake:
+  Version:    4.0.3
+  Executable: /gpfs/easybuild/prod/software/CMake/4.0.3-GCCcore-14.3.0/bin/cmake
+zlib:
+  Version:    1.3.1
+  Includes:   -I/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/include
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib -lz
+HDF5:
+  Version:    1.14.6
+  Includes:   -I/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/include
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib -L/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib -lhdf5_hl -lhdf5
+netCDF:
+  Version:    4.10.1
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lnetcdf
+PnetCDF:
+  Version:    1.14.1
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lpnetcdf
+hypre:
+  Version:    3.2.0
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lHYPRE
+SuiteSparse:
+  Version:    7.14.1
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include/suitesparse -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lspqr -lumfpack -lklu -lcholmod -lamd
+Bison:
+  Version:    3.8
+  Executable: /gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/bin/bison
+METIS:
+  Version:    5.1.0
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lmetis
+PTSCOTCH:
+  Version:    7.0.15
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lptesmumps -lptscotchparmetisv3 -lptscotch -lptscotcherr -lesmumps -lscotch -lscotcherr
+FFTW:
+  Version:    3.3.11
+  Includes:   -I/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/include
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib -lfftw3_mpi -lfftw3
+ScaLAPACK:
+  Libraries:  -Wl,-rpath,/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib -L/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib -lscalapack
+MUMPS:
+  Version:    5.9.1
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lsmumps -ldmumps -lcmumps -lzmumps -lmumps_common -lpord -lpthread
+SuperLU_DIST:
+  Version:    9.2.1
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lsuperlu_dist
+ctetgen:
+  Includes:   -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include
+  Libraries:  -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -lctetgen
+PETSc:
+  Language used to compile PETSc: C
+  Language used to compile PetscDevice: C
+  PETSC_ARCH: arch-firedrake-int64
+  PETSC_DIR: /gpfs/home/lac224/firedrake-dev-int64/petsc
+  Prefix: <inplace installation>
+  Scalar type: real
+  Precision: double
+  Support for __float128
+  Integer size: 8 bytes
+  Single library: yes
+  Shared libraries: yes
+  Memory alignment from malloc(): 16 bytes
+  Using GNU make: /bin/make
+xxx=======================================================================================xxx
+ Configure stage complete. Now build PETSc libraries with:
+   make PETSC_DIR=/gpfs/home/lac224/firedrake-dev-int64/petsc PETSC_ARCH=arch-firedrake-int64 all
+xxx=======================================================================================xxx
+
+Building PETSc
+/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/bin/python3 ./config/gmakegen.py --petsc-arch=arch-firedrake-int64
+==========================================
+ 
+See documentation/faq.html and documentation/bugreporting.html
+for help with installation problems. Please send EVERYTHING
+printed out below when reporting problems. Please check the
+mailing list archives and consider subscribing.
+ 
+  https://petsc.org/release/community/mailing/
+ 
+==========================================
+Starting make run on hx1-c03-2-2 at Fri, 09 Oct 2026 13:36:01 +0100
+Machine characteristics: Linux hx1-c03-2-2 4.18.0-553.137.1.el8_10.x86_64 #1 SMP Fri Jun 19 18:53:55 EDT 2026 x86_64 x86_64 x86_64 GNU/Linux
+-----------------------------------------
+Using PETSc directory: /gpfs/home/lac224/firedrake-dev-int64/petsc
+Using PETSc arch: arch-firedrake-int64
+-----------------------------------------
+PETSC_VERSION_RELEASE    0
+PETSC_VERSION_MAJOR      3
+PETSC_VERSION_MINOR      26
+PETSC_VERSION_SUBMINOR   0
+PETSC_VERSION_DATE       "unknown"
+PETSC_VERSION_GIT        "unknown"
+PETSC_VERSION_DATE_GIT   "unknown"
+-----------------------------------------
+Using configure Options: --with-cc=mpicc --with-cxx=mpicxx --with-fc=mpif90 --with-c2html=0 --with-debugging=0 --with-fortran-bindings=0 --with-shared-libraries=1 --with-64-bit-indices=1 --with-strict-petscerrorcode PETSC_ARCH=arch-firedrake-int64 --COPTFLAGS="-O3 -march=native -mtune=native" --CXXOPTFLAGS="-O3 -march=native -mtune=native" --FOPTFLAGS="-O3 -march=native -mtune=native" --with-blaslapack-dir=/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0 --with-scalapack-dir=/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb --with-fftw-dir=/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0 --with-hwloc-dir=/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0 --with-zlib-dir=/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0 --with-hdf5-dir=/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b --download-bison --download-ptscotch --download-suitesparse --download-superlu_dist --download-mumps --download-hypre --download-pnetcdf --download-netcdf --download-metis --download-ctetgen
+Using configuration flags:
+#define PETSC_ARCH "arch-firedrake-int64"
+#define PETSC_ATTRIBUTEALIGNED(size) __attribute((aligned(size)))
+#define PETSC_BLASLAPACK_UNDERSCORE 1
+#define PETSC_CLANGUAGE_C 1
+#define PETSC_CXX_RESTRICT __restrict
+#define PETSC_DEPRECATED_ENUM_BASE(string_literal_why) __attribute__((deprecated(string_literal_why)))
+#define PETSC_DEPRECATED_FUNCTION_BASE(string_literal_why) __attribute__((deprecated(string_literal_why)))
+#define PETSC_DEPRECATED_MACRO_BASE(string_literal_why) PETSC_DEPRECATED_MACRO_BASE_(GCC warning string_literal_why)
+#define PETSC_DEPRECATED_MACRO_BASE_(why) _Pragma(#why)
+#define PETSC_DEPRECATED_OBJECT_BASE(string_literal_why) __attribute__((deprecated(string_literal_why)))
+#define PETSC_DEPRECATED_TYPEDEF_BASE(string_literal_why) __attribute__((deprecated(string_literal_why)))
+#define PETSC_DEVICELANGUAGE_C 1
+#define PETSC_DIR "/gpfs/home/lac224/firedrake-dev-int64/petsc"
+#define PETSC_DIR_SEPARATOR '/'
+#define PETSC_FORTRAN_CHARLEN_T size_t
+#define PETSC_FUNCTION_NAME_C __func__
+#define PETSC_FUNCTION_NAME_CXX __func__
+#define PETSC_HAVE_ACCESS 1
+#define PETSC_HAVE_ATOLL 1
+#define PETSC_HAVE_ATTRIBUTEALIGNED 1
+#define PETSC_HAVE_BISON 1
+#define PETSC_HAVE_BUILTIN_EXPECT 1
+#define PETSC_HAVE_BZERO 1
+#define PETSC_HAVE_C99_COMPLEX 1
+#define PETSC_HAVE_CLOCK 1
+#define PETSC_HAVE_CTETGEN 1
+#define PETSC_HAVE_CXX 1
+#define PETSC_HAVE_CXXABI_H 1
+#define PETSC_HAVE_CXX_ATOMIC 1
+#define PETSC_HAVE_CXX_COMPLEX 1
+#define PETSC_HAVE_CXX_COMPLEX_FIX 1
+#define PETSC_HAVE_CXX_DIALECT_CXX11 1
+#define PETSC_HAVE_CXX_DIALECT_CXX14 1
+#define PETSC_HAVE_CXX_DIALECT_CXX17 1
+#define PETSC_HAVE_CXX_DIALECT_CXX20 1
+#define PETSC_HAVE_DLADDR 1
+#define PETSC_HAVE_DLCLOSE 1
+#define PETSC_HAVE_DLERROR 1
+#define PETSC_HAVE_DLFCN_H 1
+#define PETSC_HAVE_DLOPEN 1
+#define PETSC_HAVE_DLSYM 1
+#define PETSC_HAVE_DOUBLE_ALIGN_MALLOC 1
+#define PETSC_HAVE_DRAND48 1
+#define PETSC_HAVE_DYNAMIC_LIBRARIES 1
+#define PETSC_HAVE_ERF 1
+#define PETSC_HAVE_EXECUTABLE_EXPORT 1
+#define PETSC_HAVE_FCNTL_H 1
+#define PETSC_HAVE_FENV_H 1
+#define PETSC_HAVE_FE_VALUES 1
+#define PETSC_HAVE_FFTW 1
+#define PETSC_HAVE_FLOAT_H 1
+#define PETSC_HAVE_FORK 1
+#define PETSC_HAVE_FORTRAN_FLUSH 1
+#define PETSC_HAVE_FORTRAN_FREE_LINE_LENGTH_NONE 1
+#define PETSC_HAVE_FORTRAN_TYPE_STAR 1
+#define PETSC_HAVE_FORTRAN_UNDERSCORE 1
+#define PETSC_HAVE_GETCWD 1
+#define PETSC_HAVE_GETDOMAINNAME 1
+#define PETSC_HAVE_GETHOSTBYNAME 1
+#define PETSC_HAVE_GETHOSTNAME 1
+#define PETSC_HAVE_GETPAGESIZE 1
+#define PETSC_HAVE_GETRUSAGE 1
+#define PETSC_HAVE_HDF5 1
+#define PETSC_HAVE_HWLOC 1
+#define PETSC_HAVE_HYPRE 1
+#define PETSC_HAVE_HYPRE_MIXEDINT 1
+#define PETSC_HAVE_IMMINTRIN_H 1
+#define PETSC_HAVE_INTTYPES_H 1
+#define PETSC_HAVE_ISINF 1
+#define PETSC_HAVE_ISNAN 1
+#define PETSC_HAVE_ISNORMAL 1
+#define PETSC_HAVE_LGAMMA 1
+#define PETSC_HAVE_LINUX 1
+#define PETSC_HAVE_LOG2 1
+#define PETSC_HAVE_LSEEK 1
+#define PETSC_HAVE_MALLOC_H 1
+#define PETSC_HAVE_MEMMOVE 1
+#define PETSC_HAVE_METIS 1
+#define PETSC_HAVE_MKSTEMP 1
+#define PETSC_HAVE_MPIEXEC_ENVIRONMENTAL_VARIABLE OMP
+#define PETSC_HAVE_MPIIO 1
+#define PETSC_HAVE_MPI_COMBINER_CONTIGUOUS 1
+#define PETSC_HAVE_MPI_COMBINER_DUP 1
+#define PETSC_HAVE_MPI_COMBINER_NAMED 1
+#define PETSC_HAVE_MPI_COUNT 1
+#define PETSC_HAVE_MPI_C_BOOL_FORTRAN 1
+#define PETSC_HAVE_MPI_FEATURE_DYNAMIC_WINDOW 1
+#define PETSC_HAVE_MPI_FTN_MODULE 1
+#define PETSC_HAVE_MPI_GET_ACCUMULATE 1
+#define PETSC_HAVE_MPI_GET_LIBRARY_VERSION 1
+#define PETSC_HAVE_MPI_GPU_AWARE 1
+#define PETSC_HAVE_MPI_INIT_THREAD 1
+#define PETSC_HAVE_MPI_INT64_T 1
+#define PETSC_HAVE_MPI_LONG_DOUBLE 1
+#define PETSC_HAVE_MPI_NEIGHBORHOOD_COLLECTIVES 1
+#define PETSC_HAVE_MPI_NONBLOCKING_COLLECTIVES 1
+#define PETSC_HAVE_MPI_ONE_SIDED 1
+#define PETSC_HAVE_MPI_PERSISTENT_NEIGHBORHOOD_COLLECTIVES 1
+#define PETSC_HAVE_MPI_PROCESS_SHARED_MEMORY 1
+#define PETSC_HAVE_MPI_REDUCE_LOCAL 1
+#define PETSC_HAVE_MPI_REDUCE_SCATTER_BLOCK 1
+#define PETSC_HAVE_MPI_RGET 1
+#define PETSC_HAVE_MPI_WIN_CREATE 1
+#define PETSC_HAVE_MUMPS 1
+#define PETSC_HAVE_MUMPS_MIXED_PRECISION 1
+#define PETSC_HAVE_NANOSLEEP 1
+#define PETSC_HAVE_NETCDF 1
+#define PETSC_HAVE_NETDB_H 1
+#define PETSC_HAVE_NETINET_IN_H 1
+#define PETSC_HAVE_NO_FINITE_MATH_ONLY 1
+#define PETSC_HAVE_OPENMPI 1
+#define PETSC_HAVE_PACKAGES ":amd:bison:blaslapack:cholmod:ctetgen:fftw:hdf5:hwloc:hypre:klu:mathlib:metis:mpi:mumps:netcdf:pnetcdf:pthread:ptscotch:scalapack:spqr:superlu_dist:umfpack:zlib:"
+#define PETSC_HAVE_PNETCDF 1
+#define PETSC_HAVE_POPEN 1
+#define PETSC_HAVE_POSIX_MEMALIGN 1
+#define PETSC_HAVE_PTHREAD 1
+#define PETSC_HAVE_PTHREAD_MUTEX 1
+#define PETSC_HAVE_PTSCOTCH 1
+#define PETSC_HAVE_PWD_H 1
+#define PETSC_HAVE_RAND 1
+#define PETSC_HAVE_READLINK 1
+#define PETSC_HAVE_REALPATH 1
+#define PETSC_HAVE_REAL___FLOAT128 1
+#define PETSC_HAVE_RTLD_GLOBAL 1
+#define PETSC_HAVE_RTLD_LAZY 1
+#define PETSC_HAVE_RTLD_LOCAL 1
+#define PETSC_HAVE_RTLD_NOLOAD 1
+#define PETSC_HAVE_RTLD_NOW 1
+#define PETSC_HAVE_SCALAPACK 1
+#define PETSC_HAVE_SCOTCH_PARMETIS_V3_NODEND 1
+#define PETSC_HAVE_SETJMP_H 1
+#define PETSC_HAVE_SHMGET 1
+#define PETSC_HAVE_SLEEP 1
+#define PETSC_HAVE_SNPRINTF 1
+#define PETSC_HAVE_SOCKET 1
+#define PETSC_HAVE_SO_REUSEADDR 1
+#define PETSC_HAVE_STDATOMIC_H 1
+#define PETSC_HAVE_STDINT_H 1
+#define PETSC_HAVE_STRCASECMP 1
+#define PETSC_HAVE_STRINGS_H 1
+#define PETSC_HAVE_STRUCT_SIGACTION 1
+#define PETSC_HAVE_SUITESPARSE 1
+#define PETSC_HAVE_SUPERLU_DIST 1
+#define PETSC_HAVE_SUPERLU_DIST_SINGLE 1
+#define PETSC_HAVE_SYS_PARAM_H 1
+#define PETSC_HAVE_SYS_PROCFS_H 1
+#define PETSC_HAVE_SYS_RESOURCE_H 1
+#define PETSC_HAVE_SYS_SOCKET_H 1
+#define PETSC_HAVE_SYS_TIMES_H 1
+#define PETSC_HAVE_SYS_TIME_H 1
+#define PETSC_HAVE_SYS_TYPES_H 1
+#define PETSC_HAVE_SYS_UTSNAME_H 1
+#define PETSC_HAVE_SYS_WAIT_H 1
+#define PETSC_HAVE_TAU_PERFSTUBS 1
+#define PETSC_HAVE_TGAMMA 1
+#define PETSC_HAVE_TIME 1
+#define PETSC_HAVE_TIME_H 1
+#define PETSC_HAVE_UNAME 1
+#define PETSC_HAVE_UNISTD_H 1
+#define PETSC_HAVE_USLEEP 1
+#define PETSC_HAVE_VA_COPY 1
+#define PETSC_HAVE_VSNPRINTF 1
+#define PETSC_HAVE_XMMINTRIN_H 1
+#define PETSC_HDF5_HAVE_PARALLEL 1
+#define PETSC_HDF5_HAVE_SZLIB 1
+#define PETSC_HDF5_HAVE_ZLIB 1
+#define PETSC_INTPTR_T intptr_t
+#define PETSC_INTPTR_T_FMT "#" PRIxPTR
+#define PETSC_IS_COLORING_MAX USHRT_MAX
+#define PETSC_IS_COLORING_VALUE_TYPE short
+#define PETSC_IS_COLORING_VALUE_TYPE_F integer2
+#define PETSC_LEVEL1_DCACHE_LINESIZE 64
+#define PETSC_LIB_DIR "/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib"
+#define PETSC_LIB_NAME_SUFFIX ""
+#define PETSC_MAX_PATH_LEN 4096
+#define PETSC_MEMALIGN 16
+#define PETSC_MPICC_SHOW "gcc -I/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/include -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,-rpath -Wl,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,--enable-new-dtags -lmpi"
+#define PETSC_MPIU_IS_COLORING_VALUE_TYPE MPI_UNSIGNED_SHORT
+#define PETSC_MPI_FTN_MODULE mpi
+#define PETSC_OMAKE "/bin/make --no-print-directory"
+#define PETSC_PREFETCH_HINT_NTA _MM_HINT_NTA
+#define PETSC_PREFETCH_HINT_T0 _MM_HINT_T0
+#define PETSC_PREFETCH_HINT_T1 _MM_HINT_T1
+#define PETSC_PREFETCH_HINT_T2 _MM_HINT_T2
+#define PETSC_PYTHON_EXE "/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/bin/python3"
+#define PETSC_Prefetch(a,b,c) _mm_prefetch((const char*)(a),(c))
+#define PETSC_REPLACE_DIR_SEPARATOR '\\'
+#define PETSC_SIGNAL_CAST  
+#define PETSC_SIZEOF_INT 4
+#define PETSC_SIZEOF_LONG 8
+#define PETSC_SIZEOF_LONG_LONG 8
+#define PETSC_SIZEOF_SIZE_T 8
+#define PETSC_SIZEOF_VOID_P 8
+#define PETSC_SLSUFFIX "so"
+#define PETSC_UINTPTR_T uintptr_t
+#define PETSC_UINTPTR_T_FMT "#" PRIxPTR
+#define PETSC_UNUSED __attribute((unused))
+#define PETSC_USE_64BIT_INDICES 1
+#define PETSC_USE_AVX512_KERNELS 1
+#define PETSC_USE_CTABLE 1
+#define PETSC_USE_DMLANDAU_2D 1
+#define PETSC_USE_INFO 1
+#define PETSC_USE_ISATTY 1
+#define PETSC_USE_LOG 1
+#define PETSC_USE_MALLOC_COALESCED 1
+#define PETSC_USE_PROC_FOR_SIZE 1
+#define PETSC_USE_REAL_DOUBLE 1
+#define PETSC_USE_SHARED_LIBRARIES 1
+#define PETSC_USE_SINGLE_LIBRARY 1
+#define PETSC_USE_SOCKET_VIEWER 1
+#define PETSC_USE_STRICT_PETSCERRORCODE 1
+#define PETSC_USE_VISIBILITY_C 1
+#define PETSC_USE_VISIBILITY_CXX 1
+#define PETSC_USING_64BIT_PTR 1
+#define PETSC_USING_F2003 1
+#define PETSC_USING_F90FREEFORM 1
+#define PETSC_VERSION_BRANCH_GIT "main"
+#define PETSC_VERSION_DATE_GIT "2026-10-09 05:53:14 +0000"
+#define PETSC_VERSION_GIT "v3.26.0-70-g995aa0ebfb9"
+#define PETSC__BSD_SOURCE 1
+#define PETSC__DEFAULT_SOURCE 1
+#define PETSC__GNU_SOURCE 1
+-----------------------------------------
+Using C compile: mpicc -o gmakeinfo -c -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native  
+mpicc -show: gcc -I/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/include -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,-rpath -Wl,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,--enable-new-dtags -lmpi
+C compiler version: gcc (GCC) 14.3.0
+Using C++ compile: mpicxx -o gmakeinfo -c -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -Wno-psabi -Wno-lto-type-mismatch -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native  -std=gnu++20 -fPIC  -I/gpfs/home/lac224/firedrake-dev-int64/petsc/include -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include/suitesparse -I/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/include -I/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/include -I/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/include -I/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/include   
+mpicxx -show: g++ -I/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/include -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,-rpath -Wl,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,--enable-new-dtags -lmpi
+C++ compiler version: g++ (GCC) 14.3.0
+Using Fortran compile: mpif90 -o gmakeinfo -c -fPIC -Wall -ffree-line-length-none -ffree-line-length-0 -Wno-lto-type-mismatch -Wno-unused-dummy-argument -O3 -march=native -mtune=native    -I/gpfs/home/lac224/firedrake-dev-int64/petsc/include -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include -I/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/include/suitesparse -I/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/include -I/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/include -I/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/include -I/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/include   
+mpif90 -show: gfortran -I/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/include -I/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,-rpath -Wl,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,--enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi
+Fortran compiler version: GNU Fortran (GCC) 14.3.0
+-----------------------------------------
+Using C/C++ linker: mpicc
+Using C/C++ flags: -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -O3 -march=native -mtune=native
+Using Fortran linker: mpif90
+Using Fortran flags: -fPIC -Wall -ffree-line-length-none -ffree-line-length-0 -Wno-lto-type-mismatch -Wno-unused-dummy-argument -O3 -march=native -mtune=native 
+-----------------------------------------
+Using system modules: GCCcore/14.3.0:zlib/1.3.1-GCCcore-14.3.0:binutils/2.44-GCCcore-14.3.0:GCC/14.3.0:numactl/2.0.19-GCCcore-14.3.0:XZ/5.8.1-GCCcore-14.3.0:libxml2/2.14.3-GCCcore-14.3.0:libpciaccess/0.18.1-GCCcore-14.3.0:hwloc/2.12.1-GCCcore-14.3.0:OpenSSL/3:libevent/2.1.12-GCCcore-14.3.0:UCX/1.19.0-GCCcore-14.3.0:libfabric/2.1.0-GCCcore-14.3.0:PMIx/5.0.8-GCCcore-14.3.0:PRRTE/3.0.11-GCCcore-14.3.0:UCC/1.4.4-GCCcore-14.3.0:OpenMPI/5.0.8-GCC-14.3.0:OpenBLAS/0.3.30-GCC-14.3.0:FlexiBLAS/3.4.5-GCC-14.3.0:FFTW/3.3.10-GCC-14.3.0:gompi/2025b:FFTW.MPI/3.3.10-gompi-2025b:ScaLAPACK/2.2.2-gompi-2025b-fb:foss/2025b:buildenv/default-foss-2025b:ncurses/6.5-GCCcore-14.3.0:bzip2/1.0.8-GCCcore-14.3.0:libidn2/2.3.8-GCCcore-14.3.0:libiconv/1.18-GCCcore-14.3.0:libunistring/1.3-GCCcore-14.3.0:libpsl/0.21.5-GCCcore-14.3.0:cURL/8.14.1-GCCcore-14.3.0:lz4/1.10.0-GCCcore-14.3.0:gzip/1.14-GCCcore-14.3.0:zstd/1.5.7-GCCcore-14.3.0:libarchive/3.8.1-GCCcore-14.3.0:CMake/4.0.3-GCCcore-14.3.0:libaec/1.1.4-GCCcore-14.3.0:Perl/5.40.2-GCCcore-14.3.0:HDF5/1.14.6-gompi-2025b:libreadline/8.2-GCCcore-14.3.0:libtommath/1.3.0-GCCcore-14.3.0:Tcl/9.0.1-GCCcore-14.3.0:SQLite/3.50.1-GCCcore-14.3.0:libffi/3.5.1-GCCcore-14.3.0:Python/3.13.5-GCCcore-14.3.0
+Using mpi.h: # 1 "/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/include/mpi.h" 1
+-----------------------------------------
+Using libraries: -Wl,-rpath,/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -L/gpfs/home/lac224/firedrake-dev-int64/petsc/arch-firedrake-int64/lib -Wl,-rpath,/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib -L/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib -Wl,-rpath,/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib64 -L/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib -L/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib -Wl,-rpath,/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libffi/3.5.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libffi/3.5.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/SQLite/3.50.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/SQLite/3.50.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/Tcl/9.0.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/Tcl/9.0.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libtommath/1.3.0-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libtommath/1.3.0-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libreadline/8.2-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libreadline/8.2-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib64 -L/gpfs/easybuild/prod/software/HDF5/1.14.6-gompi-2025b/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/Perl/5.40.2-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/Perl/5.40.2-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libaec/1.1.4-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libaec/1.1.4-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libarchive/3.8.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libarchive/3.8.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/zstd/1.5.7-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/zstd/1.5.7-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/lz4/1.10.0-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/lz4/1.10.0-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/cURL/8.14.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/cURL/8.14.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libpsl/0.21.5-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libpsl/0.21.5-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libunistring/1.3-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libunistring/1.3-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libiconv/1.18-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libiconv/1.18-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libidn2/2.3.8-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libidn2/2.3.8-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/bzip2/1.0.8-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/bzip2/1.0.8-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/ncurses/6.5-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/ncurses/6.5-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib64 -L/gpfs/easybuild/prod/software/ScaLAPACK/2.2.2-gompi-2025b-fb/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/FFTW.MPI/3.3.10-gompi-2025b/lib64 -L/gpfs/easybuild/prod/software/FFTW.MPI/3.3.10-gompi-2025b/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib64 -L/gpfs/easybuild/prod/software/FFTW/3.3.10-GCC-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/OpenBLAS/0.3.30-GCC-14.3.0/lib64 -L/gpfs/easybuild/prod/software/OpenBLAS/0.3.30-GCC-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib64 -L/gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/UCC/1.4.4-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/UCC/1.4.4-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/PRRTE/3.0.11-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/PRRTE/3.0.11-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/PMIx/5.0.8-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/PMIx/5.0.8-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libfabric/2.1.0-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libfabric/2.1.0-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libevent/2.1.12-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libevent/2.1.12-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/OpenSSL/3/lib64 -L/gpfs/easybuild/prod/software/OpenSSL/3/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/hwloc/2.12.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libpciaccess/0.18.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libpciaccess/0.18.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/libxml2/2.14.3-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/libxml2/2.14.3-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/XZ/5.8.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/XZ/5.8.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/numactl/2.0.19-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/numactl/2.0.19-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/binutils/2.44-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/binutils/2.44-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib64 -L/gpfs/easybuild/prod/software/zlib/1.3.1-GCCcore-14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib64 -L/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib64 -Wl,-rpath,/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib/gcc/x86_64-pc-linux-gnu/14.3.0 -L/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib/gcc/x86_64-pc-linux-gnu/14.3.0 -Wl,-rpath,/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/Python/3.13.5-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libffi/3.5.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libffi/3.5.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/SQLite/3.50.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/SQLite/3.50.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/Tcl/9.0.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/Tcl/9.0.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libtommath/1.3.0-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libtommath/1.3.0-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libreadline/8.2-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libreadline/8.2-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/Perl/5.40.2-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/Perl/5.40.2-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libaec/1.1.4-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libaec/1.1.4-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libarchive/3.8.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libarchive/3.8.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/zstd/1.5.7-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/zstd/1.5.7-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/lz4/1.10.0-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/lz4/1.10.0-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/cURL/8.14.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/cURL/8.14.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libpsl/0.21.5-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libpsl/0.21.5-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libunistring/1.3-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libunistring/1.3-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libiconv/1.18-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libiconv/1.18-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libidn2/2.3.8-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libidn2/2.3.8-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/bzip2/1.0.8-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/bzip2/1.0.8-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/ncurses/6.5-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/ncurses/6.5-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/FFTW.MPI/3.3.10-gompi-2025b/lib -L/gpfs/easybuild/prod/software/FFTW.MPI/3.3.10-gompi-2025b/lib -Wl,-rpath,/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/FlexiBLAS/3.4.5-GCC-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/OpenBLAS/0.3.30-GCC-14.3.0/lib -L/gpfs/easybuild/prod/software/OpenBLAS/0.3.30-GCC-14.3.0/lib -Wl,-rpath,/opt/pbs/lib -L/opt/pbs/lib -Wl,-rpath,/gpfs/easybuild/prod/software/UCC/1.4.4-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/UCC/1.4.4-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/PRRTE/3.0.11-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/PRRTE/3.0.11-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/PMIx/5.0.8-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/PMIx/5.0.8-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libfabric/2.1.0-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libfabric/2.1.0-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/UCX/1.19.0-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libevent/2.1.12-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libevent/2.1.12-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libpciaccess/0.18.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libpciaccess/0.18.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/libxml2/2.14.3-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/libxml2/2.14.3-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/XZ/5.8.1-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/XZ/5.8.1-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/numactl/2.0.19-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/numactl/2.0.19-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/binutils/2.44-GCCcore-14.3.0/lib -L/gpfs/easybuild/prod/software/binutils/2.44-GCCcore-14.3.0/lib -Wl,-rpath,/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib -L/gpfs/easybuild/prod/software/GCCcore/14.3.0/lib -lpetsc -lHYPRE -lspqr -lumfpack -lklu -lcholmod -lamd -lfftw3_mpi -lfftw3 -lsmumps -ldmumps -lcmumps -lzmumps -lmumps_common -lpord -lpthread -lscalapack -lsuperlu_dist -lflexiblas -lptesmumps -lptscotchparmetisv3 -lptscotch -lptscotcherr -lesmumps -lscotch -lscotcherr -lpthread -lnetcdf -lhdf5_hl -lhdf5 -lmetis -lpnetcdf -lm -lz -lctetgen -lhwloc -ldl -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lgfortran -lm -lgfortran -lm -lgcc_s -lquadmath -lstdc++ -lquadmath -ldl
+------------------------------------------
+Using mpiexec: /gpfs/easybuild/prod/software/OpenMPI/5.0.8-GCC-14.3.0/bin/mpiexec --oversubscribe
+------------------------------------------
+Using MAKE: /bin/make
+Default MAKEFLAGS: MAKE_NP:40 MAKE_LOAD:64.0 MAKEFLAGS: -j16 --jobserver-auth=4,5 --no-print-directory -- PETSC_DIR=/gpfs/home/lac224/firedrake-dev-int64/petsc PETSC_ARCH=arch-firedrake-int64
+==========================================
+/bin/make --print-directory -f gmakefile -l64.0 --output-sync=recurse V= libs
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dflush.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dellipse.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dcoor.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dline.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dpause.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/impls/null/drawnull.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dmarker.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dclear.o
+         CC arch-firedrake-int64/obj/src/sys/classes/bm/interface/bm.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/impls/tikz/tikz.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dmouse.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/drawreg.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/draw.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dpoint.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/drawregall.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/drect.o
+         CC arch-firedrake-int64/obj/src/sys/classes/bag/bag.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dtext.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/axis.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/impls/image/drawimage.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dsave.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dtri.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/image.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/bars.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/axisc.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/interface/dviewp.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/cmap.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/dscatter.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/zoom.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/hists.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/interface/dlregisrand.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/impls/rander48/rander48.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/lgc.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/impls/rand/rand.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/interface/random.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/interface/randreg.o
+         CC arch-firedrake-int64/obj/src/sys/classes/draw/utils/lg.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/interface/randomc.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/ascii/vcreatea.o
+         CC arch-firedrake-int64/obj/src/sys/classes/random/impls/rand48/rand48.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/pyvista/pyvistaviewer.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/python/pythonviewer.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/string/stringv.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/draw/drawv.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/draw/draw/fdrawv.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/dlregispetsc.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/vu/petscvu.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/socket/send.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/ascii/filev.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/dupl.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/glvis/glvis.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/hdf5/hdf5v.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/vtk/vtkv.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/flush.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/viewa.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/binary/binv.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/viewregall.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/impls/hdf5/impl/ihdf5v.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/viewers.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/view.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/utils/btview.o
+         CC arch-firedrake-int64/obj/src/sys/dll/demangle.o
+         CC arch-firedrake-int64/obj/src/sys/dll/dlimpl.o
+         CC arch-firedrake-int64/obj/src/sys/error/checkptr.o
+         CC arch-firedrake-int64/obj/src/sys/error/errabort.o
+         CC arch-firedrake-int64/obj/src/sys/error/err.o
+         CC arch-firedrake-int64/obj/src/sys/error/adebug.o
+         CC arch-firedrake-int64/obj/src/sys/dll/dl.o
+         CC arch-firedrake-int64/obj/src/sys/error/errstop.o
+         CC arch-firedrake-int64/obj/src/sys/error/pstack.o
+         CC arch-firedrake-int64/obj/src/sys/classes/viewer/interface/viewreg.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/fpath.o
+         CC arch-firedrake-int64/obj/src/sys/error/signal.o
+         CC arch-firedrake-int64/obj/src/sys/error/errtrace.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/fdir.o
+         CC arch-firedrake-int64/obj/src/sys/error/fp.o
+         CC arch-firedrake-int64/obj/src/sys/dll/reg.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/fwd.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/ghome.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/fretrieve.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/grpath.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/rpath.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/ftest.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/smatlab.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/legacy/loglegacy.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/trace/logtrace.o
+         CC arch-firedrake-int64/obj/src/sys/info/verboseinfo.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/perfstubs/logperfstubs.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/mpiuopen.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/sysio.o
+         CC arch-firedrake-int64/obj/src/sys/logging/utils/stack.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/interface/lhreg.o
+         CC arch-firedrake-int64/obj/src/sys/fileio/mprint.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/nested/xmlviewer.o
+         CC arch-firedrake-int64/obj/src/sys/memory/mal.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/nested/lognested.o
+         CC arch-firedrake-int64/obj/src/sys/memory/mhbw.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/interface/loghandler.o
+         CC arch-firedrake-int64/obj/src/sys/memory/mem.o
+         CC arch-firedrake-int64/obj/src/sys/logging/plog.o
+         CC arch-firedrake-int64/obj/src/sys/objects/device/util/memory.o
+         CC arch-firedrake-int64/obj/src/sys/logging/state/logregistry.o
+         CC arch-firedrake-int64/obj/src/sys/logging/state/logstate.o
+         CC arch-firedrake-int64/obj/src/sys/objects/device/util/devicereg.o
+         CC arch-firedrake-int64/obj/src/sys/objects/destroy.o
+         CC arch-firedrake-int64/obj/src/sys/objects/fcallback.o
+         CC arch-firedrake-int64/obj/src/sys/objects/device/c/device.o
+         CC arch-firedrake-int64/obj/src/sys/objects/gtype.o
+         CC arch-firedrake-int64/obj/src/sys/objects/gcomm.o
+         CC arch-firedrake-int64/obj/src/sys/objects/gcookie.o
+         CC arch-firedrake-int64/obj/src/sys/objects/finit.o
+         CC arch-firedrake-int64/obj/src/sys/memory/mtr.o
+         CC arch-firedrake-int64/obj/src/sys/objects/package.o
+         CC arch-firedrake-int64/obj/src/sys/objects/olist.o
+         CC arch-firedrake-int64/obj/src/sys/objects/pgname.o
+         CC arch-firedrake-int64/obj/src/sys/objects/garbage.o
+         CC arch-firedrake-int64/obj/src/sys/objects/aoptions.o
+         CC arch-firedrake-int64/obj/src/sys/objects/inherit.o
+         CC arch-firedrake-int64/obj/src/sys/objects/ptype.o
+         CC arch-firedrake-int64/obj/src/sys/objects/prefix.o
+         CC arch-firedrake-int64/obj/src/sys/objects/pname.o
+         CC arch-firedrake-int64/obj/src/sys/objects/state.o
+         CC arch-firedrake-int64/obj/src/sys/objects/init.o
+         CC arch-firedrake-int64/obj/src/sys/objects/version.o
+         CC arch-firedrake-int64/obj/src/sys/perfstubs/pstimer.o
+         CC arch-firedrake-int64/obj/src/sys/time/cputime.o
+         CC arch-firedrake-int64/obj/src/sys/python/pythonsys.o
+         CC arch-firedrake-int64/obj/src/sys/time/fdate.o
+         CC arch-firedrake-int64/obj/src/sys/objects/subcomm.o
+         CC arch-firedrake-int64/obj/src/sys/objects/tagm.o
+         CC arch-firedrake-int64/obj/src/sys/totalview/tv_data_display.o
+         CC arch-firedrake-int64/obj/src/sys/utils/arch.o
+         CC arch-firedrake-int64/obj/src/sys/utils/fhost.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mathclose.o
+         CC arch-firedrake-int64/obj/src/sys/utils/fuser.o
+         CC arch-firedrake-int64/obj/src/sys/logging/handler/impls/default/logdefault.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mathinf.o
+         CC arch-firedrake-int64/obj/src/sys/objects/pinit.o
+         CC arch-firedrake-int64/obj/src/sys/utils/matheq.o
+         CC arch-firedrake-int64/obj/src/sys/utils/memc.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mathfit.o
+         CC arch-firedrake-int64/obj/src/sys/utils/arrayview.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mpishm.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mpitr.o
+         CC arch-firedrake-int64/obj/src/sys/utils/pbarrier.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mpiu.o
+         CC arch-firedrake-int64/obj/src/sys/utils/pdisplay.o
+         CC arch-firedrake-int64/obj/src/sys/utils/psleep.o
+         CC arch-firedrake-int64/obj/src/sys/utils/psplit.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mpimesg.o
+         CC arch-firedrake-int64/obj/src/sys/utils/segbuffer.o
+         CC arch-firedrake-int64/obj/src/sys/utils/server.o
+         CC arch-firedrake-int64/obj/src/sys/utils/sortd.o
+         CC arch-firedrake-int64/obj/src/sys/utils/sortip.o
+         CC arch-firedrake-int64/obj/src/sys/utils/mpits.o
+         CC arch-firedrake-int64/obj/src/sys/objects/options.o
+         CC arch-firedrake-int64/obj/src/vec/is/ao/impls/mapping/aomapping.o
+         CC arch-firedrake-int64/obj/src/vec/is/ao/interface/ao.o
+         CC arch-firedrake-int64/obj/src/vec/is/ao/interface/aoreg.o
+         CC arch-firedrake-int64/obj/src/sys/utils/str.o
+         CC arch-firedrake-int64/obj/src/vec/is/ao/impls/basic/aobasic.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/interface/isregall.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/interface/isreg.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/impls/stride/stride.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/impls/block/block.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/utils/isblock.o
+         CC arch-firedrake-int64/obj/src/vec/is/ao/impls/memscalable/aomemscalable.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/impls/general/general.o
+         CC arch-firedrake-int64/obj/src/sys/utils/sorti.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/utils/iscomp.o
+         CC arch-firedrake-int64/obj/src/sys/objects/optionsyaml.o
+         CC arch-firedrake-int64/obj/src/sys/utils/sortso.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/allgather/sfallgather.o
+         CC arch-firedrake-int64/obj/src/vec/is/section/interface/hdf5/sectionhdf5.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/alltoall/sfalltoall.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/gather/sfgather.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/utils/isdiff.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/gatherv/sfgatherv.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/utils/iscoloring.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/allgatherv/sfallgatherv.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/sfmpi.o
+         CC arch-firedrake-int64/obj/src/vec/is/is/interface/index.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/neighbor/sfneighbor.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/interface/dlregissf.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/interface/sfregi.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/sfbasic.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/interface/sftype.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/isio.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/utils/sfcoord.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/hdf5/hdf5io.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/pmap.o
+         CC arch-firedrake-int64/obj/src/vec/pf/impls/constant/const.o
+         CC arch-firedrake-int64/obj/src/vec/pf/impls/string/cstring.o
+         CC arch-firedrake-int64/obj/src/vec/pf/interface/pfall.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/hypre/vhyp.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/window/sfwindow.o
+         CC arch-firedrake-int64/obj/src/vec/pf/interface/pf.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/mpi/commonmpvec.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/psort.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/mpi/pvec2.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/utils/sfutils.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/mpi/vmpicr.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/kdtree.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/seq/bvec3.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/seq/vseqcr.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/seq/bvec1.o
+         CC arch-firedrake-int64/obj/src/vec/is/section/interface/section.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/shared/shvec.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/veccreate.o
+         CC arch-firedrake-int64/obj/src/vec/is/utils/isltog.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/mpi/pbvec.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/dlregisvec.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/vecreg.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/vecregall.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/interface/sf.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/nest/vecnest.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/seq/bvec2.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/absolute.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/seq/dvec2.o
+         CC arch-firedrake-int64/obj/src/vec/vec/impls/mpi/pdvec.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/and.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/andor.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/relative.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/simple.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/or.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/interface/dlregistagger.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/impls/cdf.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/comb.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/interface/tagger.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/projection.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vecs.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/tagger/interface/taggerregi.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/veccreatememtype.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vecio.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/vector.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vsection.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vecglvis.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/coarsen/interface/scoarsen.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/coarsen/interface/coarsen.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vecstash.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/coarsen/impls/mis/mis.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/coarsen/impls/misk/misk.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/degr.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/dsm.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vscat.o
+         CC arch-firedrake-int64/obj/src/vec/vec/interface/rvector.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/color.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/numsrt.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/seq.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/ido.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/setr.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/minpack/slo.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/jp/jp.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/natural/natural.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/interface/matcoloringregi.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/greedy/greedy.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/impls/power/power.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/amd/amd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/interface/matcoloring.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/utils/bipartite.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/degree.o
+         CC arch-firedrake-int64/obj/src/vec/vec/utils/vinv.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/fn1wd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/utils/valid.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/fndsep.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/gen1wd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/color/utils/weights.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/coarsen/impls/hem/hem.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/genrcm.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/fnroot.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/genqmd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/qmdrch.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/qmdmrg.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/gennd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/metisnd/metisnd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/qmdqt.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/qmdupd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/rootls.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/rcm.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/sp1wd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/spnd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/spqmd.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/sprcm.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/sorder.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/spectral.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/wbm.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/partition/impls/metis/metis.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/order/sregis.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/aijperm/mpiaijperm.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/aijsell/mpiaijsell.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/partition/spartition.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/partition/impls/scotch/scotch.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/crl/mcrl.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpiaijpc.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpb_aij.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/partition/partition.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpimatmatmatmult.o
+         CC arch-firedrake-int64/obj/src/mat/graphops/partition/impls/hierarchical/hierarchical.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpimattransposematmult.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mumps/mumps.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mmaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/strumpack/strumpack.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/aijsell/aijsell.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/fdmpiaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/adj/mpi/mpiadj.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/superlu_dist/superlu_dist.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/cholmod/aijcholmod.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/aijperm/aijperm.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/bas/basfactor.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/crl/crl.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/fdaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/ij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/hdf5/aijhdf5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/inode2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/klu/klu.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/bas/spbas.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/matmatmatmult.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/mattransposematmult.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/matptap.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/matrart.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/spqr/aijspqr.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/symtranspose.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/umfpack/umfpack.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/aijfact.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/mpi/mpb_baij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/mpi/mpiaijbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/mpi/mmbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpimatmatmult.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/aijbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact13.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpiptap.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact11.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/matmatmult.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/mpi/baijov.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mumps/impl/imumps.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpiov.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat1.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/aij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat11.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat14.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact9.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/seq/inode.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijfact5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat6.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolv.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baij2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran1.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvnat15.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran6.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat1.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtran7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrann.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgedi.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat6.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baijsolvtrannat7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/mpi/mpibaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa6.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/centering/centering.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/dgefa7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/dense/seq/hdf5/densehdf5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/cdiagonal/cdiagonal.o
+         CC arch-firedrake-int64/obj/src/mat/impls/dummy/matdummy.o
+         CC arch-firedrake-int64/obj/src/mat/impls/composite/mcomposite.o
+         CC arch-firedrake-int64/obj/src/mat/impls/fft/fft.o
+         CC arch-firedrake-int64/obj/src/mat/impls/htool/htool.o
+         CC arch-firedrake-int64/obj/src/mat/impls/dense/mpi/mmdense.o
+         CC arch-firedrake-int64/obj/src/mat/impls/baij/seq/baij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/blockmat/seq/blockmat.o
+         CC arch-firedrake-int64/obj/src/mat/impls/fft/fftw/fftw.o
+         CC arch-firedrake-int64/obj/src/mat/impls/aij/mpi/mpiaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/localref/mlocalref.o
+         CC arch-firedrake-int64/obj/src/mat/impls/mffd/mffddef.o
+         CC arch-firedrake-int64/obj/src/mat/impls/mffd/mfregis.o
+         CC arch-firedrake-int64/obj/src/mat/impls/lrc/lrc.o
+         CC arch-firedrake-int64/obj/src/mat/impls/diagonal/diagonal.o
+         CC arch-firedrake-int64/obj/src/mat/impls/mffd/wp.o
+         CC arch-firedrake-int64/obj/src/mat/impls/mffd/mffd.o
+         CC arch-firedrake-int64/obj/src/mat/impls/nest/multishift.o
+         CC arch-firedrake-int64/obj/src/mat/impls/python/pythonmat.o
+         CC arch-firedrake-int64/obj/src/mat/impls/normal/normmh.o
+         CC arch-firedrake-int64/obj/src/mat/impls/normal/normm.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/mpi/mpiaijsbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/preallocator/matpreallocator.o
+         CC arch-firedrake-int64/obj/src/mat/impls/dense/mpi/mpidense.o
+         CC arch-firedrake-int64/obj/src/mat/impls/hypre/mhypre.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/mpi/mmsbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/aijsbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/mpi/sbaijov.o
+         CC arch-firedrake-int64/obj/src/mat/impls/kaij/kaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/cholmod/sbaijcholmod.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact10.o
+         CC arch-firedrake-int64/obj/src/mat/impls/dense/seq/dense.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact12.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact4.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact11.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact3.o
+         CC arch-firedrake-int64/obj/src/mat/impls/maij/maij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact5.o
+         CC arch-firedrake-int64/obj/src/mat/impls/nest/matnest.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact6.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sro.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact7.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact8.o
+         CC arch-firedrake-int64/obj/src/mat/impls/scatter/mscatter.o
+         CC arch-firedrake-int64/obj/src/mat/impls/is/matis.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sell/seq/fdsell.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact9.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sell/mpi/mmsell.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaij2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/submat/submat.o
+         CC arch-firedrake-int64/obj/src/mat/impls/shell/shellcnv.o
+         CC arch-firedrake-int64/obj/src/mat/impls/transpose/htransm.o
+         CC arch-firedrake-int64/obj/src/mat/interface/dlregismat.o
+         CC arch-firedrake-int64/obj/src/mat/impls/transpose/transm.o
+         CC arch-firedrake-int64/obj/src/mat/interface/matnull.o
+         CC arch-firedrake-int64/obj/src/mat/interface/matreg.o
+         CC arch-firedrake-int64/obj/src/mat/interface/matregis.o
+         CC arch-firedrake-int64/obj/src/mat/impls/scalapack/matscalapack.o
+         CC arch-firedrake-int64/obj/src/mat/interface/matproduct.o
+         CC arch-firedrake-int64/obj/src/mat/utils/bandwidth.o
+         CC arch-firedrake-int64/obj/src/mat/utils/convert.o
+         CC arch-firedrake-int64/obj/src/mat/impls/shell/shell.o
+         CC arch-firedrake-int64/obj/src/mat/utils/compressedrow.o
+         CC arch-firedrake-int64/obj/src/mat/utils/freespace.o
+         CC arch-firedrake-int64/obj/src/mat/matfd/fdmatrix.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/mpi/mpisbaij.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaijfact2.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sell/seq/sell.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sell/mpi/mpisell.o
+         CC arch-firedrake-int64/obj/src/mat/impls/sbaij/seq/sbaij.o
+         CC arch-firedrake-int64/obj/src/mat/utils/axpy.o
+         CC arch-firedrake-int64/obj/src/mat/utils/isltog.o
+         CC arch-firedrake-int64/obj/src/mat/utils/matio.o
+         CC arch-firedrake-int64/obj/src/mat/utils/getcolv.o
+         CC arch-firedrake-int64/obj/src/mat/utils/matstashspace.o
+         CC arch-firedrake-int64/obj/src/mat/utils/pheap.o
+         CC arch-firedrake-int64/obj/src/mat/utils/veccreatematdense.o
+         CC arch-firedrake-int64/obj/src/mat/utils/zerorows.o
+         CC arch-firedrake-int64/obj/src/mat/utils/zerodiag.o
+         CC arch-firedrake-int64/obj/src/mat/utils/overlapsplit.o
+         CC arch-firedrake-int64/obj/src/mat/utils/gcreate.o
+         CC arch-firedrake-int64/obj/src/mat/utils/multequal.o
+         CC arch-firedrake-int64/obj/src/dm/dt/dualspace/impls/refined/dualspacerefined.o
+         CC arch-firedrake-int64/obj/src/dm/dt/dualspace/impls/simple/dspacesimple.o
+         CC arch-firedrake-int64/obj/src/mat/utils/matstash.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fe/impls/vector/fevector.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fe/impls/composite/fecomposite.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fe/interface/fegeom.o
+         CC arch-firedrake-int64/obj/src/dm/dt/interface/dtprob.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/point/spacepoint.o
+         CC arch-firedrake-int64/obj/src/dm/dt/dualspace/impls/sum/dualspacesum.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fv/interface/fv.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/poly/spacepoly.o
+         CC arch-firedrake-int64/obj/src/dm/dt/dualspace/interface/dualspace.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/ptrimmed/spaceptrimmed.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/sum/spacesum.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/interface/space.o
+         CC arch-firedrake-int64/obj/src/dm/dt/interface/dtaltv.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/wxy/spacewxy.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fe/impls/basic/febasic.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/subspace/spacesubspace.o
+         CC arch-firedrake-int64/obj/src/dm/dt/interface/dtds.o
+         CC arch-firedrake-int64/obj/src/dm/field/interface/dlregisdmfield.o
+         CC arch-firedrake-int64/obj/src/dm/dt/interface/dtweakform.o
+         CC arch-firedrake-int64/obj/src/dm/dt/space/impls/tensor/spacetensor.o
+         CC arch-firedrake-int64/obj/src/dm/field/interface/dmfieldregi.o
+         CC arch-firedrake-int64/obj/src/dm/dt/fe/interface/fe.o
+         CC arch-firedrake-int64/obj/src/dm/field/impls/da/dmfieldda.o
+         CC arch-firedrake-int64/obj/src/dm/field/interface/dmfield.o
+         CC arch-firedrake-int64/obj/src/dm/field/impls/shell/dmfieldshell.o
+         CC arch-firedrake-int64/obj/src/dm/impls/composite/packm.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dacorn.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dadestroy.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dadist.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/da1.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dacreate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/da.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dadd.o
+         CC arch-firedrake-int64/obj/src/dm/dt/interface/dt.o
+         CC arch-firedrake-int64/obj/src/dm/impls/composite/pack.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/daghost.o
+         CC arch-firedrake-int64/obj/src/dm/dt/dualspace/impls/lagrange/dspacelagrange.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/da2.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dageometry.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dagtol.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dagetelem.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dagetarray.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dagtona.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/daindex.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/daltol.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dapf.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dareg.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dascatter.o
+         CC arch-firedrake-int64/obj/src/dm/field/impls/ds/dmfieldds.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dalocal.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dapreallocate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/daview.o
+         CC arch-firedrake-int64/obj/src/mat/interface/matrix.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dasub.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/gr1.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/da3.o
+         CC arch-firedrake-int64/obj/src/dm/impls/network/networkmonitor.o
+         CC arch-firedrake-int64/obj/src/dm/impls/network/networkcreate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/forest/forest.o
+         CC arch-firedrake-int64/obj/src/dm/impls/patch/patchcreate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/grglvis.o
+         CC arch-firedrake-int64/obj/src/dm/impls/network/networkview.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/dainterp.o
+         CC arch-firedrake-int64/obj/src/dm/impls/patch/patch.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/gr2.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/hypre/mhyp.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/grvtk.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/hdf5/plexhdf5xdmf.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexcoarsen.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/generators/ctetgen/ctetgenerate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexcgns.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexadapt.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexegads.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexcheckinterface.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexceed.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexdd.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexexodusii.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexextrude.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexgenerate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexindices.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexfvm.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexfluent.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexnatural.o
+         CC arch-firedrake-int64/obj/src/dm/impls/network/network.o
+         CC arch-firedrake-int64/obj/src/dm/impls/da/fdda.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexmetric.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexglvis.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexorient.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexdistribute.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexpoint.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexply.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/hdf5/plexhdf5.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexrefine.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexinterpolate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexreorder.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexvtk.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexsection.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexpreallocate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexproject.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/pointqueue.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexpartition.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/filter/plextrfilter.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/1d/plexref1d.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/alfeld/plexrefalfeld.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/extrude/plextrcohesive.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/regular/plexrefregular.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/extrude/plextrextrude.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/bl/plexrefbl.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexvtu.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/tobox/plexreftobox.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/tosimplex/plexreftosimplex.o
+         CC arch-firedrake-int64/obj/src/dm/impls/product/product.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexgeometry.o
+         CC arch-firedrake-int64/obj/src/dm/impls/product/productutils.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexsfc.o
+         CC arch-firedrake-int64/obj/src/dm/impls/sliced/sliced.o
+         CC arch-firedrake-int64/obj/src/dm/impls/shell/dmshell.o
+         CC arch-firedrake-int64/obj/src/dm/impls/redundant/dmredundant.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexgmsh.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/impls/refine/sbr/plexrefsbr.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stagintern.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stag1d.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stag.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stagda.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stagstencil.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stagutils.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/data_bucket.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/data_ex.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/transform/interface/plextransform.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stag2d.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarm_migrate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarmpic_da.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexcreate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plextree.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarmpic_sort.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarmpic_plex.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmceed.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarmpic.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarmpic_view.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dlregisdmdm.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmgenerate.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexsubmesh.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmgeommodel.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmglvis.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmget.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmregall.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmcoordinates.o
+         CC arch-firedrake-int64/obj/src/dm/label/impls/ephemeral/plex/dmlabelephplex.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmperiodicity.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/chaco/partchaco.o
+         CC arch-firedrake-int64/obj/src/dm/label/impls/ephemeral/dmlabeleph.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dmi.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/gather/partgather.o
+         CC arch-firedrake-int64/obj/src/dm/impls/swarm/swarm.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plexfem.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/matpart/partmatpart.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/parmetis/partparmetis.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/interface/partitionerreg.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/shell/partshell.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/interface/partitioner.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/ptscotch/partptscotch.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/simple/partsimple.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgs/bcgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgs/fbcgs/fbcgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/guess/impls/fischer/fischer.o
+         CC arch-firedrake-int64/obj/src/dm/partitioner/impls/multistage/mspart.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/guess/impls/pod/pod.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgs/pipebcgs/pipebcgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgs/fbcgsr/fbcgsr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bicg/bicg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgs/qmrcgs/qmrcgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/cgeig.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stagmulti.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/cgls.o
+         CC arch-firedrake-int64/obj/src/dm/impls/stag/stag3d.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/cgtype.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/bcgsl/bcgsl.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/groppcg/groppcg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/cgne/cgne.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/pipecg/pipecg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/nash/nash.o
+         CC arch-firedrake-int64/obj/src/dm/impls/plex/plex.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/pipeprcg/pipeprcg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/pipecgrr/pipecgrr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cheby/betas.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/cg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cgs/cgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/stcg/stcg.o
+         CC arch-firedrake-int64/obj/src/dm/label/dmlabel.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/gltr/gltr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/pipecg2/pipecg2.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cr/pipecr/pipecr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cg/pipelcg/pipelcg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cr/cr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gcr/gcr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/gmpre.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/fgmres/modpcf.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/fcg/fcg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/fcg/pipefcg/pipefcg.o
+         CC arch-firedrake-int64/obj/src/dm/interface/dm.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/fgmres/fgmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/cheby/cheby.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gcr/pipegcr/pipegcr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/gmreig.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/eksm/eksm.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/lgmres/lgmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/gmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/python/pythonksp.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/pgmres/pgmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/preonly/preonly.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/lcd/lcd.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/ibcgs/ibcgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/idr/idr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/pipefgmres/pipefgmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/qcg/qcg.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/lsqr/lsqr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/gmres/dgmres/dgmres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/fetidp/fetidp.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/symmlq/symmlq.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/rich/richscale.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/tcqmr/tcqmr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/tfqmr/tfqmr.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/tsirm/tsirm.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/dlregisksp.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/dmksp.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/rich/rich.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/iguess.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/impls/minres/minres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/itres.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/eige.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/itcreate.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/itregis.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/itcl.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/kspmatregi.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/orthog.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/bfgs/bfgs.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/xmon.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/brdn/badbrdn.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/iterativ.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/dfp/dfp.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/diagbrdn/diagbrdn.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/brdn/brdn.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/dense/cd_utils.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/lmbasis.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/lmproducts.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/symbrdn/symbadbrdn.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/lmvmimpl.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/interface/itfunc.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/sr1/sr1.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/rescale/symbrdnrescale.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/lmvmutils.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/blas_cyclic/blas_cyclic.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/dense/denseqn.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/dm/dmproject.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcnullspace.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/schurm/schurm.o
+         CC arch-firedrake-int64/obj/src/ksp/ksp/utils/lmvm/symbrdn/symbrdn.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcscalingbasic.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/cp/cp.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/composite/composite.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/cholesky/cholesky.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/eisens/eisen.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/deflation/deflation.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/factimpl.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/deflation/deflationspace.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/icc/icc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/asm/asm.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/ilu/ilu.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcfetidp.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/factor.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bjacobi/bjacobi.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/qr/qr.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/factor/lu/lu.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/galerkin/galerkin.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gamg/util.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/hypre/hypre.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gamg/geo.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/hmg/hmg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gamg/classical.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/is/nn/nn.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcgraph.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/kaczmarz/kaczmarz.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/is/pcis.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/jacobi/jacobi.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/ksp/pcksp.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/lmvm/lmvmpc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mat/pcmat.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/lsc/lsc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gasm/gasm.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/smg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/fmg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/mgadapt.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/mgfunc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/none/none.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gamg/gamg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/gdsw.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/python/pythonpc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcschurs.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/spai/ispai.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/sor/sor.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/pbjacobi/pbjacobi.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/shell/shellpc.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/redundant/redundant.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/redistribute/redistribute.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/svd/svd.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mpi/pcmpi.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/gamg/agg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/hypre/impl/ihypre.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/bitmask.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/telescope/telescope_coarsedm.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/mg/mg.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/tfs.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/fieldsplit/fieldsplit.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/comm.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/vpbjacobi/vpbjacobi.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/telescope/telescope.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/gs.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/xxt.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/xyt.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/telescope/telescope_dmda.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/tfs/ivec.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/interface/pcset.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/interface/pcregis.o
+         CC arch-firedrake-int64/obj/src/snes/impls/fas/fasgalerkin.o
+         CC arch-firedrake-int64/obj/src/snes/impls/gs/gssecant.o
+         CC arch-firedrake-int64/obj/src/snes/impls/gs/snesgs.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ksponly/ksponly.o
+         CC arch-firedrake-int64/obj/src/snes/impls/al/al.o
+         CC arch-firedrake-int64/obj/src/snes/impls/fas/fasfunc.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ls/ls.o
+         CC arch-firedrake-int64/obj/src/snes/impls/composite/snescomposite.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/interface/precon.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/wb/wb.o
+         CC arch-firedrake-int64/obj/src/snes/impls/nasm/aspin.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ms/ms.o
+         CC arch-firedrake-int64/obj/src/snes/impls/multiblock/multiblock.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ngmres/anderson.o
+         CC arch-firedrake-int64/obj/src/snes/impls/fas/fas.o
+         CC arch-firedrake-int64/obj/src/snes/impls/python/pythonsnes.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ncg/snesncg.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ngmres/ngmresfunc.o
+         CC arch-firedrake-int64/obj/src/snes/impls/richardson/snesrichardson.o
+         CC arch-firedrake-int64/obj/src/snes/impls/shell/snesshell.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ngmres/snesngmres.o
+         CC arch-firedrake-int64/obj/src/snes/impls/patch/snespatch.o
+         CC arch-firedrake-int64/obj/src/snes/impls/ntrdc/ntrdc.o
+         CC arch-firedrake-int64/obj/src/snes/impls/qn/qn.o
+         CC arch-firedrake-int64/obj/src/snes/impls/nasm/nasm.o
+         CC arch-firedrake-int64/obj/src/snes/interface/dlregissnes.o
+         CC arch-firedrake-int64/obj/src/snes/impls/vi/ss/viss.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snesj2.o
+         CC arch-firedrake-int64/obj/src/snes/interface/noise/snesnoise.o
+         CC arch-firedrake-int64/obj/src/snes/impls/vi/rs/virs.o
+         CC arch-firedrake-int64/obj/src/snes/interface/noise/snesdnest.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snesj.o
+         CC arch-firedrake-int64/obj/src/snes/interface/noise/snesmfj2.o
+         CC arch-firedrake-int64/obj/src/snes/impls/vi/vi.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snesob.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snesregi.o
+         CC arch-firedrake-int64/obj/src/snes/impls/tr/tr.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snespc.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/bisection/linesearchbisection.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/none/linesearchnone.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/shell/linesearchshell.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/cp/linesearchcp.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/interface/linesearchregi.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snesut.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/secant/linesearchsecant.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/nleqerr/linesearchnleqerr.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/impls/bt/linesearchbt.o
+         CC arch-firedrake-int64/obj/src/snes/mf/snesmfj.o
+         CC arch-firedrake-int64/obj/src/snes/linesearch/interface/linesearch.o
+         CC arch-firedrake-int64/obj/src/snes/utils/convest.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/cfl/adaptcfl.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/basic/adaptbasic.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dmlocalsnes.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/glee/adaptglee.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/dsp/adaptdsp.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dmdasnes.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/history/adapthist.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dmsnes.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/impls/none/adaptnone.o
+         CC arch-firedrake-int64/obj/src/ts/characteristic/impls/da/slda.o
+         CC arch-firedrake-int64/obj/src/ts/characteristic/interface/mocregis.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/patch/pcpatch.o
+         CC arch-firedrake-int64/obj/src/ts/characteristic/interface/slregis.o
+         CC arch-firedrake-int64/obj/src/ts/adapt/interface/tsadapt.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dm/dminterpolatesnes.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dm/dmadapt.o
+         CC arch-firedrake-int64/obj/src/snes/utils/dmplexsnes.o
+         CC arch-firedrake-int64/obj/src/snes/interface/snes.o
+         CC arch-firedrake-int64/obj/src/ts/impls/explicit/euler/euler.o
+         CC arch-firedrake-int64/obj/src/ts/impls/eimex/eimex.o
+         CC arch-firedrake-int64/obj/src/ts/event/tsevent.o
+         CC arch-firedrake-int64/obj/src/ts/impls/bdf/bdf.o
+         CC arch-firedrake-int64/obj/src/ts/impls/arkimex/fsarkimex.o
+         CC arch-firedrake-int64/obj/src/ts/characteristic/interface/characteristic.o
+         CC arch-firedrake-int64/obj/src/ts/impls/explicit/ssp/ssp.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/alpha/alpha1.o
+         CC arch-firedrake-int64/obj/src/ts/impls/explicit/rk/mrk.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/alpha/alpha2.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/glle/glleadapt.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/discgrad/tsdiscgrad.o
+         CC arch-firedrake-int64/obj/src/ts/impls/glee/glee.o
+         CC arch-firedrake-int64/obj/src/ts/impls/python/pythonts.o
+         CC arch-firedrake-int64/obj/src/ts/impls/explicit/rk/rk.o
+         CC arch-firedrake-int64/obj/src/ts/impls/mimex/mimex.o
+         CC arch-firedrake-int64/obj/src/ts/impls/arkimex/arkimex.o
+         CC arch-firedrake-int64/obj/src/ts/impls/pseudo/posindep.o
+         CC arch-firedrake-int64/obj/src/ts/interface/dlregists.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/irk/irk.o
+         CC arch-firedrake-int64/obj/src/ts/impls/symplectic/basicsymplectic/basicsymplectic.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tscreate.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tseig.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tshistory.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tsreg.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/theta/theta.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tsregall.o
+         CC arch-firedrake-int64/obj/src/ts/interface/sensitivity/tssen.o
+         CC arch-firedrake-int64/obj/src/ts/impls/rosw/rosw.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tsrhssplit.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/impls/basic/trajbasic.o
+         CC arch-firedrake-int64/obj/src/ts/impls/multirate/mprk.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/impls/singlefile/singlefile.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/impls/visualization/trajvisualization.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/utils/reconstruct.o
+         CC arch-firedrake-int64/obj/src/ts/interface/tsmon.o
+         CC arch-firedrake-int64/obj/src/ts/impls/implicit/glle/glle.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmdats.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmnetworkts.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/interface/traj.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmlocalts.o
+         CC arch-firedrake-int64/obj/src/ts/trajectory/impls/memory/trajmemory.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmplexts.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmts.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/blmvm/blmvm.o
+         CC arch-firedrake-int64/obj/src/ts/utils/tsconvest.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bnk/bnls.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bnk/bntl.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bnk/bntr.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bqnk/bqnkls.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bqnk/bqnk.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bqnk/bqnktr.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bqnk/bqnktl.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bncg/bncg.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bqnls/bqnls.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/tron/tron.o
+         CC arch-firedrake-int64/obj/src/ksp/pc/impls/bddc/bddcprivate.o
+         CC arch-firedrake-int64/obj/src/tao/bound/impls/bnk/bnk.o
+         CC arch-firedrake-int64/obj/src/tao/complementarity/impls/ssls/ssls.o
+         CC arch-firedrake-int64/obj/src/ts/interface/ts.o
+         CC arch-firedrake-int64/obj/src/tao/bound/utils/isutil.o
+         CC arch-firedrake-int64/obj/src/tao/complementarity/impls/asls/asfls.o
+         CC arch-firedrake-int64/obj/src/tao/complementarity/impls/asls/asils.o
+         CC arch-firedrake-int64/obj/src/tao/complementarity/impls/ssls/ssils.o
+         CC arch-firedrake-int64/obj/src/tao/complementarity/impls/ssls/ssfls.o
+         CC arch-firedrake-int64/obj/src/tao/constrained/impls/almm/almmutils.o
+         CC arch-firedrake-int64/obj/src/tao/interface/dlregistao.o
+         CC arch-firedrake-int64/obj/src/tao/interface/fdiff.o
+         CC arch-firedrake-int64/obj/src/tao/interface/taosolver_bounds.o
+         CC arch-firedrake-int64/obj/src/tao/interface/taosolverregi.o
+         CC arch-firedrake-int64/obj/src/tao/constrained/impls/almm/almm.o
+         CC arch-firedrake-int64/obj/src/tao/constrained/impls/admm/admm.o
+         CC arch-firedrake-int64/obj/src/tao/interface/taosolver_fg.o
+         CC arch-firedrake-int64/obj/src/tao/interface/taosolver_hj.o
+         CC arch-firedrake-int64/obj/src/tao/leastsquares/impls/pounders/gqt.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/impls/armijo/armijo.o
+         CC arch-firedrake-int64/obj/src/tao/leastsquares/impls/brgn/brgn.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/impls/gpcglinesearch/gpcglinesearch.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/impls/unit/unit.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/interface/dlregis_taolinesearch.o
+         CC arch-firedrake-int64/obj/src/tao/constrained/impls/ipm/ipm.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/impls/morethuente/morethuente.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/impls/owarmijo/owarmijo.o
+         CC arch-firedrake-int64/obj/src/tao/matrix/adamat.o
+         CC arch-firedrake-int64/obj/src/tao/linesearch/interface/taolinesearch.o
+         CC arch-firedrake-int64/obj/src/tao/python/pythontao.o
+         CC arch-firedrake-int64/obj/src/tao/interface/taosolver.o
+         CC arch-firedrake-int64/obj/src/tao/shell/taoshell.o
+         CC arch-firedrake-int64/obj/src/tao/matrix/submatfree.o
+         CC arch-firedrake-int64/obj/src/tao/snes/taosnes.o
+         CC arch-firedrake-int64/obj/src/tao/constrained/impls/ipm/pdipm.o
+         CC arch-firedrake-int64/obj/src/tao/quadratic/impls/gpcg/gpcg.o
+         CC arch-firedrake-int64/obj/src/tao/quadratic/impls/bqpip/bqpip.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/halfl2squared/taotermhalfl2squared.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/quadratic/taotermquadratic.o
+         CC arch-firedrake-int64/obj/src/tao/term/interface/taotermregi.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/shell/taotermshell.o
+         CC arch-firedrake-int64/obj/src/tao/pde_constrained/impls/lcl/lcl.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/callbacks/taotermcallbacks.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/l1/taoterml1.o
+         CC arch-firedrake-int64/obj/src/tao/term/utils/taotermelementwise.o
+         CC arch-firedrake-int64/obj/src/tao/term/utils/taotermutils.o
+         CC arch-firedrake-int64/obj/src/tao/term/utils/taotermfdiff.o
+         CC arch-firedrake-int64/obj/src/tao/term/impls/sum/taotermsum.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/cg/taocg.o
+         CC arch-firedrake-int64/obj/src/tao/term/utils/taotermmapping.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/lmvm/lmvm.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/neldermead/neldermead.o
+         CC arch-firedrake-int64/obj/src/vec/is/sf/impls/basic/sfpack.o
+         CC arch-firedrake-int64/obj/src/tao/term/interface/taoterm.o
+         CC arch-firedrake-int64/obj/src/tao/leastsquares/impls/pounders/pounders.o
+         CC arch-firedrake-int64/obj/src/tao/util/softthreshold.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/owlqn/owlqn.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/ntr/ntr.o
+         CC arch-firedrake-int64/obj/src/ts/utils/dmplexlandau/plexland.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/ntl/ntl.o
+         CC arch-firedrake-int64/obj/src/tao/util/tao_util.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/nls/nls.o
+         CC arch-firedrake-int64/obj/src/ml/regressor/interface/dlregisregressor.o
+         CC arch-firedrake-int64/obj/src/ml/regressor/interface/regressorregi.o
+         CC arch-firedrake-int64/obj/src/tao/unconstrained/impls/bmrm/bmrm.o
+         CC arch-firedrake-int64/obj/src/ml/da/interface/petscda.o
+         CC arch-firedrake-int64/obj/src/ml/regressor/interface/regressor.o
+         CC arch-firedrake-int64/obj/src/ml/regressor/impls/linear/linear.o
+         CC arch-firedrake-int64/obj/src/ml/da/impls/ensemble/daensemble.o
+         CC arch-firedrake-int64/obj/src/ml/da/impls/ensemble/letkf/letkf_obs_scatter.o
+         CC arch-firedrake-int64/obj/src/ml/da/impls/ensemble/letkf/dalocalizationletkf.o
+         CC arch-firedrake-int64/obj/src/ml/da/impls/ensemble/letkf/letkfilter.o
+    CLINKER arch-firedrake-int64/lib/libpetsc.so.3.026.0
+=========================================
+Now to check if the libraries are working do:
+make PETSC_DIR=/gpfs/home/lac224/firedrake-dev-int64/petsc PETSC_ARCH=arch-firedrake-int64 check
+=========================================
+
+Running PETSc check
+Running PETSc check examples to verify correct installation
+Using PETSC_DIR=/gpfs/home/lac224/firedrake-dev-int64/petsc and PETSC_ARCH=arch-firedrake-int64
+C/C++ example src/snes/tutorials/ex19 run successfully with 1 MPI process
+C/C++ example src/snes/tutorials/ex19 run successfully with 2 MPI processes
+C/C++ example src/snes/tutorials/ex19 run successfully with HYPRE
+C/C++ example src/snes/tutorials/ex19 run successfully with MUMPS
+C/C++ example src/snes/tutorials/ex19 run successfully with SuiteSparse
+C/C++ example src/snes/tutorials/ex19 run successfully with SuperLU_DIST
+C/C++ example src/vec/vec/tests/ex47 run successfully with HDF5
+Completed PETSc check examples
+  PETSc checks passed. Log: /gpfs/home/lac224/firedrake-dev-int64/logs/petsc_check_20261009_133655.log
+
+====================================
+CPU Time used: 00:52:38
+CPU Percent: 549%
+Memory usage: 2527528kb
+Approx Power usage: 0.0104
+Walltime usage: 00:27:47
+
+====================================
