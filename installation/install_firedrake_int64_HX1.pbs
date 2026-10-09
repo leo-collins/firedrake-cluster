@@ -1,0 +1,113 @@
+#!/bin/bash
+# Run after install_petsc_int64_HX1.pbs has completed successfully.
+# Submit with: qsub install_firedrake_int64_HX1.pbs
+# Firedrake is cloned via SSH; use HTTPS if SSH is unavailable.
+
+#PBS -N firedrake_int64_install
+#PBS -l select=1:ncpus=16:mem=64gb:mpiprocs=16
+#PBS -l walltime=03:00:00
+#PBS -j oe
+#PBS -o firedrake_int64_install.log
+
+set -euo pipefail
+
+INSTALL_DIR="$HOME/firedrake-dev-int64"
+
+mkdir -p "$INSTALL_DIR/logs"
+LOGFILE="$INSTALL_DIR/logs/install_foss_$(date +%Y%m%d_%H%M%S).log"
+exec > >(tee -a "$LOGFILE") 2>&1
+
+# Load modules
+echo ""
+echo "Loading modules"
+module purge
+module load buildenv/default-foss-2025b
+module load CMake/4.0.3-GCCcore-14.3.0
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+module list
+
+cd "$INSTALL_DIR"
+
+# Clone Firedrake
+echo ""
+echo "Cloning Firedrake"
+if [[ -d "$INSTALL_DIR/firedrake/.git" ]]; then
+    echo "  Firedrake already cloned, skipping."
+else
+    git clone git@github.com:firedrakeproject/firedrake.git --branch leo/distributed-rtree-refactor "$INSTALL_DIR/firedrake"
+fi
+
+# Export environment variables
+export CC=mpicc
+export CXX=mpicxx
+export PETSC_ARCH=arch-firedrake-int64
+export PETSC_DIR="$INSTALL_DIR/petsc"
+export HDF5_MPI=ON
+export HDF5_DIR="$EBROOTHDF5"
+
+# Create virtual environment
+cd "$INSTALL_DIR"
+if [[ ! -d "$INSTALL_DIR/venv-firedrake" ]]; then
+    python3 -m venv venv-firedrake
+fi
+source "$INSTALL_DIR/venv-firedrake/bin/activate"
+echo "  Python: $(which python3) ($(python3 --version))"
+
+# Install Python packages
+# Build extensions against this PETSc architecture without reusing cached wheels.
+
+echo "Installing petsc4py"
+pip install --no-cache-dir --force-reinstall --no-deps "$PETSC_DIR/src/binding/petsc4py"
+
+echo "Installing Firedrake build requirements"
+pip install --no-cache-dir -r "$INSTALL_DIR/firedrake/requirements-build.txt"
+
+echo "Installing Firedrake"
+pip install \
+    --no-build-isolation \
+    --no-cache-dir \
+    --no-binary h5py,pyop2 \
+    --editable "$INSTALL_DIR/firedrake[check,docs]"
+
+# Confirm that both PETSc and Firedrake use 64-bit indices.
+python - <<'PYTHON'
+import numpy as np
+from petsc4py import PETSc
+from firedrake.utils import IntType
+
+assert np.dtype(PETSc.IntType).itemsize == 8, "PETSc indices are not 64-bit"
+assert np.dtype(IntType).itemsize == 8, "Firedrake indices are not 64-bit"
+print("PETSc and Firedrake use 64-bit indices")
+PYTHON
+
+# Save the HX1 environment for future sessions.
+cat > "$INSTALL_DIR/activate-firedrake.sh" <<EOF
+#!/bin/bash
+module purge
+module load buildenv/default-foss-2025b
+module load CMake/4.0.3-GCCcore-14.3.0
+module load HDF5/1.14.6-gompi-2025b
+module load Python/3.13.5-GCCcore-14.3.0
+export CC=mpicc
+export CXX=mpicxx
+export PETSC_ARCH="$PETSC_ARCH"
+export PETSC_DIR="$PETSC_DIR"
+export HDF5_MPI=ON
+export HDF5_DIR="\$EBROOTHDF5"
+source "$INSTALL_DIR/venv-firedrake/bin/activate"
+EOF
+
+# Run firedrake-check
+echo ""
+echo "Running firedrake-check"
+CHECK_LOG="$INSTALL_DIR/logs/firedrake_check_$(date +%Y%m%d_%H%M%S).log"
+if ! firedrake-check 2>&1 | tee "$CHECK_LOG"; then
+    echo "ERROR: firedrake-check failed. See $CHECK_LOG"
+    exit 1
+fi
+
+echo "Installation complete: $(date -Iseconds)"
+echo ""
+echo "To use Firedrake in future sessions:"
+echo "  source $INSTALL_DIR/activate-firedrake.sh"
