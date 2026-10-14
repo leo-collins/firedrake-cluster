@@ -79,7 +79,7 @@ def parse_args():
     parser.add_argument("degree", type=int, help="Degree of the CG element.")
     parser.add_argument(
         "--env",
-        choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3"),
+        choices=("firedrake-dev", "firedrake-dev2", "firedrake-dev3", "firedrake-dev-int64"),
         required=True,
         help="Firedrake environment directory below $HOME.",
     )
