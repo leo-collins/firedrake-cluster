@@ -1,3 +1,6 @@
 .DS_Store
 */meshes
+!partition_boxes/meshes/
+partition_boxes/meshes/*
+!partition_boxes/meshes/generate_cube_hierarchy.py
 __pycache__/
