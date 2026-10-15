@@ -1,0 +1,66 @@
+Running crossmesh_overlapping_weakscaling.py with DOFs=200000, degree=3, on 512 processes.
+Firedrake environment: /gpfs/home/lac224/firedrake-dev-int64/venv-firedrake
+Results will be saved to /gpfs/home/lac224/firedrake-cluster/partition_boxes/results/crossmesh_overlapping_weakscaling_CG3_200000.csv.
+Job ID: 718891.pbs-6
+Node:   hx1-c08-3-2
+Date:   Wed 14 Oct 20:22:35 BST 2026
+CSV:    /gpfs/home/lac224/firedrake-cluster/partition_boxes/results/crossmesh_overlapping_weakscaling_CG3_200000.csv
+PBS params: 
+  PBS -l select=8:ncpus=64:mpiprocs=64:mem=250gb
+  PBS -l place=excl
+  PBS -l walltime=04:00:00
+  PBS -j oe
+  PBS -o /gpfs/home/lac224/firedrake-cluster/partition_boxes/logs/
+mesh=UnitCubeMesh, nprocs=512: mesh setup=2715.38s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run0 time=14.5093s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run1 time=13.8636s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run2 time=13.9176s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run3 time=13.7676s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run4 time=14.403s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run5 time=13.6151s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run6 time=13.5227s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run7 time=13.7726s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run8 time=13.9313s
+mesh=UnitCubeMesh, nprocs=512: cold-index twoform_run9 time=14.0962s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run0 time=8.98735s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run1 time=9.01718s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run2 time=9.23016s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run3 time=10.1858s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run4 time=8.89984s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run5 time=8.9399s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run6 time=9.52995s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run7 time=9.13021s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run8 time=8.99646s
+mesh=UnitCubeMesh, nprocs=512: cold-index oneform_run9 time=9.10392s
+nprocs=512: MeshHierarchy seeds=78/79, refinements=1
+mesh=MeshHierarchy, nprocs=512: mesh setup=293.546s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run0 time=14.6786s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run1 time=15.486s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run2 time=14.8451s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run3 time=15.2245s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run4 time=14.5363s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run5 time=15.0453s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run6 time=15.1029s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run7 time=15.3287s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run8 time=14.8165s
+mesh=MeshHierarchy, nprocs=512: cold-index twoform_run9 time=15.4943s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run0 time=9.8636s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run1 time=9.80376s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run2 time=9.52377s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run3 time=9.98505s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run4 time=9.6616s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run5 time=10.0866s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run6 time=9.9924s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run7 time=10.2533s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run8 time=9.62653s
+mesh=MeshHierarchy, nprocs=512: cold-index oneform_run9 time=9.89782s
+Job completed at Wed 14 Oct 21:23:15 BST 2026.
+
+====================================
+CPU Time used: 61:04:49
+CPU Percent: 6354%
+Memory usage: 120477724kb
+Approx Power usage: 0.7328000000000001
+Walltime usage: 01:01:06
+
+====================================
