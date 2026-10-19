@@ -52,7 +52,7 @@ PETSc.Sys.Print(
 )
 mesh = refined_cube(seed_n, levels)
 PETSc.Sys.Print(f"nprocs={nprocs}: mesh construction complete")
-mesh.tolerance = 0.5
+mesh.tolerance = 10e-8
 firedrake_git_branch = COMM_WORLD.bcast(
     _firedrake_git_branch() if COMM_WORLD.rank == 0 else None,
     root=0,
@@ -103,13 +103,11 @@ for run in range(n_runs):
     if candidate_observation is None:
         raise RuntimeError("VertexOnlyMesh did not construct a candidate SF")
     boxes = mesh._box_ratio_heuristic
-    side_lengths = boxes[:, 1, :] - boxes[:, 0, :]
     rank_diagnostics = {
-        "local_time_s": local_time_s,
         "candidate_leaves": candidate_observation.nleaves,
         "candidate_input_peers": np.unique(candidate_observation.input_ranks).size,
         "partition_boxes": boxes.shape[0],
-        "partition_box_volume_sum": np.prod(side_lengths, axis=1).sum(),
+        "local_time_s": local_time_s,
         "vom_owned_points": vom.cell_set.size,
     }
     if run == n_runs - 1:
@@ -131,6 +129,8 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         diagnostic_output[f"{name}_min"] = values.min()
         diagnostic_output[f"{name}_median"] = np.median(values)
         diagnostic_output[f"{name}_max"] = values.max()
+        if name == "partition_boxes":
+            diagnostic_output["partition_boxes_total"] = values.sum()
     fieldnames = [
         "nprocs",
         "pbs_job_id",
@@ -138,9 +138,7 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         "mesh_n",
         "mesh_cells_per_core",
         "points_per_core",
-        "mean_time_s",
-        "std_time_s",
-    ] + [f"run{i}" for i in range(n_runs)] + list(diagnostic_output)
+    ] + list(diagnostic_output)
     with csv_path.open("a+", newline="") as f:
         fcntl.flock(f, fcntl.LOCK_EX)
         f.seek(0)
@@ -161,10 +159,7 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
             "mesh_n": mesh_n,
             "mesh_cells_per_core": total_mesh_cells / nprocs,
             "points_per_core": points_per_core,
-            "mean_time_s": mean_time_s,
-            "std_time_s": std_time_s,
         }
-        row.update({f"run{i}": elapsed_s for i, elapsed_s in enumerate(times)})
         row.update(diagnostic_output)
         writer.writerow(row)
         f.flush()
