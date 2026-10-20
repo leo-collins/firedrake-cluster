@@ -52,7 +52,7 @@ PETSc.Sys.Print(
 )
 mesh = refined_cube(seed_n, levels)
 PETSc.Sys.Print(f"nprocs={nprocs}: mesh construction complete")
-mesh.tolerance = 10e-8
+mesh.tolerance = 0.5
 firedrake_git_branch = COMM_WORLD.bcast(
     _firedrake_git_branch() if COMM_WORLD.rank == 0 else None,
     root=0,
