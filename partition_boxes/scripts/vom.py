@@ -1,12 +1,26 @@
+import argparse
 import csv
 import fcntl
 from pathlib import Path
 from sys import argv, path
 from time import perf_counter_ns
 
+parser = argparse.ArgumentParser(description="Benchmark VOM creation on a unit cube.")
+parser.add_argument("points_per_core", type=int)
+parser.add_argument("csv_path", nargs="?", type=Path)
+parser.add_argument("pbs_job_id", nargs="?")
+parser.add_argument("n_runs", nargs="?", type=int, default=10)
+parser.add_argument("--high-order", action="store_true", help="Use a warped cubic Netgen mesh.")
+args = parser.parse_args()
+# PETSc initializes on import; the benchmark arguments have already been parsed.
+argv[:] = argv[:1]
+
 import numpy as np
 from benchmark_utils import _firedrake_git_branch
-from firedrake import COMM_WORLD, PETSc, VertexOnlyMesh
+from firedrake import (
+    COMM_WORLD, PETSc, DirichletBC, Function, Mesh, MeshHierarchy,
+    SpatialCoordinate, VectorFunctionSpace, VertexOnlyMesh, as_vector, pi, sin,
+)
 from firedrake.mesh import VertexOnlyMeshSF
 from firedrake.petsc import garbage_cleanup
 from mpi4py import MPI
@@ -16,20 +30,49 @@ from generate_cube_hierarchy import refined_cube
 
 
 # Run with:
-#   mpiexec -n <nprocs> python vom_weakscaling_3d.py \
-#       <points_per_core> [csv_path] [pbs_job_id] [n_runs]
+#   mpiexec -n <nprocs> python vom.py \
+#       <points_per_core> [csv_path] [pbs_job_id] [n_runs] [--high-order]
 
-if len(argv) < 2:
-    raise ValueError(
-        "Usage: vom_weakscaling_3d.py "
-        "<points_per_core> [csv_path] [pbs_job_id] [n_runs]"
-    )
+
+def high_order_cube(target_cells, levels):
+    """Refine a Netgen cube in parallel and warp its cubic coordinates."""
+    from netgen.csg import unit_cube
+    from netgen.meshing import Mesh as NetgenMesh
+
+    target_seed_cells = target_cells / 8**levels
+    maxh = (6 / target_seed_cells) ** (1 / 3)
+    ngmesh = NetgenMesh(dim=3)
+    if COMM_WORLD.rank == 0:
+        for attempt in range(6):
+            ngmesh = unit_cube.GenerateMesh(maxh=maxh)
+            if abs(ngmesh.ne / target_seed_cells - 1) <= 0.1 or attempt == 5:
+                break
+            maxh *= (ngmesh.ne / target_seed_cells) ** (1 / 3)
+    maxh = COMM_WORLD.bcast(maxh, root=0)
+    seed = Mesh(ngmesh)
+    # A fresh coordinate Function avoids Netgen's CAD snapping on refinement.
+    seed = Mesh(seed.coordinates.copy())
+    mesh = MeshHierarchy(seed, levels)[-1]
+
+    h = maxh / 2**levels
+    periods = max(1, round(1 / (4 * h)))
+    x = SpatialCoordinate(mesh)
+    waves = [sin(2 * pi * periods * x[i]) for i in range(3)]
+    displacement = as_vector([
+        0.2 * h * sin(pi * x[i]) * waves[(i + 1) % 3] * waves[(i + 2) % 3]
+        for i in range(3)
+    ])
+    V = VectorFunctionSpace(mesh, "CG", 3)
+    coordinates = Function(V).interpolate(x + displacement)
+    DirichletBC(V, x, "on_boundary").apply(coordinates)
+    return Mesh(coordinates)
+
 
 nprocs = COMM_WORLD.size
-points_per_core = int(argv[1])
-csv_path = Path(argv[2]) if len(argv) > 2 else None
-pbs_job_id = argv[3] if len(argv) > 3 else None
-n_runs = int(argv[4]) if len(argv) > 4 else 10
+points_per_core = args.points_per_core
+csv_path = args.csv_path
+pbs_job_id = args.pbs_job_id
+n_runs = args.n_runs
 
 if points_per_core < 1:
     raise ValueError("points_per_core must be >= 1")
@@ -38,20 +81,21 @@ if n_runs < 1:
 
 # Keep approximately 25,000 mesh cells per core.
 target_mesh_cells_per_core = 25_000
-mesh_n = max(round((target_mesh_cells_per_core * nprocs / 6) ** (1 / 3)), 1)
 levels = 3
-# Three refinements require rounding the requested n to a multiple of eight.
-scale = 2 ** levels
-seed_n = max((mesh_n + scale // 2) // scale, 1)
-mesh_n = seed_n * scale
-total_mesh_cells = 6 * mesh_n**3
+mesh_type = "high order" if args.high_order else "linear"
+if args.high_order:
+    mesh = high_order_cube(target_mesh_cells_per_core * nprocs, levels)
+else:
+    mesh_n = max(round((target_mesh_cells_per_core * nprocs / 6) ** (1 / 3)), 1)
+    # Three refinements require rounding the requested n to a multiple of eight.
+    scale = 2 ** levels
+    seed_n = max((mesh_n + scale // 2) // scale, 1)
+    mesh = refined_cube(seed_n, levels)
+total_mesh_cells = COMM_WORLD.allreduce(mesh.cell_set.size, op=MPI.SUM)
 PETSc.Sys.Print(
-    f"nprocs={nprocs}: constructing MeshHierarchy with seed n={seed_n}, "
-    f"refinements={levels}, effective n={mesh_n}, "
-    f"and {total_mesh_cells} tetrahedra"
+    f"nprocs={nprocs}: {mesh_type} mesh construction complete, "
+    f"{total_mesh_cells} tetrahedra, {total_mesh_cells / nprocs:.1f} cells/rank"
 )
-mesh = refined_cube(seed_n, levels)
-PETSc.Sys.Print(f"nprocs={nprocs}: mesh construction complete")
 mesh.tolerance = 0.5
 firedrake_git_branch = COMM_WORLD.bcast(
     _firedrake_git_branch() if COMM_WORLD.rank == 0 else None,
@@ -135,7 +179,7 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
         "nprocs",
         "pbs_job_id",
         "firedrake_git_branch",
-        "mesh_n",
+        "mesh_type",
         "mesh_cells_per_core",
         "points_per_core",
     ] + list(diagnostic_output)
@@ -156,7 +200,7 @@ if COMM_WORLD.rank == 0 and csv_path is not None:
             "nprocs": nprocs,
             "pbs_job_id": pbs_job_id,
             "firedrake_git_branch": firedrake_git_branch,
-            "mesh_n": mesh_n,
+            "mesh_type": mesh_type,
             "mesh_cells_per_core": total_mesh_cells / nprocs,
             "points_per_core": points_per_core,
         }
