@@ -96,7 +96,7 @@ PETSc.Sys.Print(
     f"nprocs={nprocs}: {mesh_type} mesh construction complete, "
     f"{total_mesh_cells} tetrahedra, {total_mesh_cells / nprocs:.1f} cells/rank"
 )
-mesh.tolerance = 0.5
+mesh.tolerance = 1e-8
 firedrake_git_branch = COMM_WORLD.bcast(
     _firedrake_git_branch() if COMM_WORLD.rank == 0 else None,
     root=0,
